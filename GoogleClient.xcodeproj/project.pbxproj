@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCB1B123D4B0041450D /* GoogleObject.swift */; };
+		A4076CCF1B125DD50041450D /* Blogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCE1B125DD50041450D /* Blogger.swift */; };
+		A4076CD11B1265BF0041450D /* BloggerBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CD01B1265BF0041450D /* BloggerBlog.swift */; };
+		A4076CD31B13E9960041450D /* BloggerComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CD21B13E9960041450D /* BloggerComment.swift */; };
+		A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46810351B093353006F7839 /* SystemConfiguration.framework */; };
+		A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46810371B0AC4E0006F7839 /* GoogleService.swift */; };
 		A4DB96A71B07FB3B00DD0950 /* GoogleClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4DB96AD1B07FB3B00DD0950 /* GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96A11B07FB3B00DD0950 /* GoogleClient.framework */; };
 		A4DB96B41B07FB3B00DD0950 /* GoogleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */; };
+		A4DB96C01B081B0E00DD0950 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */; };
+		A4DB96C21B081B1600DD0950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96C11B081B1600DD0950 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +32,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A4076CCB1B123D4B0041450D /* GoogleObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleObject.swift; sourceTree = "<group>"; };
+		A4076CCE1B125DD50041450D /* Blogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Blogger.swift; path = Blogger/Blogger.swift; sourceTree = "<group>"; };
+		A4076CD01B1265BF0041450D /* BloggerBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerBlog.swift; path = Blogger/BloggerBlog.swift; sourceTree = "<group>"; };
+		A4076CD21B13E9960041450D /* BloggerComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerComment.swift; path = Blogger/BloggerComment.swift; sourceTree = "<group>"; };
+		A46810351B093353006F7839 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A46810371B0AC4E0006F7839 /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		A4DB96A11B07FB3B00DD0950 /* GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB96A51B07FB3B00DD0950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleClient.h; sourceTree = "<group>"; };
 		A4DB96AC1B07FB3B00DD0950 /* GoogleClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB96B21B07FB3B00DD0950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClientTests.swift; sourceTree = "<group>"; };
+		A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		A4DB96C11B081B1600DD0950 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF4B317BEC91F24E3159DF5B /* Pods-GoogleClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.debug.xcconfig"; sourceTree = "<group>"; };
+		E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11C25D499A7337C8C32EABF /* Pods-GoogleClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +56,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */,
+				A4DB96C21B081B1600DD0950 /* Foundation.framework in Frameworks */,
+				A4DB96C01B081B0E00DD0950 /* AddressBook.framework in Frameworks */,
+				4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +74,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124A1DFFD0D1B41A67323E7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A46810351B093353006F7839 /* SystemConfiguration.framework */,
+				A4DB96C11B081B1600DD0950 /* Foundation.framework */,
+				A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */,
+				E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AE9D8EA81AA9A168AE9A4B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF4B317BEC91F24E3159DF5B /* Pods-GoogleClient.debug.xcconfig */,
+				F11C25D499A7337C8C32EABF /* Pods-GoogleClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A4076CCD1B125D5E0041450D /* Blogger */ = {
+			isa = PBXGroup;
+			children = (
+				A4076CCE1B125DD50041450D /* Blogger.swift */,
+				A4076CD01B1265BF0041450D /* BloggerBlog.swift */,
+				A4076CD21B13E9960041450D /* BloggerComment.swift */,
+			);
+			name = Blogger;
+			sourceTree = "<group>";
+		};
 		A4DB96971B07FB3A00DD0950 = {
 			isa = PBXGroup;
 			children = (
 				A4DB96A31B07FB3B00DD0950 /* GoogleClient */,
 				A4DB96B01B07FB3B00DD0950 /* GoogleClientTests */,
 				A4DB96A21B07FB3B00DD0950 /* Products */,
+				2AE9D8EA81AA9A168AE9A4B7 /* Pods */,
+				124A1DFFD0D1B41A67323E7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +127,11 @@
 		A4DB96A31B07FB3B00DD0950 /* GoogleClient */ = {
 			isa = PBXGroup;
 			children = (
+				A4076CCD1B125D5E0041450D /* Blogger */,
 				A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */,
 				A4DB96A41B07FB3B00DD0950 /* Supporting Files */,
+				A46810371B0AC4E0006F7839 /* GoogleService.swift */,
+				A4076CCB1B123D4B0041450D /* GoogleObject.swift */,
 			);
 			path = GoogleClient;
 			sourceTree = "<group>";
@@ -120,10 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DB96B71B07FB3B00DD0950 /* Build configuration list for PBXNativeTarget "GoogleClient" */;
 			buildPhases = (
+				D761990782B7BBD813054D43 /* Check Pods Manifest.lock */,
 				A4DB969C1B07FB3B00DD0950 /* Sources */,
 				A4DB969D1B07FB3B00DD0950 /* Frameworks */,
 				A4DB969E1B07FB3B00DD0950 /* Headers */,
 				A4DB969F1B07FB3B00DD0950 /* Resources */,
+				77A38B4611BA40540AB83E3F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,11 +265,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		77A38B4611BA40540AB83E3F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D761990782B7BBD813054D43 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4DB969C1B07FB3B00DD0950 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4076CD31B13E9960041450D /* BloggerComment.swift in Sources */,
+				A4076CCF1B125DD50041450D /* Blogger.swift in Sources */,
+				A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */,
+				A4076CD11B1265BF0041450D /* BloggerBlog.swift in Sources */,
+				A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +421,9 @@
 		};
 		A4DB96B81B07FB3B00DD0950 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF4B317BEC91F24E3159DF5B /* Pods-GoogleClient.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +433,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A4DB96B91B07FB3B00DD0950 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F11C25D499A7337C8C32EABF /* Pods-GoogleClient.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -399,6 +503,7 @@
 				A4DB96B91B07FB3B00DD0950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4DB96BA1B07FB3B00DD0950 /* Build configuration list for PBXNativeTarget "GoogleClientTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +512,7 @@
 				A4DB96BC1B07FB3B00DD0950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

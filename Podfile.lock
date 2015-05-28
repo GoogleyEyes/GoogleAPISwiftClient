@@ -1,0 +1,43 @@
+PODS:
+  - Alamofire (1.2.2)
+  - AlamofireObjectMapper (0.2):
+    - Alamofire (~> 1.2)
+    - ObjectMapper (~> 0.10)
+  - GoogleSignInSDK (1.0.0)
+  - ObjectMapper (0.11)
+  - OMGHTTPURLRQ (2.1):
+    - OMGHTTPURLRQ/RQ (= 2.1)
+  - OMGHTTPURLRQ/FormURLEncode (2.1)
+  - OMGHTTPURLRQ/RQ (2.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (2.1)
+  - PromiseKit (2.0.0):
+    - PromiseKit/Foundation (= 2.0.0)
+    - PromiseKit/QuartzCore (= 2.0.0)
+    - PromiseKit/UIKit (= 2.0.0)
+  - PromiseKit/CorePromise (2.0.0)
+  - PromiseKit/Foundation (2.0.0):
+    - OMGHTTPURLRQ
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (2.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (2.0.0):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Alamofire (~> 1.2)
+  - AlamofireObjectMapper
+  - GoogleSignInSDK (~> 1.0.0)
+  - ObjectMapper
+  - PromiseKit (~> 2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 11a6022f5089887d92ffb5a3014c97a0a915ab98
+  AlamofireObjectMapper: 0ed3f7b154a9b35bded72b2fa6adeee7ac49a9a2
+  GoogleSignInSDK: eb9fb3fbaaad36dd12130ca92e4de60b7816ac57
+  ObjectMapper: fc34b29bb04086ed831174a01c8310b507a6ba25
+  OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
+  PromiseKit: 94a571258076767ae3458a4329bc6630f881f711
+
+COCOAPODS: 0.37.1
