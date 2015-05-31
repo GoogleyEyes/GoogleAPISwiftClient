@@ -14,6 +14,12 @@
 		A4076CD31B13E9960041450D /* BloggerComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CD21B13E9960041450D /* BloggerComment.swift */; };
 		A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46810351B093353006F7839 /* SystemConfiguration.framework */; };
 		A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46810371B0AC4E0006F7839 /* GoogleService.swift */; };
+		A4BA70171B17BF4500F2ACDB /* BloggerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA70161B17BF4500F2ACDB /* BloggerPage.swift */; };
+		A4BA70191B17C4C700F2ACDB /* BloggerPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA70181B17C4C700F2ACDB /* BloggerPost.swift */; };
+		A4BA701B1B17CA8B00F2ACDB /* BloggerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA701A1B17CA8B00F2ACDB /* BloggerUser.swift */; };
+		A4BA701D1B17CDC100F2ACDB /* BloggerBlogUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA701C1B17CDC100F2ACDB /* BloggerBlogUserInfo.swift */; };
+		A4BA701F1B17D12100F2ACDB /* BloggerPageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA701E1B17D12100F2ACDB /* BloggerPageViews.swift */; };
+		A4BA70211B17D26E00F2ACDB /* BloggerPostUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA70201B17D26E00F2ACDB /* BloggerPostUserInfo.swift */; };
 		A4DB96A71B07FB3B00DD0950 /* GoogleClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4DB96AD1B07FB3B00DD0950 /* GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96A11B07FB3B00DD0950 /* GoogleClient.framework */; };
 		A4DB96B41B07FB3B00DD0950 /* GoogleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */; };
@@ -38,6 +44,12 @@
 		A4076CD21B13E9960041450D /* BloggerComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerComment.swift; path = Blogger/BloggerComment.swift; sourceTree = "<group>"; };
 		A46810351B093353006F7839 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46810371B0AC4E0006F7839 /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
+		A4BA70161B17BF4500F2ACDB /* BloggerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerPage.swift; path = Blogger/BloggerPage.swift; sourceTree = "<group>"; };
+		A4BA70181B17C4C700F2ACDB /* BloggerPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerPost.swift; path = Blogger/BloggerPost.swift; sourceTree = "<group>"; };
+		A4BA701A1B17CA8B00F2ACDB /* BloggerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerUser.swift; path = Blogger/BloggerUser.swift; sourceTree = "<group>"; };
+		A4BA701C1B17CDC100F2ACDB /* BloggerBlogUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerBlogUserInfo.swift; path = Blogger/BloggerBlogUserInfo.swift; sourceTree = "<group>"; };
+		A4BA701E1B17D12100F2ACDB /* BloggerPageViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerPageViews.swift; path = Blogger/BloggerPageViews.swift; sourceTree = "<group>"; };
+		A4BA70201B17D26E00F2ACDB /* BloggerPostUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerPostUserInfo.swift; path = Blogger/BloggerPostUserInfo.swift; sourceTree = "<group>"; };
 		A4DB96A11B07FB3B00DD0950 /* GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB96A51B07FB3B00DD0950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleClient.h; sourceTree = "<group>"; };
@@ -100,6 +112,12 @@
 				A4076CCE1B125DD50041450D /* Blogger.swift */,
 				A4076CD01B1265BF0041450D /* BloggerBlog.swift */,
 				A4076CD21B13E9960041450D /* BloggerComment.swift */,
+				A4BA70161B17BF4500F2ACDB /* BloggerPage.swift */,
+				A4BA70181B17C4C700F2ACDB /* BloggerPost.swift */,
+				A4BA701A1B17CA8B00F2ACDB /* BloggerUser.swift */,
+				A4BA701C1B17CDC100F2ACDB /* BloggerBlogUserInfo.swift */,
+				A4BA701E1B17D12100F2ACDB /* BloggerPageViews.swift */,
+				A4BA70201B17D26E00F2ACDB /* BloggerPostUserInfo.swift */,
 			);
 			name = Blogger;
 			sourceTree = "<group>";
@@ -304,10 +322,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4076CD31B13E9960041450D /* BloggerComment.swift in Sources */,
+				A4BA70211B17D26E00F2ACDB /* BloggerPostUserInfo.swift in Sources */,
 				A4076CCF1B125DD50041450D /* Blogger.swift in Sources */,
 				A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */,
+				A4BA70191B17C4C700F2ACDB /* BloggerPost.swift in Sources */,
 				A4076CD11B1265BF0041450D /* BloggerBlog.swift in Sources */,
+				A4BA701B1B17CA8B00F2ACDB /* BloggerUser.swift in Sources */,
+				A4BA701F1B17D12100F2ACDB /* BloggerPageViews.swift in Sources */,
 				A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */,
+				A4BA701D1B17CDC100F2ACDB /* BloggerBlogUserInfo.swift in Sources */,
+				A4BA70171B17BF4500F2ACDB /* BloggerPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

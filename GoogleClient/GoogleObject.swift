@@ -92,3 +92,13 @@ class RFC3339Transform: TransformType {
         return string;
     }
 }
+
+extension Bool {
+    func toJSONAndQueryString() -> String {
+        if boolValue {
+            return "true"
+        } else {
+            return "false"
+        }
+    }
+}

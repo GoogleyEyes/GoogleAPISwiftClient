@@ -23,17 +23,14 @@ public class BloggerBlog: GoogleObject {
     // public var posts: GoogleObjectList<BloggerPost>? // "posts.items"
     public var totalNumberOfPages: Int! // "pages.totalItems"
     public var pagesResourceURL: NSURL! // "pages.selfLink"
-    public var language: String! // "locale.language"
-    public var country: String! // "locale.country"
-    public var languageVariant: String! //"locale.variant"
-    public var customMetaData: [String: String]?
+    public var locale: BloggerLocale!
+    public var customMetaData: String?
     
     public required init?(_ map: Map) {
         mapping(map)
     }
     
     public func mapping(map: Map) {
-        kind <- map["kind"]
         identifier <- map["id"]
         name <- map["name"]
         blogDescription <- map["description"]
@@ -46,19 +43,37 @@ public class BloggerBlog: GoogleObject {
         // posts <- map["posts"]
         totalNumberOfPages <- map["pages.totalItems"]
         pagesResourceURL <- (map["pages.selfLink"], URLTransform())
-        language <- map["locale.language"]
-        country <- map["locale.country"]
-        languageVariant <- map["locale.variant"]
+        locale <- map["locale"]
         customMetaData <- map["customMetaData"]
     }
 }
 
-public class BloggerBlogList: GoogleObjectList { // TODO: Finish implementation
+public class BloggerLocale: Mappable {
+    public var language: String!
+    public var country: String!
+    public var languageVariant: String! // "variant"
+    
+    public required init(_ map: Map) {
+        mapping(map)
+    }
+    
+    public func mapping(map: Map) {
+        language <- map["language"]
+        country <- map["country"]
+        languageVariant <- map["variant"]
+    }
+}
+
+public enum BloggerBlogStatus: String {
+    case Deleted = "DELETED"
+    case Live = "LIVE"
+}
+
+public class BloggerBlogList: GoogleObjectList {
     public typealias Type = BloggerBlog
     public var kind: String = "blogger#blogList"
     public var items: [Type]!
-    public var nextPageToken: String?
-    public var ETag: String?
+    public var blogUserInfos: [BloggerBlogUserInfo]?
     
     public required init?(_ map: Map) {
         mapping(map)
@@ -66,8 +81,7 @@ public class BloggerBlogList: GoogleObjectList { // TODO: Finish implementation
     
     public func mapping(map: Map) {
         items <- map["items"]
-        nextPageToken <- map["nextPageToken"]
-        ETag <- map["etag"]
+        blogUserInfos <- map["blogUserInfos"]
     }
     
     public required init(arrayLiteral elements: Type...) {
