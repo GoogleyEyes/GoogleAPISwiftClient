@@ -89,7 +89,7 @@ public class Blogger: GoogleService {
     
     // MARK: Comment methods
     
-    public func listComments(#blogID: String, postID: String, completionHandler: (blog: BloggerCommentList?, error: NSError?) -> ()) {
+    public func listComments(#postID: String, blogID: String, completionHandler: (commentList: BloggerCommentList?, error: NSError?) -> ()) {
         var queryParams = setUpStandardQueryParams()
         if let startDateParam = startDate {
             let jsonDateTime = RFC3339Transform().transformToJSON(startDateParam)
@@ -114,10 +114,108 @@ public class Blogger: GoogleService {
         
         GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/posts/\(postID)/comments", queryParams: queryParams) { (JSON, error) -> () in
             if error != nil {
-                completionHandler(blog: nil, error: error)
+                completionHandler(commentList: nil, error: error)
             } else if JSON != nil {
                 let commentList = Mapper<BloggerCommentList>().map(JSON)
-                completionHandler(blog: commentList, error: nil)
+                completionHandler(commentList: commentList, error: nil)
+            }
+        }
+    }
+    
+    public func getComment(id commentID: String, postID: String, blogID: String, completionHandler: (comment: BloggerComment?, error: NSError?) -> ()) {
+        var queryParams = setUpStandardQueryParams()
+        GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/posts/\(postID)/comments/\(commentID)", queryParams: queryParams) { (JSON, error) -> () in
+            if error != nil {
+                completionHandler(comment: nil, error: error)
+            } else if JSON != nil {
+                let comment = Mapper<BloggerComment>().map(JSON)
+                completionHandler(comment: comment, error: nil)
+            }
+        }
+    }
+    
+    public func approveComment(id commentID: String, postID: String, blogID: String, completionHandler: (comment: BloggerComment?, error: NSError?) -> ()) {
+        var queryParams = [String: String]()
+        if let fields = fields {
+            queryParams.updateValue(fields, forKey: "fields")
+        }
+        GoogleServiceFetcher.sharedInstance.performRequest(method: .POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/posts/\(postID)/comments/\(commentID)/approve", queryParams: queryParams) { (JSON, error) -> () in
+            if error != nil {
+                completionHandler(comment: nil, error: error)
+            } else if JSON != nil {
+                let comment = Mapper<BloggerComment>().map(JSON)
+                completionHandler(comment: comment, error: nil)
+            }
+        }
+    }
+    
+    public func deleteComment(id commentID: String, postID: String, blogID: String, completionHandler: (success: Bool, error: NSError?) -> ()) {
+        var queryParams = setUpStandardQueryParams()
+        GoogleServiceFetcher.sharedInstance.performRequest(method: .DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/posts/\(postID)/comments/\(commentID)", queryParams: queryParams) { (JSON, error) -> () in
+            if error != nil {
+                completionHandler(success: false, error: error)
+            } else {
+                completionHandler(success: true, error: nil)
+            }
+        }
+    }
+    
+    public func listCommentsByBlog(id blogID: String, completionHandler: (commentList: BloggerCommentList?, error: NSError?) -> ()) {
+        var queryParams = setUpStandardQueryParams()
+        if let startDateParam = startDate {
+            let jsonDateTime = RFC3339Transform().transformToJSON(startDateParam)
+            queryParams.updateValue(jsonDateTime!, forKey: "startDate")
+        }
+        if let endDateParam = endDate {
+            let jsonDateTime = RFC3339Transform().transformToJSON(endDateParam)
+            queryParams.updateValue(jsonDateTime!, forKey: "endDate")
+        }
+        if let fetchBodiesParam = fetchBodies {
+            queryParams.updateValue(fetchBodiesParam.toJSONAndQueryString(), forKey: "fetchBodies")
+        }
+        if let maxResultsParam = maxResults {
+            queryParams.updateValue(NSNumber(unsignedLong: maxResultsParam).stringValue, forKey: "maxResults")
+        }
+        if let pageTokenParam = pageToken {
+            queryParams.updateValue(pageTokenParam, forKey: "pageToken")
+        }
+        if let statusParam = commentStatus {
+            queryParams.updateValue(statusParam.rawValue, forKey: "status")
+        }
+        
+        GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/comments", queryParams: queryParams) { (JSON, error) -> () in
+            if error != nil {
+                completionHandler(commentList: nil, error: error)
+            } else if JSON != nil {
+                let commentList = Mapper<BloggerCommentList>().map(JSON)
+                completionHandler(commentList: commentList, error: nil)
+            }
+        }
+    }
+    
+    public func markCommentAsSpam(id commentID: String, postID: String, blogID: String, completionHandler: (comment: BloggerComment?, error: NSError?) -> ()) {
+        var queryParams = [String: String]()
+        if let fields = fields {
+            queryParams.updateValue(fields, forKey: "fields")
+        }
+        GoogleServiceFetcher.sharedInstance.performRequest(method: .POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/posts/\(postID)/comments/\(commentID)/spam", queryParams: queryParams) { (JSON, error) -> () in
+            if error != nil {
+                completionHandler(comment: nil, error: error)
+            } else if JSON != nil {
+                let comment = Mapper<BloggerComment>().map(JSON)
+                completionHandler(comment: comment, error: nil)
+            }
+        }
+    }
+    
+    public func deleteContentOfComment(id commentID: String, postID: String, blogID: String, completionHandler: (comment: BloggerComment?, error: NSError?) -> ()) {
+        var queryParams = setUpStandardQueryParams()
+        GoogleServiceFetcher.sharedInstance.performRequest(method: .POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogID)/posts/\(postID)/comments/\(commentID)/removecontent", queryParams: queryParams) { (JSON, error) -> () in
+            if error != nil {
+                completionHandler(comment: nil, error: error)
+            } else if JSON != nil {
+                let comment = Mapper<BloggerComment>().map(JSON)
+                completionHandler(comment: comment, error: nil)
             }
         }
     }
