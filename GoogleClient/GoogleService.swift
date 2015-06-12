@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Matthew Wyskiel. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 
 protocol GoogleService {
@@ -17,18 +17,20 @@ protocol GoogleService {
     var apiVersionString: String {
         get
     }
+    var accessToken: String?
+    var apiKey: String?
 }
 
 class GoogleServiceFetcher {
     let baseURL = "https://www.googleapis.com"
     var accessToken: String?
     var apiKey: String?
-    
+
     static let sharedInstance : GoogleServiceFetcher = GoogleServiceFetcher()
     private init() {
-        
+
     }
-    
+
     func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: NSError?) -> ()) {
         var url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
