@@ -17,8 +17,8 @@ protocol GoogleService {
     var apiVersionString: String {
         get
     }
-    var accessToken: String?
-    var apiKey: String?
+    var accessToken: String? { get set }
+    var apiKey: String? { get set }
 }
 
 class GoogleServiceFetcher {
