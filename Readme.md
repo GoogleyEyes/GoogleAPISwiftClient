@@ -1,4 +1,4 @@
-# GoogleClient
+# GoogleAPISwiftClient
 A lot of us probably use at least one of Google's public data APIs, and those of us using Cocoa and Cocoa Touch are directed to the open-source [Google APIs Objective-C Client](https://code.google.com/p/google-api-objectivec-client/) for implementation help.
 
 It was good for what it was in 2011, but that was before Swift, modern Objective-C, CocoaPods, and even Automatic Reference Counting! Some things in life age well; that library is not one of them. And Google hasn't helped by basically ignoring their client library in these ways. They don't even support it in their new [CocoaPods-based library distribution system](https://developers.google.com/ios/cocoapods#cocoapods_published_by_google)! (Don't be fooled: "Google APIs for iOS" is just an aggregation pod for all the other "modern" libraries that Google supports with this distribution flow, obviously not including the aforementioned Data APIs Client)
@@ -13,8 +13,14 @@ Please feel free to help move this project along in any way you see fit, whether
 
 ## Installation
 ```ruby
-  pod 'GoogleClient', '~> 0.0.1'
-  ```
+  pod 'GoogleAPISwiftClient', '~> 0.0.3'
+```
+
+Then import:
+```swift
+  import GoogleAPIs
+```
+
 ## Authentication
 The Google APIs use one of two methods for authentication: an API Key or OAuth 2.0.
 

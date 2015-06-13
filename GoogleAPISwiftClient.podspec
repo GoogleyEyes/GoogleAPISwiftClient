@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "GoogleClient"
+  s.name         = "GoogleAPISwiftClient"
   s.version      = "0.0.3"
   s.summary      = "A Google API Client for Cocoa and Cocoa Touch in 2015"
 
@@ -20,18 +20,18 @@ Pod::Spec.new do |s|
                    This current version only contains the base model and fetcher classes and protocols. I have another branch set up for the first service to be implemented, which is Blogger.
                    DESC
 
-  s.homepage     = "https://github.com/mattwyskiel/GoogleClient"
+  s.homepage     = "https://github.com/mattwyskiel/GoogleAPISwiftClient"
 
   s.license      = "Apache License, Version 2.0"
 
   s.author             = { "Matthew Wyskiel" => "mwyskiel@optonline.net" }
-  s.social_media_url   = "https://twitter.com/Matthew Wyskiel"
+  s.social_media_url   = "https://twitter.com/mattwyskiel"
 
   # written in Swift
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
 
-  s.source       = { :git => "http://github.com/mattwyskiel/GoogleClient.git", :tag => "0.0.3" }
+  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.0.3" }
   s.source_files  = "GoogleClient/*.{swift}"
 
   s.framework  = "Foundation"
@@ -39,5 +39,7 @@ Pod::Spec.new do |s|
 
   s.dependency "Alamofire", "~> 1.2"
   s.dependency "ObjectMapper", "~> 0.11"
+
+  s.module_name = "GoogleAPIs"
 
 end
