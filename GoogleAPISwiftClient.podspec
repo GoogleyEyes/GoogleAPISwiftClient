@@ -42,4 +42,15 @@ Pod::Spec.new do |s|
 
   s.module_name = "GoogleAPIs"
 
+  s.default_subspec = 'Common'
+
+  s.subspec "Common" do |sp|
+    sp.source_files  = "GoogleClient/*.{swift}"
+  end
+
+  s.subspec "Discovery" do |sp|
+    sp.source_files = "GoogleClient/Discovery/*.{swift}"
+    sp.dependency 'GoogleAPISwiftClient/Common'
+  end
+
 end
