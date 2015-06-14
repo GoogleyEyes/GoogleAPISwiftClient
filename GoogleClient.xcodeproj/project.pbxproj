@@ -11,6 +11,9 @@
 		A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCB1B123D4B0041450D /* GoogleObject.swift */; };
 		A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46810351B093353006F7839 /* SystemConfiguration.framework */; };
 		A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46810371B0AC4E0006F7839 /* GoogleService.swift */; };
+		A4A4FF781B2CD6FF00BA4B8B /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4FF771B2CD6FF00BA4B8B /* Discovery.swift */; };
+		A4A4FF7A1B2CD80D00BA4B8B /* DiscoveryRestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4FF791B2CD80D00BA4B8B /* DiscoveryRestDescription.swift */; };
+		A4A4FF7C1B2CFDB900BA4B8B /* DiscoveryDirectoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4FF7B1B2CFDB900BA4B8B /* DiscoveryDirectoryList.swift */; };
 		A4DB96A71B07FB3B00DD0950 /* GoogleClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4DB96AD1B07FB3B00DD0950 /* GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96A11B07FB3B00DD0950 /* GoogleClient.framework */; };
 		A4DB96B41B07FB3B00DD0950 /* GoogleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */; };
@@ -32,6 +35,9 @@
 		A4076CCB1B123D4B0041450D /* GoogleObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleObject.swift; sourceTree = "<group>"; };
 		A46810351B093353006F7839 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46810371B0AC4E0006F7839 /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
+		A4A4FF771B2CD6FF00BA4B8B /* Discovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discovery.swift; path = Discovery/Discovery.swift; sourceTree = "<group>"; };
+		A4A4FF791B2CD80D00BA4B8B /* DiscoveryRestDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryRestDescription.swift; path = Discovery/DiscoveryRestDescription.swift; sourceTree = "<group>"; };
+		A4A4FF7B1B2CFDB900BA4B8B /* DiscoveryDirectoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryDirectoryList.swift; path = Discovery/DiscoveryDirectoryList.swift; sourceTree = "<group>"; };
 		A4DB96A11B07FB3B00DD0950 /* GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB96A51B07FB3B00DD0950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleClient.h; sourceTree = "<group>"; };
@@ -88,6 +94,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A4A4FF761B2CD6C600BA4B8B /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				A4A4FF791B2CD80D00BA4B8B /* DiscoveryRestDescription.swift */,
+				A4A4FF771B2CD6FF00BA4B8B /* Discovery.swift */,
+				A4A4FF7B1B2CFDB900BA4B8B /* DiscoveryDirectoryList.swift */,
+			);
+			name = Discovery;
+			sourceTree = "<group>";
+		};
 		A4DB96971B07FB3A00DD0950 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +127,7 @@
 		A4DB96A31B07FB3B00DD0950 /* GoogleClient */ = {
 			isa = PBXGroup;
 			children = (
+				A4A4FF761B2CD6C600BA4B8B /* Discovery */,
 				A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */,
 				A4DB96A41B07FB3B00DD0950 /* Supporting Files */,
 				A46810371B0AC4E0006F7839 /* GoogleService.swift */,
@@ -286,8 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4A4FF781B2CD6FF00BA4B8B /* Discovery.swift in Sources */,
 				A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */,
 				A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */,
+				A4A4FF7A1B2CD80D00BA4B8B /* DiscoveryRestDescription.swift in Sources */,
+				A4A4FF7C1B2CFDB900BA4B8B /* DiscoveryDirectoryList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
