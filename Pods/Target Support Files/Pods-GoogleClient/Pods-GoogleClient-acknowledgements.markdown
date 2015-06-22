@@ -50,6 +50,10 @@ SOFTWARE.
 
 
 
+## GoogleSignInSDK
+
+Copyright 2015 Google Inc.
+
 ## OMGHTTPURLRQ
 
 See README.markdown for full license text.

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "25E95A967D2F75B320487137"
+               BlueprintIdentifier = "420EB66B44914ED8D353B295"
                BuildableName = "OMGHTTPURLRQ.framework"
                BlueprintName = "Pods-GoogleClient-OMGHTTPURLRQ"
                ReferencedContainer = "container:Pods.xcodeproj">

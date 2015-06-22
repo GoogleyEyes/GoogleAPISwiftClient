@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GoogleAPISwiftClient"
-  s.version      = "0.0.3"
+  s.version      = "0.1.0"
   s.summary      = "A Google API Client for Cocoa and Cocoa Touch in 2015"
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
                    It was good for what it was in 2011, but that was before Swift, modern Objective-C, CocoaPods, and even Automatic Reference Counting! Some things in life age well; that library is not one of them. And Google hasn't helped by basically ignoring their client library in these ways.
                    That's why I decided I would try something new. Something that would actually utilize current technologies. Something that would be actually nice for devs to use.
                    I couldn't find what I was looking for, so I decided to build it myself.
-                   This current version only contains the base model and fetcher classes and protocols. I have another branch set up for the first service to be implemented, which is Blogger.
+                   In its current state this library is very bare-bones, but I'm excited for what this library could become!
                    DESC
 
   s.homepage     = "https://github.com/mattwyskiel/GoogleAPISwiftClient"
@@ -31,8 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
 
-  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.0.3" }
-  s.source_files  = "GoogleClient/*.{swift}"
+  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.1.0" }
 
   s.framework  = "Foundation"
   s.requires_arc = true
