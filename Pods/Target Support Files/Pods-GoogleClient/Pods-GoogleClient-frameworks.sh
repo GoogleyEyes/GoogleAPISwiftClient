@@ -49,14 +49,12 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'AlamofireObjectMapper.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'ObjectMapper.framework'
   install_framework 'PromiseKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'AlamofireObjectMapper.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'ObjectMapper.framework'
   install_framework 'PromiseKit.framework'

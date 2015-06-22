@@ -32,15 +32,15 @@ class GoogleServiceFetcher {
     }
 
     func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: NSError?) -> ()) {
-        var url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
+        let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         if accessToken != nil {
-            var manager = Manager.sharedInstance
+            let manager = Manager.sharedInstance
             manager.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken!)"]
         } else if apiKey != nil {
             finalQueryParams.updateValue(apiKey!, forKey: "key")
         }
-        Alamofire.request(method, url, parameters: finalQueryParams)
+        Alamofire.request(method, URLString: url, parameters: finalQueryParams)
             .validate()
             .responseString { (request, response, data, error) -> Void in
                 if error != nil {

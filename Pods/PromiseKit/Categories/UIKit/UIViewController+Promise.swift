@@ -32,7 +32,7 @@ extension UIViewController {
     }
     
     public func promiseViewController<T>(nc: UINavigationController, animated: Bool = true, completion:(()->Void)? = nil) -> Promise<T> {
-        if let vc = nc.viewControllers.first as? UIViewController {
+        if let vc = nc.viewControllers.first {
             let p: Promise<T> = promise(vc)
             if p.pending {
                 presentViewController(nc, animated: animated, completion: completion)
@@ -82,7 +82,7 @@ private func promise<T>(vc: UIViewController) -> Promise<T> {
         return Promise(error: "The provided UIViewController does not conform to the Promisable protocol.", code: PMKInvalidUsageError)
     } else if let promise = vc.valueForKeyPath("promise") as? Promise<T> {
         return promise
-    } else if let promise: AnyObject = vc.valueForKeyPath("promise") {
+    } else if let _: AnyObject = vc.valueForKeyPath("promise") {
         return Promise(error: "The provided UIViewController’s promise has unexpected type specialization.", code: PMKInvalidUsageError)
     } else {
         return Promise(error: "The provided UIViewController’s promise property returned nil", code: PMKInvalidUsageError)
@@ -92,7 +92,7 @@ private func promise<T>(vc: UIViewController) -> Promise<T> {
 
 // internal scope because used by ALAssetsLibrary extension
 @objc class UIImagePickerControllerProxy: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    let (promise, fulfill, reject) = Promise<[NSObject : AnyObject]>.defer()
+    let (promise, fulfill, reject) = Promise<[NSObject : AnyObject]>.pendingPromise()
     var retainCycle: AnyObject?
 
     required override init() {
@@ -100,7 +100,7 @@ private func promise<T>(vc: UIViewController) -> Promise<T> {
         retainCycle = self
     }
 
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         fulfill(info)
         retainCycle = nil
     }

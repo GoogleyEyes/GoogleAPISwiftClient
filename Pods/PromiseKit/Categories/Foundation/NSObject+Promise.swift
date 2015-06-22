@@ -17,8 +17,15 @@ import PromiseKit
     import PromiseKit
 */
 extension NSObject {
+    /**
+      @return A promise that resolves when the provided keyPath changes.
+
+      @warning *Important* The promise must not outlive the object under observation.
+
+      @see Apple’s KVO documentation.
+    */
     public func observe<T>(keyPath: String) -> Promise<T> {
-        let (promise, fulfill, reject) = Promise<T>.defer()
+        let (promise, fulfill, reject) = Promise<T>.pendingPromise()
         KVOProxy(observee: self, keyPath: keyPath) { obj in
             if let obj = obj as? T {
                 fulfill(obj)
@@ -39,12 +46,20 @@ private class KVOProxy: NSObject {
         fulfill = resolve
         super.init()
         retainCycle = self
-        observee.addObserver(self, forKeyPath: keyPath, options: NSKeyValueObservingOptions.New, context: nil)
+        observee.addObserver(self, forKeyPath: keyPath, options: NSKeyValueObservingOptions.New, context: pointer)
     }
 
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        fulfill(change[NSKeyValueChangeNewKey])
-        object.removeObserver(self, forKeyPath: keyPath)
-        retainCycle = nil
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [NSObject : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if let change = change where context == pointer {
+            fulfill(change[NSKeyValueChangeNewKey])
+            if let object = object, keyPath = keyPath {
+                object.removeObserver(self, forKeyPath: keyPath)
+            }
+            retainCycle = nil
+        }
     }
+
+    private lazy var pointer: UnsafeMutablePointer<KVOProxy> = {
+        return UnsafeMutablePointer<KVOProxy>(Unmanaged<KVOProxy>.passUnretained(self).toOpaque())
+    }()
 }

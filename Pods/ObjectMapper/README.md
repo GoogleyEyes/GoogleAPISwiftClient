@@ -1,7 +1,8 @@
 ObjectMapper
 ============
-
-<!-- [![Build Status](https://travis-ci.org/Hearst-DD/ObjectMapper.svg?branch=master)](https://travis-ci.org/Hearst-DD/ObjectMapper) -->
+[![CocoaPods](https://img.shields.io/cocoapods/v/ObjectMapper.svg)](https://github.com/Hearst-DD/ObjectMapper)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/Hearst-DD/ObjectMapper.svg?branch=master)](https://travis-ci.org/Hearst-DD/ObjectMapper)
 
 ObjectMapper is a framework written in Swift that makes it easy for you to convert your Model objects (Classes and Structs) to and from JSON. 
 
@@ -10,6 +11,7 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 - [Mapping Nested Objects](#easy-mapping-of-nested-objects)
 - [Custom Transformations](#custom-transfoms)
 - [Subclassing](#subclasses)
+- [ObjectMapper + Alamofire](#objectmapper--alamofire) 
 - [Contributing](#contributing)
 - [Installation](#installation)
 
@@ -93,11 +95,13 @@ Object mapper can map classes composed of the following types:
 - Double
 - Float
 - String
+- RawRepresentable (Enums)
 - Array\<AnyObject\>
 - Dictionary\<String, AnyObject\>
 - Object\<T: Mappable\>
 - Array\<T: Mappable\>
 - Dictionary\<String, T: Mappable\>
+- Dictionary\<String, Array\<T: Mappable\>\>
 - Optionals of all the above
 - Implicitly Unwrapped Optionals of the above
 
@@ -189,6 +193,10 @@ class Subclass: Base {
 
 <!-- ##To Do -->
 
+#ObjectMapper + Alamofire
+
+If you are using [Alamofire](https://github.com/Alamofire/Alamofire) for networking and you want to convert your responses to swift objects, you can use [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper). It is a simple Alamofire extension that uses ObjectMapper to automatically map JSON response data to swift objects.
+
 #Contributing
 
 Contributions are very welcomed 👍😃. 
@@ -204,12 +212,12 @@ From this point on, you should open the project using ObjectMapper.xcworkspace a
 #Installation
 ObjectMapper can be added to your project using [Cocoapods 0.36 (beta)](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your Podfile:
 ```
-pod 'ObjectMapper', '~> 0.10'
+pod 'ObjectMapper', '~> 0.12'
 ```
 
 If your using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on ObjectMapper by adding it to your Cartfile:
 ```
-github "Hearst-DD/ObjectMapper" ~> 0.10
+github "Hearst-DD/ObjectMapper" ~> 0.12
 ```
 
 Otherwise, ObjectMapper can be added as a submodule:

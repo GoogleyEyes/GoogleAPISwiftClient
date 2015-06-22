@@ -68,10 +68,10 @@ public enum ParameterEncoding {
     /**
         Creates a URL request by encoding parameters and applying them onto an existing request.
 
-        :param: URLRequest The request to have parameters applied
-        :param: parameters The parameters to apply
+        - parameter URLRequest: The request to have parameters applied
+        - parameter parameters: The parameters to apply
 
-        :returns: A tuple containing the constructed request and the error that occurred during parameter encoding, if any.
+        - returns: A tuple containing the constructed request and the error that occurred during parameter encoding, if any.
     */
     public func encode(URLRequest: URLRequestConvertible, parameters: [String: AnyObject]?) -> (NSURLRequest, NSError?) {
         if parameters == nil {
@@ -79,18 +79,18 @@ public enum ParameterEncoding {
         }
 
         var mutableURLRequest: NSMutableURLRequest! = URLRequest.URLRequest.mutableCopy() as! NSMutableURLRequest
-        var error: NSError? = nil
+        var encodingError: NSError? = nil
 
         switch self {
         case .URL:
             func query(parameters: [String: AnyObject]) -> String {
                 var components: [(String, String)] = []
-                for key in sorted(Array(parameters.keys), <) {
+                for key in Array(parameters.keys).sort(<) {
                     let value: AnyObject! = parameters[key]
                     components += self.queryComponents(key, value)
                 }
 
-                return join("&", components.map{"\($0)=\($1)"} as [String])
+                return "&".join(components.map{"\($0)=\($1)"} as [String])
             }
 
             func encodesParametersInURL(method: Method) -> Bool {
@@ -116,21 +116,27 @@ public enum ParameterEncoding {
                 mutableURLRequest.HTTPBody = query(parameters!).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
             }
         case .JSON:
-            let options = NSJSONWritingOptions.allZeros
-            if let data = NSJSONSerialization.dataWithJSONObject(parameters!, options: options, error: &error) {
+            do {
+                let options = NSJSONWritingOptions()
+                let data = try NSJSONSerialization.dataWithJSONObject(parameters!, options: options)
                 mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 mutableURLRequest.HTTPBody = data
+            } catch {
+                encodingError = error as NSError
             }
         case .PropertyList(let (format, options)):
-            if let data = NSPropertyListSerialization.dataWithPropertyList(parameters!, format: format, options: options, error: &error) {
+            do {
+                let data = try NSPropertyListSerialization.dataWithPropertyList(parameters!, format: format, options: options)
                 mutableURLRequest.setValue("application/x-plist", forHTTPHeaderField: "Content-Type")
                 mutableURLRequest.HTTPBody = data
+            } catch {
+                encodingError = error as NSError
             }
         case .Custom(let closure):
             return closure(mutableURLRequest, parameters)
         }
 
-        return (mutableURLRequest, error)
+        return (mutableURLRequest, encodingError)
     }
 
     func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
@@ -150,8 +156,44 @@ public enum ParameterEncoding {
         return components
     }
 
+    /**
+        Returns a percent escaped string following RFC 3986 for query string formatting.
+
+        RFC 3986 states that the following characters are "reserved" characters.
+
+        - General Delimiters: ":", "#", "[", "]", "@", "?", "/"
+        - Sub-Delimiters: "!", "$", "&", "'", "(", ")", "*", "+", ",", ";", "="
+
+        Core Foundation interprets RFC 3986 in terms of legal and illegal characters.
+
+        - Legal Numbers: "0123456789"
+        - Legal Letters: "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        - Legal Characters: "!", "$", "&", "'", "(", ")", "*", "+", ",", "-",
+                            ".", "/", ":", ";", "=", "?", "@", "_", "~", "\""
+        - Illegal Characters: All characters not listed as Legal
+
+        While the Core Foundation `CFURLCreateStringByAddingPercentEscapes` documentation states
+        that it follows RFC 3986, the headers actually point out that it follows RFC 2396. This
+        explains why it does not consider "[", "]" and "#" to be "legal" characters even though 
+        they are specified as "reserved" characters in RFC 3986. The following rdar has been filed
+        to hopefully get the documentation updated.
+
+        - https://openradar.appspot.com/radar?id=5058257274011648
+
+        In RFC 3986 - Section 3.4, it states that the "?" and "/" characters should not be escaped to allow
+        query strings to include a URL. Therefore, all "reserved" characters with the exception of "?" and "/"
+        should be percent escaped in the query string.
+
+        - parameter string: The string to be percent escaped.
+
+        - returns: The percent escaped string.
+    */
     func escape(string: String) -> String {
-        let legalURLCharactersToBeEscaped: CFStringRef = ":&=;+!@#$()',*"
+        let generalDelimiters = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        let subDelimiters = "!$&'()*+,;="
+
+        let legalURLCharactersToBeEscaped: CFStringRef = generalDelimiters + subDelimiters
+
         return CFURLCreateStringByAddingPercentEscapes(nil, string, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
     }
 }

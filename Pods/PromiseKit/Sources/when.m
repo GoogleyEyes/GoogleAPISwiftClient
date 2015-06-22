@@ -2,8 +2,16 @@
 #import "AnyPromise+Private.h"
 @import Foundation.NSDictionary;
 @import Foundation.NSError;
+@import Foundation.NSProgress;
 @import Foundation.NSNull;
 #import "Umbrella.h"
+
+// NSProgress resources:
+//  * https://robots.thoughtbot.com/asynchronous-nsprogress
+//  * http://oleb.net/blog/2014/03/nsprogress/
+// NSProgress! Beware!
+//  * https://github.com/AFNetworking/AFNetworking/issues/2261
+
 
 AnyPromise *PMKWhen(id promises) {
     if (promises == nil)
@@ -18,6 +26,12 @@ AnyPromise *PMKWhen(id promises) {
         return [AnyPromise promiseWithValue:promises];
     }
 
+#ifndef PMKDisableProgress
+    NSProgress *progress = [NSProgress progressWithTotalUnitCount:[promises count]];
+    progress.pausable = NO;
+    progress.cancellable = NO;
+#endif
+
     PMKResolver resolve;
     AnyPromise *rootPromise = [[AnyPromise alloc] initWithResolver:&resolve];
     __block void (^fulfill)();
@@ -30,14 +44,15 @@ AnyPromise *PMKWhen(id promises) {
             if (!rootPromise.pending) {
                 // suppress “already resolved” log message
             } else if (IsError(value)) {
-                NSError *err = value;
-                id userInfo = err.userInfo.mutableCopy;
-                userInfo[PMKFailingPromiseIndexKey] = key;
-                //TODO add test that when etc. don't lose NSError class
-                err = [[[value class] alloc] initWithDomain:err.domain code:err.code userInfo:userInfo];
-                resolve(err);
+              #ifndef PMKDisableProgress
+                progress.completedUnitCount = progress.totalUnitCount;
+              #endif
+                resolve(NSErrorSupplement(value, @{PMKFailingPromiseIndexKey: key}));
             } else {
-                set(value);
+              #ifndef PMKDisableProgress
+                progress.completedUnitCount++;
+              #endif
+                set(promise.value);  // we use -value to unwrap PMKManifolds
                 if (--countdown == 0)
                     fulfill();
             }

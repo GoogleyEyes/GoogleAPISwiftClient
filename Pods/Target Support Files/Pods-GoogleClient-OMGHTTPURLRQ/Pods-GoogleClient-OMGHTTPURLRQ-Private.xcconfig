@@ -2,7 +2,7 @@
 CONFIGURATION_BUILD_DIR = $PODS_FRAMEWORK_BUILD_PATH
 FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/OMGHTTPURLRQ" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Alamofire" "${PODS_ROOT}/Headers/Public/AlamofireObjectMapper" "${PODS_ROOT}/Headers/Public/GoogleSignInSDK" "${PODS_ROOT}/Headers/Public/OMGHTTPURLRQ" "${PODS_ROOT}/Headers/Public/ObjectMapper" "${PODS_ROOT}/Headers/Public/PromiseKit"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/OMGHTTPURLRQ" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Alamofire" "${PODS_ROOT}/Headers/Public/GoogleSignInSDK" "${PODS_ROOT}/Headers/Public/OMGHTTPURLRQ" "${PODS_ROOT}/Headers/Public/ObjectMapper" "${PODS_ROOT}/Headers/Public/PromiseKit"
 OTHER_LDFLAGS = -ObjC
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-GoogleClient
 PODS_ROOT = ${SRCROOT}

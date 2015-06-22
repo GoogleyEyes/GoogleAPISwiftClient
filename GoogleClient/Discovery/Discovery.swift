@@ -29,7 +29,7 @@ public class Discovery: GoogleService {
     public var userIp: String?
     
     public func getDiscoveryDocument(forAPI api: String, version /* begins with 'v' followed by number */: String, completionHandler: (restDescription: DiscoveryRestDescription?, error: NSError?) -> ()) {
-        var queryParams = setUpQueryParams()
+        let queryParams = setUpQueryParams()
         GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis/\(api)/\(version)/rest", queryParams: queryParams) { (JSON, error) -> () in
             if error != nil {
                 completionHandler(restDescription: nil, error: error)

@@ -7,803 +7,705 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02D6D9D29961A878BBA25946 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0BBF243A3215DD94026DAE /* Validation.swift */; };
-		062FFF4D9A244D045366EB2B /* dispatch_promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62B2C372A4DE14F4A50D28 /* dispatch_promise.swift */; };
-		08A5725AD206FA931762A222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBFCBF06674206C251FCF25 /* UIKit.framework */; };
-		0A0B3E8D3BD1FE68FBA3C0B1 /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE43F6F06B978A6FDC27EB /* NSObject+Promise.swift */; };
-		10049FA071112F0B03C1F743 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BAFB809E9344DB08429E91A /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		10AFD35127DC03FDDB367638 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AA68397C16AE56BC131B40 /* CustomDateFormatTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		128D8AE429F1C6E76ABB5E68 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E495E81933613ADFB5379E45 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m */; };
-		14356077814B523970E2498E /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D2B0D37D3D19EA25675822 /* join.m */; };
-		176ED33698D7BB883AF251A3 /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8362D505387A53E902A7EFBA /* DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1CC6F9FF61425E289B788A0B /* UIActionSheet+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F3D1A758BDAEB13E35635 /* UIActionSheet+AnyPromise.m */; };
-		1E441A3C301A683905190BD2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08275C87EAB5C4141BFA20 /* State.swift */; };
-		2337B75DE7995239BD3B94D3 /* NSURLConnection+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81853F77E792920C3287C1C /* NSURLConnection+Promise.swift */; };
-		25CA8188C80F052A062B875D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2350C15E77E7E53332047E7 /* Foundation.framework */; };
-		26E936908B15E18BD87FB414 /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 085AEDFF7D5B43704A6F800A /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		307BF7071AA716CC08D3C570 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB440299E5534D36B2606F2 /* Request.swift */; };
-		36BA0DD66C82A11B0814ADCB /* UIAlertView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB707480BD6F9EFA7D99068 /* UIAlertView+AnyPromise.m */; };
-		36D91D127A49D5BBDC55476F /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A7EF3C53EBD27059564237 /* after.m */; };
-		36FEAE10366276EA3C9254AB /* CALayer+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB0CF38C26A412176E4F22 /* CALayer+AnyPromise.m */; };
-		4087FE53BC3BEBD3A72A1E95 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB2EC3C92075DFD7626BB9 /* after.swift */; };
-		446D5BD027B2CD6E750EA316 /* AlmofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC2C2693F5FF4C757688B15 /* AlmofireObjectMapper.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4642F1D2857CE7B99B1E3D33 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88917537C7E82D249BCFB5A /* ISO8601DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		476C3ECB5D2E2C3B27E18BA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2350C15E77E7E53332047E7 /* Foundation.framework */; };
-		49FCCBA3F555346EA6EDCA54 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 53989938AE8637E7136E9FFA /* OMGHTTPURLRQ.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4A9D212167166AFBA37AC02E /* UIActionSheet+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 85423BA6B1386631013EB712 /* UIActionSheet+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4EAADA9A5C6FFD30F4F94B73 /* DateFormaterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB0F04ED1874DB5EA77302 /* DateFormaterTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4EBD4E49EDC234DE95374405 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD0898F96C820D736C0D3F /* URLTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5295F84084FBC9DC01494028 /* NSURLConnection+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B134E32006F6136176054EB /* NSURLConnection+AnyPromise.m */; };
-		54A38FB7AF599A7E889B6750 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA61870DD4258F48521D2A4 /* Promise.swift */; };
-		561A3CB9B241CAEFBD448205 /* UIAlertView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = FBFFE1F75EB08E1CE6F71CE1 /* UIAlertView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		580BEAB58D68A8762D28D1AC /* PMKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB8F6A12DC7DED1E0EE170C /* PMKPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F494BC1937AA30AEE874895 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C23DF3E8F50CD82B1B5C5E /* when.swift */; };
-		5FF7FBC263EA4575DFC3A378 /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E06EFC23FB142F2CCDFA895 /* Promise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61E49FBE385527871FC14503 /* UIView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBD0F9FB92E93162525ADB2 /* UIView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C36BE0BF3F74C6C59FF7D01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2350C15E77E7E53332047E7 /* Foundation.framework */; };
-		6DB8B1CB0DF622715DE8AD2F /* PMKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7D065AB26BDC32755F2152 /* PMKPromise.m */; };
-		6FBF72EE300151B1854AE59E /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A581EA1EE7ACC9C43C1F1 /* Upload.swift */; };
-		7708FC78F9C9BE82F44EC177 /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5645038E56FDC2AC607620 /* when.m */; };
-		780C8FB9A161E52B4AF79C91 /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C73DFD255A8D8EAE8E08AD /* NSNotificationCenter+AnyPromise.m */; };
-		784039B6398E4E2872A8B632 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E38F701450B149B33C0951 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78A821E438CEE432B01C134E /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D6445F4A89E540E0F2438 /* ResponseSerialization.swift */; };
-		78C756EE555F82A16B219196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2350C15E77E7E53332047E7 /* Foundation.framework */; };
-		7AB4CF6CF95D327C7A20B9CB /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3FD5D1BF33A501B1FED7F2 /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8182AB48B158CFDBE51BCA8F /* CALayer+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 567D1838842CB26260EDE8F2 /* CALayer+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84DE26D1C4B9412205684089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2350C15E77E7E53332047E7 /* Foundation.framework */; };
-		85E1F8E5A2F33DF858BADBDA /* UIView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D1F239A196F2B26CE21151 /* UIView+Promise.swift */; };
-		867A9245B9BA534C7243CDFD /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B1ADB0D1485A2AD26C82A /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		89AB395AA20A24826AC3E64C /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2128308849D46F92B602424B /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A46209E98D80031F5E028B8 /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7F9071B172F7D61B98029 /* UIView+AnyPromise.m */; };
-		8B797C9616897B1B343F843E /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE332B3F478BCD0704E0BD7 /* ParameterEncoding.swift */; };
-		8E7D2FB5826D5B2EF2CB99A0 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB64B8579AFE5F1E0000FE0 /* hang.m */; };
-		9055A7822E83ADE231910241 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63A627CBAD1B3CFA8D8471 /* FromJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		922E22B4536D23B68AB0757F /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640B5A47017720F818681B7 /* Download.swift */; };
-		929BCF2F37E0B4D1172EA900 /* Pods-GoogleClient-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C267BE5C2056C7438BD8729 /* Pods-GoogleClient-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BEF9E998BBC387C2D13AD5B /* Pods-GoogleClient-ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0185A13E171D423AE1667995 /* Pods-GoogleClient-ObjectMapper-dummy.m */; };
-		9C7091E9A6CE99E1002F0896 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56278B7FB619906D9A3747 /* Operators.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9FFB7241600B99910F14028C /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5ECCC902F99EEA6F1CC9CC /* race.swift */; };
-		A25ED984D4B3ED38D0409576 /* NSJSONFromData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BDE4464F7C8A67D7618F33 /* NSJSONFromData.swift */; };
-		A33130DDF84D0FCD83FFD0F5 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B7C02445D47192C7A3813A /* Manager.swift */; };
-		A5800A0F28AE96D003AA6750 /* NSURLConnection+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A92E369E3E4F63471FF295E /* NSURLConnection+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A917B99FEAB64B120A61F010 /* ErrorUnhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AC25EF9E0562526C9BAED2 /* ErrorUnhandler.swift */; };
-		AB4E36E1B522BEC7013239A1 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21599B0E54708EF0B108D2BB /* Promise+Properties.swift */; };
-		ACDD781F7424A4D219E07022 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964EF44329C3FC7BB0A1806 /* AnyPromise.swift */; };
-		AE9F6DBAF3DB8CCA03AC353D /* NSError+Cancellation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7E40151143CD6329C398E03 /* NSError+Cancellation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B03A16931ABBE508B0F97D2D /* Umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98FD5E6100C9BCC2DA971747 /* Umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B068F1718DFD2B798FD8CC39 /* Pods-GoogleClient-AlamofireObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C37596C521776FF72BBFF352 /* Pods-GoogleClient-AlamofireObjectMapper-dummy.m */; };
-		B24F4AF698472DE7BE687F4C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B5F8EB456AAFF6233A5CF9 /* QuartzCore.framework */; };
-		B2704466A92B7C1F35CDD091 /* Pods-GoogleClient-AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8BB2823A391222F44A780C /* Pods-GoogleClient-AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B28A760DF292C19E49E42A9A /* Pods-GoogleClient-ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8CF03D17C9754C66691B869 /* Pods-GoogleClient-ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5941255DDC13E3B13EDAFA3 /* UIViewController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94C031D936CDEA6BD2C4F2F /* UIViewController+Promise.swift */; };
-		B894469EE6D5D3C2309B7A17 /* UIActionSheet+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CACE9B322874A462750FEB /* UIActionSheet+Promise.swift */; };
-		BC9201C8BC08D5EB60DA3F6E /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F272C7699E7BBD08E49D7D4 /* AnyPromise.m */; };
-		BE49CEF545666AE09F504600 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2350C15E77E7E53332047E7 /* Foundation.framework */; };
-		C16655AE5FDB0002F64A5599 /* Pods-GoogleClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C36CE31BBE8C1DA2E1636E /* Pods-GoogleClient-dummy.m */; };
-		C1FE259DFF394342076A029B /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7038B38517F2EB5108E15077 /* TransformType.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C72E11EBCE3D895BF7F01391 /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CE434C5ACE25DBAC4F96C8 /* OMGHTTPURLRQ.framework */; };
-		C8F2FEFC03BEFCB4E6795829 /* Sealant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652ECD43E0A796E6618FD89 /* Sealant.swift */; };
-		D6AEA3BBE90AE1DAD896E5F4 /* Pods-GoogleClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0EAB97F2606C41747B33BB /* Pods-GoogleClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6CD7CA96883CAED15CE5E2F /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD801BF64574C4858794B3B /* NSNotificationCenter+Promise.swift */; };
-		D7DFC199A249D60700A4162F /* Pods-GoogleClient-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3742601B16E99C282FF43962 /* Pods-GoogleClient-Alamofire-dummy.m */; };
-		D8AD676C2B664BB36BBA5EEC /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD0CE55D5F1A306B0D79A1 /* EnumTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D98502995AAA70C5EEC6AF78 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AE23EA9042CB2E3987CB9D /* dispatch_promise.m */; };
-		DE53CB3D52BAA88F22F9C2E3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B6B740C02D16DD89F47722 /* Alamofire.swift */; };
-		DFA3C406AF845F0B7BBA465E /* UIViewController+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC85CB45D50DAD1CD294F39 /* UIViewController+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E3A58A7B62C03AD8531CE8E6 /* Pods-GoogleClient-PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1FF3447C8C4BD6CD269BDB /* Pods-GoogleClient-PromiseKit-dummy.m */; };
-		E55C626D92A577587E78D455 /* UIViewController+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 650469DED7469F7C929372CE /* UIViewController+AnyPromise.m */; };
-		ECDCE4AA10DEC59859A9A009 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EFA82A90F91ACF7AC39F2E /* Mapper.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EDE6FFDEF7F6B1A4F0A1905E /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = DD3C638C5BD6A7182DB81EEF /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F35572F643C57F8DA017DD27 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2532C56E127E4C32CFDB774E /* Alamofire.framework */; };
-		F4A930818800E519810B8F0B /* UIAlertView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101BBEBD3B3B934DC5DF5B14 /* UIAlertView+Promise.swift */; };
-		F51F58FF92F33B3C856AB069 /* NSFileManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF2EE3BCDA4720204DF5C /* NSFileManager+Promise.swift */; };
-		F5AA5952E3300F254D3D2F05 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CD7CAFD39AC5AA5EC8BA1E /* ObjectMapper.framework */; };
-		F632908FDA3537A9849C6930 /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6658330E225D5252C4CC72 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F69ED9F3CC8051EED122F918 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841952849F1D4BC902394E66 /* ToJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F8CAF13E3E3019BA000E7D93 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C9438E31738DD300D0A617 /* OMGUserAgent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FDB5B9FE41E907D8F795D47C /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FBDB43A9B25449843CD661 /* OMGFormURLEncode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		093111DBDC68D7C1A0122935 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE00D1D8D468376BC6D0454D /* Mapper.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE5B458A7A11BAE04EC9161 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E5FBFA872EAB2A16458410 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m */; };
+		0AEA6137D930977480760DF9 /* UIAlertView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = AC64625A67F5136E0566C7E9 /* UIAlertView+AnyPromise.m */; };
+		0C2DBC2BDFF6EC6A66D36BB7 /* UIActionSheet+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2618BBCBE868E4C4DBDDFBD5 /* UIActionSheet+Promise.swift */; };
+		0D6F7527A8B6D541CE4E291F /* PMKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = C3227DEEF9F8345BED569D29 /* PMKPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		105D515EB747780A6BDDB89E /* Sealant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBCDC8282BDA062B0A52BAF /* Sealant.swift */; };
+		12DA839FE42AE92A70350AAF /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 17213D519A14DB66AF0E7606 /* hang.m */; };
+		131A5FC6AC0C113BE83F76DC /* Pods-GoogleClient-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD454C075D700195EEE0F73 /* Pods-GoogleClient-Alamofire-dummy.m */; };
+		15C311060B65B9926D0CCDBB /* NSFileManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77DE667B0F7CC9CBCED16A8 /* NSFileManager+Promise.swift */; };
+		1604FFC3270A09274AFB4406 /* Umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE49B821AC0AF191B6F6FE03 /* Umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1803081C129D26EA3F11793E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F01274BA115A83B6F5ED7 /* Request.swift */; };
+		1A998060945C3A36D25D3A08 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB48BEED85619054E43D9C /* CustomDateFormatTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1AEA51DB740564A28D277757 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E45E87EC47D0EFA1CAFD3EC7 /* OMGUserAgent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1FE12FA33A66A53AC2FB9418 /* UIView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DB64C450A4A6A17AB3354A /* UIView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23EF931DEC9CCABF23F1446B /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 23190F5F7DEBF5670B638EEB /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27382317F218808FB4389951 /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 62412A5FFE140AFD66ED1B9E /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		304232501EFF5E61DDB77A45 /* CALayer+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 06CD5AFFD29E89C930CB1493 /* CALayer+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3130915FA4ADDE5EC6F1C71C /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 30305D4E23E7FB2CDD9E2ED2 /* Promise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3462433EE24242CD6F5C9E7B /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900B75441A8E33A4EEBEC6F /* DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35C1C584C6A73A945E1E0E76 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B8BD56AC148BFF4EB245C /* Validation.swift */; };
+		360EB945C2837D0B8C233F4D /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A26D439AD0548B595EDEB2E /* UIView+AnyPromise.m */; };
+		383EA1294A4E912D5473BD46 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CF295A745A2932A96A74EE /* Operators.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		394CB10CFE179692E07C8250 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8EF21BAA900A636FF0D5DF /* Foundation.framework */; };
+		3D37544E06374B9878D99B14 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C6F0BB14074D5B327FB93 /* Manager.swift */; };
+		3EA8247DEFC267E62E1BAED8 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102E270791A475C8E780CCF /* race.swift */; };
+		3FCE8008D004BFCBCA65CF22 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = FD0800E8B756FFD600614245 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		410E904457ADF54733C5EDA0 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DDFF4F251FFB642D62BF1B /* URLTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		418FC65FD4D4DB49D493D64A /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDDACDBAAEFEA7DF3F4A006 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4752E9CACBE7E40D3007D53B /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9BCBA22200919EFD3D3A51 /* NSNotificationCenter+AnyPromise.m */; };
+		4789763CBB30F4F7735E25E8 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4AC39EEA4A1FAE61B250D /* EnumTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A6B93D7FD0F6A03169F2E1E /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE0072B4AB4110B13D0A4F /* ResponseSerialization.swift */; };
+		4C344A063A03EDAA0875EFB3 /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8779E5F24A05E2C3AA1BF /* NSObject+Promise.swift */; };
+		4EC9D3EEFA77C58FA2425B25 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EB364F694DD2D2617A6513 /* OMGHTTPURLRQ.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		51A2C18704C23C84DA6F2E14 /* ErrorUnhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA870487CEBD4D3BC9496B /* ErrorUnhandler.swift */; };
+		57265C613CB77836E2D4944B /* UIAlertView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C67A5FB5F95861E5E2781 /* UIAlertView+Promise.swift */; };
+		57B49FF35C2544BDC9FA1AFA /* UIViewController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34F58A0D22DC6D1F2D3295 /* UIViewController+Promise.swift */; };
+		5AF7603E44F80A02DBA0EA3F /* NSURLConnection+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = F98CBA57BE139F4735E0A28D /* NSURLConnection+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C134A6F460E322CAC86F0AB /* Pods-GoogleClient-ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DFAA389C06CB1947DC89D1 /* Pods-GoogleClient-ObjectMapper-dummy.m */; };
+		5C4C54888AA6AD3BFF5F5689 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC127F7053E6E8E2C16C16FE /* Upload.swift */; };
+		601D6F664234B203BF339AFE /* dispatch_promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A885D10D93194B5B77E0013 /* dispatch_promise.swift */; };
+		61AB57C60F1F64F677433A21 /* UIActionSheet+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EA10EE20B69789B4BAA3B /* UIActionSheet+AnyPromise.m */; };
+		6624767730CC195036830704 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8EF21BAA900A636FF0D5DF /* Foundation.framework */; };
+		671719A675DCFC13BCBF759B /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CED2BEC6E25E4FE20AD0E6 /* ToJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		67A3E382BF0426C00B13D966 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BA761BE054BB242F3623A /* AnyPromise.swift */; };
+		69C44C32574272E862AAE083 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAFF010A2EEF62F364067CA /* UIKit.framework */; };
+		6B3B1D7B04D3DFF95F1AD757 /* UIViewController+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BCA9AC18C09EF9D93B3096 /* UIViewController+AnyPromise.m */; };
+		6F5526A4DF4EC1EB4B411D2E /* UIView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4CCF869F8A2F0F890E2EF /* UIView+Promise.swift */; };
+		73C3B43B6866D0980AB28256 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8EF21BAA900A636FF0D5DF /* Foundation.framework */; };
+		743EECF2C17F9785E69AC16B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBA59DCB79091584EDA0F2 /* Alamofire.swift */; };
+		7558844DE17194F8E752E833 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8EF21BAA900A636FF0D5DF /* Foundation.framework */; };
+		815C1C9AF212DB6A0F5CF32C /* afterlife.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F416671A5AE308C4C59F3D /* afterlife.swift */; };
+		849DD3FDD4DFBDE7725907A1 /* CALayer+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82C3DD4E242759F7A739 /* CALayer+AnyPromise.m */; };
+		855BB673B9A7FD8759EB0C54 /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1A7C2D0D92DC73ADA2DF7 /* AnyPromise.m */; };
+		8FD30ED3F56486E62EF3FD7D /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C246ED21CB7971E0FCE7282 /* TransformType.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		92D5085FDC649BAB905B095F /* Pods-GoogleClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7A966B3174123166888AFD /* Pods-GoogleClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93DE0F116BD081903089D813 /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A34D209F1A96191323A0BEF /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95076BB41AE7514ED58A2557 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63295DA3CE5605DA4311300 /* QuartzCore.framework */; };
+		951C41AF3E4F158329CD02B7 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11ACFCA72CE8E9981EAC0B2F /* when.swift */; };
+		958D40B626C57BC920CB2CCC /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD97992332AE92F7811410D /* OMGFormURLEncode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		96BD9C56CC35229C577D3E76 /* UIViewController+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EFDFC76985B4485D7F88A06 /* UIViewController+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B44C2A06D37C714D2D2667F /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C6A7D05C09935F26242E7 /* ParameterEncoding.swift */; };
+		9C477A66A3176899E44C58EC /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6095084A17D8C693FDF9B /* after.swift */; };
+		A0C15F75B8521B72650038AA /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CDC4ADDC73FB821EF00246E /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A14C87110978E863C3F2FBE0 /* UIActionSheet+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = B99B48766A355648B5F97440 /* UIActionSheet+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1691E0B0847A330579DEB26 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB2AE821DF2501DB5752EF1 /* ISO8601DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B06FA27A9EFCC35815035618 /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E75B803AD47955E4B839F0 /* when.m */; };
+		B9ADBADE39CDF2640D39FD92 /* Pods-GoogleClient-ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27DD21EA22C7D084D07EF61F /* Pods-GoogleClient-ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BACDB92FA93C219352D43EB7 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6327DB9BE73DA4D66CED99 /* dispatch_promise.m */; };
+		BB16945244976703D667AC39 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEE47D94B19D0BD1FC9777 /* Promise+Properties.swift */; };
+		C125429A1AADD0AD46AD64FC /* Pods-GoogleClient-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5984ECD5B78809F1920AC729 /* Pods-GoogleClient-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5D3F656541C277AC9EE5302 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69610A064AD2E30248BF73CA /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CDD140DE1B0B361D1BF09F35 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80E1ACC14A3C31AD600F60 /* Promise.swift */; };
+		D006B2EB3116C3D43C4F5588 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB7B54FE869D612D1CB0D8 /* FromJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D6C813F5D2B6CD5DF5CB5E61 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = A82377CEF67ECA51C5B26CE5 /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBF61FC92E60AA95D80370F8 /* DateFormaterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1621E726BFB5C7AB6BF990C /* DateFormaterTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA923DD11D8642EE76326F6 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198D9CBCD86C748D866287D1 /* Download.swift */; };
+		DF3C0C920D38E6BBE45C95C0 /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8203018843B8B6905A5EA2C /* NSNotificationCenter+Promise.swift */; };
+		DFCF5A186777C9DD0971D6E3 /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6DDFABFB5427ED6AFC526A /* join.m */; };
+		E2D8FCBDB82A9A1037EDAE8D /* NSJSONFromData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D25C38D1DDED3A807A1C1 /* NSJSONFromData.swift */; };
+		E7E2EA49D308BA653CB27EBD /* PMKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = B809E23DB09FDAD0D3CFD83D /* PMKPromise.m */; };
+		EA2595FB5CABDC3A767DE2F9 /* Pods-GoogleClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 278453884E4D49C2473902AB /* Pods-GoogleClient-dummy.m */; };
+		ED00C9A4523E8B260FC23C73 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E8D6517F97DDBBED3DA84 /* after.m */; };
+		ED21AED2A8C25026D0C3874B /* NSError+Cancellation.h in Headers */ = {isa = PBXBuildFile; fileRef = C388239C84A2338E8D84E8D7 /* NSError+Cancellation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEBC8327C2418D4A74E506C2 /* NSURLConnection+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = C482B42D06567FD4287DA66B /* NSURLConnection+AnyPromise.m */; };
+		EF7559383A96D755E1E08C2B /* NSURLConnection+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8C9BF94E51810BC79C087 /* NSURLConnection+Promise.swift */; };
+		F2ADBC8B8BDDB3E58BA669B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8EF21BAA900A636FF0D5DF /* Foundation.framework */; };
+		F4BFBB4613EE46096E19F199 /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1F34FEB519137E7ACE2A00 /* OMGHTTPURLRQ.framework */; };
+		F55E63CE0D7D07E132B63927 /* UIAlertView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 19982CA5E36EE370040CA4E6 /* UIAlertView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC024847C46378473B6B4243 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B332712CF0EA8D77542B5E7 /* State.swift */; };
+		FC2E31808DEE7C7BE4B82EF9 /* Pods-GoogleClient-PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9E4B8421D1FD0E0C0B91AB /* Pods-GoogleClient-PromiseKit-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		127A2548EADA5DB772197909 /* PBXContainerItemProxy */ = {
+		0BCE679746BA930E55B8B44D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
+			containerPortal = 2B6E6BDA1F4CBF43E113BE68 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 420EB66B44914ED8D353B295;
-			remoteInfo = "Pods-GoogleClient-OMGHTTPURLRQ";
+			remoteGlobalIDString = 6C4DEF3E23F2DD32C8E045EB;
+			remoteInfo = "Pods-GoogleClient-ObjectMapper";
 		};
-		4C93029EBE1B877EDA1B09C9 /* PBXContainerItemProxy */ = {
+		7B1BAE999837113C6B7E84DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
+			containerPortal = 2B6E6BDA1F4CBF43E113BE68 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 420EB66B44914ED8D353B295;
-			remoteInfo = "Pods-GoogleClient-OMGHTTPURLRQ";
-		};
-		6D3D7EF3B61D95BA1CECF4B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F834BF1AD6E8A55020280386;
+			remoteGlobalIDString = 9EA42E56D057564A760F7E17;
 			remoteInfo = "Pods-GoogleClient-PromiseKit";
 		};
-		787A73FBD281115F8D1BD2B3 /* PBXContainerItemProxy */ = {
+		85EDC9C798C64B80B0219ECC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
+			containerPortal = 2B6E6BDA1F4CBF43E113BE68 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EC536B8AEA0D3ABD7C29059A;
-			remoteInfo = "Pods-GoogleClient-ObjectMapper";
+			remoteGlobalIDString = 3A1036AF923120BDAB355E8D;
+			remoteInfo = "Pods-GoogleClient-OMGHTTPURLRQ";
 		};
-		9748BC8D1FB16F1F0130A69F /* PBXContainerItemProxy */ = {
+		CFED9BD4CC2FB6B0340DD5A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
+			containerPortal = 2B6E6BDA1F4CBF43E113BE68 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0E608F55B36A669D932DE26E;
+			remoteGlobalIDString = 3A1036AF923120BDAB355E8D;
+			remoteInfo = "Pods-GoogleClient-OMGHTTPURLRQ";
+		};
+		F7DE53C72C1AE132BC0F0EE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B6E6BDA1F4CBF43E113BE68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C0DB85B2E58AA8020402259;
 			remoteInfo = "Pods-GoogleClient-Alamofire";
-		};
-		9AA7844A33723B2901B805FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E608F55B36A669D932DE26E;
-			remoteInfo = "Pods-GoogleClient-Alamofire";
-		};
-		E02E8CB4F11671EB83793646 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC536B8AEA0D3ABD7C29059A;
-			remoteInfo = "Pods-GoogleClient-ObjectMapper";
-		};
-		ECA20E4795B87B4B7AEF8A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68BAE84E479AB6A9A246EE8A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB66136CC5D2EDD42699FACE;
-			remoteInfo = "Pods-GoogleClient-AlamofireObjectMapper";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0185A13E171D423AE1667995 /* Pods-GoogleClient-ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-ObjectMapper-dummy.m"; sourceTree = "<group>"; };
-		05AE23EA9042CB2E3987CB9D /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
-		076C2CCD009AAC5822823365 /* Pods-GoogleClient-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoogleClient-frameworks.sh"; sourceTree = "<group>"; };
-		085AEDFF7D5B43704A6F800A /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Categories/Foundation/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
-		0AB440299E5534D36B2606F2 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		0BD801BF64574C4858794B3B /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Categories/Foundation/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
-		101BBEBD3B3B934DC5DF5B14 /* UIAlertView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIAlertView+Promise.swift"; path = "Categories/UIKit/UIAlertView+Promise.swift"; sourceTree = "<group>"; };
-		1AB0E1423BC0B259CDD08192 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B3FD5D1BF33A501B1FED7F2 /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h"; sourceTree = "<group>"; };
-		1CFB0CF38C26A412176E4F22 /* CALayer+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+AnyPromise.m"; path = "Categories/QuartzCore/CALayer+AnyPromise.m"; sourceTree = "<group>"; };
-		20D7F9071B172F7D61B98029 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Categories/UIKit/UIView+AnyPromise.m"; sourceTree = "<group>"; };
-		2128308849D46F92B602424B /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
-		21599B0E54708EF0B108D2BB /* Promise+Properties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Properties.swift"; path = "Sources/Promise+Properties.swift"; sourceTree = "<group>"; };
-		2532C56E127E4C32CFDB774E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2982047B7EF29A423604DDC5 /* Pods-GoogleClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient.modulemap"; sourceTree = "<group>"; };
-		2AB479F65FCB16BA232D4F81 /* Pods-GoogleClient-OMGHTTPURLRQ.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-OMGHTTPURLRQ.xcconfig"; sourceTree = "<group>"; };
-		2C39E803AC14077FC8ACB5B2 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D67A2A0940EC0CB6C0550A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3364AD4C43A03ABB060AF1D5 /* Pods_GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		33ECE4EAD261B742EA3B6793 /* Pods-GoogleClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient.debug.xcconfig"; sourceTree = "<group>"; };
-		34FF457AFCCAF9D408EC6029 /* GIDProfileData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDProfileData.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDProfileData.h; sourceTree = "<group>"; };
-		35CACE9B322874A462750FEB /* UIActionSheet+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIActionSheet+Promise.swift"; path = "Categories/UIKit/UIActionSheet+Promise.swift"; sourceTree = "<group>"; };
-		3742601B16E99C282FF43962 /* Pods-GoogleClient-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-Alamofire-dummy.m"; sourceTree = "<group>"; };
-		37B5D0A915C988F7A854D770 /* Pods-GoogleClient-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
-		3964EF44329C3FC7BB0A1806 /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
-		396AF2EE3BCDA4720204DF5C /* NSFileManager+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSFileManager+Promise.swift"; path = "Categories/Foundation/NSFileManager+Promise.swift"; sourceTree = "<group>"; };
-		3B0EAB97F2606C41747B33BB /* Pods-GoogleClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-umbrella.h"; sourceTree = "<group>"; };
-		3C1FF3447C8C4BD6CD269BDB /* Pods-GoogleClient-PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-PromiseKit-dummy.m"; sourceTree = "<group>"; };
-		3C267BE5C2056C7438BD8729 /* Pods-GoogleClient-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		3C5ECCC902F99EEA6F1CC9CC /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
-		42BDE4464F7C8A67D7618F33 /* NSJSONFromData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSJSONFromData.swift; path = Sources/NSJSONFromData.swift; sourceTree = "<group>"; };
-		4421AD1C000FD19ADCEDDACE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4652ECD43E0A796E6618FD89 /* Sealant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sealant.swift; path = Sources/Sealant.swift; sourceTree = "<group>"; };
-		492707BB670645B2983E3AFC /* Pods-GoogleClient-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-Alamofire.xcconfig"; sourceTree = "<group>"; };
-		49FD1A585C137E8B39BCD531 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CBFCBF06674206C251FCF25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		4E06EFC23FB142F2CCDFA895 /* Promise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Promise.h; path = Sources/Promise.h; sourceTree = "<group>"; };
-		4EBD0F9FB92E93162525ADB2 /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Categories/UIKit/UIView+AnyPromise.h"; sourceTree = "<group>"; };
-		5223B9702D2B1D1288B47DC5 /* Pods-GoogleClient-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-environment.h"; sourceTree = "<group>"; };
-		53989938AE8637E7136E9FFA /* OMGHTTPURLRQ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OMGHTTPURLRQ.m; sourceTree = "<group>"; };
-		55DB0F04ED1874DB5EA77302 /* DateFormaterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormaterTransform.swift; path = ObjectMapper/Transforms/DateFormaterTransform.swift; sourceTree = "<group>"; };
-		567D1838842CB26260EDE8F2 /* CALayer+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+AnyPromise.h"; path = "Categories/QuartzCore/CALayer+AnyPromise.h"; sourceTree = "<group>"; };
-		58625AA7546F0267A8808256 /* Pods-GoogleClient-AlamofireObjectMapper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-AlamofireObjectMapper-Private.xcconfig"; sourceTree = "<group>"; };
-		5C2825920C17998009FB53C4 /* GIDSignInButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDSignInButton.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDSignInButton.h; sourceTree = "<group>"; };
-		60E5F7D912E1DDC116A6FF87 /* GIDSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDSignIn.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDSignIn.h; sourceTree = "<group>"; };
-		61B6B740C02D16DD89F47722 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		62AA68397C16AE56BC131B40 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = ObjectMapper/Transforms/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
-		650469DED7469F7C929372CE /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Categories/UIKit/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
-		66AC25EF9E0562526C9BAED2 /* ErrorUnhandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUnhandler.swift; path = Sources/ErrorUnhandler.swift; sourceTree = "<group>"; };
-		67C36CE31BBE8C1DA2E1636E /* Pods-GoogleClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-dummy.m"; sourceTree = "<group>"; };
-		6A92E369E3E4F63471FF295E /* NSURLConnection+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLConnection+AnyPromise.h"; path = "Categories/Foundation/NSURLConnection+AnyPromise.h"; sourceTree = "<group>"; };
-		6B9B677740DD12828EF4BED8 /* Pods-GoogleClient-AlamofireObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-AlamofireObjectMapper-prefix.pch"; sourceTree = "<group>"; };
-		6DA61870DD4258F48521D2A4 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
-		7038B38517F2EB5108E15077 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = ObjectMapper/Transforms/TransformType.swift; sourceTree = "<group>"; };
-		709F3D1A758BDAEB13E35635 /* UIActionSheet+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+AnyPromise.m"; path = "Categories/UIKit/UIActionSheet+AnyPromise.m"; sourceTree = "<group>"; };
-		70A09C6FEA731B78D1ECD1A9 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-ObjectMapper-Private.xcconfig"; sourceTree = "<group>"; };
-		759239B916095EA11E039250 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A56278B7FB619906D9A3747 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = ObjectMapper/Core/Operators.swift; sourceTree = "<group>"; };
-		7B134E32006F6136176054EB /* NSURLConnection+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLConnection+AnyPromise.m"; path = "Categories/Foundation/NSURLConnection+AnyPromise.m"; sourceTree = "<group>"; };
-		7BCA92F25A2EDD707D81C2C5 /* GIDAuthentication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDAuthentication.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDAuthentication.h; sourceTree = "<group>"; };
-		7CDD0CE55D5F1A306B0D79A1 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = ObjectMapper/Transforms/EnumTransform.swift; sourceTree = "<group>"; };
-		7DC85CB45D50DAD1CD294F39 /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Categories/UIKit/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
-		7DFBE8272591904D6CE72CA2 /* Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch"; sourceTree = "<group>"; };
-		7E08275C87EAB5C4141BFA20 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
-		810E58E338E1D7CCBFE1F73C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81B5F8EB456AAFF6233A5CF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		82C8BB958E1AD8AD3FF82A1C /* Pods-GoogleClient-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoogleClient-acknowledgements.plist"; sourceTree = "<group>"; };
-		82CE434C5ACE25DBAC4F96C8 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8362D505387A53E902A7EFBA /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = ObjectMapper/Transforms/DateTransform.swift; sourceTree = "<group>"; };
-		83FB2EC3C92075DFD7626BB9 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
-		841952849F1D4BC902394E66 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = ObjectMapper/Core/ToJSON.swift; sourceTree = "<group>"; };
-		85423BA6B1386631013EB712 /* UIActionSheet+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+AnyPromise.h"; path = "Categories/UIKit/UIActionSheet+AnyPromise.h"; sourceTree = "<group>"; };
-		86E38F701450B149B33C0951 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OMGHTTPURLRQ.h; sourceTree = "<group>"; };
-		8A92182EF625668EEF6E3BA9 /* Pods-GoogleClient-ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-ObjectMapper.xcconfig"; sourceTree = "<group>"; };
-		8C87FA655FF6525068C0DBB5 /* Pods-GoogleClient-PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-PromiseKit.xcconfig"; sourceTree = "<group>"; };
-		8FF625CF8F5B8BE80771E3A5 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		91505596DD7516E1E9CF6C58 /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig"; sourceTree = "<group>"; };
-		91C6CFCFE37F1B558A16941A /* Pods-GoogleClient-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoogleClient-acknowledgements.markdown"; sourceTree = "<group>"; };
-		91EFA82A90F91ACF7AC39F2E /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = ObjectMapper/Core/Mapper.swift; sourceTree = "<group>"; };
-		9345C1FF379BCFD87EA342C3 /* Pods-GoogleClient-PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-PromiseKit-prefix.pch"; sourceTree = "<group>"; };
-		948A581EA1EE7ACC9C43C1F1 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		9640B5A47017720F818681B7 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		98FD5E6100C9BCC2DA971747 /* Umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Umbrella.h; path = Sources/Umbrella.h; sourceTree = "<group>"; };
-		9A6658330E225D5252C4CC72 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
-		9BAFB809E9344DB08429E91A /* OMGUserAgent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OMGUserAgent.h; sourceTree = "<group>"; };
-		9D0BBF243A3215DD94026DAE /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		9D396C9098844E40D40CFBF7 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = google_signin_sdk_1_0_0/GoogleSignIn.framework; sourceTree = "<group>"; };
-		9D7D065AB26BDC32755F2152 /* PMKPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMKPromise.m; path = Sources/PMKPromise.m; sourceTree = "<group>"; };
-		9DB8F6A12DC7DED1E0EE170C /* PMKPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKPromise.h; path = Sources/PMKPromise.h; sourceTree = "<group>"; };
-		9F272C7699E7BBD08E49D7D4 /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
-		9F3C2EDE5A393850624F58D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5DEDFE19DB00216C4ED6CA7 /* Pods-GoogleClient-ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-ObjectMapper.modulemap"; sourceTree = "<group>"; };
-		A8CF03D17C9754C66691B869 /* Pods-GoogleClient-ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
-		AA8BB2823A391222F44A780C /* Pods-GoogleClient-AlamofireObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-AlamofireObjectMapper-umbrella.h"; sourceTree = "<group>"; };
-		AE62B2C372A4DE14F4A50D28 /* dispatch_promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dispatch_promise.swift; path = Sources/dispatch_promise.swift; sourceTree = "<group>"; };
-		B1FAE02CC62BB665DD7B6E0C /* Pods-GoogleClient-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		B2350C15E77E7E53332047E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B39D6445F4A89E540E0F2438 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		B4CD7CAFD39AC5AA5EC8BA1E /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7AE85C88B32F49931DE058E /* Pods-GoogleClient-OMGHTTPURLRQ.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-OMGHTTPURLRQ.modulemap"; sourceTree = "<group>"; };
-		B81853F77E792920C3287C1C /* NSURLConnection+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLConnection+Promise.swift"; path = "Categories/Foundation/NSURLConnection+Promise.swift"; sourceTree = "<group>"; };
-		BB6ECEA646201166A70B8CE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCE332B3F478BCD0704E0BD7 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		BF43257762CB1A94AD3008A2 /* Pods-GoogleClient-PromiseKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-PromiseKit-Private.xcconfig"; sourceTree = "<group>"; };
-		C1C73DFD255A8D8EAE8E08AD /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Categories/Foundation/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
-		C2295270322A504DDE0A0489 /* GIDGoogleUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDGoogleUser.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDGoogleUser.h; sourceTree = "<group>"; };
-		C37596C521776FF72BBFF352 /* Pods-GoogleClient-AlamofireObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-AlamofireObjectMapper-dummy.m"; sourceTree = "<group>"; };
-		C37DE34E0AE7FA0F588B4BA0 /* Pods-GoogleClient-PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-PromiseKit.modulemap"; sourceTree = "<group>"; };
-		C4A7EF3C53EBD27059564237 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
-		C6C9438E31738DD300D0A617 /* OMGUserAgent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OMGUserAgent.m; sourceTree = "<group>"; };
-		C9262D41A8068C3C830E11AA /* Pods-GoogleClient-AlamofireObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-AlamofireObjectMapper.xcconfig"; sourceTree = "<group>"; };
-		CA6DD5BAE2F0B74796594C90 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCEE545E7B664C592045D539 /* Pods-GoogleClient-AlamofireObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-AlamofireObjectMapper.modulemap"; sourceTree = "<group>"; };
-		CDB707480BD6F9EFA7D99068 /* UIAlertView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AnyPromise.m"; path = "Categories/UIKit/UIAlertView+AnyPromise.m"; sourceTree = "<group>"; };
-		CDC2C2693F5FF4C757688B15 /* AlmofireObjectMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlmofireObjectMapper.swift; path = AlamofireObjectMapper/AlmofireObjectMapper.swift; sourceTree = "<group>"; };
-		CE5645038E56FDC2AC607620 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
-		D7FA27A6482084E95292EAB9 /* Pods-GoogleClient-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-Alamofire.modulemap"; sourceTree = "<group>"; };
-		DBB64B8579AFE5F1E0000FE0 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
-		DCFD0898F96C820D736C0D3F /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = ObjectMapper/Transforms/URLTransform.swift; sourceTree = "<group>"; };
-		DD3C638C5BD6A7182DB81EEF /* OMGFormURLEncode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OMGFormURLEncode.h; sourceTree = "<group>"; };
-		E1B7C02445D47192C7A3813A /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
-		E298AD6F9CDD2BE07D82BD4A /* Pods-GoogleClient-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoogleClient-resources.sh"; sourceTree = "<group>"; };
-		E495E81933613ADFB5379E45 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-OMGHTTPURLRQ-dummy.m"; sourceTree = "<group>"; };
-		E4D1F239A196F2B26CE21151 /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Categories/UIKit/UIView+Promise.swift"; sourceTree = "<group>"; };
-		E704CBCCFBCFE2B7BACE69E8 /* GoogleSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleSignIn.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GoogleSignIn.h; sourceTree = "<group>"; };
-		E88917537C7E82D249BCFB5A /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = ObjectMapper/Transforms/ISO8601DateTransform.swift; sourceTree = "<group>"; };
-		E94C031D936CDEA6BD2C4F2F /* UIViewController+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Promise.swift"; path = "Categories/UIKit/UIViewController+Promise.swift"; sourceTree = "<group>"; };
-		F06C26159AA26FC8D44B1663 /* Pods-GoogleClient-ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
-		F0C23DF3E8F50CD82B1B5C5E /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
-		F1CE43F6F06B978A6FDC27EB /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Categories/Foundation/NSObject+Promise.swift"; sourceTree = "<group>"; };
-		F3FBDB43A9B25449843CD661 /* OMGFormURLEncode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OMGFormURLEncode.m; sourceTree = "<group>"; };
-		F4A61BE489402969D86E486F /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6D2B0D37D3D19EA25675822 /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
-		F71354555CD10AF195CA1ABA /* Pods-GoogleClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient.release.xcconfig"; sourceTree = "<group>"; };
-		F7E40151143CD6329C398E03 /* NSError+Cancellation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+Cancellation.h"; path = "Sources/NSError+Cancellation.h"; sourceTree = "<group>"; };
-		FBFFE1F75EB08E1CE6F71CE1 /* UIAlertView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AnyPromise.h"; path = "Categories/UIKit/UIAlertView+AnyPromise.h"; sourceTree = "<group>"; };
-		FD2B1ADB0D1485A2AD26C82A /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = ObjectMapper/Transforms/TransformOf.swift; sourceTree = "<group>"; };
-		FE63A627CBAD1B3CFA8D8471 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = ObjectMapper/Core/FromJSON.swift; sourceTree = "<group>"; };
+		03DBA59DCB79091584EDA0F2 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		05BCA9AC18C09EF9D93B3096 /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Categories/UIKit/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
+		06CD5AFFD29E89C930CB1493 /* CALayer+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+AnyPromise.h"; path = "Categories/QuartzCore/CALayer+AnyPromise.h"; sourceTree = "<group>"; };
+		0AA517F3249BDD6A3AFF0DEF /* Pods-GoogleClient-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoogleClient-acknowledgements.plist"; sourceTree = "<group>"; };
+		0D5AFEBE05830F01F3774F1F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0EB1A7C2D0D92DC73ADA2DF7 /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
+		0EBCDC8282BDA062B0A52BAF /* Sealant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sealant.swift; path = Sources/Sealant.swift; sourceTree = "<group>"; };
+		1102E270791A475C8E780CCF /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
+		11ACFCA72CE8E9981EAC0B2F /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
+		17213D519A14DB66AF0E7606 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
+		198D9CBCD86C748D866287D1 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		19982CA5E36EE370040CA4E6 /* UIAlertView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AnyPromise.h"; path = "Categories/UIKit/UIAlertView+AnyPromise.h"; sourceTree = "<group>"; };
+		1A26D439AD0548B595EDEB2E /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Categories/UIKit/UIView+AnyPromise.m"; sourceTree = "<group>"; };
+		23190F5F7DEBF5670B638EEB /* OMGFormURLEncode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OMGFormURLEncode.h; sourceTree = "<group>"; };
+		2618BBCBE868E4C4DBDDFBD5 /* UIActionSheet+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIActionSheet+Promise.swift"; path = "Categories/UIKit/UIActionSheet+Promise.swift"; sourceTree = "<group>"; };
+		26FEE47D94B19D0BD1FC9777 /* Promise+Properties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Properties.swift"; path = "Sources/Promise+Properties.swift"; sourceTree = "<group>"; };
+		278453884E4D49C2473902AB /* Pods-GoogleClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-dummy.m"; sourceTree = "<group>"; };
+		27DD21EA22C7D084D07EF61F /* Pods-GoogleClient-ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
+		2C4D5FC28F49CDA3C86536B4 /* Pods-GoogleClient-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoogleClient-resources.sh"; sourceTree = "<group>"; };
+		2CED82C3DD4E242759F7A739 /* CALayer+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+AnyPromise.m"; path = "Categories/QuartzCore/CALayer+AnyPromise.m"; sourceTree = "<group>"; };
+		2FFB48BEED85619054E43D9C /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = ObjectMapper/Transforms/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		30305D4E23E7FB2CDD9E2ED2 /* Promise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Promise.h; path = Sources/Promise.h; sourceTree = "<group>"; };
+		31E75B803AD47955E4B839F0 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
+		348F6B8A4DFF001ED3813303 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39BD939F9728F2CAD6B1A92C /* GIDAuthentication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDAuthentication.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDAuthentication.h; sourceTree = "<group>"; };
+		3AE8D26D904938DD2FCB731B /* Pods-GoogleClient-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		3DE0C48444C57F78A2A8B65C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42B6095084A17D8C693FDF9B /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
+		46C8C9BF94E51810BC79C087 /* NSURLConnection+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLConnection+Promise.swift"; path = "Categories/Foundation/NSURLConnection+Promise.swift"; sourceTree = "<group>"; };
+		48F64ADDE26E2AFE02E7A4D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A885D10D93194B5B77E0013 /* dispatch_promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dispatch_promise.swift; path = Sources/dispatch_promise.swift; sourceTree = "<group>"; };
+		4AA15204E33F68491211A5AE /* Pods-GoogleClient-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-Alamofire.modulemap"; sourceTree = "<group>"; };
+		4AEB7B54FE869D612D1CB0D8 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = ObjectMapper/Core/FromJSON.swift; sourceTree = "<group>"; };
+		4B332712CF0EA8D77542B5E7 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
+		4C95632EC22485AA02E86976 /* Pods-GoogleClient-ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-ObjectMapper.modulemap"; sourceTree = "<group>"; };
+		4CDDACDBAAEFEA7DF3F4A006 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Categories/Foundation/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
+		4E34F58A0D22DC6D1F2D3295 /* UIViewController+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Promise.swift"; path = "Categories/UIKit/UIViewController+Promise.swift"; sourceTree = "<group>"; };
+		5088C50BC86B16400E546C56 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = google_signin_sdk_1_0_0/GoogleSignIn.framework; sourceTree = "<group>"; };
+		51D8F4DF5F6DAFA63AA3BF9A /* Pods-GoogleClient-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoogleClient-frameworks.sh"; sourceTree = "<group>"; };
+		51E3A7AE62E17E406BD7464E /* Pods-GoogleClient-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-environment.h"; sourceTree = "<group>"; };
+		5984ECD5B78809F1920AC729 /* Pods-GoogleClient-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		5D6DDFABFB5427ED6AFC526A /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
+		5F7A966B3174123166888AFD /* Pods-GoogleClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-umbrella.h"; sourceTree = "<group>"; };
+		5FDF32074F21613B8CB2E151 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62412A5FFE140AFD66ED1B9E /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
+		69610A064AD2E30248BF73CA /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = ObjectMapper/Transforms/TransformOf.swift; sourceTree = "<group>"; };
+		69DDFF4F251FFB642D62BF1B /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = ObjectMapper/Transforms/URLTransform.swift; sourceTree = "<group>"; };
+		6AFA870487CEBD4D3BC9496B /* ErrorUnhandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUnhandler.swift; path = Sources/ErrorUnhandler.swift; sourceTree = "<group>"; };
+		6B6327DB9BE73DA4D66CED99 /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
+		6BA0AC6CCD4C538032B65A92 /* Pods-GoogleClient-PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-PromiseKit.xcconfig"; sourceTree = "<group>"; };
+		6BD4AC39EEA4A1FAE61B250D /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = ObjectMapper/Transforms/EnumTransform.swift; sourceTree = "<group>"; };
+		6C246ED21CB7971E0FCE7282 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = ObjectMapper/Transforms/TransformType.swift; sourceTree = "<group>"; };
+		6CDC4ADDC73FB821EF00246E /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h"; sourceTree = "<group>"; };
+		6F2E8D6517F97DDBBED3DA84 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
+		6F6D25C38D1DDED3A807A1C1 /* NSJSONFromData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSJSONFromData.swift; path = Sources/NSJSONFromData.swift; sourceTree = "<group>"; };
+		72C2A3387646F42F702D52DB /* Pods-GoogleClient-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoogleClient-acknowledgements.markdown"; sourceTree = "<group>"; };
+		74B4BB950AD90579A05B7CC9 /* Pods-GoogleClient-OMGHTTPURLRQ.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-OMGHTTPURLRQ.xcconfig"; sourceTree = "<group>"; };
+		75C2FAF84A3D93D66F4475BE /* Pods-GoogleClient-ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		76FFFF55EB5E8597867B342A /* GIDGoogleUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDGoogleUser.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDGoogleUser.h; sourceTree = "<group>"; };
+		776A54683056C8A4D50D567C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7900B75441A8E33A4EEBEC6F /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = ObjectMapper/Transforms/DateTransform.swift; sourceTree = "<group>"; };
+		793D0BC088C21049FC7D1449 /* Pods-GoogleClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient.debug.xcconfig"; sourceTree = "<group>"; };
+		7A34D209F1A96191323A0BEF /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
+		7F1FFDD83903121FCF66DF41 /* Pods-GoogleClient-OMGHTTPURLRQ.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-OMGHTTPURLRQ.modulemap"; sourceTree = "<group>"; };
+		81975A36A4A8D5A02BD49256 /* GIDSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDSignIn.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDSignIn.h; sourceTree = "<group>"; };
+		81DBEB1C6A43DA70133BD483 /* Pods-GoogleClient-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		8A80E1ACC14A3C31AD600F60 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
+		8AFB7F62E1FB1EFD5300C039 /* Pods-GoogleClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient.modulemap"; sourceTree = "<group>"; };
+		8C2F4B29E12F4518CC897D13 /* GIDSignInButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDSignInButton.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDSignInButton.h; sourceTree = "<group>"; };
+		93CED2BEC6E25E4FE20AD0E6 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = ObjectMapper/Core/ToJSON.swift; sourceTree = "<group>"; };
+		96DB64C450A4A6A17AB3354A /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Categories/UIKit/UIView+AnyPromise.h"; sourceTree = "<group>"; };
+		96DFAA389C06CB1947DC89D1 /* Pods-GoogleClient-ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-ObjectMapper-dummy.m"; sourceTree = "<group>"; };
+		9BB2AE821DF2501DB5752EF1 /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = ObjectMapper/Transforms/ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		9C8EF21BAA900A636FF0D5DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9E9CE3444429A24487295D70 /* GoogleSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleSignIn.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GoogleSignIn.h; sourceTree = "<group>"; };
+		9EFDFC76985B4485D7F88A06 /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Categories/UIKit/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
+		A08EA10EE20B69789B4BAA3B /* UIActionSheet+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+AnyPromise.m"; path = "Categories/UIKit/UIActionSheet+AnyPromise.m"; sourceTree = "<group>"; };
+		A12B8BD56AC148BFF4EB245C /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		A1621E726BFB5C7AB6BF990C /* DateFormaterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormaterTransform.swift; path = ObjectMapper/Transforms/DateFormaterTransform.swift; sourceTree = "<group>"; };
+		A3F416671A5AE308C4C59F3D /* afterlife.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = afterlife.swift; path = Categories/Foundation/afterlife.swift; sourceTree = "<group>"; };
+		A82377CEF67ECA51C5B26CE5 /* OMGUserAgent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OMGUserAgent.h; sourceTree = "<group>"; };
+		AC64625A67F5136E0566C7E9 /* UIAlertView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AnyPromise.m"; path = "Categories/UIKit/UIAlertView+AnyPromise.m"; sourceTree = "<group>"; };
+		AE49B821AC0AF191B6F6FE03 /* Umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Umbrella.h; path = Sources/Umbrella.h; sourceTree = "<group>"; };
+		B4A4CCF869F8A2F0F890E2EF /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Categories/UIKit/UIView+Promise.swift"; sourceTree = "<group>"; };
+		B5529825F41CB19DD0117DAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B63295DA3CE5605DA4311300 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		B64C6A7D05C09935F26242E7 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		B67C8F15EB56501E2BB75E75 /* Pods-GoogleClient-PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-PromiseKit-prefix.pch"; sourceTree = "<group>"; };
+		B762749B655163D8D32F74CB /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B809E23DB09FDAD0D3CFD83D /* PMKPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMKPromise.m; path = Sources/PMKPromise.m; sourceTree = "<group>"; };
+		B9513390F7D5B50D27FF8F86 /* Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch"; sourceTree = "<group>"; };
+		B99B48766A355648B5F97440 /* UIActionSheet+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+AnyPromise.h"; path = "Categories/UIKit/UIActionSheet+AnyPromise.h"; sourceTree = "<group>"; };
+		BAAFF010A2EEF62F364067CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BCD97992332AE92F7811410D /* OMGFormURLEncode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OMGFormURLEncode.m; sourceTree = "<group>"; };
+		BE00D1D8D468376BC6D0454D /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = ObjectMapper/Core/Mapper.swift; sourceTree = "<group>"; };
+		C3227DEEF9F8345BED569D29 /* PMKPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKPromise.h; path = Sources/PMKPromise.h; sourceTree = "<group>"; };
+		C388239C84A2338E8D84E8D7 /* NSError+Cancellation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+Cancellation.h"; path = "Sources/NSError+Cancellation.h"; sourceTree = "<group>"; };
+		C482B42D06567FD4287DA66B /* NSURLConnection+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLConnection+AnyPromise.m"; path = "Categories/Foundation/NSURLConnection+AnyPromise.m"; sourceTree = "<group>"; };
+		C4FE0072B4AB4110B13D0A4F /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		C6CF295A745A2932A96A74EE /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = ObjectMapper/Core/Operators.swift; sourceTree = "<group>"; };
+		C77DE667B0F7CC9CBCED16A8 /* NSFileManager+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSFileManager+Promise.swift"; path = "Categories/Foundation/NSFileManager+Promise.swift"; sourceTree = "<group>"; };
+		C8E5FBFA872EAB2A16458410 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-OMGHTTPURLRQ-dummy.m"; sourceTree = "<group>"; };
+		C9077F7BFFA5476F74AF58FD /* Pods-GoogleClient-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		CB8012CFBA78B665402A0C3D /* Pods-GoogleClient-PromiseKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-PromiseKit-Private.xcconfig"; sourceTree = "<group>"; };
+		CC1F34FEB519137E7ACE2A00 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8C6F0BB14074D5B327FB93 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		CE9BA761BE054BB242F3623A /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
+		D47969DB106A7B886FAF7E29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8203018843B8B6905A5EA2C /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Categories/Foundation/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
+		D9196ADA924ADD4F5A51B98B /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig"; sourceTree = "<group>"; };
+		DA9BCBA22200919EFD3D3A51 /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Categories/Foundation/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
+		DE42ED067F654138130F21DF /* Pods-GoogleClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient.release.xcconfig"; sourceTree = "<group>"; };
+		DF9E4B8421D1FD0E0C0B91AB /* Pods-GoogleClient-PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-PromiseKit-dummy.m"; sourceTree = "<group>"; };
+		E45E87EC47D0EFA1CAFD3EC7 /* OMGUserAgent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OMGUserAgent.m; sourceTree = "<group>"; };
+		E8EB364F694DD2D2617A6513 /* OMGHTTPURLRQ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OMGHTTPURLRQ.m; sourceTree = "<group>"; };
+		EA3F01274BA115A83B6F5ED7 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		EA936CB6118A806E32C8F782 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-ObjectMapper-Private.xcconfig"; sourceTree = "<group>"; };
+		EC127F7053E6E8E2C16C16FE /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		ECD454C075D700195EEE0F73 /* Pods-GoogleClient-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoogleClient-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		ED0FF1B8A2696330AE6AC29D /* Pods_GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7DADC812713200EBDE1846 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEA9D4D54CFB75D139D36312 /* Pods-GoogleClient-ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleClient-ObjectMapper.xcconfig"; sourceTree = "<group>"; };
+		F22A9EE5EB21109441F06667 /* Pods-GoogleClient-PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GoogleClient-PromiseKit.modulemap"; sourceTree = "<group>"; };
+		F3D8779E5F24A05E2C3AA1BF /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Categories/Foundation/NSObject+Promise.swift"; sourceTree = "<group>"; };
+		F4C77DE903D316B010F64969 /* GIDProfileData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDProfileData.h; path = google_signin_sdk_1_0_0/GoogleSignIn.framework/Headers/GIDProfileData.h; sourceTree = "<group>"; };
+		F84C67A5FB5F95861E5E2781 /* UIAlertView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIAlertView+Promise.swift"; path = "Categories/UIKit/UIAlertView+Promise.swift"; sourceTree = "<group>"; };
+		F98CBA57BE139F4735E0A28D /* NSURLConnection+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLConnection+AnyPromise.h"; path = "Categories/Foundation/NSURLConnection+AnyPromise.h"; sourceTree = "<group>"; };
+		FD0800E8B756FFD600614245 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OMGHTTPURLRQ.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18F0D40018C72F2CA8DFEFBB /* Frameworks */ = {
+		2B8019F62F40B6D96C52EAEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35572F643C57F8DA017DD27 /* Alamofire.framework in Frameworks */,
-				25CA8188C80F052A062B875D /* Foundation.framework in Frameworks */,
-				F5AA5952E3300F254D3D2F05 /* ObjectMapper.framework in Frameworks */,
+				73C3B43B6866D0980AB28256 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D1027F9BBF9B6FAEA592AED /* Frameworks */ = {
+		36AD855419F70DD41A6E7F08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DE26D1C4B9412205684089 /* Foundation.framework in Frameworks */,
+				7558844DE17194F8E752E833 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		788B6192631EC7D0F83E1065 /* Frameworks */ = {
+		434BACBDCEA9333C2383D091 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE49CEF545666AE09F504600 /* Foundation.framework in Frameworks */,
+				6624767730CC195036830704 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E24A5C074F4CEDE483357E40 /* Frameworks */ = {
+		A2F83FA9ED68ED40282257AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C36BE0BF3F74C6C59FF7D01 /* Foundation.framework in Frameworks */,
+				394CB10CFE179692E07C8250 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE3C3AD8D7E4C2BE18FFEB1D /* Frameworks */ = {
+		AC8DA0F4BC47EDC97BC6F7AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C756EE555F82A16B219196 /* Foundation.framework in Frameworks */,
-				C72E11EBCE3D895BF7F01391 /* OMGHTTPURLRQ.framework in Frameworks */,
-				B24F4AF698472DE7BE687F4C /* QuartzCore.framework in Frameworks */,
-				08A5725AD206FA931762A222 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F21420657C4388AF89225161 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				476C3ECB5D2E2C3B27E18BA2 /* Foundation.framework in Frameworks */,
+				F2ADBC8B8BDDB3E58BA669B2 /* Foundation.framework in Frameworks */,
+				F4BFBB4613EE46096E19F199 /* OMGHTTPURLRQ.framework in Frameworks */,
+				95076BB41AE7514ED58A2557 /* QuartzCore.framework in Frameworks */,
+				69C44C32574272E862AAE083 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		092779C8C94EC68384F09F30 /* Products */ = {
+		063F29935D4A7E1FBBBE69F1 /* FormURLEncode */ = {
 			isa = PBXGroup;
 			children = (
-				1AB0E1423BC0B259CDD08192 /* Alamofire.framework */,
-				49FD1A585C137E8B39BCD531 /* AlamofireObjectMapper.framework */,
-				F4A61BE489402969D86E486F /* OMGHTTPURLRQ.framework */,
-				2C39E803AC14077FC8ACB5B2 /* ObjectMapper.framework */,
-				3364AD4C43A03ABB060AF1D5 /* Pods_GoogleClient.framework */,
-				CA6DD5BAE2F0B74796594C90 /* PromiseKit.framework */,
+				23190F5F7DEBF5670B638EEB /* OMGFormURLEncode.h */,
+				BCD97992332AE92F7811410D /* OMGFormURLEncode.m */,
 			);
-			name = Products;
+			name = FormURLEncode;
 			sourceTree = "<group>";
 		};
-		118DC31260AE590C0F133DCD /* Support Files */ = {
+		20C86BD099ED9A047076F175 /* UserAgent */ = {
 			isa = PBXGroup;
 			children = (
-				810E58E338E1D7CCBFE1F73C /* Info.plist */,
-				CCEE545E7B664C592045D539 /* Pods-GoogleClient-AlamofireObjectMapper.modulemap */,
-				C9262D41A8068C3C830E11AA /* Pods-GoogleClient-AlamofireObjectMapper.xcconfig */,
-				58625AA7546F0267A8808256 /* Pods-GoogleClient-AlamofireObjectMapper-Private.xcconfig */,
-				C37596C521776FF72BBFF352 /* Pods-GoogleClient-AlamofireObjectMapper-dummy.m */,
-				6B9B677740DD12828EF4BED8 /* Pods-GoogleClient-AlamofireObjectMapper-prefix.pch */,
-				AA8BB2823A391222F44A780C /* Pods-GoogleClient-AlamofireObjectMapper-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-GoogleClient-AlamofireObjectMapper";
-			sourceTree = "<group>";
-		};
-		23C22F93F792E21F93D56CBE /* GoogleSignInSDK */ = {
-			isa = PBXGroup;
-			children = (
-				7BCA92F25A2EDD707D81C2C5 /* GIDAuthentication.h */,
-				C2295270322A504DDE0A0489 /* GIDGoogleUser.h */,
-				34FF457AFCCAF9D408EC6029 /* GIDProfileData.h */,
-				60E5F7D912E1DDC116A6FF87 /* GIDSignIn.h */,
-				5C2825920C17998009FB53C4 /* GIDSignInButton.h */,
-				E704CBCCFBCFE2B7BACE69E8 /* GoogleSignIn.h */,
-				739996A4BE0A2EE65C1C3591 /* Frameworks */,
-			);
-			path = GoogleSignInSDK;
-			sourceTree = "<group>";
-		};
-		2B2AB09CEEC9229CED2FA02E /* OMGHTTPURLRQ */ = {
-			isa = PBXGroup;
-			children = (
-				E218E7C941737C455CCFC5FD /* FormURLEncode */,
-				E63835364EAAC405FEB7256C /* RQ */,
-				FBBBA1C43EB6F43DD30AA00B /* Support Files */,
-				4B5C046FFD02328CCCB2D9B4 /* UserAgent */,
-			);
-			path = OMGHTTPURLRQ;
-			sourceTree = "<group>";
-		};
-		3054EBAF0149BC074A98D55B /* AlamofireObjectMapper */ = {
-			isa = PBXGroup;
-			children = (
-				CDC2C2693F5FF4C757688B15 /* AlmofireObjectMapper.swift */,
-				118DC31260AE590C0F133DCD /* Support Files */,
-			);
-			path = AlamofireObjectMapper;
-			sourceTree = "<group>";
-		};
-		3C19A66B1AF07E404EBC7731 /* CorePromise */ = {
-			isa = PBXGroup;
-			children = (
-				9A6658330E225D5252C4CC72 /* AnyPromise.h */,
-				9F272C7699E7BBD08E49D7D4 /* AnyPromise.m */,
-				3964EF44329C3FC7BB0A1806 /* AnyPromise.swift */,
-				66AC25EF9E0562526C9BAED2 /* ErrorUnhandler.swift */,
-				F7E40151143CD6329C398E03 /* NSError+Cancellation.h */,
-				42BDE4464F7C8A67D7618F33 /* NSJSONFromData.swift */,
-				9DB8F6A12DC7DED1E0EE170C /* PMKPromise.h */,
-				9D7D065AB26BDC32755F2152 /* PMKPromise.m */,
-				4E06EFC23FB142F2CCDFA895 /* Promise.h */,
-				6DA61870DD4258F48521D2A4 /* Promise.swift */,
-				21599B0E54708EF0B108D2BB /* Promise+Properties.swift */,
-				2128308849D46F92B602424B /* PromiseKit.h */,
-				4652ECD43E0A796E6618FD89 /* Sealant.swift */,
-				7E08275C87EAB5C4141BFA20 /* State.swift */,
-				98FD5E6100C9BCC2DA971747 /* Umbrella.h */,
-				C4A7EF3C53EBD27059564237 /* after.m */,
-				83FB2EC3C92075DFD7626BB9 /* after.swift */,
-				05AE23EA9042CB2E3987CB9D /* dispatch_promise.m */,
-				AE62B2C372A4DE14F4A50D28 /* dispatch_promise.swift */,
-				DBB64B8579AFE5F1E0000FE0 /* hang.m */,
-				F6D2B0D37D3D19EA25675822 /* join.m */,
-				3C5ECCC902F99EEA6F1CC9CC /* race.swift */,
-				CE5645038E56FDC2AC607620 /* when.m */,
-				F0C23DF3E8F50CD82B1B5C5E /* when.swift */,
-			);
-			name = CorePromise;
-			sourceTree = "<group>";
-		};
-		422DBE21BADAC7A16B512FAC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				759239B916095EA11E039250 /* Info.plist */,
-				D7FA27A6482084E95292EAB9 /* Pods-GoogleClient-Alamofire.modulemap */,
-				492707BB670645B2983E3AFC /* Pods-GoogleClient-Alamofire.xcconfig */,
-				37B5D0A915C988F7A854D770 /* Pods-GoogleClient-Alamofire-Private.xcconfig */,
-				3742601B16E99C282FF43962 /* Pods-GoogleClient-Alamofire-dummy.m */,
-				B1FAE02CC62BB665DD7B6E0C /* Pods-GoogleClient-Alamofire-prefix.pch */,
-				3C267BE5C2056C7438BD8729 /* Pods-GoogleClient-Alamofire-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-GoogleClient-Alamofire";
-			sourceTree = "<group>";
-		};
-		42CBC44DAFC6411B076CBD49 /* QuartzCore */ = {
-			isa = PBXGroup;
-			children = (
-				567D1838842CB26260EDE8F2 /* CALayer+AnyPromise.h */,
-				1CFB0CF38C26A412176E4F22 /* CALayer+AnyPromise.m */,
-			);
-			name = QuartzCore;
-			sourceTree = "<group>";
-		};
-		45E8143CCCBCDDF07C74501C /* PromiseKit */ = {
-			isa = PBXGroup;
-			children = (
-				3C19A66B1AF07E404EBC7731 /* CorePromise */,
-				8AE39C9F490D9A3FBB4FCF53 /* Foundation */,
-				42CBC44DAFC6411B076CBD49 /* QuartzCore */,
-				53788BA3A1743D4DB7B85211 /* Support Files */,
-				5DFB53FE2A6EEBDC0F8CB9B2 /* UIKit */,
-			);
-			path = PromiseKit;
-			sourceTree = "<group>";
-		};
-		4B5C046FFD02328CCCB2D9B4 /* UserAgent */ = {
-			isa = PBXGroup;
-			children = (
-				9BAFB809E9344DB08429E91A /* OMGUserAgent.h */,
-				C6C9438E31738DD300D0A617 /* OMGUserAgent.m */,
+				A82377CEF67ECA51C5B26CE5 /* OMGUserAgent.h */,
+				E45E87EC47D0EFA1CAFD3EC7 /* OMGUserAgent.m */,
 			);
 			name = UserAgent;
 			sourceTree = "<group>";
 		};
-		4CB37055657FAF700A873FBB /* Pods-GoogleClient */ = {
+		21B89AA8327A171A6E9ECCCD /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				BB6ECEA646201166A70B8CE9 /* Info.plist */,
-				2982047B7EF29A423604DDC5 /* Pods-GoogleClient.modulemap */,
-				91C6CFCFE37F1B558A16941A /* Pods-GoogleClient-acknowledgements.markdown */,
-				82C8BB958E1AD8AD3FF82A1C /* Pods-GoogleClient-acknowledgements.plist */,
-				67C36CE31BBE8C1DA2E1636E /* Pods-GoogleClient-dummy.m */,
-				5223B9702D2B1D1288B47DC5 /* Pods-GoogleClient-environment.h */,
-				076C2CCD009AAC5822823365 /* Pods-GoogleClient-frameworks.sh */,
-				E298AD6F9CDD2BE07D82BD4A /* Pods-GoogleClient-resources.sh */,
-				3B0EAB97F2606C41747B33BB /* Pods-GoogleClient-umbrella.h */,
-				33ECE4EAD261B742EA3B6793 /* Pods-GoogleClient.debug.xcconfig */,
-				F71354555CD10AF195CA1ABA /* Pods-GoogleClient.release.xcconfig */,
+				03DBA59DCB79091584EDA0F2 /* Alamofire.swift */,
+				198D9CBCD86C748D866287D1 /* Download.swift */,
+				CD8C6F0BB14074D5B327FB93 /* Manager.swift */,
+				B64C6A7D05C09935F26242E7 /* ParameterEncoding.swift */,
+				EA3F01274BA115A83B6F5ED7 /* Request.swift */,
+				C4FE0072B4AB4110B13D0A4F /* ResponseSerialization.swift */,
+				EC127F7053E6E8E2C16C16FE /* Upload.swift */,
+				A12B8BD56AC148BFF4EB245C /* Validation.swift */,
+				A57AA88B8C1829277C9302FA /* Support Files */,
 			);
-			name = "Pods-GoogleClient";
-			path = "Target Support Files/Pods-GoogleClient";
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		5104E02363024F5AE95523A0 /* ObjectMapper */ = {
+		32176CAC58D8179E51240650 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62AA68397C16AE56BC131B40 /* CustomDateFormatTransform.swift */,
-				55DB0F04ED1874DB5EA77302 /* DateFormaterTransform.swift */,
-				8362D505387A53E902A7EFBA /* DateTransform.swift */,
-				7CDD0CE55D5F1A306B0D79A1 /* EnumTransform.swift */,
-				FE63A627CBAD1B3CFA8D8471 /* FromJSON.swift */,
-				E88917537C7E82D249BCFB5A /* ISO8601DateTransform.swift */,
-				91EFA82A90F91ACF7AC39F2E /* Mapper.swift */,
-				7A56278B7FB619906D9A3747 /* Operators.swift */,
-				841952849F1D4BC902394E66 /* ToJSON.swift */,
-				FD2B1ADB0D1485A2AD26C82A /* TransformOf.swift */,
-				7038B38517F2EB5108E15077 /* TransformType.swift */,
-				DCFD0898F96C820D736C0D3F /* URLTransform.swift */,
-				B744D6B60654B0FE98AE219F /* Support Files */,
+				776A54683056C8A4D50D567C /* Alamofire.framework */,
+				348F6B8A4DFF001ED3813303 /* OMGHTTPURLRQ.framework */,
+				5FDF32074F21613B8CB2E151 /* ObjectMapper.framework */,
+				ED0FF1B8A2696330AE6AC29D /* Pods_GoogleClient.framework */,
+				B762749B655163D8D32F74CB /* PromiseKit.framework */,
 			);
-			path = ObjectMapper;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		53788BA3A1743D4DB7B85211 /* Support Files */ = {
+		3A1649A8642242F5A6D79A94 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4421AD1C000FD19ADCEDDACE /* Info.plist */,
-				C37DE34E0AE7FA0F588B4BA0 /* Pods-GoogleClient-PromiseKit.modulemap */,
-				8C87FA655FF6525068C0DBB5 /* Pods-GoogleClient-PromiseKit.xcconfig */,
-				BF43257762CB1A94AD3008A2 /* Pods-GoogleClient-PromiseKit-Private.xcconfig */,
-				3C1FF3447C8C4BD6CD269BDB /* Pods-GoogleClient-PromiseKit-dummy.m */,
-				9345C1FF379BCFD87EA342C3 /* Pods-GoogleClient-PromiseKit-prefix.pch */,
+				9C8EF21BAA900A636FF0D5DF /* Foundation.framework */,
+				B63295DA3CE5605DA4311300 /* QuartzCore.framework */,
+				BAAFF010A2EEF62F364067CA /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		451E0B15607DD214D0ECDE8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC1F34FEB519137E7ACE2A00 /* OMGHTTPURLRQ.framework */,
+				3A1649A8642242F5A6D79A94 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F3B6CC6DE0B8A3D2BAAAEB0 /* CorePromise */ = {
+			isa = PBXGroup;
+			children = (
+				7A34D209F1A96191323A0BEF /* AnyPromise.h */,
+				0EB1A7C2D0D92DC73ADA2DF7 /* AnyPromise.m */,
+				CE9BA761BE054BB242F3623A /* AnyPromise.swift */,
+				6AFA870487CEBD4D3BC9496B /* ErrorUnhandler.swift */,
+				C388239C84A2338E8D84E8D7 /* NSError+Cancellation.h */,
+				6F6D25C38D1DDED3A807A1C1 /* NSJSONFromData.swift */,
+				C3227DEEF9F8345BED569D29 /* PMKPromise.h */,
+				B809E23DB09FDAD0D3CFD83D /* PMKPromise.m */,
+				30305D4E23E7FB2CDD9E2ED2 /* Promise.h */,
+				8A80E1ACC14A3C31AD600F60 /* Promise.swift */,
+				26FEE47D94B19D0BD1FC9777 /* Promise+Properties.swift */,
+				62412A5FFE140AFD66ED1B9E /* PromiseKit.h */,
+				0EBCDC8282BDA062B0A52BAF /* Sealant.swift */,
+				4B332712CF0EA8D77542B5E7 /* State.swift */,
+				AE49B821AC0AF191B6F6FE03 /* Umbrella.h */,
+				6F2E8D6517F97DDBBED3DA84 /* after.m */,
+				42B6095084A17D8C693FDF9B /* after.swift */,
+				6B6327DB9BE73DA4D66CED99 /* dispatch_promise.m */,
+				4A885D10D93194B5B77E0013 /* dispatch_promise.swift */,
+				17213D519A14DB66AF0E7606 /* hang.m */,
+				5D6DDFABFB5427ED6AFC526A /* join.m */,
+				1102E270791A475C8E780CCF /* race.swift */,
+				31E75B803AD47955E4B839F0 /* when.m */,
+				11ACFCA72CE8E9981EAC0B2F /* when.swift */,
+			);
+			name = CorePromise;
+			sourceTree = "<group>";
+		};
+		508F632D54ED8260FF7B419C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5088C50BC86B16400E546C56 /* GoogleSignIn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A3769F3059073DF5C5CB9E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21B89AA8327A171A6E9ECCCD /* Alamofire */,
+				7DFD45D6ECDF42B8C0B69B21 /* GoogleSignInSDK */,
+				AD295FCBDCE9CBD0E88623CA /* OMGHTTPURLRQ */,
+				750BBB5A7EF9860C7E79F58E /* ObjectMapper */,
+				96065FF7EC1CB0AA99C19994 /* PromiseKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5ACA2F6B978C5B1887520E97 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D47969DB106A7B886FAF7E29 /* Info.plist */,
+				F22A9EE5EB21109441F06667 /* Pods-GoogleClient-PromiseKit.modulemap */,
+				6BA0AC6CCD4C538032B65A92 /* Pods-GoogleClient-PromiseKit.xcconfig */,
+				CB8012CFBA78B665402A0C3D /* Pods-GoogleClient-PromiseKit-Private.xcconfig */,
+				DF9E4B8421D1FD0E0C0B91AB /* Pods-GoogleClient-PromiseKit-dummy.m */,
+				B67C8F15EB56501E2BB75E75 /* Pods-GoogleClient-PromiseKit-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-GoogleClient-PromiseKit";
 			sourceTree = "<group>";
 		};
-		5BE5F2C663FF6D8F1BE24D3F /* iOS */ = {
+		750BBB5A7EF9860C7E79F58E /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
-				B2350C15E77E7E53332047E7 /* Foundation.framework */,
-				81B5F8EB456AAFF6233A5CF9 /* QuartzCore.framework */,
-				4CBFCBF06674206C251FCF25 /* UIKit.framework */,
+				2FFB48BEED85619054E43D9C /* CustomDateFormatTransform.swift */,
+				A1621E726BFB5C7AB6BF990C /* DateFormaterTransform.swift */,
+				7900B75441A8E33A4EEBEC6F /* DateTransform.swift */,
+				6BD4AC39EEA4A1FAE61B250D /* EnumTransform.swift */,
+				4AEB7B54FE869D612D1CB0D8 /* FromJSON.swift */,
+				9BB2AE821DF2501DB5752EF1 /* ISO8601DateTransform.swift */,
+				BE00D1D8D468376BC6D0454D /* Mapper.swift */,
+				C6CF295A745A2932A96A74EE /* Operators.swift */,
+				93CED2BEC6E25E4FE20AD0E6 /* ToJSON.swift */,
+				69610A064AD2E30248BF73CA /* TransformOf.swift */,
+				6C246ED21CB7971E0FCE7282 /* TransformType.swift */,
+				69DDFF4F251FFB642D62BF1B /* URLTransform.swift */,
+				9D6111C6404C55F08868F48D /* Support Files */,
 			);
-			name = iOS;
+			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
-		5DFB53FE2A6EEBDC0F8CB9B2 /* UIKit */ = {
+		7A10895D52EE7A6107F7ADE4 /* Pods-GoogleClient */ = {
 			isa = PBXGroup;
 			children = (
-				85423BA6B1386631013EB712 /* UIActionSheet+AnyPromise.h */,
-				709F3D1A758BDAEB13E35635 /* UIActionSheet+AnyPromise.m */,
-				35CACE9B322874A462750FEB /* UIActionSheet+Promise.swift */,
-				FBFFE1F75EB08E1CE6F71CE1 /* UIAlertView+AnyPromise.h */,
-				CDB707480BD6F9EFA7D99068 /* UIAlertView+AnyPromise.m */,
-				101BBEBD3B3B934DC5DF5B14 /* UIAlertView+Promise.swift */,
-				4EBD0F9FB92E93162525ADB2 /* UIView+AnyPromise.h */,
-				20D7F9071B172F7D61B98029 /* UIView+AnyPromise.m */,
-				E4D1F239A196F2B26CE21151 /* UIView+Promise.swift */,
-				7DC85CB45D50DAD1CD294F39 /* UIViewController+AnyPromise.h */,
-				650469DED7469F7C929372CE /* UIViewController+AnyPromise.m */,
-				E94C031D936CDEA6BD2C4F2F /* UIViewController+Promise.swift */,
+				48F64ADDE26E2AFE02E7A4D3 /* Info.plist */,
+				8AFB7F62E1FB1EFD5300C039 /* Pods-GoogleClient.modulemap */,
+				72C2A3387646F42F702D52DB /* Pods-GoogleClient-acknowledgements.markdown */,
+				0AA517F3249BDD6A3AFF0DEF /* Pods-GoogleClient-acknowledgements.plist */,
+				278453884E4D49C2473902AB /* Pods-GoogleClient-dummy.m */,
+				51E3A7AE62E17E406BD7464E /* Pods-GoogleClient-environment.h */,
+				51D8F4DF5F6DAFA63AA3BF9A /* Pods-GoogleClient-frameworks.sh */,
+				2C4D5FC28F49CDA3C86536B4 /* Pods-GoogleClient-resources.sh */,
+				5F7A966B3174123166888AFD /* Pods-GoogleClient-umbrella.h */,
+				793D0BC088C21049FC7D1449 /* Pods-GoogleClient.debug.xcconfig */,
+				DE42ED067F654138130F21DF /* Pods-GoogleClient.release.xcconfig */,
 			);
-			name = UIKit;
+			name = "Pods-GoogleClient";
+			path = "Target Support Files/Pods-GoogleClient";
 			sourceTree = "<group>";
 		};
-		60D9A358BEB17832083ECA9A = {
+		7DFD45D6ECDF42B8C0B69B21 /* GoogleSignInSDK */ = {
 			isa = PBXGroup;
 			children = (
-				8FF625CF8F5B8BE80771E3A5 /* Podfile */,
-				7AEFD434BD23328E497086EC /* Frameworks */,
-				A0AE92EA1108B2C3D75ADEC0 /* Pods */,
-				092779C8C94EC68384F09F30 /* Products */,
-				8B754C958574E35AB5EECF79 /* Targets Support Files */,
+				39BD939F9728F2CAD6B1A92C /* GIDAuthentication.h */,
+				76FFFF55EB5E8597867B342A /* GIDGoogleUser.h */,
+				F4C77DE903D316B010F64969 /* GIDProfileData.h */,
+				81975A36A4A8D5A02BD49256 /* GIDSignIn.h */,
+				8C2F4B29E12F4518CC897D13 /* GIDSignInButton.h */,
+				9E9CE3444429A24487295D70 /* GoogleSignIn.h */,
+				508F632D54ED8260FF7B419C /* Frameworks */,
+			);
+			path = GoogleSignInSDK;
+			sourceTree = "<group>";
+		};
+		8659C032BC658516CB021DEC = {
+			isa = PBXGroup;
+			children = (
+				0D5AFEBE05830F01F3774F1F /* Podfile */,
+				451E0B15607DD214D0ECDE8D /* Frameworks */,
+				5A3769F3059073DF5C5CB9E0 /* Pods */,
+				32176CAC58D8179E51240650 /* Products */,
+				A7B7319E771A04D378C55841 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		718CAAED75A3A0637F53E651 /* Alamofire */ = {
+		96065FF7EC1CB0AA99C19994 /* PromiseKit */ = {
 			isa = PBXGroup;
 			children = (
-				61B6B740C02D16DD89F47722 /* Alamofire.swift */,
-				9640B5A47017720F818681B7 /* Download.swift */,
-				E1B7C02445D47192C7A3813A /* Manager.swift */,
-				BCE332B3F478BCD0704E0BD7 /* ParameterEncoding.swift */,
-				0AB440299E5534D36B2606F2 /* Request.swift */,
-				B39D6445F4A89E540E0F2438 /* ResponseSerialization.swift */,
-				948A581EA1EE7ACC9C43C1F1 /* Upload.swift */,
-				9D0BBF243A3215DD94026DAE /* Validation.swift */,
-				422DBE21BADAC7A16B512FAC /* Support Files */,
+				4F3B6CC6DE0B8A3D2BAAAEB0 /* CorePromise */,
+				DF9B27C18E5649759A7FF870 /* Foundation */,
+				F2D68076F27332D36D4D533B /* QuartzCore */,
+				5ACA2F6B978C5B1887520E97 /* Support Files */,
+				DAAE77CE01596FF18BC646EB /* UIKit */,
 			);
-			path = Alamofire;
+			path = PromiseKit;
 			sourceTree = "<group>";
 		};
-		739996A4BE0A2EE65C1C3591 /* Frameworks */ = {
+		9D6111C6404C55F08868F48D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D396C9098844E40D40CFBF7 /* GoogleSignIn.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7AEFD434BD23328E497086EC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2532C56E127E4C32CFDB774E /* Alamofire.framework */,
-				82CE434C5ACE25DBAC4F96C8 /* OMGHTTPURLRQ.framework */,
-				B4CD7CAFD39AC5AA5EC8BA1E /* ObjectMapper.framework */,
-				5BE5F2C663FF6D8F1BE24D3F /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8AE39C9F490D9A3FBB4FCF53 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				396AF2EE3BCDA4720204DF5C /* NSFileManager+Promise.swift */,
-				085AEDFF7D5B43704A6F800A /* NSNotificationCenter+AnyPromise.h */,
-				C1C73DFD255A8D8EAE8E08AD /* NSNotificationCenter+AnyPromise.m */,
-				0BD801BF64574C4858794B3B /* NSNotificationCenter+Promise.swift */,
-				F1CE43F6F06B978A6FDC27EB /* NSObject+Promise.swift */,
-				6A92E369E3E4F63471FF295E /* NSURLConnection+AnyPromise.h */,
-				7B134E32006F6136176054EB /* NSURLConnection+AnyPromise.m */,
-				B81853F77E792920C3287C1C /* NSURLConnection+Promise.swift */,
-			);
-			name = Foundation;
-			sourceTree = "<group>";
-		};
-		8B754C958574E35AB5EECF79 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CB37055657FAF700A873FBB /* Pods-GoogleClient */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		A0AE92EA1108B2C3D75ADEC0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				718CAAED75A3A0637F53E651 /* Alamofire */,
-				3054EBAF0149BC074A98D55B /* AlamofireObjectMapper */,
-				23C22F93F792E21F93D56CBE /* GoogleSignInSDK */,
-				2B2AB09CEEC9229CED2FA02E /* OMGHTTPURLRQ */,
-				5104E02363024F5AE95523A0 /* ObjectMapper */,
-				45E8143CCCBCDDF07C74501C /* PromiseKit */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B744D6B60654B0FE98AE219F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9F3C2EDE5A393850624F58D5 /* Info.plist */,
-				A5DEDFE19DB00216C4ED6CA7 /* Pods-GoogleClient-ObjectMapper.modulemap */,
-				8A92182EF625668EEF6E3BA9 /* Pods-GoogleClient-ObjectMapper.xcconfig */,
-				70A09C6FEA731B78D1ECD1A9 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */,
-				0185A13E171D423AE1667995 /* Pods-GoogleClient-ObjectMapper-dummy.m */,
-				F06C26159AA26FC8D44B1663 /* Pods-GoogleClient-ObjectMapper-prefix.pch */,
-				A8CF03D17C9754C66691B869 /* Pods-GoogleClient-ObjectMapper-umbrella.h */,
+				B5529825F41CB19DD0117DAB /* Info.plist */,
+				4C95632EC22485AA02E86976 /* Pods-GoogleClient-ObjectMapper.modulemap */,
+				EEA9D4D54CFB75D139D36312 /* Pods-GoogleClient-ObjectMapper.xcconfig */,
+				EA936CB6118A806E32C8F782 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */,
+				96DFAA389C06CB1947DC89D1 /* Pods-GoogleClient-ObjectMapper-dummy.m */,
+				75C2FAF84A3D93D66F4475BE /* Pods-GoogleClient-ObjectMapper-prefix.pch */,
+				27DD21EA22C7D084D07EF61F /* Pods-GoogleClient-ObjectMapper-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-GoogleClient-ObjectMapper";
 			sourceTree = "<group>";
 		};
-		E218E7C941737C455CCFC5FD /* FormURLEncode */ = {
+		A57AA88B8C1829277C9302FA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DD3C638C5BD6A7182DB81EEF /* OMGFormURLEncode.h */,
-				F3FBDB43A9B25449843CD661 /* OMGFormURLEncode.m */,
+				3DE0C48444C57F78A2A8B65C /* Info.plist */,
+				4AA15204E33F68491211A5AE /* Pods-GoogleClient-Alamofire.modulemap */,
+				3AE8D26D904938DD2FCB731B /* Pods-GoogleClient-Alamofire.xcconfig */,
+				C9077F7BFFA5476F74AF58FD /* Pods-GoogleClient-Alamofire-Private.xcconfig */,
+				ECD454C075D700195EEE0F73 /* Pods-GoogleClient-Alamofire-dummy.m */,
+				81DBEB1C6A43DA70133BD483 /* Pods-GoogleClient-Alamofire-prefix.pch */,
+				5984ECD5B78809F1920AC729 /* Pods-GoogleClient-Alamofire-umbrella.h */,
 			);
-			name = FormURLEncode;
+			name = "Support Files";
+			path = "../Target Support Files/Pods-GoogleClient-Alamofire";
 			sourceTree = "<group>";
 		};
-		E63835364EAAC405FEB7256C /* RQ */ = {
+		A7B7319E771A04D378C55841 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				86E38F701450B149B33C0951 /* OMGHTTPURLRQ.h */,
-				53989938AE8637E7136E9FFA /* OMGHTTPURLRQ.m */,
+				7A10895D52EE7A6107F7ADE4 /* Pods-GoogleClient */,
 			);
-			name = RQ;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FBBBA1C43EB6F43DD30AA00B /* Support Files */ = {
+		A7F06F6DB1AC11D4ED94A8F8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D67A2A0940EC0CB6C0550A3 /* Info.plist */,
-				B7AE85C88B32F49931DE058E /* Pods-GoogleClient-OMGHTTPURLRQ.modulemap */,
-				2AB479F65FCB16BA232D4F81 /* Pods-GoogleClient-OMGHTTPURLRQ.xcconfig */,
-				91505596DD7516E1E9CF6C58 /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */,
-				E495E81933613ADFB5379E45 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m */,
-				7DFBE8272591904D6CE72CA2 /* Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch */,
-				1B3FD5D1BF33A501B1FED7F2 /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h */,
+				EE7DADC812713200EBDE1846 /* Info.plist */,
+				7F1FFDD83903121FCF66DF41 /* Pods-GoogleClient-OMGHTTPURLRQ.modulemap */,
+				74B4BB950AD90579A05B7CC9 /* Pods-GoogleClient-OMGHTTPURLRQ.xcconfig */,
+				D9196ADA924ADD4F5A51B98B /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */,
+				C8E5FBFA872EAB2A16458410 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m */,
+				B9513390F7D5B50D27FF8F86 /* Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch */,
+				6CDC4ADDC73FB821EF00246E /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ";
 			sourceTree = "<group>";
 		};
+		AD295FCBDCE9CBD0E88623CA /* OMGHTTPURLRQ */ = {
+			isa = PBXGroup;
+			children = (
+				063F29935D4A7E1FBBBE69F1 /* FormURLEncode */,
+				B1D5E2C1DF41426D4514CC18 /* RQ */,
+				A7F06F6DB1AC11D4ED94A8F8 /* Support Files */,
+				20C86BD099ED9A047076F175 /* UserAgent */,
+			);
+			path = OMGHTTPURLRQ;
+			sourceTree = "<group>";
+		};
+		B1D5E2C1DF41426D4514CC18 /* RQ */ = {
+			isa = PBXGroup;
+			children = (
+				FD0800E8B756FFD600614245 /* OMGHTTPURLRQ.h */,
+				E8EB364F694DD2D2617A6513 /* OMGHTTPURLRQ.m */,
+			);
+			name = RQ;
+			sourceTree = "<group>";
+		};
+		DAAE77CE01596FF18BC646EB /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B99B48766A355648B5F97440 /* UIActionSheet+AnyPromise.h */,
+				A08EA10EE20B69789B4BAA3B /* UIActionSheet+AnyPromise.m */,
+				2618BBCBE868E4C4DBDDFBD5 /* UIActionSheet+Promise.swift */,
+				19982CA5E36EE370040CA4E6 /* UIAlertView+AnyPromise.h */,
+				AC64625A67F5136E0566C7E9 /* UIAlertView+AnyPromise.m */,
+				F84C67A5FB5F95861E5E2781 /* UIAlertView+Promise.swift */,
+				96DB64C450A4A6A17AB3354A /* UIView+AnyPromise.h */,
+				1A26D439AD0548B595EDEB2E /* UIView+AnyPromise.m */,
+				B4A4CCF869F8A2F0F890E2EF /* UIView+Promise.swift */,
+				9EFDFC76985B4485D7F88A06 /* UIViewController+AnyPromise.h */,
+				05BCA9AC18C09EF9D93B3096 /* UIViewController+AnyPromise.m */,
+				4E34F58A0D22DC6D1F2D3295 /* UIViewController+Promise.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		DF9B27C18E5649759A7FF870 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				C77DE667B0F7CC9CBCED16A8 /* NSFileManager+Promise.swift */,
+				4CDDACDBAAEFEA7DF3F4A006 /* NSNotificationCenter+AnyPromise.h */,
+				DA9BCBA22200919EFD3D3A51 /* NSNotificationCenter+AnyPromise.m */,
+				D8203018843B8B6905A5EA2C /* NSNotificationCenter+Promise.swift */,
+				F3D8779E5F24A05E2C3AA1BF /* NSObject+Promise.swift */,
+				F98CBA57BE139F4735E0A28D /* NSURLConnection+AnyPromise.h */,
+				C482B42D06567FD4287DA66B /* NSURLConnection+AnyPromise.m */,
+				46C8C9BF94E51810BC79C087 /* NSURLConnection+Promise.swift */,
+				A3F416671A5AE308C4C59F3D /* afterlife.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		F2D68076F27332D36D4D533B /* QuartzCore */ = {
+			isa = PBXGroup;
+			children = (
+				06CD5AFFD29E89C930CB1493 /* CALayer+AnyPromise.h */,
+				2CED82C3DD4E242759F7A739 /* CALayer+AnyPromise.m */,
+			);
+			name = QuartzCore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		30C01597344C6C68983F6AAD /* Headers */ = {
+		40CE0E8EF404D57EEA2F174F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929BCF2F37E0B4D1172EA900 /* Pods-GoogleClient-Alamofire-umbrella.h in Headers */,
+				C125429A1AADD0AD46AD64FC /* Pods-GoogleClient-Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51FA9033A2A19D7B9EBD812B /* Headers */ = {
+		4DA3E6D8826A8D0363BA18FC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28A760DF292C19E49E42A9A /* Pods-GoogleClient-ObjectMapper-umbrella.h in Headers */,
+				93DE0F116BD081903089D813 /* AnyPromise.h in Headers */,
+				304232501EFF5E61DDB77A45 /* CALayer+AnyPromise.h in Headers */,
+				ED21AED2A8C25026D0C3874B /* NSError+Cancellation.h in Headers */,
+				418FC65FD4D4DB49D493D64A /* NSNotificationCenter+AnyPromise.h in Headers */,
+				5AF7603E44F80A02DBA0EA3F /* NSURLConnection+AnyPromise.h in Headers */,
+				0D6F7527A8B6D541CE4E291F /* PMKPromise.h in Headers */,
+				3130915FA4ADDE5EC6F1C71C /* Promise.h in Headers */,
+				27382317F218808FB4389951 /* PromiseKit.h in Headers */,
+				A14C87110978E863C3F2FBE0 /* UIActionSheet+AnyPromise.h in Headers */,
+				F55E63CE0D7D07E132B63927 /* UIAlertView+AnyPromise.h in Headers */,
+				1FE12FA33A66A53AC2FB9418 /* UIView+AnyPromise.h in Headers */,
+				96BD9C56CC35229C577D3E76 /* UIViewController+AnyPromise.h in Headers */,
+				1604FFC3270A09274AFB4406 /* Umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68C18B426ECD59EF072E2DEE /* Headers */ = {
+		920BB9D78ACBAA810E1046E4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F632908FDA3537A9849C6930 /* AnyPromise.h in Headers */,
-				8182AB48B158CFDBE51BCA8F /* CALayer+AnyPromise.h in Headers */,
-				AE9F6DBAF3DB8CCA03AC353D /* NSError+Cancellation.h in Headers */,
-				26E936908B15E18BD87FB414 /* NSNotificationCenter+AnyPromise.h in Headers */,
-				A5800A0F28AE96D003AA6750 /* NSURLConnection+AnyPromise.h in Headers */,
-				580BEAB58D68A8762D28D1AC /* PMKPromise.h in Headers */,
-				5FF7FBC263EA4575DFC3A378 /* Promise.h in Headers */,
-				89AB395AA20A24826AC3E64C /* PromiseKit.h in Headers */,
-				4A9D212167166AFBA37AC02E /* UIActionSheet+AnyPromise.h in Headers */,
-				561A3CB9B241CAEFBD448205 /* UIAlertView+AnyPromise.h in Headers */,
-				61E49FBE385527871FC14503 /* UIView+AnyPromise.h in Headers */,
-				DFA3C406AF845F0B7BBA465E /* UIViewController+AnyPromise.h in Headers */,
-				B03A16931ABBE508B0F97D2D /* Umbrella.h in Headers */,
+				92D5085FDC649BAB905B095F /* Pods-GoogleClient-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B196A77C4E0EFFEB633B399 /* Headers */ = {
+		B20468EE831EAA2DC143C567 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2704466A92B7C1F35CDD091 /* Pods-GoogleClient-AlamofireObjectMapper-umbrella.h in Headers */,
+				B9ADBADE39CDF2640D39FD92 /* Pods-GoogleClient-ObjectMapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE0C7FB3CA0AE1F7DD0656D4 /* Headers */ = {
+		B56CD31CB5BD33994B652D8B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE6FFDEF7F6B1A4F0A1905E /* OMGFormURLEncode.h in Headers */,
-				784039B6398E4E2872A8B632 /* OMGHTTPURLRQ.h in Headers */,
-				10049FA071112F0B03C1F743 /* OMGUserAgent.h in Headers */,
-				7AB4CF6CF95D327C7A20B9CB /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC9018241A200CCFB8D524AF /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6AEA3BBE90AE1DAD896E5F4 /* Pods-GoogleClient-umbrella.h in Headers */,
+				23EF931DEC9CCABF23F1446B /* OMGFormURLEncode.h in Headers */,
+				3FCE8008D004BFCBCA65CF22 /* OMGHTTPURLRQ.h in Headers */,
+				D6C813F5D2B6CD5DF5CB5E61 /* OMGUserAgent.h in Headers */,
+				A0C15F75B8521B72650038AA /* Pods-GoogleClient-OMGHTTPURLRQ-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0E608F55B36A669D932DE26E /* Pods-GoogleClient-Alamofire */ = {
+		3A1036AF923120BDAB355E8D /* Pods-GoogleClient-OMGHTTPURLRQ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2012A37A28675D87D671B400 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-Alamofire" */;
+			buildConfigurationList = A6EA03C3BDCB00B1EA2FC349 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-OMGHTTPURLRQ" */;
 			buildPhases = (
-				CD6A28C8E996D8E9D537E068 /* Sources */,
-				E24A5C074F4CEDE483357E40 /* Frameworks */,
-				30C01597344C6C68983F6AAD /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-GoogleClient-Alamofire";
-			productName = "Pods-GoogleClient-Alamofire";
-			productReference = 1AB0E1423BC0B259CDD08192 /* Alamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		420EB66B44914ED8D353B295 /* Pods-GoogleClient-OMGHTTPURLRQ */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A49382B7C64C684A3CB5D654 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-OMGHTTPURLRQ" */;
-			buildPhases = (
-				F0AF7D22F778AC7973E7DA28 /* Sources */,
-				5D1027F9BBF9B6FAEA592AED /* Frameworks */,
-				CE0C7FB3CA0AE1F7DD0656D4 /* Headers */,
+				561FD51DF359BB277546F318 /* Sources */,
+				36AD855419F70DD41A6E7F08 /* Frameworks */,
+				B56CD31CB5BD33994B652D8B /* Headers */,
 			);
 			buildRules = (
 			);
@@ -811,57 +713,33 @@
 			);
 			name = "Pods-GoogleClient-OMGHTTPURLRQ";
 			productName = "Pods-GoogleClient-OMGHTTPURLRQ";
-			productReference = F4A61BE489402969D86E486F /* OMGHTTPURLRQ.framework */;
+			productReference = 348F6B8A4DFF001ED3813303 /* OMGHTTPURLRQ.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BAFF9F1FCE071BD63A52CEEF /* Pods-GoogleClient */ = {
+		6C0DB85B2E58AA8020402259 /* Pods-GoogleClient-Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A8E5B4134D56EB3EECE2D8A /* Build configuration list for PBXNativeTarget "Pods-GoogleClient" */;
+			buildConfigurationList = 3DC942F8936FF887827118C7 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-Alamofire" */;
 			buildPhases = (
-				AC91DA41AED18890F2458A5B /* Sources */,
-				F21420657C4388AF89225161 /* Frameworks */,
-				EC9018241A200CCFB8D524AF /* Headers */,
+				34822AF22C9D290CE37D7CF9 /* Sources */,
+				2B8019F62F40B6D96C52EAEE /* Frameworks */,
+				40CE0E8EF404D57EEA2F174F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				703858AFE62D56E1D5577370 /* PBXTargetDependency */,
-				49688653CF4E0A1FB81B216F /* PBXTargetDependency */,
-				763B48AD4EB38D06FA76B940 /* PBXTargetDependency */,
-				62FF440AF08E2D2BBEF64312 /* PBXTargetDependency */,
-				DFEF3F287763F8F208B5BBB0 /* PBXTargetDependency */,
 			);
-			name = "Pods-GoogleClient";
-			productName = "Pods-GoogleClient";
-			productReference = 3364AD4C43A03ABB060AF1D5 /* Pods_GoogleClient.framework */;
+			name = "Pods-GoogleClient-Alamofire";
+			productName = "Pods-GoogleClient-Alamofire";
+			productReference = 776A54683056C8A4D50D567C /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CB66136CC5D2EDD42699FACE /* Pods-GoogleClient-AlamofireObjectMapper */ = {
+		6C4DEF3E23F2DD32C8E045EB /* Pods-GoogleClient-ObjectMapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06DDCC835A62D67EEF80174C /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-AlamofireObjectMapper" */;
+			buildConfigurationList = 64BB78986E3CA4ABE92E718A /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-ObjectMapper" */;
 			buildPhases = (
-				7BBD5FC0685C8E217687063A /* Sources */,
-				18F0D40018C72F2CA8DFEFBB /* Frameworks */,
-				7B196A77C4E0EFFEB633B399 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6ADD2FB7A92002A847FC18BC /* PBXTargetDependency */,
-				1E05F7BFC61EA77FB3FFCE5C /* PBXTargetDependency */,
-			);
-			name = "Pods-GoogleClient-AlamofireObjectMapper";
-			productName = "Pods-GoogleClient-AlamofireObjectMapper";
-			productReference = 49FD1A585C137E8B39BCD531 /* AlamofireObjectMapper.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EC536B8AEA0D3ABD7C29059A /* Pods-GoogleClient-ObjectMapper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3A63E9DA63DEB79E9DC32038 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-ObjectMapper" */;
-			buildPhases = (
-				A6A75C3FFC93FB22AD26A312 /* Sources */,
-				788B6192631EC7D0F83E1065 /* Frameworks */,
-				51FA9033A2A19D7B9EBD812B /* Headers */,
+				2E20811749CE5A1B0B662DDB /* Sources */,
+				A2F83FA9ED68ED40282257AF /* Frameworks */,
+				B20468EE831EAA2DC143C567 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -869,247 +747,215 @@
 			);
 			name = "Pods-GoogleClient-ObjectMapper";
 			productName = "Pods-GoogleClient-ObjectMapper";
-			productReference = 2C39E803AC14077FC8ACB5B2 /* ObjectMapper.framework */;
+			productReference = 5FDF32074F21613B8CB2E151 /* ObjectMapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F834BF1AD6E8A55020280386 /* Pods-GoogleClient-PromiseKit */ = {
+		9EA42E56D057564A760F7E17 /* Pods-GoogleClient-PromiseKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 960BC252A11AF8297F6BCB02 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-PromiseKit" */;
+			buildConfigurationList = D6320370DA00667D9D3A429A /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-PromiseKit" */;
 			buildPhases = (
-				EC85AC89A5FCEBA948F0897C /* Sources */,
-				EE3C3AD8D7E4C2BE18FFEB1D /* Frameworks */,
-				68C18B426ECD59EF072E2DEE /* Headers */,
+				5B6F79581A1B1EBDD2A9A5D8 /* Sources */,
+				AC8DA0F4BC47EDC97BC6F7AD /* Frameworks */,
+				4DA3E6D8826A8D0363BA18FC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F47E2CC40AA289B99AA8C6DC /* PBXTargetDependency */,
+				BAF8F2C338DD638BFE7196BE /* PBXTargetDependency */,
 			);
 			name = "Pods-GoogleClient-PromiseKit";
 			productName = "Pods-GoogleClient-PromiseKit";
-			productReference = CA6DD5BAE2F0B74796594C90 /* PromiseKit.framework */;
+			productReference = B762749B655163D8D32F74CB /* PromiseKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F0A8681ABA918360ABDC9E9F /* Pods-GoogleClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 396F001FDF2775A42F285E77 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient" */;
+			buildPhases = (
+				22AB71D942B4DFBDBA35DADD /* Sources */,
+				434BACBDCEA9333C2383D091 /* Frameworks */,
+				920BB9D78ACBAA810E1046E4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43876164E4C744CA09FD0089 /* PBXTargetDependency */,
+				0F125ACCC35D261C47513BFA /* PBXTargetDependency */,
+				33B7540BAB01E18AFCCF6CFF /* PBXTargetDependency */,
+				694BDCAED09012DAD9DA074D /* PBXTargetDependency */,
+			);
+			name = "Pods-GoogleClient";
+			productName = "Pods-GoogleClient";
+			productReference = ED0FF1B8A2696330AE6AC29D /* Pods_GoogleClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		68BAE84E479AB6A9A246EE8A /* Project object */ = {
+		2B6E6BDA1F4CBF43E113BE68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 5D533E24C0E9D9DC7CFD35A2 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 7B3749554281366195782EF5 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 60D9A358BEB17832083ECA9A;
-			productRefGroup = 092779C8C94EC68384F09F30 /* Products */;
+			mainGroup = 8659C032BC658516CB021DEC;
+			productRefGroup = 32176CAC58D8179E51240650 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BAFF9F1FCE071BD63A52CEEF /* Pods-GoogleClient */,
-				0E608F55B36A669D932DE26E /* Pods-GoogleClient-Alamofire */,
-				CB66136CC5D2EDD42699FACE /* Pods-GoogleClient-AlamofireObjectMapper */,
-				420EB66B44914ED8D353B295 /* Pods-GoogleClient-OMGHTTPURLRQ */,
-				EC536B8AEA0D3ABD7C29059A /* Pods-GoogleClient-ObjectMapper */,
-				F834BF1AD6E8A55020280386 /* Pods-GoogleClient-PromiseKit */,
+				F0A8681ABA918360ABDC9E9F /* Pods-GoogleClient */,
+				6C0DB85B2E58AA8020402259 /* Pods-GoogleClient-Alamofire */,
+				3A1036AF923120BDAB355E8D /* Pods-GoogleClient-OMGHTTPURLRQ */,
+				6C4DEF3E23F2DD32C8E045EB /* Pods-GoogleClient-ObjectMapper */,
+				9EA42E56D057564A760F7E17 /* Pods-GoogleClient-PromiseKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7BBD5FC0685C8E217687063A /* Sources */ = {
+		22AB71D942B4DFBDBA35DADD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446D5BD027B2CD6E750EA316 /* AlmofireObjectMapper.swift in Sources */,
-				B068F1718DFD2B798FD8CC39 /* Pods-GoogleClient-AlamofireObjectMapper-dummy.m in Sources */,
+				EA2595FB5CABDC3A767DE2F9 /* Pods-GoogleClient-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6A75C3FFC93FB22AD26A312 /* Sources */ = {
+		2E20811749CE5A1B0B662DDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10AFD35127DC03FDDB367638 /* CustomDateFormatTransform.swift in Sources */,
-				4EAADA9A5C6FFD30F4F94B73 /* DateFormaterTransform.swift in Sources */,
-				176ED33698D7BB883AF251A3 /* DateTransform.swift in Sources */,
-				D8AD676C2B664BB36BBA5EEC /* EnumTransform.swift in Sources */,
-				9055A7822E83ADE231910241 /* FromJSON.swift in Sources */,
-				4642F1D2857CE7B99B1E3D33 /* ISO8601DateTransform.swift in Sources */,
-				ECDCE4AA10DEC59859A9A009 /* Mapper.swift in Sources */,
-				9C7091E9A6CE99E1002F0896 /* Operators.swift in Sources */,
-				9BEF9E998BBC387C2D13AD5B /* Pods-GoogleClient-ObjectMapper-dummy.m in Sources */,
-				F69ED9F3CC8051EED122F918 /* ToJSON.swift in Sources */,
-				867A9245B9BA534C7243CDFD /* TransformOf.swift in Sources */,
-				C1FE259DFF394342076A029B /* TransformType.swift in Sources */,
-				4EBD4E49EDC234DE95374405 /* URLTransform.swift in Sources */,
+				1A998060945C3A36D25D3A08 /* CustomDateFormatTransform.swift in Sources */,
+				DBF61FC92E60AA95D80370F8 /* DateFormaterTransform.swift in Sources */,
+				3462433EE24242CD6F5C9E7B /* DateTransform.swift in Sources */,
+				4789763CBB30F4F7735E25E8 /* EnumTransform.swift in Sources */,
+				D006B2EB3116C3D43C4F5588 /* FromJSON.swift in Sources */,
+				A1691E0B0847A330579DEB26 /* ISO8601DateTransform.swift in Sources */,
+				093111DBDC68D7C1A0122935 /* Mapper.swift in Sources */,
+				383EA1294A4E912D5473BD46 /* Operators.swift in Sources */,
+				5C134A6F460E322CAC86F0AB /* Pods-GoogleClient-ObjectMapper-dummy.m in Sources */,
+				671719A675DCFC13BCBF759B /* ToJSON.swift in Sources */,
+				C5D3F656541C277AC9EE5302 /* TransformOf.swift in Sources */,
+				8FD30ED3F56486E62EF3FD7D /* TransformType.swift in Sources */,
+				410E904457ADF54733C5EDA0 /* URLTransform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC91DA41AED18890F2458A5B /* Sources */ = {
+		34822AF22C9D290CE37D7CF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C16655AE5FDB0002F64A5599 /* Pods-GoogleClient-dummy.m in Sources */,
+				743EECF2C17F9785E69AC16B /* Alamofire.swift in Sources */,
+				DDA923DD11D8642EE76326F6 /* Download.swift in Sources */,
+				3D37544E06374B9878D99B14 /* Manager.swift in Sources */,
+				9B44C2A06D37C714D2D2667F /* ParameterEncoding.swift in Sources */,
+				131A5FC6AC0C113BE83F76DC /* Pods-GoogleClient-Alamofire-dummy.m in Sources */,
+				1803081C129D26EA3F11793E /* Request.swift in Sources */,
+				4A6B93D7FD0F6A03169F2E1E /* ResponseSerialization.swift in Sources */,
+				5C4C54888AA6AD3BFF5F5689 /* Upload.swift in Sources */,
+				35C1C584C6A73A945E1E0E76 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD6A28C8E996D8E9D537E068 /* Sources */ = {
+		561FD51DF359BB277546F318 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE53CB3D52BAA88F22F9C2E3 /* Alamofire.swift in Sources */,
-				922E22B4536D23B68AB0757F /* Download.swift in Sources */,
-				A33130DDF84D0FCD83FFD0F5 /* Manager.swift in Sources */,
-				8B797C9616897B1B343F843E /* ParameterEncoding.swift in Sources */,
-				D7DFC199A249D60700A4162F /* Pods-GoogleClient-Alamofire-dummy.m in Sources */,
-				307BF7071AA716CC08D3C570 /* Request.swift in Sources */,
-				78A821E438CEE432B01C134E /* ResponseSerialization.swift in Sources */,
-				6FBF72EE300151B1854AE59E /* Upload.swift in Sources */,
-				02D6D9D29961A878BBA25946 /* Validation.swift in Sources */,
+				958D40B626C57BC920CB2CCC /* OMGFormURLEncode.m in Sources */,
+				4EC9D3EEFA77C58FA2425B25 /* OMGHTTPURLRQ.m in Sources */,
+				1AEA51DB740564A28D277757 /* OMGUserAgent.m in Sources */,
+				0AE5B458A7A11BAE04EC9161 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC85AC89A5FCEBA948F0897C /* Sources */ = {
+		5B6F79581A1B1EBDD2A9A5D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC9201C8BC08D5EB60DA3F6E /* AnyPromise.m in Sources */,
-				ACDD781F7424A4D219E07022 /* AnyPromise.swift in Sources */,
-				36FEAE10366276EA3C9254AB /* CALayer+AnyPromise.m in Sources */,
-				A917B99FEAB64B120A61F010 /* ErrorUnhandler.swift in Sources */,
-				F51F58FF92F33B3C856AB069 /* NSFileManager+Promise.swift in Sources */,
-				A25ED984D4B3ED38D0409576 /* NSJSONFromData.swift in Sources */,
-				780C8FB9A161E52B4AF79C91 /* NSNotificationCenter+AnyPromise.m in Sources */,
-				D6CD7CA96883CAED15CE5E2F /* NSNotificationCenter+Promise.swift in Sources */,
-				0A0B3E8D3BD1FE68FBA3C0B1 /* NSObject+Promise.swift in Sources */,
-				5295F84084FBC9DC01494028 /* NSURLConnection+AnyPromise.m in Sources */,
-				2337B75DE7995239BD3B94D3 /* NSURLConnection+Promise.swift in Sources */,
-				6DB8B1CB0DF622715DE8AD2F /* PMKPromise.m in Sources */,
-				E3A58A7B62C03AD8531CE8E6 /* Pods-GoogleClient-PromiseKit-dummy.m in Sources */,
-				AB4E36E1B522BEC7013239A1 /* Promise+Properties.swift in Sources */,
-				54A38FB7AF599A7E889B6750 /* Promise.swift in Sources */,
-				C8F2FEFC03BEFCB4E6795829 /* Sealant.swift in Sources */,
-				1E441A3C301A683905190BD2 /* State.swift in Sources */,
-				1CC6F9FF61425E289B788A0B /* UIActionSheet+AnyPromise.m in Sources */,
-				B894469EE6D5D3C2309B7A17 /* UIActionSheet+Promise.swift in Sources */,
-				36BA0DD66C82A11B0814ADCB /* UIAlertView+AnyPromise.m in Sources */,
-				F4A930818800E519810B8F0B /* UIAlertView+Promise.swift in Sources */,
-				8A46209E98D80031F5E028B8 /* UIView+AnyPromise.m in Sources */,
-				85E1F8E5A2F33DF858BADBDA /* UIView+Promise.swift in Sources */,
-				E55C626D92A577587E78D455 /* UIViewController+AnyPromise.m in Sources */,
-				B5941255DDC13E3B13EDAFA3 /* UIViewController+Promise.swift in Sources */,
-				36D91D127A49D5BBDC55476F /* after.m in Sources */,
-				4087FE53BC3BEBD3A72A1E95 /* after.swift in Sources */,
-				D98502995AAA70C5EEC6AF78 /* dispatch_promise.m in Sources */,
-				062FFF4D9A244D045366EB2B /* dispatch_promise.swift in Sources */,
-				8E7D2FB5826D5B2EF2CB99A0 /* hang.m in Sources */,
-				14356077814B523970E2498E /* join.m in Sources */,
-				9FFB7241600B99910F14028C /* race.swift in Sources */,
-				7708FC78F9C9BE82F44EC177 /* when.m in Sources */,
-				5F494BC1937AA30AEE874895 /* when.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F0AF7D22F778AC7973E7DA28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FDB5B9FE41E907D8F795D47C /* OMGFormURLEncode.m in Sources */,
-				49FCCBA3F555346EA6EDCA54 /* OMGHTTPURLRQ.m in Sources */,
-				F8CAF13E3E3019BA000E7D93 /* OMGUserAgent.m in Sources */,
-				128D8AE429F1C6E76ABB5E68 /* Pods-GoogleClient-OMGHTTPURLRQ-dummy.m in Sources */,
+				855BB673B9A7FD8759EB0C54 /* AnyPromise.m in Sources */,
+				67A3E382BF0426C00B13D966 /* AnyPromise.swift in Sources */,
+				849DD3FDD4DFBDE7725907A1 /* CALayer+AnyPromise.m in Sources */,
+				51A2C18704C23C84DA6F2E14 /* ErrorUnhandler.swift in Sources */,
+				15C311060B65B9926D0CCDBB /* NSFileManager+Promise.swift in Sources */,
+				E2D8FCBDB82A9A1037EDAE8D /* NSJSONFromData.swift in Sources */,
+				4752E9CACBE7E40D3007D53B /* NSNotificationCenter+AnyPromise.m in Sources */,
+				DF3C0C920D38E6BBE45C95C0 /* NSNotificationCenter+Promise.swift in Sources */,
+				4C344A063A03EDAA0875EFB3 /* NSObject+Promise.swift in Sources */,
+				EEBC8327C2418D4A74E506C2 /* NSURLConnection+AnyPromise.m in Sources */,
+				EF7559383A96D755E1E08C2B /* NSURLConnection+Promise.swift in Sources */,
+				E7E2EA49D308BA653CB27EBD /* PMKPromise.m in Sources */,
+				FC2E31808DEE7C7BE4B82EF9 /* Pods-GoogleClient-PromiseKit-dummy.m in Sources */,
+				BB16945244976703D667AC39 /* Promise+Properties.swift in Sources */,
+				CDD140DE1B0B361D1BF09F35 /* Promise.swift in Sources */,
+				105D515EB747780A6BDDB89E /* Sealant.swift in Sources */,
+				FC024847C46378473B6B4243 /* State.swift in Sources */,
+				61AB57C60F1F64F677433A21 /* UIActionSheet+AnyPromise.m in Sources */,
+				0C2DBC2BDFF6EC6A66D36BB7 /* UIActionSheet+Promise.swift in Sources */,
+				0AEA6137D930977480760DF9 /* UIAlertView+AnyPromise.m in Sources */,
+				57265C613CB77836E2D4944B /* UIAlertView+Promise.swift in Sources */,
+				360EB945C2837D0B8C233F4D /* UIView+AnyPromise.m in Sources */,
+				6F5526A4DF4EC1EB4B411D2E /* UIView+Promise.swift in Sources */,
+				6B3B1D7B04D3DFF95F1AD757 /* UIViewController+AnyPromise.m in Sources */,
+				57B49FF35C2544BDC9FA1AFA /* UIViewController+Promise.swift in Sources */,
+				ED00C9A4523E8B260FC23C73 /* after.m in Sources */,
+				9C477A66A3176899E44C58EC /* after.swift in Sources */,
+				815C1C9AF212DB6A0F5CF32C /* afterlife.swift in Sources */,
+				BACDB92FA93C219352D43EB7 /* dispatch_promise.m in Sources */,
+				601D6F664234B203BF339AFE /* dispatch_promise.swift in Sources */,
+				12DA839FE42AE92A70350AAF /* hang.m in Sources */,
+				DFCF5A186777C9DD0971D6E3 /* join.m in Sources */,
+				3EA8247DEFC267E62E1BAED8 /* race.swift in Sources */,
+				B06FA27A9EFCC35815035618 /* when.m in Sources */,
+				951C41AF3E4F158329CD02B7 /* when.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1E05F7BFC61EA77FB3FFCE5C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GoogleClient-ObjectMapper";
-			target = EC536B8AEA0D3ABD7C29059A /* Pods-GoogleClient-ObjectMapper */;
-			targetProxy = E02E8CB4F11671EB83793646 /* PBXContainerItemProxy */;
-		};
-		49688653CF4E0A1FB81B216F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GoogleClient-AlamofireObjectMapper";
-			target = CB66136CC5D2EDD42699FACE /* Pods-GoogleClient-AlamofireObjectMapper */;
-			targetProxy = ECA20E4795B87B4B7AEF8A2F /* PBXContainerItemProxy */;
-		};
-		62FF440AF08E2D2BBEF64312 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GoogleClient-ObjectMapper";
-			target = EC536B8AEA0D3ABD7C29059A /* Pods-GoogleClient-ObjectMapper */;
-			targetProxy = 787A73FBD281115F8D1BD2B3 /* PBXContainerItemProxy */;
-		};
-		6ADD2FB7A92002A847FC18BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GoogleClient-Alamofire";
-			target = 0E608F55B36A669D932DE26E /* Pods-GoogleClient-Alamofire */;
-			targetProxy = 9748BC8D1FB16F1F0130A69F /* PBXContainerItemProxy */;
-		};
-		703858AFE62D56E1D5577370 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GoogleClient-Alamofire";
-			target = 0E608F55B36A669D932DE26E /* Pods-GoogleClient-Alamofire */;
-			targetProxy = 9AA7844A33723B2901B805FF /* PBXContainerItemProxy */;
-		};
-		763B48AD4EB38D06FA76B940 /* PBXTargetDependency */ = {
+		0F125ACCC35D261C47513BFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GoogleClient-OMGHTTPURLRQ";
-			target = 420EB66B44914ED8D353B295 /* Pods-GoogleClient-OMGHTTPURLRQ */;
-			targetProxy = 127A2548EADA5DB772197909 /* PBXContainerItemProxy */;
+			target = 3A1036AF923120BDAB355E8D /* Pods-GoogleClient-OMGHTTPURLRQ */;
+			targetProxy = 85EDC9C798C64B80B0219ECC /* PBXContainerItemProxy */;
 		};
-		DFEF3F287763F8F208B5BBB0 /* PBXTargetDependency */ = {
+		33B7540BAB01E18AFCCF6CFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GoogleClient-ObjectMapper";
+			target = 6C4DEF3E23F2DD32C8E045EB /* Pods-GoogleClient-ObjectMapper */;
+			targetProxy = 0BCE679746BA930E55B8B44D /* PBXContainerItemProxy */;
+		};
+		43876164E4C744CA09FD0089 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GoogleClient-Alamofire";
+			target = 6C0DB85B2E58AA8020402259 /* Pods-GoogleClient-Alamofire */;
+			targetProxy = F7DE53C72C1AE132BC0F0EE3 /* PBXContainerItemProxy */;
+		};
+		694BDCAED09012DAD9DA074D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GoogleClient-PromiseKit";
-			target = F834BF1AD6E8A55020280386 /* Pods-GoogleClient-PromiseKit */;
-			targetProxy = 6D3D7EF3B61D95BA1CECF4B1 /* PBXContainerItemProxy */;
+			target = 9EA42E56D057564A760F7E17 /* Pods-GoogleClient-PromiseKit */;
+			targetProxy = 7B1BAE999837113C6B7E84DA /* PBXContainerItemProxy */;
 		};
-		F47E2CC40AA289B99AA8C6DC /* PBXTargetDependency */ = {
+		BAF8F2C338DD638BFE7196BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GoogleClient-OMGHTTPURLRQ";
-			target = 420EB66B44914ED8D353B295 /* Pods-GoogleClient-OMGHTTPURLRQ */;
-			targetProxy = 4C93029EBE1B877EDA1B09C9 /* PBXContainerItemProxy */;
+			target = 3A1036AF923120BDAB355E8D /* Pods-GoogleClient-OMGHTTPURLRQ */;
+			targetProxy = CFED9BD4CC2FB6B0340DD5A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1036F366CD84C0CD74B6887A /* Release */ = {
+		08C63CEB7250AAED0D22A857 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37B5D0A915C988F7A854D770 /* Pods-GoogleClient-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-Alamofire/Pods-GoogleClient-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-Alamofire/Pods-GoogleClient-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		16F17826BFAD17967D076528 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37B5D0A915C988F7A854D770 /* Pods-GoogleClient-Alamofire-Private.xcconfig */;
+			baseConfigurationReference = C9077F7BFFA5476F74AF58FD /* Pods-GoogleClient-Alamofire-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1135,9 +981,9 @@
 			};
 			name = Debug;
 		};
-		17FCA31B5966D253268D7F08 /* Release */ = {
+		329E575412BB453F83E31939 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF43257762CB1A94AD3008A2 /* Pods-GoogleClient-PromiseKit-Private.xcconfig */;
+			baseConfigurationReference = CB8012CFBA78B665402A0C3D /* Pods-GoogleClient-PromiseKit-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1152,35 +998,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-PromiseKit/Pods-GoogleClient-PromiseKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PromiseKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3E0D98A9577AB363DC939D9B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58625AA7546F0267A8808256 /* Pods-GoogleClient-AlamofireObjectMapper-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-AlamofireObjectMapper/Pods-GoogleClient-AlamofireObjectMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-AlamofireObjectMapper/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-AlamofireObjectMapper/Pods-GoogleClient-AlamofireObjectMapper.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AlamofireObjectMapper;
+				PRODUCT_NAME = PromiseKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1190,9 +1009,36 @@
 			};
 			name = Debug;
 		};
-		3F5D973356218E315F439CA5 /* Release */ = {
+		36807D9FD6B35021123E7FB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F71354555CD10AF195CA1ABA /* Pods-GoogleClient.release.xcconfig */;
+			baseConfigurationReference = C9077F7BFFA5476F74AF58FD /* Pods-GoogleClient-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-Alamofire/Pods-GoogleClient-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-Alamofire/Pods-GoogleClient-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		38FB209FEA4EFAB7F8457729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE42ED067F654138130F21DF /* Pods-GoogleClient.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1219,7 +1065,91 @@
 			};
 			name = Release;
 		};
-		40ABD943993AF1A5EA3CF0F0 /* Release */ = {
+		455816A8A331A41A50833D0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA936CB6118A806E32C8F782 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C8CA9CDDDD18442E54E89B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 793D0BC088C21049FC7D1449 /* Pods-GoogleClient.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient/Pods-GoogleClient.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_GoogleClient;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E88EA47D937E3A868F01D63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB8012CFBA78B665402A0C3D /* Pods-GoogleClient-PromiseKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-PromiseKit/Pods-GoogleClient-PromiseKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-PromiseKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-PromiseKit/Pods-GoogleClient-PromiseKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PromiseKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC01D1AC33539EC7D862A773 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1253,9 +1183,9 @@
 			};
 			name = Release;
 		};
-		70AB935C83889F51EF3D344F /* Release */ = {
+		EC298A285063A7FED1363E9D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91505596DD7516E1E9CF6C58 /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */;
+			baseConfigurationReference = EA936CB6118A806E32C8F782 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1264,77 +1194,24 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OMGHTTPURLRQ;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7CD1E89684D3CB0C55E7AA69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91505596DD7516E1E9CF6C58 /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OMGHTTPURLRQ;
+				PRODUCT_NAME = ObjectMapper;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		967867C2093AC37CC784C8F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58625AA7546F0267A8808256 /* Pods-GoogleClient-AlamofireObjectMapper-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-AlamofireObjectMapper/Pods-GoogleClient-AlamofireObjectMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-AlamofireObjectMapper/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-AlamofireObjectMapper/Pods-GoogleClient-AlamofireObjectMapper.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AlamofireObjectMapper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9DEF17A6D1FE5F18AAFD930C /* Debug */ = {
+		F4379188D5E642CFAAAA3EAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1373,9 +1250,9 @@
 			};
 			name = Debug;
 		};
-		BBB8522B4D571068B81DAE53 /* Release */ = {
+		F939F55910DB0624CB2AD70C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70A09C6FEA731B78D1ECD1A9 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */;
+			baseConfigurationReference = D9196ADA924ADD4F5A51B98B /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1384,14 +1261,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ObjectMapper;
+				PRODUCT_NAME = OMGHTTPURLRQ;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1400,9 +1277,9 @@
 			};
 			name = Release;
 		};
-		C4069713CCE13D15C52CE134 /* Debug */ = {
+		FD586426C2377090A01367F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70A09C6FEA731B78D1ECD1A9 /* Pods-GoogleClient-ObjectMapper-Private.xcconfig */;
+			baseConfigurationReference = D9196ADA924ADD4F5A51B98B /* Pods-GoogleClient-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1411,75 +1288,16 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-ObjectMapper/Pods-GoogleClient-ObjectMapper.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-OMGHTTPURLRQ/Pods-GoogleClient-OMGHTTPURLRQ.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ObjectMapper;
+				PRODUCT_NAME = OMGHTTPURLRQ;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D33344A9B58A9411B20EA36B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF43257762CB1A94AD3008A2 /* Pods-GoogleClient-PromiseKit-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GoogleClient-PromiseKit/Pods-GoogleClient-PromiseKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient-PromiseKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient-PromiseKit/Pods-GoogleClient-PromiseKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PromiseKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E72DC5ADD54C770F8D338115 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33ECE4EAD261B742EA3B6793 /* Pods-GoogleClient.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-GoogleClient/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GoogleClient/Pods-GoogleClient.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_GoogleClient;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1489,70 +1307,61 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06DDCC835A62D67EEF80174C /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-AlamofireObjectMapper" */ = {
+		396F001FDF2775A42F285E77 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E0D98A9577AB363DC939D9B /* Debug */,
-				967867C2093AC37CC784C8F2 /* Release */,
+				C8CA9CDDDD18442E54E89B11 /* Debug */,
+				38FB209FEA4EFAB7F8457729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2012A37A28675D87D671B400 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-Alamofire" */ = {
+		3DC942F8936FF887827118C7 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16F17826BFAD17967D076528 /* Debug */,
-				1036F366CD84C0CD74B6887A /* Release */,
+				08C63CEB7250AAED0D22A857 /* Debug */,
+				36807D9FD6B35021123E7FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A63E9DA63DEB79E9DC32038 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-ObjectMapper" */ = {
+		64BB78986E3CA4ABE92E718A /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-ObjectMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4069713CCE13D15C52CE134 /* Debug */,
-				BBB8522B4D571068B81DAE53 /* Release */,
+				EC298A285063A7FED1363E9D /* Debug */,
+				455816A8A331A41A50833D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D533E24C0E9D9DC7CFD35A2 /* Build configuration list for PBXProject "Pods" */ = {
+		7B3749554281366195782EF5 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DEF17A6D1FE5F18AAFD930C /* Debug */,
-				40ABD943993AF1A5EA3CF0F0 /* Release */,
+				F4379188D5E642CFAAAA3EAE /* Debug */,
+				EC01D1AC33539EC7D862A773 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A8E5B4134D56EB3EECE2D8A /* Build configuration list for PBXNativeTarget "Pods-GoogleClient" */ = {
+		A6EA03C3BDCB00B1EA2FC349 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-OMGHTTPURLRQ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E72DC5ADD54C770F8D338115 /* Debug */,
-				3F5D973356218E315F439CA5 /* Release */,
+				FD586426C2377090A01367F1 /* Debug */,
+				F939F55910DB0624CB2AD70C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		960BC252A11AF8297F6BCB02 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-PromiseKit" */ = {
+		D6320370DA00667D9D3A429A /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-PromiseKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D33344A9B58A9411B20EA36B /* Debug */,
-				17FCA31B5966D253268D7F08 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A49382B7C64C684A3CB5D654 /* Build configuration list for PBXNativeTarget "Pods-GoogleClient-OMGHTTPURLRQ" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7CD1E89684D3CB0C55E7AA69 /* Debug */,
-				70AB935C83889F51EF3D344F /* Release */,
+				329E575412BB453F83E31939 /* Debug */,
+				E88EA47D937E3A868F01D63D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 68BAE84E479AB6A9A246EE8A /* Project object */;
+	rootObject = 2B6E6BDA1F4CBF43E113BE68 /* Project object */;
 }

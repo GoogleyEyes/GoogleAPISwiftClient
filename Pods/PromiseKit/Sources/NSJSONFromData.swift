@@ -4,40 +4,41 @@ private func b0rkedEmptyRailsResponse() -> NSData {
     return NSData(bytes: " ", length: 1)
 }
 
-public func NSJSONFromData(data: NSData) -> Promise<NSArray> {
+public func NSJSONFromData(data: NSData) throws -> NSArray {
     if data == b0rkedEmptyRailsResponse() {
-        return Promise(NSArray())
+        return NSArray()
     } else {
-        return NSJSONFromDataT(data)
+        return try NSJSONFromDataT(data)
     }
 }
 
-public func NSJSONFromData(data: NSData) -> Promise<NSDictionary> {
+public func NSJSONFromData(data: NSData) throws -> NSDictionary {
     if data == b0rkedEmptyRailsResponse() {
-        return Promise(NSDictionary())
+        return NSDictionary()
     } else {
-        return NSJSONFromDataT(data)
+        return try NSJSONFromDataT(data)
     }
 }
 
-private func NSJSONFromDataT<T>(data: NSData) -> Promise<T> {
-    var error: NSError?
-    let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options:nil, error:&error)
+private func NSJSONFromDataT<T>(data: NSData) throws -> T {
+    let json: AnyObject
+    do {
+        json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+    } catch (let errorType) {
+        let error = errorType as NSError
+        let debug = error.userInfo["NSDebugDescription"] as! String
+        let description = "The server’s JSON response could not be decoded. (\(debug))"
+        throw NSError(domain: PMKErrorDomain, code: PMKJSONError, userInfo: [
+            NSLocalizedDescriptionKey: "There was an error decoding the server’s JSON response.",
+            NSUnderlyingErrorKey: error, NSLocalizedDescriptionKey: description])
+    }
 
     if let cast = json as? T {
-        return Promise(cast)
-    } else if let error = error {
-        // NSJSONSerialization gives awful errors, so we wrap it
-        let debug = error.userInfo!["NSDebugDescription"] as? String
-        let description = "The server’s JSON response could not be decoded. (\(debug))"
-        return Promise(NSError(domain: PMKErrorDomain, code: PMKJSONError, userInfo: [
-            NSLocalizedDescriptionKey: "There was an error decoding the server’s JSON response.",
-            NSUnderlyingErrorKey: error
-        ]))
+        return cast
     } else {
         var info = [NSObject: AnyObject]()
         info[NSLocalizedDescriptionKey] = "The server returned JSON in an unexpected arrangement"
         info[PMKJSONErrorJSONObjectKey] = json
-        return Promise(NSError(domain: PMKErrorDomain, code: PMKJSONError, userInfo: info))
+        throw NSError(domain: PMKErrorDomain, code: PMKJSONError, userInfo: info)
     }
 }
