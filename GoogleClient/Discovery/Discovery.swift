@@ -13,13 +13,20 @@ public class Discovery: GoogleService {
     var apiNameInURL: String = "discovery"
     var apiVersionString: String = "v1"
     
-    public var accessToken: String?
-    public var apiKey: String?
+    public var accessToken: String? {
+        didSet {
+            GoogleServiceFetcher.sharedInstance.accessToken = accessToken
+        }
+    }
+    public var apiKey: String? {
+        didSet {
+            GoogleServiceFetcher.sharedInstance.apiKey = apiKey
+        }
+    }
     
     public static let sharedInstance : Discovery = Discovery()
     private init() {
-        GoogleServiceFetcher.sharedInstance.accessToken = accessToken
-        GoogleServiceFetcher.sharedInstance.apiKey = apiKey
+        
     }
     
     public var alt: DiscoveryAlt?
