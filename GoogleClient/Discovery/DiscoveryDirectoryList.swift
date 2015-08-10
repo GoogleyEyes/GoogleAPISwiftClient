@@ -15,8 +15,8 @@ public class DiscoveryDirectoryList: GoogleObjectList {
     public typealias Type = DiscoveryDirectoryItem
     public var items: [Type]!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryDirectoryList()
     }
     
     public func mapping(map: Map) {
@@ -40,8 +40,8 @@ public class DiscoveryDirectoryItem: GoogleObject {
     public var labels: [String]!
     public var preferred: Bool!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryDirectoryItem()
     }
     
     public func mapping(map: Map) {
