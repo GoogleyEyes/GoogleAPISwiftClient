@@ -1,4 +1,5 @@
 #import <dispatch/once.h>
+#import <Foundation/NSDictionary.h>
 #import <Foundation/NSError.h>
 #import <Foundation/NSException.h>
 #import "NSMethodSignatureForBlock.m"
@@ -9,11 +10,6 @@
 #ifndef PMKLog
 #define PMKLog NSLog
 #endif
-
-static inline NSError *NSErrorFromNil() {
-    PMKLog(@"PromiseKit: Warning: Promise rejected with nil");
-    return [NSError errorWithDomain:PMKErrorDomain code:PMKInvalidUsageError userInfo:nil];
-}
 
 @interface PMKArray : NSObject {
 @public
@@ -135,7 +131,10 @@ NSError *PMKProcessUnhandledException(id thrown) {
     });
 
     id err = PMKUnhandledExceptionHandler(thrown);
-    if (!err) @throw thrown;
+    if (!err) {
+        NSLog(@"PromiseKit no longer catches *all* exceptions. However you can change this behavior by setting a new PMKProcessUnhandledException handler.");
+        @throw thrown;
+    }
     return err;
 }
 

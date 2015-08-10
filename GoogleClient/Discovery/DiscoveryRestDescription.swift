@@ -34,8 +34,8 @@ public class DiscoveryRestDescription: GoogleObject {
     public var methods: [String: DiscoveryRestMethod]!
     public var resources: [String: DiscoveryResource]!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryRestDescription()
     }
     
     public func mapping(map: Map) {
@@ -69,8 +69,8 @@ public class DiscoveryAPIIcon: Mappable {
     public var x16: NSURL!
     public var x32: NSURL!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryAPIIcon()
     }
     
     public func mapping(map: Map) {
@@ -82,8 +82,8 @@ public class DiscoveryAPIIcon: Mappable {
 public class DiscoveryAuth: Mappable { // assuming OAuth 2
     public var OAuthScopes: [String: DiscoveryAuthScope]! // oauth2.scopes
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryAuth()
     }
     
     public func mapping(map: Map) {
@@ -94,8 +94,8 @@ public class DiscoveryAuth: Mappable { // assuming OAuth 2
 public class DiscoveryAuthScope: Mappable {
     public var scopeDescription: String! // description
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryAuthScope()
     }
     
     public func mapping(map: Map) {
@@ -123,8 +123,8 @@ public class DiscoveryJSONSchema: Mappable {
     public var items: DiscoveryJSONSchema!
     public var annotations: DiscoveryJSONSchemaAnnotations!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryJSONSchema()
     }
     
     public func mapping(map: Map) {
@@ -152,8 +152,8 @@ public class DiscoveryJSONSchema: Mappable {
 public class DiscoveryJSONSchemaAnnotations: Mappable {
     public var required: [String]!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryJSONSchemaAnnotations()
     }
     
     public func mapping(map: Map) {
@@ -176,8 +176,8 @@ public class DiscoveryRestMethod: Mappable {
     public var mediaUpload: DiscoveryRestMethodMediaUpload!
     public var supportsSubscription: Bool!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryRestMethod()
     }
     
     public func mapping(map: Map) {
@@ -202,8 +202,8 @@ public class DiscoveryRestMethodMediaUpload: Mappable {
     public var maxSize: String!
     public var protocols: [String: DiscoveryRestMethodMediaUploadProtocol]!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryRestMethodMediaUpload()
     }
     
     public func mapping(map: Map) {
@@ -222,8 +222,8 @@ public class DiscoveryRestMethodMediaUploadProtocol: Mappable {
     public var multipart: Bool = true
     public var path: String!
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryRestMethodMediaUploadProtocol()
     }
     
     public func mapping(map: Map) {
@@ -235,8 +235,8 @@ public class DiscoveryResource: Mappable {
     public var methods: [String: DiscoveryRestMethod]!
     public var subResources: [String: DiscoveryResource]! // resources
     
-    public required init(_ map: Map) {
-        mapping(map)
+    public class func newInstance(map: Map) -> Mappable? {
+        return DiscoveryResource()
     }
     
     public func mapping(map: Map) {

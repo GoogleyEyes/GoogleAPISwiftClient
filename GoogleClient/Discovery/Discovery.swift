@@ -34,7 +34,8 @@ public class Discovery: GoogleService {
             if error != nil {
                 completionHandler(restDescription: nil, error: error)
             } else if JSON != nil {
-                let restDescription = Mapper<DiscoveryRestDescription>().map(JSON)
+                let jsonString = JSON!
+                let restDescription = Mapper<DiscoveryRestDescription>().map(jsonString)
                 completionHandler(restDescription: restDescription, error: nil)
             }
         }

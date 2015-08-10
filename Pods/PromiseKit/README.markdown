@@ -15,14 +15,26 @@ when(fetchImage(), getLocation()).then { image, location in
 }
 ```
 
-[![Join the chat at https://gitter.im/mxcl/PromiseKit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mxcl/PromiseKit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+PromiseKit is a thoughtful and complete implementation of promises for iOS and OS X with first-class support for **both** Objective-C *and* Swift.
+
+[![Join the chat at https://gitter.im/mxcl/PromiseKit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mxcl/PromiseKit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![](https://img.shields.io/cocoapods/v/PromiseKit.svg?label=Current%20Release)  [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+
+
+# Swift 2
+
+The `swift-2.0-beta` branch has a working Swift 2 implementation. Please be aware that both `catch` and `defer` are Swift 2 keywords so we have had to rename these functions and our new choices are not yet final.
+
+
+# PromiseKit 2
+
+PromiseKit 2 contains many interesting and important additions. Check out our our [release announcement](http://promisekit.org/PromiseKit-2.0-Released/) for full details.
 
 
 # How To Get Started
 
-* Check out the [complete, comprehensive PromiseKit documentation](http://promisekit.org).
-* Read the [API documentation](http://cocoadocs.org/docsets/PromiseKit/).
-* [Integrate](http://promisekit.org/getting-setup) promises into your existing projects.
+* Check out the complete, comprehensive [PromiseKit documentation](http://promisekit.org).
+* Read the [API documentation](http://cocoadocs.org/docsets/PromiseKit/), (note the documentation is not 100% currently as CocoaDocs is not good with Swift, you may have better luck reading the comments in the sources).
+* [Integrate](http://promisekit.org/getting-started) promises into your existing projects.
 
 ## Quick Start Guide
 
@@ -39,23 +51,21 @@ pod "PromiseKit", "~> 2.0"
 github "mxcl/PromiseKit" ~> 2.0
 ```
 
-### Standalone Downloads
+### Standalone Distributions
 
-*Coming soon!*
+* [iOS 8 & OS X 10.9  Frameworks](https://github.com/mxcl/PromiseKit/releases/download/2.2.1/PromiseKit-2.2.1.zip) (Binaries)
 
-*Please Note* If you want a standalone download because you don’t want to learn CocoaPods or Carthage then may we ask you to reconsider? If you choose to use third-party libraries you should also choose to install bug fix releases, some of the fixes can be very important! Using a dependency manager takes the headache out of staying up-to-date.
+*Please note*, the preferred way to integrate PromiseKit is CocoaPods or Carthage.
 
 ###  iOS 7 And Below
 
-Neither CocoaPods or Carthage will install iOS frameworks for deployment targets below iOS 8. PromiseKit 2 is an iOS framework. If you need previous iOS versions then you need to do one of:
+Neither CocoaPods or Carthage will install PromiseKit 2 for an iOS 7 target. Your options are:
 
  1. `pod "PromiseKit", "~> 1.5"` †‡
- 2. Manually compile all the PromiseKit sources into your app target.
+ 2. Use our [iOS 7 EZ-Bake](https://github.com/PromiseKit/EZiOS7)
  3. Download our pre-built static framework (coming soon!)
 
-† There is no Swift support with PromiseKit 1.x installed via CocoaPods.
-
-‡ PromiseKit 1.x will work as far back as iOS 5 if required.
+† There is no Swift support with PromiseKit 1.x installed via CocoaPods.<br>‡ PromiseKit 1.x will work as far back as iOS 5 if required.
 
 
 # Donations
@@ -65,7 +75,7 @@ PromiseKit is hundreds of hours of work almost completely by just me: [Max Howel
 
 # License
 
-Copyright 2015 Max Howell <mxcl@me.com>
+Copyright 2015, Max Howell; <mxcl@me.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

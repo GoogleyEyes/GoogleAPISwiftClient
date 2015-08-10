@@ -1,7 +1,8 @@
 ObjectMapper
 ============
-
-<!-- [![Build Status](https://travis-ci.org/Hearst-DD/ObjectMapper.svg?branch=master)](https://travis-ci.org/Hearst-DD/ObjectMapper) -->
+[![CocoaPods](https://img.shields.io/cocoapods/v/ObjectMapper.svg)](https://github.com/Hearst-DD/ObjectMapper)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/Hearst-DD/ObjectMapper.svg?branch=master)](https://travis-ci.org/Hearst-DD/ObjectMapper)
 
 ObjectMapper is a framework written in Swift that makes it easy for you to convert your Model objects (Classes and Structs) to and from JSON. 
 
@@ -10,6 +11,7 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 - [Mapping Nested Objects](#easy-mapping-of-nested-objects)
 - [Custom Transformations](#custom-transfoms)
 - [Subclassing](#subclasses)
+- [ObjectMapper + Alamofire](#objectmapper--alamofire) 
 - [Contributing](#contributing)
 - [Installation](#installation)
 
@@ -24,7 +26,7 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 To support mapping, a Class or Struct just needs to implement the ```Mappable``` protocol.
 ```swift
 public protocol Mappable {
-    init?(_ map: Map)
+    static func newInstance(map: Map) -> Mappable?
     mutating func mapping(map: Map)
 }
 ```
@@ -41,8 +43,8 @@ class User: Mappable {
     var friends: [User]?                        // Array of Users
     var birthday: NSDate?
 
-    required init?(_ map: Map) {
-        mapping(map)
+    class func newInstance(map: Map) -> Mappable? {
+        return User()
     }
 
     // Mappable
@@ -62,10 +64,8 @@ struct Temperature: Mappable {
     var celcius: Double?
     var fahrenheit: Double?
 
-    init(){}
-
-    init?(_ map: Map) {
-        mapping(map)
+    static func newInstance(map: Map) -> Mappable? {
+        return Temperature()
     }
 
 	mutating func mapping(map: Map) {
@@ -93,11 +93,13 @@ Object mapper can map classes composed of the following types:
 - Double
 - Float
 - String
+- RawRepresentable (Enums)
 - Array\<AnyObject\>
 - Dictionary\<String, AnyObject\>
 - Object\<T: Mappable\>
 - Array\<T: Mappable\>
 - Dictionary\<String, T: Mappable\>
+- Dictionary\<String, Array\<T: Mappable\>\>
 - Optionals of all the above
 - Implicitly Unwrapped Optionals of the above
 
@@ -158,14 +160,14 @@ id <- (map["id"], TransformOf<Int, String>(fromJSON: { $0?.toInt() }, toJSON: { 
 ```
 
 #Subclasses
-Classes that implement the Mappable protocol can easily be subclassed. When subclassing Mappable classes, follow the structure below:
+Classes that implement the Mappable protocol can easily be subclassed. When subclassing Mappable classes, follow the structure below (note that you must use the `class` keyword instead of `static`):
 ```
 class Base: Mappable {
 	var base: String?
 	
-	required init?(_ map: Map) {
-		mapping(map)
-	}
+	class func newInstance(map: Map) -> Mappable? {
+        return Base()
+    }
 
 	func mapping(map: Map) {
 		base <- map["base"]
@@ -175,9 +177,9 @@ class Base: Mappable {
 class Subclass: Base {
 	var sub: String?
 
-	required init?(_ map: Map) {
-		super.init(map)
-	}
+	override class func newInstance(map: Map) -> Mappable? {
+        return Subclass()
+    }
 
 	override func mapping(map: Map) {
 		super.mapping(map)
@@ -188,6 +190,10 @@ class Subclass: Base {
 ```
 
 <!-- ##To Do -->
+
+#ObjectMapper + Alamofire
+
+If you are using [Alamofire](https://github.com/Alamofire/Alamofire) for networking and you want to convert your responses to swift objects, you can use [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper). It is a simple Alamofire extension that uses ObjectMapper to automatically map JSON response data to swift objects.
 
 #Contributing
 
@@ -204,12 +210,12 @@ From this point on, you should open the project using ObjectMapper.xcworkspace a
 #Installation
 ObjectMapper can be added to your project using [Cocoapods 0.36 (beta)](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your Podfile:
 ```
-pod 'ObjectMapper', '~> 0.10'
+pod 'ObjectMapper', '~> 0.15'
 ```
 
 If your using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on ObjectMapper by adding it to your Cartfile:
 ```
-github "Hearst-DD/ObjectMapper" ~> 0.10
+github "Hearst-DD/ObjectMapper" ~> 0.15
 ```
 
 Otherwise, ObjectMapper can be added as a submodule:
