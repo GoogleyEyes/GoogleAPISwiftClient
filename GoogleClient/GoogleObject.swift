@@ -18,6 +18,23 @@ public protocol GoogleObjectList: GoogleObject, ArrayLiteralConvertible, Sequenc
     var items: [Type]! { get }
 }
 
+extension GoogleObjectList {
+    public required init(arrayLiteral elements: Type...) {
+        items = elements
+    }
+    
+    public typealias Generator = IndexingGenerator<[Type]>
+    
+    public func generate() -> Generator {
+        let objects = items as [Type]
+        return objects.generate()
+    }
+    
+    public subscript(position: Int) -> Type {
+        return items[position]
+    }
+}
+
 class RFC3339Transform: TransformType {
 
     func transformFromJSON(value: AnyObject?) -> NSDate? {

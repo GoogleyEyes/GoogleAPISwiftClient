@@ -24,21 +24,6 @@ public class DiscoveryDirectoryList: GoogleObjectList {
         discoveryVersion <- map["discoveryVersion"]
         items <- map["items"]
     }
-    
-    public required init(arrayLiteral elements: Type...) {
-        items = elements
-    }
-    
-    public typealias Generator = IndexingGenerator<[Type]>
-    
-    public func generate() -> Generator {
-        let objects = items as [Type]
-        return objects.generate()
-    }
-    
-    public subscript(position: Int) -> Type {
-        return items[position]
-    }
 }
 
 public class DiscoveryDirectoryItem: GoogleObject {

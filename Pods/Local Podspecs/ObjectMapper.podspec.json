@@ -1,6 +1,6 @@
 {
   "name": "ObjectMapper",
-  "version": "0.12",
+  "version": "0.14",
   "license": "MIT",
   "summary": "JSON Object mapping written in Swift",
   "homepage": "https://github.com/Hearst-DD/ObjectMapper",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/Hearst-DD/ObjectMapper.git",
-    "tag": "0.12"
+    "tag": "0.14"
   },
   "platforms": {
     "ios": "8.0",

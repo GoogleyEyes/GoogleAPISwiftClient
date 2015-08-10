@@ -203,7 +203,7 @@ public func <- <T: TransformType>(inout left: [String: T.Object]!, right: (Map, 
 
 private func fromJSONArrayWithTransform<T: TransformType>(input: AnyObject?, transform: T) -> [T.Object] {
 	if let values = input as? [AnyObject] {
-		return values.filterMap { value in
+		return values.flatMap { value in
 			return transform.transformFromJSON(value)
 		}
 	} else {
@@ -222,7 +222,7 @@ private func fromJSONDictionaryWithTransform<T: TransformType>(input: AnyObject?
 }
 
 private func toJSONArrayWithTransform<T: TransformType>(input: [T.Object]?, transform: T) -> [T.JSON]? {
-	return input?.filterMap { value in
+	return input?.flatMap { value in
 		return transform.transformToJSON(value)
 	}
 }
@@ -344,5 +344,36 @@ public func <- <T: Mappable>(inout left: Array<T>!, right: Map) {
 		FromJSON.optionalObjectArray(&left, object: right.currentValue)
 	} else {
 		ToJSON.optionalObjectArray(left, key: right.currentKey!, dictionary: &right.JSONDictionary)
+	}
+}
+
+
+// MARK:- Set of Mappable objects - Set<T: Mappable where T: Hashable>
+
+/// Array of Mappable objects
+public func <- <T: Mappable where T: Hashable>(inout left: Set<T>, right: Map) {
+	if right.mappingType == MappingType.FromJSON {
+		FromJSON.objectSet(&left, object: right.currentValue)
+	} else {
+		ToJSON.objectSet(left, key: right.currentKey!, dictionary: &right.JSONDictionary)
+	}
+}
+
+
+/// Optional array of Mappable objects
+public func <- <T: Mappable where T: Hashable>(inout left: Set<T>?, right: Map) {
+	if right.mappingType == MappingType.FromJSON {
+		FromJSON.optionalObjectSet(&left, object: right.currentValue)
+	} else {
+		ToJSON.optionalObjectSet(left, key: right.currentKey!, dictionary: &right.JSONDictionary)
+	}
+}
+
+/// Implicitly unwrapped Optional array of Mappable objects
+public func <- <T: Mappable where T: Hashable>(inout left: Set<T>!, right: Map) {
+	if right.mappingType == MappingType.FromJSON {
+		FromJSON.optionalObjectSet(&left, object: right.currentValue)
+	} else {
+		ToJSON.optionalObjectSet(left, key: right.currentKey!, dictionary: &right.JSONDictionary)
 	}
 }

@@ -40,13 +40,13 @@ class GoogleServiceFetcher {
         } else if apiKey != nil {
             finalQueryParams.updateValue(apiKey!, forKey: "key")
         }
-        Alamofire.request(method, URLString: url, parameters: finalQueryParams)
+        Alamofire.request(method, url, parameters: finalQueryParams)
             .validate()
-            .responseString { (request, response, data, error) -> Void in
-                if error != nil {
-                    completionHandler(JSON: nil, error: error)
-                } else if data != nil {
-                    completionHandler(JSON: data, error: nil)
+            .responseString { (request, response, result) -> Void in
+                if result.isFailure {
+                    completionHandler(JSON: nil, error: result.error)
+                } else {
+                    completionHandler(JSON: result.value, error: nil)
                 }
             }
     }

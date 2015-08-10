@@ -1,9 +1,9 @@
 {
   "name": "PromiseKit",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "source": {
     "git": "https://github.com/mxcl/PromiseKit.git",
-    "tag": "2.0.3"
+    "tag": "3.0.0"
   },
   "license": {
     "type": "MIT",
@@ -99,16 +99,12 @@
         "Sources/{after,AnyPromise,dispatch_promise,hang,join,PMKPromise,when}.m",
         "Sources/AnyPromise.h",
         "Sources/NSError+Cancellation.h",
-        "Sources/PMKPromise.h",
-        "Sources/Promise.h",
         "Sources/PromiseKit.h",
         "Sources/Umbrella.h"
       ],
       "public_header_files": [
         "Sources/AnyPromise.h",
         "Sources/NSError+Cancellation.h",
-        "Sources/PMKPromise.h",
-        "Sources/Promise.h",
         "Sources/PromiseKit.h",
         "Sources/Umbrella.h"
       ],
@@ -134,14 +130,14 @@
       "ios": {
         "source_files": [
           "Categories/Foundation/afterlife.swift",
-          "Categories/Foundation/NSFileManager+Promise.swift",
           "Categories/Foundation/NSNotificationCenter+AnyPromise.h",
           "Categories/Foundation/NSNotificationCenter+AnyPromise.m",
           "Categories/Foundation/NSNotificationCenter+Promise.swift",
           "Categories/Foundation/NSObject+Promise.swift",
           "Categories/Foundation/NSURLConnection+AnyPromise.h",
           "Categories/Foundation/NSURLConnection+AnyPromise.m",
-          "Categories/Foundation/NSURLConnection+Promise.swift"
+          "Categories/Foundation/NSURLConnection+Promise.swift",
+          "Categories/Foundation/NSURLSession+Promise.swift"
         ]
       },
       "osx": {
@@ -152,7 +148,7 @@
 
         ],
         "OMGHTTPURLRQ": [
-
+          "~> 3.0.0"
         ]
       },
       "frameworks": "Foundation"

@@ -9,11 +9,11 @@
 import class Foundation.NSNumber
 
 private func setValue(value: AnyObject, forKey key: String, inout dictionary: [String : AnyObject]) {
-	let keyComponents = ArraySlice(split(key.characters) { $0 == "." })
+	let keyComponents = ArraySlice(key.characters.split { $0 == "." })
 	return setValue(value, forKeyPathComponents: keyComponents, dictionary: &dictionary)
 }
 
-private func setValue(value: AnyObject, forKeyPathComponents components: ArraySlice<String.CharacterView.SubSlice>, inout dictionary: [String : AnyObject]) {
+private func setValue(value: AnyObject, forKeyPathComponents components: ArraySlice<String.CharacterView.SubSequence>, inout dictionary: [String : AnyObject]) {
 	if components.isEmpty {
 		return
 	}
@@ -28,7 +28,7 @@ private func setValue(value: AnyObject, forKeyPathComponents components: ArraySl
 			child = [:]
 		}
 
-		let tail = dropFirst(components)
+		let tail = components.dropFirst()
 		setValue(value, forKeyPathComponents: tail, dictionary: &child!)
 
 		return dictionary[String(head)] = child
@@ -121,7 +121,20 @@ internal final class ToJSON {
             objectArray(field, key: key, dictionary: &dictionary)
         }
     }
-    
+	
+	
+	class func objectSet<N: Mappable where N: Hashable>(field: Set<N>, key: String, inout dictionary: [String : AnyObject]) {
+		let JSONObjects = Mapper().toJSONSet(field)
+		
+		setValue(JSONObjects, forKey: key, dictionary: &dictionary)
+	}
+	
+	class func optionalObjectSet<N: Mappable where N: Hashable>(field: Set<N>?, key: String, inout dictionary: [String : AnyObject]) {
+		if let field = field {
+			objectSet(field, key: key, dictionary: &dictionary)
+		}
+	}
+	
 	class func objectDictionary<N: Mappable>(field: Dictionary<String, N>, key: String, inout dictionary: [String : AnyObject]) {
 		let JSONObjects = Mapper().toJSONDictionary(field)
 

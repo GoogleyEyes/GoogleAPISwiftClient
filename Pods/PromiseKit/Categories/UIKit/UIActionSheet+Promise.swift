@@ -1,5 +1,7 @@
-import PromiseKit
 import UIKit.UIActionSheet
+#if !COCOAPODS
+import PromiseKit
+#endif
 
 /**
  To import the `UIActionSheet` category:
@@ -29,6 +31,16 @@ extension UIActionSheet {
 
         return proxy.promise
     }
+
+    public enum Error: CancellableErrorType {
+        case Cancelled
+
+        public var cancelled: Bool {
+            switch self {
+                case .Cancelled: return true
+            }
+        }
+    }
 }
 
 private class PMKActionSheetDelegate: NSObject, UIActionSheetDelegate {
@@ -36,11 +48,12 @@ private class PMKActionSheetDelegate: NSObject, UIActionSheetDelegate {
     var retainCycle: NSObject?
 
     @objc func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
+        defer { retainCycle = nil }
+
         if buttonIndex != actionSheet.cancelButtonIndex {
             fulfill(buttonIndex)
         } else {
-            reject(NSError.cancelledError())
+            reject(UIActionSheet.Error.Cancelled)
         }
-        retainCycle = nil
     }
 }

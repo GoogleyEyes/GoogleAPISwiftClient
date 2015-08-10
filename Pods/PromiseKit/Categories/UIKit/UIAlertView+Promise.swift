@@ -1,6 +1,8 @@
 import Foundation
-import PromiseKit
 import UIKit.UIAlertView
+#if !COCOAPODS
+import PromiseKit
+#endif
 
 /**
  To import the `UIActionSheet` category:
@@ -30,6 +32,16 @@ extension UIAlertView {
         
         return proxy.promise
     }
+
+    public enum Error: CancellableErrorType {
+        case Cancelled
+
+        public var cancelled: Bool {
+            switch self {
+                case .Cancelled: return true
+            }
+        }
+    }
 }
 
 private class PMKAlertViewDelegate: NSObject, UIAlertViewDelegate {
@@ -40,7 +52,7 @@ private class PMKAlertViewDelegate: NSObject, UIAlertViewDelegate {
         if buttonIndex != alertView.cancelButtonIndex {
             fulfill(buttonIndex)
         } else {
-            reject(NSError.cancelledError())
+            reject(UIAlertView.Error.Cancelled)
         }
     }
 }
