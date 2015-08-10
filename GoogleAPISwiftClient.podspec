@@ -36,8 +36,8 @@ Pod::Spec.new do |s|
   s.framework  = "Foundation"
   s.requires_arc = true
 
-  s.dependency "Alamofire", "~> 1.2"
-  s.dependency "ObjectMapper", "~> 0.11"
+  s.dependency "Alamofire", "~> 1.3"
+  s.dependency "ObjectMapper", "~> 0.15"
 
   s.module_name = "GoogleAPIs"
 
