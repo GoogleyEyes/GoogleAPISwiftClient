@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (1.3.0)
+  - GoogleSignInSDK (1.0.0)
+  - ObjectMapper (0.14)
+  - OMGHTTPURLRQ (3.0.0):
+    - OMGHTTPURLRQ/RQ (= 3.0.0)
+  - OMGHTTPURLRQ/FormURLEncode (3.0.0)
+  - OMGHTTPURLRQ/RQ (3.0.0):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.0.0)
+  - PromiseKit (3.0.0):
+    - PromiseKit/Foundation (= 3.0.0)
+    - PromiseKit/QuartzCore (= 3.0.0)
+    - PromiseKit/UIKit (= 3.0.0)
+  - PromiseKit/CorePromise (3.0.0)
+  - PromiseKit/Foundation (3.0.0):
+    - OMGHTTPURLRQ (~> 3.0.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.0.0):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
+  - GoogleSignInSDK (~> 1.0.0)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-2.0`)
+  - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-2.0-beta5`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift-2.0
+    :git: https://github.com/Alamofire/Alamofire.git
+  ObjectMapper:
+    :branch: swift-2.0
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+  PromiseKit:
+    :branch: swift-2.0-beta5
+    :git: https://github.com/mxcl/PromiseKit.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 61d6ddf9c91da83a062cbe29dc6b7f6a0a5d8789
+    :git: https://github.com/Alamofire/Alamofire.git
+  ObjectMapper:
+    :commit: 27e1cef9bf09d5da51444f2561d3341429875223
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+  PromiseKit:
+    :commit: 39495e0212792d3cc158b3bca92ddcc417679f55
+    :git: https://github.com/mxcl/PromiseKit.git
+
+SPEC CHECKSUMS:
+  Alamofire: e57db85401895fda01783b3b9bda5b32d9f347ff
+  GoogleSignInSDK: 1f87f59b51e4a59dec0c9378327d88a5c6e8ebd5
+  ObjectMapper: 45b97fa0a68c3851daad3efca87bc6c1ab1718c0
+  OMGHTTPURLRQ: 45cd892e5643206a5a359307621df7678625ebec
+  PromiseKit: a410490b0593d18fe5d44a3f812c4d41e981406c
+
+COCOAPODS: 0.38.2
