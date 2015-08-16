@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GoogleAPISwiftClient"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "A Google API Client for Cocoa and Cocoa Touch in 2015"
 
   s.description  = <<-DESC
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
 
-  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.1.1" }
 
   s.framework  = "Foundation"
   s.requires_arc = true
