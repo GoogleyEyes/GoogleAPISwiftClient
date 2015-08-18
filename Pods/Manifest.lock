@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (2.0.0-beta.1)
+  - GoogleSignInSDK (1.0.0)
+  - ObjectMapper (0.14)
+  - OMGHTTPURLRQ (3.0.0):
+    - OMGHTTPURLRQ/RQ (= 3.0.0)
+  - OMGHTTPURLRQ/FormURLEncode (3.0.0)
+  - OMGHTTPURLRQ/RQ (3.0.0):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.0.0)
+  - PromiseKit (3.0.0):
+    - PromiseKit/Foundation (= 3.0.0)
+    - PromiseKit/QuartzCore (= 3.0.0)
+    - PromiseKit/UIKit (= 3.0.0)
+  - PromiseKit/CorePromise (3.0.0)
+  - PromiseKit/Foundation (3.0.0):
+    - OMGHTTPURLRQ (~> 3.0.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.0.0):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
+  - GoogleSignInSDK (~> 1.0.0)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-2.0`)
+  - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-2.0-beta5`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift-2.0
+    :git: https://github.com/Alamofire/Alamofire.git
+  ObjectMapper:
+    :branch: swift-2.0
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+  PromiseKit:
+    :branch: swift-2.0-beta5
+    :git: https://github.com/mxcl/PromiseKit.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 6446acd786b647bcf21e57035fc975be4cb559d8
+    :git: https://github.com/Alamofire/Alamofire.git
+  ObjectMapper:
+    :commit: 87180c69bf38ca3ca7955214bc4cacb45e859445
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+  PromiseKit:
+    :commit: d1f27a1ef9f0d395b44c70add2391075f27f6e13
+    :git: https://github.com/mxcl/PromiseKit.git
+
+SPEC CHECKSUMS:
+  Alamofire: 96feccc1e48a735edb92395cf023ba4ed52bdb45
+  GoogleSignInSDK: 1f87f59b51e4a59dec0c9378327d88a5c6e8ebd5
+  ObjectMapper: 45b97fa0a68c3851daad3efca87bc6c1ab1718c0
+  OMGHTTPURLRQ: 45cd892e5643206a5a359307621df7678625ebec
+  PromiseKit: a657c450a01f60137376a0210eb7b11f1aef8413
+
+COCOAPODS: 0.38.2

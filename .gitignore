@@ -16,8 +16,5 @@ xcuserdata
 DerivedData
 *.xcuserstate
 
-### Cocoapods ###
-Pods
-
 ### OSX ###
 .DS_Store
