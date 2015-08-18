@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2F1067A53F46782CA541059F"
+               BlueprintIdentifier = "84E93A8071903C27583B76F0"
                BuildableName = "Pods_GoogleClient.framework"
                BlueprintName = "Pods-GoogleClient"
                ReferencedContainer = "container:Pods.xcodeproj">
