@@ -34,7 +34,7 @@ public class DiscoveryRestDescription: GoogleObject {
     public var methods: [String: DiscoveryRestMethod]!
     public var resources: [String: DiscoveryResource]!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryRestDescription()
     }
     
@@ -69,7 +69,7 @@ public class DiscoveryAPIIcon: Mappable {
     public var x16: NSURL!
     public var x32: NSURL!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryAPIIcon()
     }
     
@@ -82,7 +82,7 @@ public class DiscoveryAPIIcon: Mappable {
 public class DiscoveryAuth: Mappable { // assuming OAuth 2
     public var OAuthScopes: [String: DiscoveryAuthScope]! // oauth2.scopes
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryAuth()
     }
     
@@ -94,7 +94,7 @@ public class DiscoveryAuth: Mappable { // assuming OAuth 2
 public class DiscoveryAuthScope: Mappable {
     public var scopeDescription: String! // description
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryAuthScope()
     }
     
@@ -123,7 +123,7 @@ public class DiscoveryJSONSchema: Mappable {
     public var items: DiscoveryJSONSchema!
     public var annotations: DiscoveryJSONSchemaAnnotations!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryJSONSchema()
     }
     
@@ -152,7 +152,7 @@ public class DiscoveryJSONSchema: Mappable {
 public class DiscoveryJSONSchemaAnnotations: Mappable {
     public var required: [String]!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryJSONSchemaAnnotations()
     }
     
@@ -176,7 +176,7 @@ public class DiscoveryRestMethod: Mappable {
     public var mediaUpload: DiscoveryRestMethodMediaUpload!
     public var supportsSubscription: Bool!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryRestMethod()
     }
     
@@ -202,7 +202,7 @@ public class DiscoveryRestMethodMediaUpload: Mappable {
     public var maxSize: String!
     public var protocols: [String: DiscoveryRestMethodMediaUploadProtocol]!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryRestMethodMediaUpload()
     }
     
@@ -222,7 +222,7 @@ public class DiscoveryRestMethodMediaUploadProtocol: Mappable {
     public var multipart: Bool = true
     public var path: String!
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryRestMethodMediaUploadProtocol()
     }
     
@@ -235,7 +235,7 @@ public class DiscoveryResource: Mappable {
     public var methods: [String: DiscoveryRestMethod]!
     public var subResources: [String: DiscoveryResource]! // resources
     
-    public class func newInstance(map: Map) -> Mappable? {
+    public class func newInstance() -> Mappable {
         return DiscoveryResource()
     }
     
