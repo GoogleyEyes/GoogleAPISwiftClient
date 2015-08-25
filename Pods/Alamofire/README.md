@@ -636,12 +636,11 @@ extension Request {
                 return .Failure(data, error)
             }
 
-            var XMLSerializationError: NSError?
-
-            if let XML = ONOXMLDocument(data: validData, error: &XMLSerializationError) {
+            do {
+                let XML = try ONOXMLDocument(data: validData)
                 return .Success(XML)
-            } else {
-                return .Failure(data, XMLSerializationError!)
+            } catch {
+                return .Failure(data, error as NSError)
             }
         }
     }
@@ -812,7 +811,7 @@ Alamofire.request(.GET, user) // http://example.com/users/mattt
 
 ### URLRequestConvertible
 
-Types adopting the `URLRequestConvertible` protocol can be used to construct URL requests. `NSURLRequest` conforms to `URLRequestConvertible` by default, allowing it to be passed into `request`, `upload`, and `download` methods directly (this is the recommended way to specify custom HTTP header fields or HTTP body for individual requests):
+Types adopting the `URLRequestConvertible` protocol can be used to construct URL requests. `NSURLRequest` conforms to `URLRequestConvertible` by default, allowing it to be passed into `request`, `upload`, and `download` methods directly (this is the recommended way to specify custom HTTP body for individual requests):
 
 ```swift
 let URL = NSURL(string: "http://httpbin.org/post")!

@@ -13,19 +13,14 @@ public protocol GoogleObject: Mappable {
     var kind: String { get }
 }
 
-public protocol GoogleObjectList: GoogleObject, ArrayLiteralConvertible, SequenceType {
+public protocol GoogleObjectList: GoogleObject, SequenceType {
     typealias Type: GoogleObject
     var items: [Type]! { get }
 }
 
 extension GoogleObjectList {
-    public required init(arrayLiteral elements: Type...) {
-        items = elements
-    }
     
-    public typealias Generator = IndexingGenerator<[Type]>
-    
-    public func generate() -> Generator {
+    public func generate() -> IndexingGenerator<[Type]> {
         let objects = items as [Type]
         return objects.generate()
     }

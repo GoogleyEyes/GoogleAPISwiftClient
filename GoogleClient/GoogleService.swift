@@ -31,7 +31,7 @@ class GoogleServiceFetcher {
 
     }
 
-    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: NSError?) -> ()) {
+    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: ErrorType?) -> ()) {
         let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         if accessToken != nil {
