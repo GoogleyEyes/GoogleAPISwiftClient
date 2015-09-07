@@ -23,8 +23,16 @@ protocol GoogleService {
 
 class GoogleServiceFetcher {
     let baseURL = "https://www.googleapis.com"
-    var accessToken: String?
-    var apiKey: String?
+    var accessToken: String? {
+        didSet {
+            apiKey = nil
+        }
+    }
+    var apiKey: String? {
+        didSet {
+            accessToken = nil
+        }
+    }
 
     static let sharedInstance : GoogleServiceFetcher = GoogleServiceFetcher()
     private init() {
