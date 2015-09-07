@@ -12,6 +12,7 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 - [Custom Transformations](#custom-transfoms)
 - [Subclassing](#subclasses)
 - [ObjectMapper + Alamofire](#objectmapper--alamofire) 
+- [ObjectMapper + Realm](#objectmapper--realm)
 - [Contributing](#contributing)
 - [Installation](#installation)
 
@@ -26,7 +27,7 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 To support mapping, a Class or Struct just needs to implement the ```Mappable``` protocol.
 ```swift
 public protocol Mappable {
-    static func newInstance() -> Mappable
+	init?(_ map: Map)
     mutating func mapping(map: Map)
 }
 ```
@@ -43,9 +44,9 @@ class User: Mappable {
     var friends: [User]?                        // Array of Users
     var birthday: NSDate?
 
-    class func newInstance() -> Mappable {
-        return User()
-    }
+	required init?(_ map: Map){
+
+	}
 
     // Mappable
     func mapping(map: Map) {
@@ -64,9 +65,9 @@ struct Temperature: Mappable {
     var celcius: Double?
     var fahrenheit: Double?
 
-    static func newInstance() -> Mappable {
-        return Temperature()
-    }
+	required init?(_ map: Map){
+
+	}
 
 	mutating func mapping(map: Map) {
 		celcius 	<- map["celcius"]
@@ -160,14 +161,14 @@ id <- (map["id"], TransformOf<Int, String>(fromJSON: { $0?.toInt() }, toJSON: { 
 ```
 
 #Subclasses
-Classes that implement the Mappable protocol can easily be subclassed. When subclassing Mappable classes, follow the structure below:
+Classes that implement the Mappable protocol can easily be subclassed. When subclassing Mappable classes, follow the structure below (note that you must use the `class` keyword instead of `static`):
 ```
 class Base: Mappable {
 	var base: String?
 	
-	class func newInstance() -> Mappable {
-        return Base()
-    }
+	required init?(_ map: Map){
+
+	}
 
 	func mapping(map: Map) {
 		base <- map["base"]
@@ -177,9 +178,9 @@ class Base: Mappable {
 class Subclass: Base {
 	var sub: String?
 
-	override class func newInstance() -> Mappable {
-        return Subclass()
-    }
+	required init?(_ map: Map){
+		super.init(map)
+	}
 
 	override func mapping(map: Map) {
 		super.mapping(map)
@@ -189,11 +190,32 @@ class Subclass: Base {
 }
 ```
 
-<!-- ##To Do -->
-
 #ObjectMapper + Alamofire
 
 If you are using [Alamofire](https://github.com/Alamofire/Alamofire) for networking and you want to convert your responses to swift objects, you can use [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper). It is a simple Alamofire extension that uses ObjectMapper to automatically map JSON response data to swift objects.
+
+
+#ObjectMapper + Realm
+
+ObjectMapper and Realm can be used together. Simply follow the Class structure below and you will be able to use ObjectMapper to generate your Realm models:
+
+```swift
+class Model: Object, Mappable {
+	dynamic var name = ""
+
+	required convenience init?(_ map: Map) {
+		self.init()
+	}
+
+	func mapping(map: Map) {
+		name <- map["name"]
+	}
+}
+
+Note: Generating a JSON string of a Realm Object using ObjectMappers' `toJSON` function only works within a Realm write transaction. This is caused because ObjectMapper uses the `inout` flag in its mapping functions (`<-`) which are used both for serializing and deserializing. Realm detects the flag and forces the `toJSON` function to be called within a write block even though the objects are not being modified.
+```
+
+<!-- ##To Do -->
 
 #Contributing
 
@@ -210,12 +232,12 @@ From this point on, you should open the project using ObjectMapper.xcworkspace a
 #Installation
 ObjectMapper can be added to your project using [Cocoapods 0.36 (beta)](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your Podfile:
 ```
-pod 'ObjectMapper', '~> 0.14'
+pod 'ObjectMapper', '~> 0.15'
 ```
 
 If your using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on ObjectMapper by adding it to your Cartfile:
 ```
-github "Hearst-DD/ObjectMapper" ~> 0.14
+github "Hearst-DD/ObjectMapper" ~> 0.15
 ```
 
 Otherwise, ObjectMapper can be added as a submodule:

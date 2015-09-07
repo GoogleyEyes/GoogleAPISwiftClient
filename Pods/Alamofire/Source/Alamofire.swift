@@ -81,12 +81,6 @@ extension NSURLRequest: URLRequestConvertible {
     }
 }
 
-extension NSMutableURLRequest {
-    public override var URLRequest: NSMutableURLRequest {
-        return self
-    }
-}
-
 // MARK: - Convenience
 
 func URLRequest(
@@ -318,6 +312,8 @@ public func upload(
 
     - parameter method:      The HTTP method.
     - parameter URLString:   The URL string.
+    - parameter parameters:  The parameters. `nil` by default.
+    - parameter encoding:    The parameter encoding. `.URL` by default.
     - parameter headers:     The HTTP headers. `nil` by default.
     - parameter destination: The closure used to determine the destination of the downloaded file.
 
@@ -326,11 +322,20 @@ public func upload(
 public func download(
     method: Method,
     _ URLString: URLStringConvertible,
+    parameters: [String: AnyObject]? = nil,
+    encoding: ParameterEncoding = .URL,
     headers: [String: String]? = nil,
     destination: Request.DownloadFileDestination)
     -> Request
 {
-    return Manager.sharedInstance.download(method, URLString, headers: headers, destination: destination)
+    return Manager.sharedInstance.download(
+        method,
+        URLString,
+        parameters: parameters,
+        encoding: encoding,
+        headers: headers,
+        destination: destination
+    )
 }
 
 /**

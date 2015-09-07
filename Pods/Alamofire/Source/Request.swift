@@ -193,7 +193,7 @@ public class Request {
         let progress: NSProgress
 
         var data: NSData? { return nil }
-        var error: NSError?
+        var error: ErrorType?
 
         var credential: NSURLCredential?
 
@@ -443,6 +443,7 @@ extension Request: CustomStringConvertible {
         if let response = response {
             components.append("(\(response.statusCode))")
         }
+
         return components.joinWithSeparator(" ")
     }
 }
@@ -472,8 +473,8 @@ extension Request: CustomDebugStringConvertible {
                 authenticationMethod: NSURLAuthenticationMethodHTTPBasic
             )
 
-            if let credentials = credentialStorage.credentialsForProtectionSpace(protectionSpace) {
-                for credential in credentials.values {
+            if let credentials = credentialStorage.credentialsForProtectionSpace(protectionSpace)?.values {
+                for credential in credentials {
                     components.append("-u \(credential.user!):\(credential.password!)")
                 }
             } else {
