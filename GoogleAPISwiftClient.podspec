@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GoogleAPISwiftClient"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "A Google API Client for Cocoa and Cocoa Touch in 2015"
 
   s.description  = <<-DESC
@@ -31,13 +31,13 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
 
-  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.2.0" }
 
   s.framework  = "Foundation"
   s.requires_arc = true
 
-  s.dependency "Alamofire", "~> 2.0.0-beta.1"
-  s.dependency "ObjectMapper", "~> 0.11"
+  s.dependency "Alamofire", "~> 2.0.0"
+  s.dependency "ObjectMapper", "~> 0.15"
 
   s.module_name = "GoogleAPIs"
 
