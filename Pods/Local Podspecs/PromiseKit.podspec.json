@@ -25,7 +25,8 @@
   "requires_arc": true,
   "platforms": {
     "ios": "8.0",
-    "osx": "10.9"
+    "osx": "10.9",
+    "watchos": "2.0"
   },
   "module_map": "Sources/PMK.modulemap",
   "xcconfig": {

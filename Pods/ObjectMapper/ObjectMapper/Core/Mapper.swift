@@ -25,24 +25,35 @@ public final class Map {
 	var JSONDictionary: [String : AnyObject] = [:]
 	var currentValue: AnyObject?
 	var currentKey: String?
+	var keyIsNested = false
 
 	/// Counter for failing cases of deserializing values to `let` properties.
 	private var failedCount: Int = 0
 
-	private init(mappingType: MappingType, JSONDictionary: [String : AnyObject]) {
+	public init(mappingType: MappingType, JSONDictionary: [String : AnyObject]) {
 		self.mappingType = mappingType
 		self.JSONDictionary = JSONDictionary
 	}
-	
 	
 	/// Sets the current mapper value and key.
 	/// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
 	public subscript(key: String) -> Map {
 		// save key and value associated to it
+		return self[key, nested: true]
+	}
+	
+	public subscript(key: String, nested nested: Bool) -> Map {
+		// save key and value associated to it
 		currentKey = key
-		// break down the components of the key
-
-		currentValue = valueFor(ArraySlice(key.componentsSeparatedByString(".")), dictionary: JSONDictionary)
+		keyIsNested = nested
+		
+		// check if a value exists for the current key
+		if nested == false {
+			currentValue = JSONDictionary[key]
+		} else {
+			// break down the components of the key that are separated by .
+			currentValue = valueFor(ArraySlice(key.componentsSeparatedByString(".")), dictionary: JSONDictionary)
+		}
 		
 		return self
 	}
@@ -88,15 +99,12 @@ private func valueFor(keyPathComponents: ArraySlice<String>, dictionary: [String
 	}
 
 	if let object: AnyObject = dictionary[keyPathComponents.first!] {
-		switch object {
-		case is NSNull:
+		if object is NSNull {
 			return nil
-
-		case let dict as [String : AnyObject] where keyPathComponents.count > 1:
+		} else if let dict = object as? [String : AnyObject] where keyPathComponents.count > 1 {
 			let tail = keyPathComponents.dropFirst()
 			return valueFor(tail, dictionary: dict)
-
-		default:
+		} else {
 			return object
 		}
 	}
@@ -203,6 +211,20 @@ public final class Mapper<N: Mappable> {
 	public func mapArray(JSONArray: [[String : AnyObject]]) -> [N] {
 		// map every element in JSON array to type N
 		return JSONArray.flatMap(map)
+	}
+	
+	/// Maps an 2 dimentional array of JSON dictionaries to a 2 dimentional array of Mappable objects
+	public func mapArrayOfArrays(JSON: AnyObject?) -> [[N]]? {
+		if let JSONArray = JSON as? [[[String : AnyObject]]] {
+			var objectArray = [[N]]()
+			
+			for innerJSONArray in JSONArray {
+				objectArray.append(mapArray(innerJSONArray))
+			}
+			return objectArray
+		}
+		
+		return nil
 	}
 	
 	/// Maps a JSON object to a dictionary of Mappable objects if it is a JSON dictionary of dictionaries, or returns nil.

@@ -99,6 +99,7 @@ Object mapper can map classes composed of the following types:
 - Dictionary\<String, AnyObject\>
 - Object\<T: Mappable\>
 - Array\<T: Mappable\>
+- Set\<T: Mappable\> 
 - Dictionary\<String, T: Mappable\>
 - Dictionary\<String, Array\<T: Mappable\>\>
 - Optionals of all the above
@@ -113,9 +114,15 @@ ObjectMapper supports dot notation within keys for easy mapping of nested object
 }
 ```
 You can access the nested objects as follows:
-```
+```swift
 func mapping(map: Map){
     distance <- map["distance.value"]
+}
+```
+If you have a key that contains `.`, you can disable the above feature as follows:
+```swift
+func mapping(map: Map){
+    identifier <- map["app.inditifier", nested: false]
 }
 ```
 
@@ -232,12 +239,12 @@ From this point on, you should open the project using ObjectMapper.xcworkspace a
 #Installation
 ObjectMapper can be added to your project using [Cocoapods 0.36 (beta)](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your Podfile:
 ```
-pod 'ObjectMapper', '~> 0.15'
+pod 'ObjectMapper', '~> 0.16'
 ```
 
 If your using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on ObjectMapper by adding it to your Cartfile:
 ```
-github "Hearst-DD/ObjectMapper" ~> 0.15
+github "Hearst-DD/ObjectMapper" ~> 0.16
 ```
 
 Otherwise, ObjectMapper can be added as a submodule:

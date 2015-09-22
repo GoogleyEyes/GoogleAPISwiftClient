@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (2.0.0-beta.4)
+  - Alamofire (2.0.2)
   - GoogleSignInSDK (1.0.0)
-  - ObjectMapper (0.15)
+  - ObjectMapper (0.17)
   - OMGHTTPURLRQ (3.0.0):
     - OMGHTTPURLRQ/RQ (= 3.0.0)
   - OMGHTTPURLRQ/FormURLEncode (3.0.0)
@@ -23,38 +23,26 @@ PODS:
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
+  - Alamofire
   - GoogleSignInSDK (~> 1.0.0)
-  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-2.0`)
+  - ObjectMapper
   - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-2.0-beta5`)
 
 EXTERNAL SOURCES:
-  Alamofire:
-    :branch: swift-2.0
-    :git: https://github.com/Alamofire/Alamofire.git
-  ObjectMapper:
-    :branch: swift-2.0
-    :git: https://github.com/Hearst-DD/ObjectMapper.git
   PromiseKit:
     :branch: swift-2.0-beta5
     :git: https://github.com/mxcl/PromiseKit.git
 
 CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 1108ae4461baa99d9c4898c213ec3e2e2956fab3
-    :git: https://github.com/Alamofire/Alamofire.git
-  ObjectMapper:
-    :commit: a666f2913afd0320fc7f631a3a54098d3b378a8e
-    :git: https://github.com/Hearst-DD/ObjectMapper.git
   PromiseKit:
-    :commit: 0881d5c09d7c8bbdb4b3b83151032bd18d27eed9
+    :commit: 69ac5b07d92396108597da82f8c144e80a0f7f77
     :git: https://github.com/mxcl/PromiseKit.git
 
 SPEC CHECKSUMS:
-  Alamofire: 20df1a4740a69d7cf6caf7fd06b8a8fc782f1ebd
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   GoogleSignInSDK: 1f87f59b51e4a59dec0c9378327d88a5c6e8ebd5
-  ObjectMapper: 0656dc1c155825897e5acfcd25362c6b61786dcb
+  ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
   OMGHTTPURLRQ: 45cd892e5643206a5a359307621df7678625ebec
-  PromiseKit: a657c450a01f60137376a0210eb7b11f1aef8413
+  PromiseKit: ca8e463ed27e3ab5d05ebeb237e4d50447822e4d
 
 COCOAPODS: 0.38.2
