@@ -23,30 +23,38 @@ protocol GoogleService {
 
 class GoogleServiceFetcher {
     let baseURL = "https://www.googleapis.com"
-    var accessToken: String?
-    var apiKey: String?
+    var accessToken: String? {
+        didSet {
+            apiKey = nil
+        }
+    }
+    var apiKey: String? {
+        didSet {
+            accessToken = nil
+        }
+    }
 
     static let sharedInstance : GoogleServiceFetcher = GoogleServiceFetcher()
     private init() {
 
     }
 
-    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: NSError?) -> ()) {
-        var url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
+    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: ErrorType?) -> ()) {
+        let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         if accessToken != nil {
-            var manager = Manager.sharedInstance
+            let manager = Manager.sharedInstance
             manager.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken!)"]
         } else if apiKey != nil {
             finalQueryParams.updateValue(apiKey!, forKey: "key")
         }
         Alamofire.request(method, url, parameters: finalQueryParams)
             .validate()
-            .responseString { (request, response, data, error) -> Void in
-                if error != nil {
-                    completionHandler(JSON: nil, error: error)
-                } else if data != nil {
-                    completionHandler(JSON: data, error: nil)
+            .responseString { (request, response, result) -> Void in
+                if result.isFailure {
+                    completionHandler(JSON: nil, error: result.error)
+                } else {
+                    completionHandler(JSON: result.value, error: nil)
                 }
             }
     }

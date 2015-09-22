@@ -13,13 +13,20 @@ public class Discovery: GoogleService {
     var apiNameInURL: String = "discovery"
     var apiVersionString: String = "v1"
     
-    public var accessToken: String?
-    public var apiKey: String?
+    public var accessToken: String? {
+        didSet {
+            GoogleServiceFetcher.sharedInstance.accessToken = accessToken
+        }
+    }
+    public var apiKey: String? {
+        didSet {
+            GoogleServiceFetcher.sharedInstance.apiKey = apiKey
+        }
+    }
     
     public static let sharedInstance : Discovery = Discovery()
     private init() {
-        GoogleServiceFetcher.sharedInstance.accessToken = accessToken
-        GoogleServiceFetcher.sharedInstance.apiKey = apiKey
+        
     }
     
     public var alt: DiscoveryAlt?
@@ -28,8 +35,8 @@ public class Discovery: GoogleService {
     public var quotaUser: String?
     public var userIp: String?
     
-    public func getDiscoveryDocument(forAPI api: String, version /* begins with 'v' followed by number */: String, completionHandler: (restDescription: DiscoveryRestDescription?, error: NSError?) -> ()) {
-        var queryParams = setUpQueryParams()
+    public func getDiscoveryDocument(forAPI api: String, version /* begins with 'v' followed by number */: String, completionHandler: (restDescription: DiscoveryRestDescription?, error: ErrorType?) -> ()) {
+        let queryParams = setUpQueryParams()
         GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis/\(api)/\(version)/rest", queryParams: queryParams) { (JSON, error) -> () in
             if error != nil {
                 completionHandler(restDescription: nil, error: error)
@@ -44,7 +51,7 @@ public class Discovery: GoogleService {
     public var name: String?
     public var preferred: Bool?
     
-    public func listAPIs(completionHandler: (list: DiscoveryDirectoryList?, error: NSError?) -> ()) {
+    public func listAPIs(completionHandler: (list: DiscoveryDirectoryList?, error: ErrorType?) -> ()) {
         var queryParams = setUpQueryParams()
         if let name = name {
             queryParams.updateValue(name, forKey: "name")

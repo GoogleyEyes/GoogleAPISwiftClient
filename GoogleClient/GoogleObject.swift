@@ -13,9 +13,21 @@ public protocol GoogleObject: Mappable {
     var kind: String { get }
 }
 
-public protocol GoogleObjectList: GoogleObject, ArrayLiteralConvertible, SequenceType {
+public protocol GoogleObjectList: GoogleObject, SequenceType {
     typealias Type: GoogleObject
     var items: [Type]! { get }
+}
+
+extension GoogleObjectList {
+    
+    public func generate() -> IndexingGenerator<[Type]> {
+        let objects = items as [Type]
+        return objects.generate()
+    }
+    
+    public subscript(position: Int) -> Type {
+        return items[position]
+    }
 }
 
 class RFC3339Transform: TransformType {
@@ -37,11 +49,11 @@ class RFC3339Transform: TransformType {
         RFC3339String = RFC3339String.stringByReplacingOccurrencesOfString("Z", withString: "-0000")
 
         // Remove colon in timezone as iOS 4+ NSDateFormatter breaks. See https://devforums.apple.com/thread/45837
-        if count(RFC3339String) > 20 {
-            let nsRange = NSMakeRange(20, count(RFC3339String) - 20)
+        if RFC3339String.characters.count > 20 {
+            let nsRange = NSMakeRange(20, RFC3339String.characters.count - 20)
             // Bridge String to NSString
             let RFC3339StringAsNSString: NSString = RFC3339String
-            RFC3339String = RFC3339StringAsNSString.stringByReplacingOccurrencesOfString(":", withString: "", options: nil, range: nsRange)
+            RFC3339String = RFC3339StringAsNSString.stringByReplacingOccurrencesOfString(":", withString: "", options: [], range: nsRange)
 
         }
 

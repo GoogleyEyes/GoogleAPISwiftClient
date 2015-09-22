@@ -15,29 +15,14 @@ public class DiscoveryDirectoryList: GoogleObjectList {
     public typealias Type = DiscoveryDirectoryItem
     public var items: [Type]!
     
-    public class func newInstance(map: Map) -> Mappable? {
-        return DiscoveryDirectoryList()
+    public required init?(_ map: Map) {
+        
     }
     
     public func mapping(map: Map) {
         kind <- map["kind"]
         discoveryVersion <- map["discoveryVersion"]
         items <- map["items"]
-    }
-    
-    public required init(arrayLiteral elements: Type...) {
-        items = elements
-    }
-    
-    public typealias Generator = IndexingGenerator<[Type]>
-    
-    public func generate() -> Generator {
-        let objects = items as [Type]
-        return objects.generate()
-    }
-    
-    public subscript(position: Int) -> Type {
-        return items[position]
     }
 }
 
@@ -55,8 +40,8 @@ public class DiscoveryDirectoryItem: GoogleObject {
     public var labels: [String]!
     public var preferred: Bool!
     
-    public class func newInstance(map: Map) -> Mappable? {
-        return DiscoveryDirectoryItem()
+    public required init?(_ map: Map) {
+        
     }
     
     public func mapping(map: Map) {

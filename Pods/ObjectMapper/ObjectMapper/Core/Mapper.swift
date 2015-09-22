@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol Mappable {
-	static func newInstance(map: Map) -> Mappable?
+	init?(_ map: Map)
 	mutating func mapping(map: Map)
 }
 
@@ -25,23 +25,35 @@ public final class Map {
 	var JSONDictionary: [String : AnyObject] = [:]
 	var currentValue: AnyObject?
 	var currentKey: String?
+	var keyIsNested = false
 
 	/// Counter for failing cases of deserializing values to `let` properties.
 	private var failedCount: Int = 0
 
-	private init(mappingType: MappingType, JSONDictionary: [String : AnyObject]) {
+	public init(mappingType: MappingType, JSONDictionary: [String : AnyObject]) {
 		self.mappingType = mappingType
 		self.JSONDictionary = JSONDictionary
 	}
-	
 	
 	/// Sets the current mapper value and key.
 	/// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
 	public subscript(key: String) -> Map {
 		// save key and value associated to it
+		return self[key, nested: true]
+	}
+	
+	public subscript(key: String, nested nested: Bool) -> Map {
+		// save key and value associated to it
 		currentKey = key
-		// break down the components of the key
-		currentValue = valueFor(ArraySlice(split(key) { $0 == "." }), JSONDictionary)
+		keyIsNested = nested
+		
+		// check if a value exists for the current key
+		if nested == false {
+			currentValue = JSONDictionary[key]
+		} else {
+			// break down the components of the key that are separated by .
+			currentValue = valueFor(ArraySlice(key.componentsSeparatedByString(".")), dictionary: JSONDictionary)
+		}
 		
 		return self
 	}
@@ -87,15 +99,12 @@ private func valueFor(keyPathComponents: ArraySlice<String>, dictionary: [String
 	}
 
 	if let object: AnyObject = dictionary[keyPathComponents.first!] {
-		switch object {
-		case is NSNull:
+		if object is NSNull {
 			return nil
-
-		case let dict as [String : AnyObject] where keyPathComponents.count > 1:
-			let tail = dropFirst(keyPathComponents)
-			return valueFor(tail, dict)
-
-		default:
+		} else if let dict = object as? [String : AnyObject] where keyPathComponents.count > 1 {
+			let tail = keyPathComponents.dropFirst()
+			return valueFor(tail, dictionary: dict)
+		} else {
 			return object
 		}
 	}
@@ -112,7 +121,7 @@ public final class Mapper<N: Mappable> {
 	// MARK: Mapping functions that map to an existing object toObject
 	
 	/// Map a JSON string onto an existing object
-	public func map(JSONString: String, var toObject object: N) -> N {
+	public func map(JSONString: String, toObject object: N) -> N {
 		if let JSON = parseJSONDictionary(JSONString) {
 			return map(JSON, toObject: object)
 		}
@@ -120,7 +129,7 @@ public final class Mapper<N: Mappable> {
 	}
 	
 	/// Maps a JSON object to an existing Mappable object if it is a JSON dictionary, or returns the passed object as is
-	public func map(JSON: AnyObject?, var toObject object: N) -> N {
+	public func map(JSON: AnyObject?, toObject object: N) -> N {
 		if let JSON = JSON as? [String : AnyObject] {
 			return map(JSON, toObject: object)
 		}
@@ -148,10 +157,7 @@ public final class Mapper<N: Mappable> {
 	
 	/// Map a JSON NSString to an object that conforms to Mappable
 	public func map(JSONString: NSString) -> N? {
-		if let string = JSONString as? String {
-			return map(string)
-		}
-		return nil
+		return map(JSONString as String)
 	}
 	
 	/// Maps a JSON object to a Mappable object if it is a JSON dictionary or NSString, or returns nil.
@@ -166,7 +172,7 @@ public final class Mapper<N: Mappable> {
 	/// Maps a JSON dictionary to an object that conforms to Mappable
 	public func map(JSONDictionary: [String : AnyObject]) -> N? {
 		let map = Map(mappingType: .FromJSON, JSONDictionary: JSONDictionary)
-		if var object = N.newInstance(map) as? N {
+		if var object = N(map) {
 			object.mapping(map)
 			return object
 		}
@@ -191,7 +197,7 @@ public final class Mapper<N: Mappable> {
 
 		return []
 	}
-
+	
 	/// Maps a JSON object to an array of Mappable objects if it is an array of JSON dictionary, or returns nil.
 	public func mapArray(JSON: AnyObject?) -> [N]? {
 		if let JSONArray = JSON as? [[String : AnyObject]] {
@@ -204,9 +210,23 @@ public final class Mapper<N: Mappable> {
 	/// Maps an array of JSON dictionary to an array of Mappable objects
 	public func mapArray(JSONArray: [[String : AnyObject]]) -> [N] {
 		// map every element in JSON array to type N
-		return JSONArray.filterMap(map)
+		return JSONArray.flatMap(map)
 	}
-
+	
+	/// Maps an 2 dimentional array of JSON dictionaries to a 2 dimentional array of Mappable objects
+	public func mapArrayOfArrays(JSON: AnyObject?) -> [[N]]? {
+		if let JSONArray = JSON as? [[[String : AnyObject]]] {
+			var objectArray = [[N]]()
+			
+			for innerJSONArray in JSONArray {
+				objectArray.append(mapArray(innerJSONArray))
+			}
+			return objectArray
+		}
+		
+		return nil
+	}
+	
 	/// Maps a JSON object to a dictionary of Mappable objects if it is a JSON dictionary of dictionaries, or returns nil.
 	public func mapDictionary(JSON: AnyObject?) -> [String : N]? {
 		if let JSONDictionary = JSON as? [String : [String : AnyObject]] {
@@ -274,12 +294,14 @@ public final class Mapper<N: Mappable> {
 	public func toJSONString(object: N, prettyPrint: Bool) -> String? {
 		let JSONDict = toJSON(object)
 
-		var err: NSError?
 		if NSJSONSerialization.isValidJSONObject(JSONDict) {
-			let options: NSJSONWritingOptions = prettyPrint ? .PrettyPrinted : .allZeros
-			let JSONData: NSData? = NSJSONSerialization.dataWithJSONObject(JSONDict, options: options, error: &err)
-			if let error = err {
-				println(error)
+			let options: NSJSONWritingOptions = prettyPrint ? .PrettyPrinted : []
+			let JSONData: NSData?
+			do {
+				JSONData = try NSJSONSerialization.dataWithJSONObject(JSONDict, options: options)
+			} catch let error {
+				print(error)
+				JSONData = nil
 			}
 
 			if let JSON = JSONData {
@@ -311,8 +333,13 @@ public final class Mapper<N: Mappable> {
 	private func parseJSONString(JSON: String) -> AnyObject? {
 		let data = JSON.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 		if let data = data {
-			var error: NSError?
-			let parsedJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)
+			let parsedJSON: AnyObject?
+			do {
+				parsedJSON = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+			} catch let error {
+				print(error)
+				parsedJSON = nil
+			}
 			return parsedJSON
 		}
 
@@ -320,18 +347,49 @@ public final class Mapper<N: Mappable> {
 	}
 }
 
-extension Array {
-	internal func filterMap<U>(@noescape f: T -> U?) -> [U] {
-		var mapped = [U]()
 
-		for value in self {
-			if let newValue = f(value) {
-				mapped.append(newValue)
-			}
+extension Mapper where N: Hashable{
+	
+	/// Maps a JSON array to an object that conforms to Mappable
+	public func mapSet(JSONString: String) -> Set<N> {
+		let parsedJSON: AnyObject? = parseJSONString(JSONString)
+		
+		if let objectArray = mapArray(parsedJSON){
+			return Set(objectArray)
 		}
-
-		return mapped
+		
+		// failed to parse JSON into array form
+		// try to parse it into a dictionary and then wrap it in an array
+		if let object = map(parsedJSON) {
+			return Set([object])
+		}
+		
+		return Set()
 	}
+	
+	/// Maps a JSON object to an Set of Mappable objects if it is an array of JSON dictionary, or returns nil.
+	public func mapSet(JSON: AnyObject?) -> Set<N>? {
+		if let JSONArray = JSON as? [[String : AnyObject]] {
+			return mapSet(JSONArray)
+		}
+		
+		return nil
+	}
+	
+	/// Maps an Set of JSON dictionary to an array of Mappable objects
+	public func mapSet(JSONArray: [[String : AnyObject]]) -> Set<N> {
+		// map every element in JSON array to type N
+		return Set(JSONArray.flatMap(map))
+	}
+
+	///Maps a Set of Objects to a Set of JSON dictionaries [[String : AnyObject]]
+	public func toJSONSet(set: Set<N>) -> [[String : AnyObject]] {
+		return set.map {
+			// convert every element in set to JSON dictionary equivalent
+			self.toJSON($0)
+		}
+	}
+	
 }
 
 extension Dictionary {
