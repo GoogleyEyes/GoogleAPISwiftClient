@@ -1,0 +1,38 @@
+//
+//  BloggerBlogPerUserInfo.swift
+//  GoogleAPISwiftClient
+//
+//  Created by Matthew Wyskiel on 10/19/15.
+//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+public class BloggerBlogPerUserInfo: GoogleObject {
+	/// ID of the User
+	public var userId: String!
+	/// The Photo Album Key for the user when adding photos to the blog
+	public var photosAlbumKey: String!
+	/// True if the user has Admin level access to the blog.
+	public var hasAdminAccess: Bool!
+	/// Access permissions that the user has for the blog (ADMIN, AUTHOR, or READER).
+	public var role: String!
+	/// ID of the Blog resource
+	public var blogId: String!
+	/// The kind of this entity. Always blogger#blogPerUserInfo
+	public var kind: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		userId <- map["userId"]
+		photosAlbumKey <- map["photosAlbumKey"]
+		hasAdminAccess <- map["hasAdminAccess"]
+		role <- map["role"]
+		blogId <- map["blogId"]
+		kind <- map["kind"]
+	}
+

@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCB1B123D4B0041450D /* GoogleObject.swift */; };
+		A42E33B31BD5D3530066F807 /* Blogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A31BD5D3530066F807 /* Blogger.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33B41BD5D3530066F807 /* BloggerBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A41BD5D3530066F807 /* BloggerBlog.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33B51BD5D3530066F807 /* BloggerBlogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A51BD5D3530066F807 /* BloggerBlogList.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33B61BD5D3530066F807 /* BloggerBlogPerUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A61BD5D3530066F807 /* BloggerBlogPerUserInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33B71BD5D3530066F807 /* BloggerBlogUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A71BD5D3530066F807 /* BloggerBlogUserInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33B81BD5D3530066F807 /* BloggerComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A81BD5D3530066F807 /* BloggerComment.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33B91BD5D3530066F807 /* BloggerCommentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A91BD5D3530066F807 /* BloggerCommentList.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33BA1BD5D3530066F807 /* BloggerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33AA1BD5D3530066F807 /* BloggerPage.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33BB1BD5D3530066F807 /* BloggerPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33AB1BD5D3530066F807 /* BloggerPageList.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33BC1BD5D3530066F807 /* BloggerPageviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33AC1BD5D3530066F807 /* BloggerPageviews.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33BD1BD5D3530066F807 /* BloggerPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33AD1BD5D3530066F807 /* BloggerPost.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33BE1BD5D3530066F807 /* BloggerPostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33AE1BD5D3530066F807 /* BloggerPostList.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33BF1BD5D3530066F807 /* BloggerPostPerUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33AF1BD5D3530066F807 /* BloggerPostPerUserInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33C01BD5D3530066F807 /* BloggerPostUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33B01BD5D3530066F807 /* BloggerPostUserInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33C11BD5D3530066F807 /* BloggerPostUserInfosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33B11BD5D3530066F807 /* BloggerPostUserInfosList.swift */; settings = {ASSET_TAGS = (); }; };
+		A42E33C21BD5D3530066F807 /* BloggerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33B21BD5D3530066F807 /* BloggerUser.swift */; settings = {ASSET_TAGS = (); }; };
 		A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46810351B093353006F7839 /* SystemConfiguration.framework */; };
 		A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46810371B0AC4E0006F7839 /* GoogleService.swift */; };
 		A4A4FF781B2CD6FF00BA4B8B /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4FF771B2CD6FF00BA4B8B /* Discovery.swift */; };
@@ -33,6 +49,22 @@
 
 /* Begin PBXFileReference section */
 		A4076CCB1B123D4B0041450D /* GoogleObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleObject.swift; sourceTree = "<group>"; };
+		A42E33A31BD5D3530066F807 /* Blogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blogger.swift; sourceTree = "<group>"; };
+		A42E33A41BD5D3530066F807 /* BloggerBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerBlog.swift; sourceTree = "<group>"; };
+		A42E33A51BD5D3530066F807 /* BloggerBlogList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerBlogList.swift; sourceTree = "<group>"; };
+		A42E33A61BD5D3530066F807 /* BloggerBlogPerUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerBlogPerUserInfo.swift; sourceTree = "<group>"; };
+		A42E33A71BD5D3530066F807 /* BloggerBlogUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerBlogUserInfo.swift; sourceTree = "<group>"; };
+		A42E33A81BD5D3530066F807 /* BloggerComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerComment.swift; sourceTree = "<group>"; };
+		A42E33A91BD5D3530066F807 /* BloggerCommentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerCommentList.swift; sourceTree = "<group>"; };
+		A42E33AA1BD5D3530066F807 /* BloggerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPage.swift; sourceTree = "<group>"; };
+		A42E33AB1BD5D3530066F807 /* BloggerPageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPageList.swift; sourceTree = "<group>"; };
+		A42E33AC1BD5D3530066F807 /* BloggerPageviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPageviews.swift; sourceTree = "<group>"; };
+		A42E33AD1BD5D3530066F807 /* BloggerPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPost.swift; sourceTree = "<group>"; };
+		A42E33AE1BD5D3530066F807 /* BloggerPostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPostList.swift; sourceTree = "<group>"; };
+		A42E33AF1BD5D3530066F807 /* BloggerPostPerUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPostPerUserInfo.swift; sourceTree = "<group>"; };
+		A42E33B01BD5D3530066F807 /* BloggerPostUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPostUserInfo.swift; sourceTree = "<group>"; };
+		A42E33B11BD5D3530066F807 /* BloggerPostUserInfosList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerPostUserInfosList.swift; sourceTree = "<group>"; };
+		A42E33B21BD5D3530066F807 /* BloggerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerUser.swift; sourceTree = "<group>"; };
 		A46810351B093353006F7839 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46810371B0AC4E0006F7839 /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		A4A4FF771B2CD6FF00BA4B8B /* Discovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discovery.swift; path = Discovery/Discovery.swift; sourceTree = "<group>"; };
@@ -94,6 +126,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A42E33A21BD5D3530066F807 /* Blogger */ = {
+			isa = PBXGroup;
+			children = (
+				A42E33A31BD5D3530066F807 /* Blogger.swift */,
+				A42E33A41BD5D3530066F807 /* BloggerBlog.swift */,
+				A42E33A51BD5D3530066F807 /* BloggerBlogList.swift */,
+				A42E33A61BD5D3530066F807 /* BloggerBlogPerUserInfo.swift */,
+				A42E33A71BD5D3530066F807 /* BloggerBlogUserInfo.swift */,
+				A42E33A81BD5D3530066F807 /* BloggerComment.swift */,
+				A42E33A91BD5D3530066F807 /* BloggerCommentList.swift */,
+				A42E33AA1BD5D3530066F807 /* BloggerPage.swift */,
+				A42E33AB1BD5D3530066F807 /* BloggerPageList.swift */,
+				A42E33AC1BD5D3530066F807 /* BloggerPageviews.swift */,
+				A42E33AD1BD5D3530066F807 /* BloggerPost.swift */,
+				A42E33AE1BD5D3530066F807 /* BloggerPostList.swift */,
+				A42E33AF1BD5D3530066F807 /* BloggerPostPerUserInfo.swift */,
+				A42E33B01BD5D3530066F807 /* BloggerPostUserInfo.swift */,
+				A42E33B11BD5D3530066F807 /* BloggerPostUserInfosList.swift */,
+				A42E33B21BD5D3530066F807 /* BloggerUser.swift */,
+			);
+			path = Blogger;
+			sourceTree = "<group>";
+		};
 		A4A4FF761B2CD6C600BA4B8B /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +182,7 @@
 		A4DB96A31B07FB3B00DD0950 /* GoogleClient */ = {
 			isa = PBXGroup;
 			children = (
+				A42E33A21BD5D3530066F807 /* Blogger */,
 				A4A4FF761B2CD6C600BA4B8B /* Discovery */,
 				A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */,
 				A4DB96A41B07FB3B00DD0950 /* Supporting Files */,
@@ -304,11 +360,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42E33B31BD5D3530066F807 /* Blogger.swift in Sources */,
+				A42E33B71BD5D3530066F807 /* BloggerBlogUserInfo.swift in Sources */,
+				A42E33C01BD5D3530066F807 /* BloggerPostUserInfo.swift in Sources */,
+				A42E33B81BD5D3530066F807 /* BloggerComment.swift in Sources */,
 				A4A4FF781B2CD6FF00BA4B8B /* Discovery.swift in Sources */,
+				A42E33BD1BD5D3530066F807 /* BloggerPost.swift in Sources */,
+				A42E33C21BD5D3530066F807 /* BloggerUser.swift in Sources */,
+				A42E33B51BD5D3530066F807 /* BloggerBlogList.swift in Sources */,
+				A42E33C11BD5D3530066F807 /* BloggerPostUserInfosList.swift in Sources */,
 				A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */,
+				A42E33BA1BD5D3530066F807 /* BloggerPage.swift in Sources */,
+				A42E33BB1BD5D3530066F807 /* BloggerPageList.swift in Sources */,
+				A42E33B41BD5D3530066F807 /* BloggerBlog.swift in Sources */,
+				A42E33B61BD5D3530066F807 /* BloggerBlogPerUserInfo.swift in Sources */,
+				A42E33B91BD5D3530066F807 /* BloggerCommentList.swift in Sources */,
 				A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */,
 				A4A4FF7A1B2CD80D00BA4B8B /* DiscoveryRestDescription.swift in Sources */,
 				A4A4FF7C1B2CFDB900BA4B8B /* DiscoveryDirectoryList.swift in Sources */,
+				A42E33BC1BD5D3530066F807 /* BloggerPageviews.swift in Sources */,
+				A42E33BE1BD5D3530066F807 /* BloggerPostList.swift in Sources */,
+				A42E33BF1BD5D3530066F807 /* BloggerPostPerUserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

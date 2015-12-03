@@ -8,29 +8,65 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>OMGHTTPURLRQ.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Pods-GoogleClient.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>PromiseKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>22D80A54A0E139A32D72924D6AB34BEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2DA17CB5A3325F11BC2EFF2C7028B0E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4AB97DF925D06DC8E965B17BAC30A6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C63E2D2EF023BACCE5536A1DF1E92C55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6D9B02D68211DC8F0C03F966F2C813D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
