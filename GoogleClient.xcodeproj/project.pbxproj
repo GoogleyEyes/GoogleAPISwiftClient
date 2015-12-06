@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; };
 		A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCB1B123D4B0041450D /* GoogleObject.swift */; };
 		A42E33B31BD5D3530066F807 /* Blogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A31BD5D3530066F807 /* Blogger.swift */; settings = {ASSET_TAGS = (); }; };
 		A42E33B41BD5D3530066F807 /* BloggerBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A41BD5D3530066F807 /* BloggerBlog.swift */; settings = {ASSET_TAGS = (); }; };

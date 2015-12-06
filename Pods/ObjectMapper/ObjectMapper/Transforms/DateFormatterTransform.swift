@@ -1,8 +1,8 @@
 //
-//  URLTransform.swift
+//  DateFormatterTransform.swift
 //  ObjectMapper
 //
-//  Created by Tristan Himmelman on 2014-10-27.
+//  Created by Tristan Himmelman on 2015-03-09.
 //
 //  The MIT License (MIT)
 //
@@ -28,22 +28,26 @@
 
 import Foundation
 
-public class URLTransform: TransformType {
-	public typealias Object = NSURL
+public class DateFormatterTransform: TransformType {
+	public typealias Object = NSDate
 	public typealias JSON = String
-
-	public init() {}
-
-	public func transformFromJSON(value: AnyObject?) -> NSURL? {
-		if let URLString = value as? String {
-			return NSURL(string: URLString)
+	
+	let dateFormatter: NSDateFormatter
+	
+	public init(dateFormatter: NSDateFormatter) {
+		self.dateFormatter = dateFormatter
+	}
+	
+	public func transformFromJSON(value: AnyObject?) -> NSDate? {
+		if let dateString = value as? String {
+			return dateFormatter.dateFromString(dateString)
 		}
 		return nil
 	}
-
-	public func transformToJSON(value: NSURL?) -> String? {
-		if let URL = value {
-			return URL.absoluteString
+	
+	public func transformToJSON(value: NSDate?) -> String? {
+		if let date = value {
+			return dateFormatter.stringFromDate(date)
 		}
 		return nil
 	}
