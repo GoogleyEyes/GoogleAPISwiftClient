@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; };
 		A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCB1B123D4B0041450D /* GoogleObject.swift */; };
 		A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46810351B093353006F7839 /* SystemConfiguration.framework */; };
 		A46810381B0AC4E0006F7839 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46810371B0AC4E0006F7839 /* GoogleService.swift */; };

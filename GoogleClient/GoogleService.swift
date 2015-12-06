@@ -50,11 +50,11 @@ class GoogleServiceFetcher {
         }
         Alamofire.request(method, url, parameters: finalQueryParams)
             .validate()
-            .responseString { (request, response, result) -> Void in
-                if result.isFailure {
-                    completionHandler(JSON: nil, error: result.error)
+            .responseString { response in
+                if response.result.isFailure {
+                    completionHandler(JSON: nil, error: response.result.error)
                 } else {
-                    completionHandler(JSON: result.value, error: nil)
+                    completionHandler(JSON: response.result.value, error: nil)
                 }
             }
     }
