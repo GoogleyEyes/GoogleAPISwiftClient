@@ -24,16 +24,28 @@ Then import:
 ## Authentication
 The Google APIs use one of two methods for authentication: an API Key or OAuth 2.0.
 
-Both the API key and OAuth access token are set directly in the GoogleService protocol conformant. This means you can use any means necessary to get the OAuth token information and keep it up to date. You can use [GTM-OAuth2](https://code.google.com/p/gtm-oauth2/wiki/Introduction), the new [Google Sign-in SDK](https://developers.google.com/identity/sign-in/ios/), or any other OAuth 2 library to get the job done.
+Both the API key and OAuth access token are set directly in the GoogleService protocol conformant, _before any service fetchers that require authentication by either are called_ (see the specific service API's documentation for which authentication method to use for a specific method).
 
-## Basic Fetcher Usage
-The bulk of the client library at this point is the fetcher class which has one simple, yet powerful method:
+This means that you can use any means necessary to get the OAuth token information and keep it up to date. You can use [GTM-OAuth2](https://code.google.com/p/gtm-oauth2/wiki/Introduction), the new [Google Sign-in SDK](https://developers.google.com/identity/sign-in/ios/), or any other OAuth 2 library to get the job done.
+
+## Basic Usage
+Simply use a chosen service's base class (named after itself) to make a request, which then returns the data to a completion handler.
+
+For example, if I wanted to fetch comments for a given Blogger post:
+- First I'd set the API Key:
 
 ```swift
-performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: NSError?) -> ())
+    Blogger.sharedInstance.apiKey = "abcdefghijklmnop1234567890" // Example
+```
+- Then I'd only need to call this method to get the comments for a post:
+```swift
+    Blogger.sharedInstance.getCommments(commentId: "abcdef", postId: "ghijkl", blogId: "1234567") {
+      comment, error in
+      // handle
+    }
 ```
 
-Yes, this library uses [Alamofire](https://github.com/Alamofire/Alamofire) under the hood.
+It really is that simple!
 
 ## Contributing
 - If you would like to help improve the base classes and protocols (GoogleObject, GoogleService, etc.) then feel free to fork and create a pull request for this repository.
