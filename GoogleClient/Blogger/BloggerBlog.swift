@@ -2,7 +2,7 @@
 //  BloggerBlog.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ public class BloggerBlog: GoogleObject {
 	/// The JSON custom meta-data for the Blog
 	public var customMetaData: String!
 	/// The kind of this entry. Always blogger#blog
-	public var kind: String!
+	public var kind: String = "blogger#blog"
 	/// The description of this blog. This is displayed underneath the title.
 	public var description: String!
 	/// RFC 3339 date-time when this blog was last updated.
@@ -56,6 +56,7 @@ public class BloggerBlog: GoogleObject {
 		url <- map["url"]
 		status <- map["status"]
 	}
+}
 
 public class BloggerBlogLocale: Mappable {
 	/// The country this blog's locale is set to.
@@ -74,6 +75,7 @@ public class BloggerBlogLocale: Mappable {
 		language <- map["language"]
 		variant <- map["variant"]
 	}
+}
 
 public class BloggerBlogPosts: Mappable {
 	/// The List of Posts for this Blog.
@@ -92,6 +94,7 @@ public class BloggerBlogPosts: Mappable {
 		selfLink <- map["selfLink"]
 		totalItems <- map["totalItems"]
 	}
+}
 
 public class BloggerBlogPages: Mappable {
 	/// The URL of the container for pages in this blog.
@@ -107,4 +110,5 @@ public class BloggerBlogPages: Mappable {
 		selfLink <- map["selfLink"]
 		totalItems <- map["totalItems"]
 	}
+}
 

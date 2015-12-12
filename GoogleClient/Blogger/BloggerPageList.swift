@@ -2,7 +2,7 @@
 //  BloggerPageList.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -17,10 +17,8 @@ public class BloggerPageList: GoogleObjectList {
 	public var nextPageToken: String!
 	/// Etag of the response.
 	public var etag: String!
-	/// The list of Pages for a Blog.
-	public var items: [BloggerPage]!
 	/// The kind of this entity. Always blogger#pageList
-	public var kind: String!
+	public var kind: String = "blogger#pageList"
 	
 	public required init?(_ map: Map) {
 
@@ -30,7 +28,6 @@ public class BloggerPageList: GoogleObjectList {
 		items <- map["items"]
 		nextPageToken <- map["nextPageToken"]
 		etag <- map["etag"]
-		items <- map["items"]
 		kind <- map["kind"]
 	}
 	public required init(arrayLiteral elements: Type...) {

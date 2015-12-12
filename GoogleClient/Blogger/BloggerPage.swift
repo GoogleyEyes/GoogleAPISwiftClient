@@ -2,7 +2,7 @@
 //  BloggerPage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -25,7 +25,7 @@ public class BloggerPage: GoogleObject {
 	/// The URL that this Page is displayed at.
 	public var url: String!
 	/// The kind of this entity. Always blogger#page
-	public var kind: String!
+	public var kind: String = "blogger#page"
 	/// Etag of the resource.
 	public var etag: String!
 	/// The status of the page for admin resources (either LIVE or DRAFT).
@@ -53,6 +53,20 @@ public class BloggerPage: GoogleObject {
 		selfLink <- map["selfLink"]
 		updated <- map["updated"]
 	}
+}
+
+public class BloggerPageBlog: Mappable {
+	/// The identifier of the blog containing this page.
+	public var id: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		id <- map["id"]
+	}
+}
 
 public class BloggerPageAuthor: Mappable {
 	/// The page author's avatar.
@@ -74,16 +88,5 @@ public class BloggerPageAuthor: Mappable {
 		displayName <- map["displayName"]
 		url <- map["url"]
 	}
-
-public class BloggerPageBlog: Mappable {
-	/// The identifier of the blog containing this page.
-	public var id: String!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		id <- map["id"]
-	}
+}
 

@@ -2,12 +2,102 @@
 //  Blogger.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
+
+public enum BloggerPostUserInfosStatus: String {
+	case Draft = "draft"
+	case Live = "live"
+	case Scheduled = "scheduled"
+}
+
+public enum BloggerAlt: String {
+	case Json = "json"
+}
+
+public enum BloggerPostsStatus: String {
+	case Draft = "draft"
+	case Live = "live"
+	case Scheduled = "scheduled"
+}
+
+public enum BloggerPostsView: String {
+	case ADMIN = "ADMIN"
+	case AUTHOR = "AUTHOR"
+	case READER = "READER"
+}
+
+public enum BloggerBlogsView: String {
+	case ADMIN = "ADMIN"
+	case AUTHOR = "AUTHOR"
+	case READER = "READER"
+}
+
+public enum BloggerPostUserInfosOrderBy: String {
+	case Published = "published"
+	case Updated = "updated"
+}
+
+public enum BloggerPagesStatus: String {
+	case Draft = "draft"
+	case Live = "live"
+}
+
+public enum BloggerBlogsStatus: String {
+	case DELETED = "DELETED"
+	case LIVE = "LIVE"
+}
+
+public enum BloggerPagesView: String {
+	case ADMIN = "ADMIN"
+	case AUTHOR = "AUTHOR"
+	case READER = "READER"
+}
+
+public enum BloggerOAuthScopes: String {
+	case Readonly = "https://www.googleapis.com/auth/blogger.readonly"
+	case Blogger = "https://www.googleapis.com/auth/blogger"
+}
+
+public enum BloggerPostsOrderBy: String {
+	case Published = "published"
+	case Updated = "updated"
+}
+
+public enum BloggerCommentsView: String {
+	case ADMIN = "ADMIN"
+	case AUTHOR = "AUTHOR"
+	case READER = "READER"
+}
+
+public enum BloggerPostUserInfosView: String {
+	case ADMIN = "ADMIN"
+	case AUTHOR = "AUTHOR"
+	case READER = "READER"
+}
+
+public enum BloggerBlogsRole: String {
+	case ADMIN = "ADMIN"
+	case AUTHOR = "AUTHOR"
+	case READER = "READER"
+}
+
+public enum BloggerPageViewsRange: String {
+	case X30DAYS = "30DAYS"
+	case X7DAYS = "7DAYS"
+	case All = "all"
+}
+
+public enum BloggerCommentsStatus: String {
+	case Emptied = "emptied"
+	case Live = "live"
+	case Pending = "pending"
+	case Spam = "spam"
+}
 
 public class Blogger: GoogleService {
 	var apiNameInURL: String = "blogger"
@@ -33,20 +123,20 @@ public class Blogger: GoogleService {
 	/// IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 	public var userIp: String!
 	/// Returns response with indentations and line breaks.
-	public var prettyPrint: Bool!
+	public var prettyPrint: Bool = true
 	/// Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
 	public var quotaUser: String!
 	/// Selector specifying which fields to include in a partial response.
 	public var fields: String!
 	/// Data format for the response.
-	public var alt: BloggerAlt!
+	public var alt: BloggerAlt = .Json
 	/// API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 	public var key: String!
 	/// OAuth 2.0 token for the current user.
 	public var oauthToken: String!
 	
 	/// Whether the body content of posts is included. Default is false.
-	public var fetchBodies: Bool!
+	public var fetchBodies: Bool = false
 	public var status: BloggerPostUserInfosStatus!
 	/// Access level with which to view the returned result. Note that some fields require elevated access.
 	public var view: BloggerPostUserInfosView!
@@ -57,7 +147,7 @@ public class Blogger: GoogleService {
 	/// Continuation token if the request is paged.
 	public var pageToken: String!
 	/// Sort order applied to search results. Default is published.
-	public var orderBy: BloggerPostUserInfosOrderBy!
+	public var orderBy: BloggerPostUserInfosOrderBy = .Published
 	/// Maximum number of posts to fetch.
 	public var maxResults: UInt!
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
@@ -65,9 +155,8 @@ public class Blogger: GoogleService {
 	
 	public func listPostUserInfos(userId userId: String!, blogId: String!, completionHandler: (PostUserInfosList: BloggerPostUserInfosList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONAndQueryString(), forKey: "fetchBodies")
-		}
+		
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let status = status {
 			queryParams.updateValue(status.rawValue, forKey: "status")
 		}
@@ -75,7 +164,7 @@ public class Blogger: GoogleService {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
 		if let endDate = endDate {
-			queryParams.updateValue(endDate, forKey: "endDate")
+			queryParams.updateValue(endDate.toJSONString(), forKey: "endDate")
 		}
 		if let labels = labels {
 			queryParams.updateValue(labels, forKey: "labels")
@@ -83,14 +172,13 @@ public class Blogger: GoogleService {
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
 		}
-		if let orderBy = orderBy {
-			queryParams.updateValue(orderBy.rawValue, forKey: "orderBy")
-		}
+		
+		queryParams.updateValue(orderBy.rawValue, forKey: "orderBy")
 		if let maxResults = maxResults {
-			queryParams.updateValue(maxResults, forKey: "maxResults")
+			queryParams.updateValue(maxResults.toJSONString(), forKey: "maxResults")
 		}
 		if let startDate = startDate {
-			queryParams.updateValue(startDate, forKey: "startDate")
+			queryParams.updateValue(startDate.toJSONString(), forKey: "startDate")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs/\(blogId)/posts", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -108,7 +196,7 @@ public class Blogger: GoogleService {
 	public func getPostUserInfos(userId userId: String!, blogId: String!, postId: String!, completionHandler: (PostUserInfo: BloggerPostUserInfo?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let maxComments = maxComments {
-			queryParams.updateValue(maxComments, forKey: "maxComments")
+			queryParams.updateValue(maxComments.toJSONString(), forKey: "maxComments")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -140,20 +228,19 @@ public class Blogger: GoogleService {
 	/// Whether to create the post as a draft (default: false).
 	public var isDraft: Bool!
 	/// Whether the body content of the post is included with the result (default: true).
-	public var fetchBody: Bool!
+	public var fetchBody: Bool = true
 	/// Whether image URL metadata for each post is included in the returned result (default: false).
 	public var fetchImages: Bool!
 	
 	public func insertPosts(blogId blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let isDraft = isDraft {
-			queryParams.updateValue(isDraft.toJSONAndQueryString(), forKey: "isDraft")
+			queryParams.updateValue(isDraft.toJSONString(), forKey: "isDraft")
 		}
-		if let fetchBody = fetchBody {
-			queryParams.updateValue(fetchBody.toJSONAndQueryString(), forKey: "fetchBody")
-		}
+		
+		queryParams.updateValue(fetchBody.toJSONString(), forKey: "fetchBody")
 		if let fetchImages = fetchImages {
-			queryParams.updateValue(fetchImages.toJSONAndQueryString(), forKey: "fetchImages")
+			queryParams.updateValue(fetchImages.toJSONString(), forKey: "fetchImages")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -171,7 +258,7 @@ public class Blogger: GoogleService {
 	public func publishPosts(blogId blogId: String!, postId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publishDate = publishDate {
-			queryParams.updateValue(publishDate, forKey: "publishDate")
+			queryParams.updateValue(publishDate.toJSONString(), forKey: "publishDate")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/publish", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -184,7 +271,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func deletePosts(blogId blogId: String!, postId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(success: false, error: error)
@@ -196,31 +283,16 @@ public class Blogger: GoogleService {
 
 	/// Whether a publish action should be performed when the post is updated (default: false).
 	public var publish: Bool!
-	/// Whether image URL metadata for each post is included in the returned result (default: false).
-	public var fetchImages: Bool!
-	/// Whether the body content of the post is included with the result (default: true).
-	public var fetchBody: Bool!
-	/// Maximum number of comments to retrieve with the returned post.
-	public var maxComments: UInt!
 	/// Whether a revert action should be performed when the post is updated (default: false).
 	public var revert: Bool!
 	
 	public func patchPosts(postId postId: String!, blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
-			queryParams.updateValue(publish.toJSONAndQueryString(), forKey: "publish")
-		}
-		if let fetchImages = fetchImages {
-			queryParams.updateValue(fetchImages.toJSONAndQueryString(), forKey: "fetchImages")
-		}
-		if let fetchBody = fetchBody {
-			queryParams.updateValue(fetchBody.toJSONAndQueryString(), forKey: "fetchBody")
-		}
-		if let maxComments = maxComments {
-			queryParams.updateValue(maxComments, forKey: "maxComments")
+			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
 		}
 		if let revert = revert {
-			queryParams.updateValue(revert.toJSONAndQueryString(), forKey: "revert")
+			queryParams.updateValue(revert.toJSONString(), forKey: "revert")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -232,19 +304,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Access level with which to view the returned result. Note that some fields require elevated access.
-	public var view: BloggerPostsView!
-	/// Maximum number of comments to pull back on a post.
-	public var maxComments: UInt!
-	
 	public func getByPathPosts(path path: String!, blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
-		if let maxComments = maxComments {
-			queryParams.updateValue(maxComments, forKey: "maxComments")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/bypath", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Post: nil, error: error)
@@ -255,34 +316,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether a publish action should be performed when the post is updated (default: false).
-	public var publish: Bool!
-	/// Whether image URL metadata for each post is included in the returned result (default: false).
-	public var fetchImages: Bool!
-	/// Whether the body content of the post is included with the result (default: true).
-	public var fetchBody: Bool!
-	/// Maximum number of comments to retrieve with the returned post.
-	public var maxComments: UInt!
-	/// Whether a revert action should be performed when the post is updated (default: false).
-	public var revert: Bool!
-	
 	public func updatePosts(postId postId: String!, blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let publish = publish {
-			queryParams.updateValue(publish.toJSONAndQueryString(), forKey: "publish")
-		}
-		if let fetchImages = fetchImages {
-			queryParams.updateValue(fetchImages.toJSONAndQueryString(), forKey: "fetchImages")
-		}
-		if let fetchBody = fetchBody {
-			queryParams.updateValue(fetchBody.toJSONAndQueryString(), forKey: "fetchBody")
-		}
-		if let maxComments = maxComments {
-			queryParams.updateValue(maxComments, forKey: "maxComments")
-		}
-		if let revert = revert {
-			queryParams.updateValue(revert.toJSONAndQueryString(), forKey: "revert")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Post: nil, error: error)
@@ -293,29 +328,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether the body content of the post is included (default: true). This should be set to false when the post bodies are not required, to help minimize traffic.
-	public var fetchBody: Bool!
-	/// Whether image URL metadata for each post is included (default: false).
-	public var fetchImages: Bool!
-	/// Access level with which to view the returned result. Note that some fields require elevated access.
-	public var view: BloggerPostsView!
-	/// Maximum number of comments to pull back on a post.
-	public var maxComments: UInt!
-	
 	public func getPosts(blogId blogId: String!, postId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let fetchBody = fetchBody {
-			queryParams.updateValue(fetchBody.toJSONAndQueryString(), forKey: "fetchBody")
-		}
-		if let fetchImages = fetchImages {
-			queryParams.updateValue(fetchImages.toJSONAndQueryString(), forKey: "fetchImages")
-		}
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
-		if let maxComments = maxComments {
-			queryParams.updateValue(maxComments, forKey: "maxComments")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Post: nil, error: error)
@@ -327,7 +341,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func revertPosts(blogId blogId: String!, postId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/revert", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Post: nil, error: error)
@@ -338,19 +352,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether the body content of posts is included (default: true). This should be set to false when the post bodies are not required, to help minimize traffic.
-	public var fetchBodies: Bool!
-	/// Sort search results
-	public var orderBy: BloggerPostsOrderBy!
-	
 	public func searchPosts(q q: String!, blogId: String!, completionHandler: (PostList: BloggerPostList?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONAndQueryString(), forKey: "fetchBodies")
-		}
-		if let orderBy = orderBy {
-			queryParams.updateValue(orderBy.rawValue, forKey: "orderBy")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/search", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(PostList: nil, error: error)
@@ -361,59 +364,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether the body content of posts is included (default: true). This should be set to false when the post bodies are not required, to help minimize traffic.
-	public var fetchBodies: Bool!
-	/// Statuses to include in the results.
-	public var status: BloggerPostsStatus!
-	/// Access level with which to view the returned result. Note that some fields require escalated access.
-	public var view: BloggerPostsView!
-	/// Whether image URL metadata for each post is included.
-	public var fetchImages: Bool!
-	/// Latest post date to fetch, a date-time with RFC 3339 formatting.
-	public var endDate: NSDate!
-	/// Comma-separated list of labels to search for.
-	public var labels: String!
-	/// Continuation token if the request is paged.
-	public var pageToken: String!
-	/// Sort search results
-	public var orderBy: BloggerPostsOrderBy!
-	/// Maximum number of posts to fetch.
-	public var maxResults: UInt!
-	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
-	public var startDate: NSDate!
-	
 	public func listPosts(blogId blogId: String!, completionHandler: (PostList: BloggerPostList?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONAndQueryString(), forKey: "fetchBodies")
-		}
-		if let status = status {
-			queryParams.updateValue(status.rawValue, forKey: "status")
-		}
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
-		if let fetchImages = fetchImages {
-			queryParams.updateValue(fetchImages.toJSONAndQueryString(), forKey: "fetchImages")
-		}
-		if let endDate = endDate {
-			queryParams.updateValue(endDate, forKey: "endDate")
-		}
-		if let labels = labels {
-			queryParams.updateValue(labels, forKey: "labels")
-		}
-		if let pageToken = pageToken {
-			queryParams.updateValue(pageToken, forKey: "pageToken")
-		}
-		if let orderBy = orderBy {
-			queryParams.updateValue(orderBy.rawValue, forKey: "orderBy")
-		}
-		if let maxResults = maxResults {
-			queryParams.updateValue(maxResults, forKey: "maxResults")
-		}
-		if let startDate = startDate {
-			queryParams.updateValue(startDate, forKey: "startDate")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(PostList: nil, error: error)
@@ -425,7 +377,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func getUsers(userId userId: String!, completionHandler: (User: BloggerUser?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(User: nil, error: error)
@@ -437,7 +389,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func markAsSpamComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/spam", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Comment: nil, error: error)
@@ -448,19 +400,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	public func deleteComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)", queryParams: queryParams) { (JSON, error) -> () in
-			if error != nil {
-				completionHandler(success: false, error: error)
-			} else {
-				completionHandler(success: true, error: nil)
-			}
-		}
-	}
-
 	public func removeContentComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/removecontent", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Comment: nil, error: error)
@@ -471,14 +412,19 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Access level for the requested comment (default: READER). Note that some comments will require elevated permissions, for example comments where the parent posts which is in a draft state, or comments that are pending moderation.
-	public var view: BloggerCommentsView!
-	
-	public func getComments(commentId commentId: String!, postId: String!, blogId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
+	public func deleteComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+		let queryParams = setUpQueryParams()
+		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)", queryParams: queryParams) { (JSON, error) -> () in
+			if error != nil {
+				completionHandler(success: false, error: error)
+			} else {
+				completionHandler(success: true, error: nil)
+			}
 		}
+	}
+
+	public func getComments(commentId commentId: String!, postId: String!, blogId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Comment: nil, error: error)
@@ -489,43 +435,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether the body content of the comments is included.
-	public var fetchBodies: Bool!
-	/// Access level with which to view the returned result. Note that some fields require elevated access.
-	public var view: BloggerCommentsView!
-	/// Latest date of comment to fetch, a date-time with RFC 3339 formatting.
-	public var endDate: NSDate!
-	/// Continuation token if request is paged.
-	public var pageToken: String!
-	/// Maximum number of comments to include in the result.
-	public var maxResults: UInt!
-	/// Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
-	public var startDate: NSDate!
-	public var status: BloggerCommentsStatus!
-	
 	public func listComments(postId postId: String!, blogId: String!, completionHandler: (CommentList: BloggerCommentList?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONAndQueryString(), forKey: "fetchBodies")
-		}
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
-		if let endDate = endDate {
-			queryParams.updateValue(endDate, forKey: "endDate")
-		}
-		if let pageToken = pageToken {
-			queryParams.updateValue(pageToken, forKey: "pageToken")
-		}
-		if let maxResults = maxResults {
-			queryParams.updateValue(maxResults, forKey: "maxResults")
-		}
-		if let startDate = startDate {
-			queryParams.updateValue(startDate, forKey: "startDate")
-		}
-		if let status = status {
-			queryParams.updateValue(status.rawValue, forKey: "status")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(CommentList: nil, error: error)
@@ -537,7 +448,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func approveComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/approve", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Comment: nil, error: error)
@@ -548,38 +459,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether the body content of the comments is included.
-	public var fetchBodies: Bool!
-	/// Latest date of comment to fetch, a date-time with RFC 3339 formatting.
-	public var endDate: NSDate!
-	/// Continuation token if request is paged.
-	public var pageToken: String!
-	/// Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
-	public var startDate: NSDate!
-	public var status: BloggerCommentsStatus!
-	/// Maximum number of comments to include in the result.
-	public var maxResults: UInt!
-	
 	public func listByBlogComments(blogId blogId: String!, completionHandler: (CommentList: BloggerCommentList?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONAndQueryString(), forKey: "fetchBodies")
-		}
-		if let endDate = endDate {
-			queryParams.updateValue(endDate, forKey: "endDate")
-		}
-		if let pageToken = pageToken {
-			queryParams.updateValue(pageToken, forKey: "pageToken")
-		}
-		if let startDate = startDate {
-			queryParams.updateValue(startDate, forKey: "startDate")
-		}
-		if let status = status {
-			queryParams.updateValue(status.rawValue, forKey: "status")
-		}
-		if let maxResults = maxResults {
-			queryParams.updateValue(maxResults, forKey: "maxResults")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/comments", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(CommentList: nil, error: error)
@@ -590,18 +471,13 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Access level with which to view the blog. Note that some fields require elevated access.
-	public var view: BloggerBlogsView!
 	/// Maximum number of posts to pull back with the blog.
 	public var maxPosts: UInt!
 	
 	public func getBlogs(blogId blogId: String!, completionHandler: (Blog: BloggerBlog?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
 		if let maxPosts = maxPosts {
-			queryParams.updateValue(maxPosts, forKey: "maxPosts")
+			queryParams.updateValue(maxPosts.toJSONString(), forKey: "maxPosts")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -613,10 +489,6 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Access level with which to view the blogs. Note that some fields require elevated access.
-	public var view: BloggerBlogsView!
-	/// Blog statuses to include in the result (default: Live blogs only). Note that ADMIN access is required to view deleted blogs.
-	public var status: BloggerBlogsStatus!
 	/// User access types for blogs to include in the results, e.g. AUTHOR will return blogs where the user has author level access. If no roles are specified, defaults to ADMIN and AUTHOR roles.
 	public var role: BloggerBlogsRole!
 	/// Whether the response is a list of blogs with per-user information instead of just blogs.
@@ -624,17 +496,11 @@ public class Blogger: GoogleService {
 	
 	public func listByUserBlogs(userId userId: String!, completionHandler: (BlogList: BloggerBlogList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
-		if let status = status {
-			queryParams.updateValue(status.rawValue, forKey: "status")
-		}
 		if let role = role {
 			queryParams.updateValue(role.rawValue, forKey: "role")
 		}
 		if let fetchUserInfo = fetchUserInfo {
-			queryParams.updateValue(fetchUserInfo.toJSONAndQueryString(), forKey: "fetchUserInfo")
+			queryParams.updateValue(fetchUserInfo.toJSONString(), forKey: "fetchUserInfo")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -646,14 +512,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Access level with which to view the blog. Note that some fields require elevated access.
-	public var view: BloggerBlogsView!
-	
 	public func getByUrlBlogs(url url: String!, completionHandler: (Blog: BloggerBlog?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/byurl", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Blog: nil, error: error)
@@ -664,14 +524,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether to create the page as a draft (default: false).
-	public var isDraft: Bool!
-	
 	public func insertPages(blogId blogId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let isDraft = isDraft {
-			queryParams.updateValue(isDraft.toJSONAndQueryString(), forKey: "isDraft")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Page: nil, error: error)
@@ -683,7 +537,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func publishPages(blogId blogId: String!, pageId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/publish", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Page: nil, error: error)
@@ -695,7 +549,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func deletePages(blogId blogId: String!, pageId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(success: false, error: error)
@@ -705,19 +559,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether a publish action should be performed when the page is updated (default: false).
-	public var publish: Bool!
-	/// Whether a revert action should be performed when the page is updated (default: false).
-	public var revert: Bool!
-	
 	public func patchPages(pageId pageId: String!, blogId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let publish = publish {
-			queryParams.updateValue(publish.toJSONAndQueryString(), forKey: "publish")
-		}
-		if let revert = revert {
-			queryParams.updateValue(revert.toJSONAndQueryString(), forKey: "revert")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Page: nil, error: error)
@@ -728,19 +571,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether a publish action should be performed when the page is updated (default: false).
-	public var publish: Bool!
-	/// Whether a revert action should be performed when the page is updated (default: false).
-	public var revert: Bool!
-	
 	public func updatePages(pageId pageId: String!, blogId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let publish = publish {
-			queryParams.updateValue(publish.toJSONAndQueryString(), forKey: "publish")
-		}
-		if let revert = revert {
-			queryParams.updateValue(revert.toJSONAndQueryString(), forKey: "revert")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Page: nil, error: error)
@@ -751,13 +583,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	public var view: BloggerPagesView!
-	
 	public func getPages(blogId blogId: String!, pageId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Page: nil, error: error)
@@ -769,7 +596,7 @@ public class Blogger: GoogleService {
 	}
 
 	public func revertPages(blogId blogId: String!, pageId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/revert", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(Page: nil, error: error)
@@ -780,33 +607,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Whether to retrieve the Page bodies.
-	public var fetchBodies: Bool!
-	/// Continuation token if the request is paged.
-	public var pageToken: String!
-	/// Access level with which to view the returned result. Note that some fields require elevated access.
-	public var view: BloggerPagesView!
-	/// Maximum number of Pages to fetch.
-	public var maxResults: UInt!
-	public var status: BloggerPagesStatus!
-	
 	public func listPages(blogId blogId: String!, completionHandler: (PageList: BloggerPageList?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONAndQueryString(), forKey: "fetchBodies")
-		}
-		if let pageToken = pageToken {
-			queryParams.updateValue(pageToken, forKey: "pageToken")
-		}
-		if let view = view {
-			queryParams.updateValue(view.rawValue, forKey: "view")
-		}
-		if let maxResults = maxResults {
-			queryParams.updateValue(maxResults, forKey: "maxResults")
-		}
-		if let status = status {
-			queryParams.updateValue(status.rawValue, forKey: "status")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(PageList: nil, error: error)
@@ -817,14 +619,8 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Maximum number of posts to pull back with the blog.
-	public var maxPosts: UInt!
-	
 	public func getBlogUserInfos(blogId blogId: String!, userId: String!, completionHandler: (BlogUserInfo: BloggerBlogUserInfo?, error: ErrorType?) -> ()) {
-		var queryParams = setUpQueryParams()
-		if let maxPosts = maxPosts {
-			queryParams.updateValue(maxPosts, forKey: "maxPosts")
-		}
+		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs/\(blogId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(BlogUserInfo: nil, error: error)
@@ -840,18 +636,16 @@ public class Blogger: GoogleService {
 		if let userIp = userIp {
 			queryParams.updateValue(userIp, forKey: "userIp")
 		}
-		if let prettyPrint = prettyPrint {
-			queryParams.updateValue(prettyPrint, forKey: "prettyPrint")
-		}
+		
+		queryParams.updateValue(prettyPrint.toJSONString(), forKey: "prettyPrint")
 		if let quotaUser = quotaUser {
 			queryParams.updateValue(quotaUser, forKey: "quotaUser")
 		}
 		if let fields = fields {
 			queryParams.updateValue(fields, forKey: "fields")
 		}
-		if let alt = alt {
-			queryParams.updateValue(alt, forKey: "alt")
-		}
+		
+		queryParams.updateValue(alt.rawValue, forKey: "alt")
 		if let key = key {
 			queryParams.updateValue(key, forKey: "key")
 		}
@@ -860,95 +654,5 @@ public class Blogger: GoogleService {
 		}
 		return queryParams
 	}
-}
-
-public enum BloggerAlt: String {
-	case Json = "json"
-}
-
-public enum BloggerPostUserInfosStatus: String {
-	case Draft = "draft"
-	case Live = "live"
-	case Scheduled = "scheduled"
-}
-
-public enum BloggerPostUserInfosView: String {
-	case ADMIN = "ADMIN"
-	case AUTHOR = "AUTHOR"
-	case READER = "READER"
-}
-
-public enum BloggerPostUserInfosOrderBy: String {
-	case Published = "published"
-	case Updated = "updated"
-}
-
-public enum BloggerPageViewsRange: String {
-	case X30DAYS = "30DAYS"
-	case X7DAYS = "7DAYS"
-	case All = "all"
-}
-
-public enum BloggerPostsView: String {
-	case ADMIN = "ADMIN"
-	case AUTHOR = "AUTHOR"
-	case READER = "READER"
-}
-
-public enum BloggerPostsOrderBy: String {
-	case Published = "published"
-	case Updated = "updated"
-}
-
-public enum BloggerPostsStatus: String {
-	case Draft = "draft"
-	case Live = "live"
-	case Scheduled = "scheduled"
-}
-
-public enum BloggerCommentsView: String {
-	case ADMIN = "ADMIN"
-	case AUTHOR = "AUTHOR"
-	case READER = "READER"
-}
-
-public enum BloggerCommentsStatus: String {
-	case Emptied = "emptied"
-	case Live = "live"
-	case Pending = "pending"
-	case Spam = "spam"
-}
-
-public enum BloggerBlogsView: String {
-	case ADMIN = "ADMIN"
-	case AUTHOR = "AUTHOR"
-	case READER = "READER"
-}
-
-public enum BloggerBlogsStatus: String {
-	case DELETED = "DELETED"
-	case LIVE = "LIVE"
-}
-
-public enum BloggerBlogsRole: String {
-	case ADMIN = "ADMIN"
-	case AUTHOR = "AUTHOR"
-	case READER = "READER"
-}
-
-public enum BloggerPagesView: String {
-	case ADMIN = "ADMIN"
-	case AUTHOR = "AUTHOR"
-	case READER = "READER"
-}
-
-public enum BloggerPagesStatus: String {
-	case Draft = "draft"
-	case Live = "live"
-}
-
-public enum BloggerOAuthScopes: String {
-	case Readonly = "https://www.googleapis.com/auth/blogger.readonly"
-	case Blogger = "https://www.googleapis.com/auth/blogger"
 }
 

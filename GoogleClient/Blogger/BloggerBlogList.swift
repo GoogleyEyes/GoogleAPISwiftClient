@@ -2,7 +2,7 @@
 //  BloggerBlogList.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -15,10 +15,8 @@ public class BloggerBlogList: GoogleObjectList {
 	public var items: [Type]!
 	/// Admin level list of blog per-user information
 	public var blogUserInfos: [BloggerBlogUserInfo]!
-	/// The list of Blogs this user has Authorship or Admin rights over.
-	public var items: [BloggerBlog]!
 	/// The kind of this entity. Always blogger#blogList
-	public var kind: String!
+	public var kind: String = "blogger#blogList"
 	
 	public required init?(_ map: Map) {
 
@@ -27,7 +25,6 @@ public class BloggerBlogList: GoogleObjectList {
 	public func mapping(map: Map) {
 		items <- map["items"]
 		blogUserInfos <- map["blogUserInfos"]
-		items <- map["items"]
 		kind <- map["kind"]
 	}
 	public required init(arrayLiteral elements: Type...) {

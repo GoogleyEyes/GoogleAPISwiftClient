@@ -2,7 +2,7 @@
 //  BloggerCommentList.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -16,11 +16,9 @@ public class BloggerCommentList: GoogleObjectList {
 	/// Pagination token to fetch the next page, if one exists.
 	public var nextPageToken: String!
 	/// The kind of this entry. Always blogger#commentList
-	public var kind: String!
+	public var kind: String = "blogger#commentList"
 	/// Etag of the response.
 	public var etag: String!
-	/// The List of Comments for a Post.
-	public var items: [BloggerComment]!
 	/// Pagination token to fetch the previous page, if one exists.
 	public var prevPageToken: String!
 	
@@ -33,7 +31,6 @@ public class BloggerCommentList: GoogleObjectList {
 		nextPageToken <- map["nextPageToken"]
 		kind <- map["kind"]
 		etag <- map["etag"]
-		items <- map["items"]
 		prevPageToken <- map["prevPageToken"]
 	}
 	public required init(arrayLiteral elements: Type...) {

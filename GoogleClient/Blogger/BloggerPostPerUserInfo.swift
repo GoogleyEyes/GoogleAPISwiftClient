@@ -2,7 +2,7 @@
 //  BloggerPostPerUserInfo.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ public class BloggerPostPerUserInfo: GoogleObject {
 	/// ID of the Post resource.
 	public var postId: String!
 	/// The kind of this entity. Always blogger#postPerUserInfo
-	public var kind: String!
+	public var kind: String = "blogger#postPerUserInfo"
 	
 	public required init?(_ map: Map) {
 
@@ -32,4 +32,5 @@ public class BloggerPostPerUserInfo: GoogleObject {
 		postId <- map["postId"]
 		kind <- map["kind"]
 	}
+}
 

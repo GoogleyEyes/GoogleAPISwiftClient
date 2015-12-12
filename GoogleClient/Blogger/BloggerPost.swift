@@ -2,12 +2,66 @@
 //  BloggerPost.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
+
+public class BloggerPostBlog: Mappable {
+	/// The identifier of the Blog that contains this Post.
+	public var id: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		id <- map["id"]
+	}
+}
+
+public class BloggerPostLocation: Mappable {
+	/// Location's longitude.
+	public var lng: Double!
+	/// Location's latitude.
+	public var lat: Double!
+	/// Location's viewport span. Can be used when rendering a map preview.
+	public var span: String!
+	/// Location name.
+	public var name: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		lng <- map["lng"]
+		lat <- map["lat"]
+		span <- map["span"]
+		name <- map["name"]
+	}
+}
+
+public class BloggerPostReplies: Mappable {
+	/// The List of Comments for this Post.
+	public var items: [BloggerComment]!
+	/// The URL of the comments on this post.
+	public var selfLink: String!
+	/// The count of comments on this post.
+	public var totalItems: Int64!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		items <- map["items"]
+		selfLink <- map["selfLink"]
+		totalItems <- map["totalItems"]
+	}
+}
 
 public class BloggerPost: GoogleObject {
 	/// The title of the Post.
@@ -15,13 +69,13 @@ public class BloggerPost: GoogleObject {
 	/// The content of the Post. May contain HTML markup.
 	public var content: String!
 	/// Display image for the Post.
-	public var images: !
+	public var images: [BloggerPostImage]!
 	/// RFC 3339 date-time when this Post was published.
 	public var published: NSDate!
 	/// The JSON meta-data for the Post.
 	public var customMetaData: String!
 	/// The kind of this entity. Always blogger#post
-	public var kind: String!
+	public var kind: String = "blogger#post"
 	/// The location for geotagged posts.
 	public var location: BloggerPostLocation!
 	/// Etag of the resource.
@@ -39,7 +93,7 @@ public class BloggerPost: GoogleObject {
 	/// Comment control and display setting for readers of this post.
 	public var readerComments: String!
 	/// The list of labels this Post was tagged with.
-	public var labels: !
+	public var labels: [String]!
 	/// The container of comments on this Post.
 	public var replies: BloggerPostReplies!
 	/// Status of the post. Only set for admin-level requests
@@ -74,27 +128,7 @@ public class BloggerPost: GoogleObject {
 		selfLink <- map["selfLink"]
 		url <- map["url"]
 	}
-
-public class BloggerPostLocation: Mappable {
-	/// Location's longitude.
-	public var lng: Double!
-	/// Location's latitude.
-	public var lat: Double!
-	/// Location's viewport span. Can be used when rendering a map preview.
-	public var span: String!
-	/// Location name.
-	public var name: String!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		lng <- map["lng"]
-		lat <- map["lat"]
-		span <- map["span"]
-		name <- map["name"]
-	}
+}
 
 public class BloggerPostAuthor: Mappable {
 	/// The Post author's avatar.
@@ -116,34 +150,17 @@ public class BloggerPostAuthor: Mappable {
 		displayName <- map["displayName"]
 		url <- map["url"]
 	}
+}
 
-public class BloggerPostBlog: Mappable {
-	/// The identifier of the Blog that contains this Post.
-	public var id: String!
+public class BloggerPostImage: Mappable {
+	public var url: String!
 	
 	public required init?(_ map: Map) {
 
 	}
 
 	public func mapping(map: Map) {
-		id <- map["id"]
+		url <- map["url"]
 	}
-
-public class BloggerPostReplies: Mappable {
-	/// The List of Comments for this Post.
-	public var items: [BloggerComment]!
-	/// The URL of the comments on this post.
-	public var selfLink: String!
-	/// The count of comments on this post.
-	public var totalItems: Int64!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		items <- map["items"]
-		selfLink <- map["selfLink"]
-		totalItems <- map["totalItems"]
-	}
+}
 

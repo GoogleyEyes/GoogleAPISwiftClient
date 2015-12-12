@@ -2,7 +2,7 @@
 //  BloggerBlogPerUserInfo.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -21,7 +21,7 @@ public class BloggerBlogPerUserInfo: GoogleObject {
 	/// ID of the Blog resource
 	public var blogId: String!
 	/// The kind of this entity. Always blogger#blogPerUserInfo
-	public var kind: String!
+	public var kind: String = "blogger#blogPerUserInfo"
 	
 	public required init?(_ map: Map) {
 
@@ -35,4 +35,5 @@ public class BloggerBlogPerUserInfo: GoogleObject {
 		blogId <- map["blogId"]
 		kind <- map["kind"]
 	}
+}
 

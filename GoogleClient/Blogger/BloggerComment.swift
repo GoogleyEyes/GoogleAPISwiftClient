@@ -2,7 +2,7 @@
 //  BloggerComment.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -25,7 +25,7 @@ public class BloggerComment: GoogleObject {
 	/// Data about the comment this is in reply to.
 	public var inReplyTo: BloggerCommentInReplyTo!
 	/// The kind of this entry. Always blogger#comment
-	public var kind: String!
+	public var kind: String = "blogger#comment"
 	/// The API REST URL to fetch this resource from.
 	public var selfLink: String!
 	/// RFC 3339 date-time when this comment was last updated.
@@ -50,6 +50,20 @@ public class BloggerComment: GoogleObject {
 		updated <- map["updated"]
 		status <- map["status"]
 	}
+}
+
+public class BloggerCommentPost: Mappable {
+	/// The identifier of the post containing this comment.
+	public var id: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		id <- map["id"]
+	}
+}
 
 public class BloggerCommentAuthor: Mappable {
 	/// The comment creator's avatar.
@@ -71,6 +85,7 @@ public class BloggerCommentAuthor: Mappable {
 		displayName <- map["displayName"]
 		url <- map["url"]
 	}
+}
 
 public class BloggerCommentBlog: Mappable {
 	/// The identifier of the blog containing this comment.
@@ -83,18 +98,7 @@ public class BloggerCommentBlog: Mappable {
 	public func mapping(map: Map) {
 		id <- map["id"]
 	}
-
-public class BloggerCommentPost: Mappable {
-	/// The identifier of the post containing this comment.
-	public var id: String!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		id <- map["id"]
-	}
+}
 
 public class BloggerCommentInReplyTo: Mappable {
 	/// The identified of the parent of this comment.
@@ -107,4 +111,5 @@ public class BloggerCommentInReplyTo: Mappable {
 	public func mapping(map: Map) {
 		id <- map["id"]
 	}
+}
 

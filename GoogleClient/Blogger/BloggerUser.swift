@@ -2,7 +2,7 @@
 //  BloggerUser.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 10/19/15.
+//  Created by Matthew Wyskiel on 12/11/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ public class BloggerUser: GoogleObject {
 	/// The display name.
 	public var displayName: String!
 	/// The kind of this entity. Always blogger#user
-	public var kind: String!
+	public var kind: String = "blogger#user"
 	/// The timestamp of when this profile was created, in seconds since epoch.
 	public var created: NSDate!
 	/// The container of blogs for this user.
@@ -44,6 +44,20 @@ public class BloggerUser: GoogleObject {
 		selfLink <- map["selfLink"]
 		url <- map["url"]
 	}
+}
+
+public class BloggerUserBlogs: Mappable {
+	/// The URL of the Blogs for this user.
+	public var selfLink: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		selfLink <- map["selfLink"]
+	}
+}
 
 public class BloggerUserLocale: Mappable {
 	/// The user's country setting.
@@ -62,16 +76,5 @@ public class BloggerUserLocale: Mappable {
 		language <- map["language"]
 		variant <- map["variant"]
 	}
-
-public class BloggerUserBlogs: Mappable {
-	/// The URL of the Blogs for this user.
-	public var selfLink: String!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		selfLink <- map["selfLink"]
-	}
+}
 
