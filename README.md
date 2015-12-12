@@ -7,7 +7,7 @@ That's why I decided I would try something new. Something that would actually ut
 
 I couldn't find what I was looking for, so I decided to build it myself.
 
-This library is still in its early stages. It contains the base model and fetcher classes and protocols, as well as an implementation of the [Discovery API](https://developers.google.com/discovery/) and the [Blogger API](https://developers.google.com/blogger/). More services to come! See Contributing below if you would like to help.
+This library is still in its early stages. It contains the base model and fetcher classes and protocols, as well as implementations of the [Discovery API](https://developers.google.com/discovery/) and the [Blogger API](https://developers.google.com/blogger/). More services to come! See Contributing below if you would like to help.
 
 Please feel free to help move this project along in any way you see fit, whether it be filing issues or submitting pull requests. Even starring helps me know this project is worth working on.
 
