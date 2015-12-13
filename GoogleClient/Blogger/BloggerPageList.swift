@@ -2,7 +2,7 @@
 //  BloggerPageList.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/11/15.
+//  Created by Matthew Wyskiel on 12/12/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 

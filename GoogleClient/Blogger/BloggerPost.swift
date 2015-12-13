@@ -2,7 +2,7 @@
 //  BloggerPost.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/11/15.
+//  Created by Matthew Wyskiel on 12/12/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,47 +19,6 @@ public class BloggerPostBlog: Mappable {
 
 	public func mapping(map: Map) {
 		id <- map["id"]
-	}
-}
-
-public class BloggerPostLocation: Mappable {
-	/// Location's longitude.
-	public var lng: Double!
-	/// Location's latitude.
-	public var lat: Double!
-	/// Location's viewport span. Can be used when rendering a map preview.
-	public var span: String!
-	/// Location name.
-	public var name: String!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		lng <- map["lng"]
-		lat <- map["lat"]
-		span <- map["span"]
-		name <- map["name"]
-	}
-}
-
-public class BloggerPostReplies: Mappable {
-	/// The List of Comments for this Post.
-	public var items: [BloggerComment]!
-	/// The URL of the comments on this post.
-	public var selfLink: String!
-	/// The count of comments on this post.
-	public var totalItems: Int64!
-	
-	public required init?(_ map: Map) {
-
-	}
-
-	public func mapping(map: Map) {
-		items <- map["items"]
-		selfLink <- map["selfLink"]
-		totalItems <- map["totalItems"]
 	}
 }
 
@@ -111,12 +70,12 @@ public class BloggerPost: GoogleObject {
 		title <- map["title"]
 		content <- map["content"]
 		images <- map["images"]
-		published <- map["published"]
+		published <- (map["published"], RFC3339Transform())
 		customMetaData <- map["customMetaData"]
 		kind <- map["kind"]
 		location <- map["location"]
 		etag <- map["etag"]
-		updated <- map["updated"]
+		updated <- (map["updated"], RFC3339Transform())
 		author <- map["author"]
 		titleLink <- map["titleLink"]
 		blog <- map["blog"]
@@ -153,6 +112,60 @@ public class BloggerPostAuthor: Mappable {
 }
 
 public class BloggerPostImage: Mappable {
+	public var url: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		url <- map["url"]
+	}
+}
+
+public class BloggerPostLocation: Mappable {
+	/// Location's longitude.
+	public var lng: Double!
+	/// Location's latitude.
+	public var lat: Double!
+	/// Location's viewport span. Can be used when rendering a map preview.
+	public var span: String!
+	/// Location name.
+	public var name: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		lng <- map["lng"]
+		lat <- map["lat"]
+		span <- map["span"]
+		name <- map["name"]
+	}
+}
+
+public class BloggerPostReplies: Mappable {
+	/// The List of Comments for this Post.
+	public var items: [BloggerComment]!
+	/// The URL of the comments on this post.
+	public var selfLink: String!
+	/// The count of comments on this post.
+	public var totalItems: Int64!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		items <- map["items"]
+		selfLink <- map["selfLink"]
+		totalItems <- map["totalItems"]
+	}
+}
+
+public class BloggerPostAuthorImage: Mappable {
+	/// The Post author's avatar URL.
 	public var url: String!
 	
 	public required init?(_ map: Map) {

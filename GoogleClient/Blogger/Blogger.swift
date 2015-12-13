@@ -2,7 +2,7 @@
 //  Blogger.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/11/15.
+//  Created by Matthew Wyskiel on 12/12/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -153,7 +153,7 @@ public class Blogger: GoogleService {
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
 	public var startDate: NSDate!
 	
-	public func listPostUserInfos(userId userId: String!, blogId: String!, completionHandler: (PostUserInfosList: BloggerPostUserInfosList?, error: ErrorType?) -> ()) {
+	public func listPostUserInfos(userId userId: String!, blogId: String!, completionHandler: (postUserInfosList: BloggerPostUserInfosList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		
 		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
@@ -182,10 +182,10 @@ public class Blogger: GoogleService {
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs/\(blogId)/posts", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(PostUserInfosList: nil, error: error)
+				completionHandler(postUserInfosList: nil, error: error)
 			} else if JSON != nil {
-				let PostUserInfosList = Mapper<BloggerPostUserInfosList>().map(JSON)
-				completionHandler(PostUserInfosList: PostUserInfosList, error: nil)
+				let postUserInfosList = Mapper<BloggerPostUserInfosList>().map(JSON)
+				completionHandler(postUserInfosList: postUserInfosList, error: nil)
 			}
 		}
 	}
@@ -193,34 +193,34 @@ public class Blogger: GoogleService {
 	/// Maximum number of comments to pull back on a post.
 	public var maxComments: UInt!
 	
-	public func getPostUserInfos(userId userId: String!, blogId: String!, postId: String!, completionHandler: (PostUserInfo: BloggerPostUserInfo?, error: ErrorType?) -> ()) {
+	public func getPostUserInfos(userId userId: String!, blogId: String!, postId: String!, completionHandler: (postUserInfo: BloggerPostUserInfo?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let maxComments = maxComments {
 			queryParams.updateValue(maxComments.toJSONString(), forKey: "maxComments")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(PostUserInfo: nil, error: error)
+				completionHandler(postUserInfo: nil, error: error)
 			} else if JSON != nil {
-				let PostUserInfo = Mapper<BloggerPostUserInfo>().map(JSON)
-				completionHandler(PostUserInfo: PostUserInfo, error: nil)
+				let postUserInfo = Mapper<BloggerPostUserInfo>().map(JSON)
+				completionHandler(postUserInfo: postUserInfo, error: nil)
 			}
 		}
 	}
 
 	public var range: BloggerPageViewsRange!
 	
-	public func getPageViews(blogId blogId: String!, completionHandler: (Pageviews: BloggerPageviews?, error: ErrorType?) -> ()) {
+	public func getPageViews(blogId blogId: String!, completionHandler: (pageviews: BloggerPageviews?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let range = range {
 			queryParams.updateValue(range.rawValue, forKey: "range")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pageviews", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Pageviews: nil, error: error)
+				completionHandler(pageviews: nil, error: error)
 			} else if JSON != nil {
-				let Pageviews = Mapper<BloggerPageviews>().map(JSON)
-				completionHandler(Pageviews: Pageviews, error: nil)
+				let pageviews = Mapper<BloggerPageviews>().map(JSON)
+				completionHandler(pageviews: pageviews, error: nil)
 			}
 		}
 	}
@@ -232,7 +232,7 @@ public class Blogger: GoogleService {
 	/// Whether image URL metadata for each post is included in the returned result (default: false).
 	public var fetchImages: Bool!
 	
-	public func insertPosts(blogId blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
+	public func insertPosts(post post: BloggerPost, blogId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let isDraft = isDraft {
 			queryParams.updateValue(isDraft.toJSONString(), forKey: "isDraft")
@@ -242,12 +242,12 @@ public class Blogger: GoogleService {
 		if let fetchImages = fetchImages {
 			queryParams.updateValue(fetchImages.toJSONString(), forKey: "fetchImages")
 		}
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts", queryParams: queryParams, postBody: Mapper<BloggerPost>().toJSON(post)) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Post: nil, error: error)
+				completionHandler(post: nil, error: error)
 			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
 			}
 		}
 	}
@@ -255,24 +255,24 @@ public class Blogger: GoogleService {
 	/// Optional date and time to schedule the publishing of the Blog. If no publishDate parameter is given, the post is either published at the a previously saved schedule date (if present), or the current time. If a future date is given, the post will be scheduled to be published.
 	public var publishDate: NSDate!
 	
-	public func publishPosts(blogId blogId: String!, postId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
+	public func publishPosts(blogId blogId: String!, postId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publishDate = publishDate {
 			queryParams.updateValue(publishDate.toJSONString(), forKey: "publishDate")
 		}
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/publish", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/publish", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Post: nil, error: error)
+				completionHandler(post: nil, error: error)
 			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
 			}
 		}
 	}
 
 	public func deletePosts(blogId blogId: String!, postId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(success: false, error: error)
 			} else {
@@ -286,7 +286,7 @@ public class Blogger: GoogleService {
 	/// Whether a revert action should be performed when the post is updated (default: false).
 	public var revert: Bool!
 	
-	public func patchPosts(postId postId: String!, blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
+	public func patchPosts(post post: BloggerPost, postId: String!, blogId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -294,127 +294,127 @@ public class Blogger: GoogleService {
 		if let revert = revert {
 			queryParams.updateValue(revert.toJSONString(), forKey: "revert")
 		}
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.PATCH, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams, postBody: Mapper<BloggerPost>().toJSON(post)) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Post: nil, error: error)
+				completionHandler(post: nil, error: error)
 			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
 			}
 		}
 	}
 
-	public func getByPathPosts(path path: String!, blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
+	public func getByPathPosts(path path: String!, blogId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/bypath", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Post: nil, error: error)
+				completionHandler(post: nil, error: error)
 			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
 			}
 		}
 	}
 
-	public func updatePosts(postId postId: String!, blogId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
+	public func updatePosts(post post: BloggerPost, postId: String!, blogId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
+		let queryParams = setUpQueryParams()
+		GoogleServiceFetcher.sharedInstance.performRequest(.PUT, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams, postBody: Mapper<BloggerPost>().toJSON(post)) { (JSON, error) -> () in
+			if error != nil {
+				completionHandler(post: nil, error: error)
+			} else if JSON != nil {
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
+			}
+		}
+	}
+
+	public func getPosts(blogId blogId: String!, postId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Post: nil, error: error)
+				completionHandler(post: nil, error: error)
 			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
 			}
 		}
 	}
 
-	public func getPosts(blogId blogId: String!, postId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
+	public func revertPosts(blogId blogId: String!, postId: String!, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/revert", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Post: nil, error: error)
+				completionHandler(post: nil, error: error)
 			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
+				let post = Mapper<BloggerPost>().map(JSON)
+				completionHandler(post: post, error: nil)
 			}
 		}
 	}
 
-	public func revertPosts(blogId blogId: String!, postId: String!, completionHandler: (Post: BloggerPost?, error: ErrorType?) -> ()) {
-		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/revert", queryParams: queryParams) { (JSON, error) -> () in
-			if error != nil {
-				completionHandler(Post: nil, error: error)
-			} else if JSON != nil {
-				let Post = Mapper<BloggerPost>().map(JSON)
-				completionHandler(Post: Post, error: nil)
-			}
-		}
-	}
-
-	public func searchPosts(q q: String!, blogId: String!, completionHandler: (PostList: BloggerPostList?, error: ErrorType?) -> ()) {
+	public func searchPosts(q q: String!, blogId: String!, completionHandler: (postList: BloggerPostList?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/search", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(PostList: nil, error: error)
+				completionHandler(postList: nil, error: error)
 			} else if JSON != nil {
-				let PostList = Mapper<BloggerPostList>().map(JSON)
-				completionHandler(PostList: PostList, error: nil)
+				let postList = Mapper<BloggerPostList>().map(JSON)
+				completionHandler(postList: postList, error: nil)
 			}
 		}
 	}
 
-	public func listPosts(blogId blogId: String!, completionHandler: (PostList: BloggerPostList?, error: ErrorType?) -> ()) {
+	public func listPosts(blogId blogId: String!, completionHandler: (postList: BloggerPostList?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(PostList: nil, error: error)
+				completionHandler(postList: nil, error: error)
 			} else if JSON != nil {
-				let PostList = Mapper<BloggerPostList>().map(JSON)
-				completionHandler(PostList: PostList, error: nil)
+				let postList = Mapper<BloggerPostList>().map(JSON)
+				completionHandler(postList: postList, error: nil)
 			}
 		}
 	}
 
-	public func getUsers(userId userId: String!, completionHandler: (User: BloggerUser?, error: ErrorType?) -> ()) {
+	public func getUsers(userId userId: String!, completionHandler: (user: BloggerUser?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(User: nil, error: error)
+				completionHandler(user: nil, error: error)
 			} else if JSON != nil {
-				let User = Mapper<BloggerUser>().map(JSON)
-				completionHandler(User: User, error: nil)
+				let user = Mapper<BloggerUser>().map(JSON)
+				completionHandler(user: user, error: nil)
 			}
 		}
 	}
 
-	public func markAsSpamComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
+	public func markAsSpamComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (comment: BloggerComment?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/spam", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/spam", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Comment: nil, error: error)
+				completionHandler(comment: nil, error: error)
 			} else if JSON != nil {
-				let Comment = Mapper<BloggerComment>().map(JSON)
-				completionHandler(Comment: Comment, error: nil)
+				let comment = Mapper<BloggerComment>().map(JSON)
+				completionHandler(comment: comment, error: nil)
 			}
 		}
 	}
 
-	public func removeContentComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
+	public func removeContentComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (comment: BloggerComment?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/removecontent", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/removecontent", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Comment: nil, error: error)
+				completionHandler(comment: nil, error: error)
 			} else if JSON != nil {
-				let Comment = Mapper<BloggerComment>().map(JSON)
-				completionHandler(Comment: Comment, error: nil)
+				let comment = Mapper<BloggerComment>().map(JSON)
+				completionHandler(comment: comment, error: nil)
 			}
 		}
 	}
 
 	public func deleteComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(success: false, error: error)
 			} else {
@@ -423,50 +423,50 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	public func getComments(commentId commentId: String!, postId: String!, blogId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
+	public func getComments(commentId commentId: String!, postId: String!, blogId: String!, completionHandler: (comment: BloggerComment?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Comment: nil, error: error)
+				completionHandler(comment: nil, error: error)
 			} else if JSON != nil {
-				let Comment = Mapper<BloggerComment>().map(JSON)
-				completionHandler(Comment: Comment, error: nil)
+				let comment = Mapper<BloggerComment>().map(JSON)
+				completionHandler(comment: comment, error: nil)
 			}
 		}
 	}
 
-	public func listComments(postId postId: String!, blogId: String!, completionHandler: (CommentList: BloggerCommentList?, error: ErrorType?) -> ()) {
+	public func listComments(postId postId: String!, blogId: String!, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(CommentList: nil, error: error)
+				completionHandler(commentList: nil, error: error)
 			} else if JSON != nil {
-				let CommentList = Mapper<BloggerCommentList>().map(JSON)
-				completionHandler(CommentList: CommentList, error: nil)
+				let commentList = Mapper<BloggerCommentList>().map(JSON)
+				completionHandler(commentList: commentList, error: nil)
 			}
 		}
 	}
 
-	public func approveComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (Comment: BloggerComment?, error: ErrorType?) -> ()) {
+	public func approveComments(blogId blogId: String!, commentId: String!, postId: String!, completionHandler: (comment: BloggerComment?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/approve", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/posts/\(postId)/comments/\(commentId)/approve", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Comment: nil, error: error)
+				completionHandler(comment: nil, error: error)
 			} else if JSON != nil {
-				let Comment = Mapper<BloggerComment>().map(JSON)
-				completionHandler(Comment: Comment, error: nil)
+				let comment = Mapper<BloggerComment>().map(JSON)
+				completionHandler(comment: comment, error: nil)
 			}
 		}
 	}
 
-	public func listByBlogComments(blogId blogId: String!, completionHandler: (CommentList: BloggerCommentList?, error: ErrorType?) -> ()) {
+	public func listByBlogComments(blogId blogId: String!, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/comments", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(CommentList: nil, error: error)
+				completionHandler(commentList: nil, error: error)
 			} else if JSON != nil {
-				let CommentList = Mapper<BloggerCommentList>().map(JSON)
-				completionHandler(CommentList: CommentList, error: nil)
+				let commentList = Mapper<BloggerCommentList>().map(JSON)
+				completionHandler(commentList: commentList, error: nil)
 			}
 		}
 	}
@@ -474,17 +474,17 @@ public class Blogger: GoogleService {
 	/// Maximum number of posts to pull back with the blog.
 	public var maxPosts: UInt!
 	
-	public func getBlogs(blogId blogId: String!, completionHandler: (Blog: BloggerBlog?, error: ErrorType?) -> ()) {
+	public func getBlogs(blogId blogId: String!, completionHandler: (blog: BloggerBlog?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let maxPosts = maxPosts {
 			queryParams.updateValue(maxPosts.toJSONString(), forKey: "maxPosts")
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Blog: nil, error: error)
+				completionHandler(blog: nil, error: error)
 			} else if JSON != nil {
-				let Blog = Mapper<BloggerBlog>().map(JSON)
-				completionHandler(Blog: Blog, error: nil)
+				let blog = Mapper<BloggerBlog>().map(JSON)
+				completionHandler(blog: blog, error: nil)
 			}
 		}
 	}
@@ -494,7 +494,7 @@ public class Blogger: GoogleService {
 	/// Whether the response is a list of blogs with per-user information instead of just blogs.
 	public var fetchUserInfo: Bool!
 	
-	public func listByUserBlogs(userId userId: String!, completionHandler: (BlogList: BloggerBlogList?, error: ErrorType?) -> ()) {
+	public func listByUserBlogs(userId userId: String!, completionHandler: (blogList: BloggerBlogList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let role = role {
 			queryParams.updateValue(role.rawValue, forKey: "role")
@@ -504,53 +504,53 @@ public class Blogger: GoogleService {
 		}
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(BlogList: nil, error: error)
+				completionHandler(blogList: nil, error: error)
 			} else if JSON != nil {
-				let BlogList = Mapper<BloggerBlogList>().map(JSON)
-				completionHandler(BlogList: BlogList, error: nil)
+				let blogList = Mapper<BloggerBlogList>().map(JSON)
+				completionHandler(blogList: blogList, error: nil)
 			}
 		}
 	}
 
-	public func getByUrlBlogs(url url: String!, completionHandler: (Blog: BloggerBlog?, error: ErrorType?) -> ()) {
+	public func getByUrlBlogs(url url: String!, completionHandler: (blog: BloggerBlog?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/byurl", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Blog: nil, error: error)
+				completionHandler(blog: nil, error: error)
 			} else if JSON != nil {
-				let Blog = Mapper<BloggerBlog>().map(JSON)
-				completionHandler(Blog: Blog, error: nil)
+				let blog = Mapper<BloggerBlog>().map(JSON)
+				completionHandler(blog: blog, error: nil)
 			}
 		}
 	}
 
-	public func insertPages(blogId blogId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
+	public func insertPages(page page: BloggerPage, blogId: String!, completionHandler: (page: BloggerPage?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages", queryParams: queryParams, postBody: Mapper<BloggerPage>().toJSON(page)) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Page: nil, error: error)
+				completionHandler(page: nil, error: error)
 			} else if JSON != nil {
-				let Page = Mapper<BloggerPage>().map(JSON)
-				completionHandler(Page: Page, error: nil)
+				let page = Mapper<BloggerPage>().map(JSON)
+				completionHandler(page: page, error: nil)
 			}
 		}
 	}
 
-	public func publishPages(blogId blogId: String!, pageId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
+	public func publishPages(blogId blogId: String!, pageId: String!, completionHandler: (page: BloggerPage?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/publish", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/publish", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Page: nil, error: error)
+				completionHandler(page: nil, error: error)
 			} else if JSON != nil {
-				let Page = Mapper<BloggerPage>().map(JSON)
-				completionHandler(Page: Page, error: nil)
+				let page = Mapper<BloggerPage>().map(JSON)
+				completionHandler(page: page, error: nil)
 			}
 		}
 	}
 
 	public func deletePages(blogId blogId: String!, pageId: String!, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(success: false, error: error)
 			} else {
@@ -559,74 +559,74 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	public func patchPages(pageId pageId: String!, blogId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
+	public func patchPages(page page: BloggerPage, pageId: String!, blogId: String!, completionHandler: (page: BloggerPage?, error: ErrorType?) -> ()) {
+		let queryParams = setUpQueryParams()
+		GoogleServiceFetcher.sharedInstance.performRequest(.PATCH, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams, postBody: Mapper<BloggerPage>().toJSON(page)) { (JSON, error) -> () in
+			if error != nil {
+				completionHandler(page: nil, error: error)
+			} else if JSON != nil {
+				let page = Mapper<BloggerPage>().map(JSON)
+				completionHandler(page: page, error: nil)
+			}
+		}
+	}
+
+	public func updatePages(page page: BloggerPage, pageId: String!, blogId: String!, completionHandler: (page: BloggerPage?, error: ErrorType?) -> ()) {
+		let queryParams = setUpQueryParams()
+		GoogleServiceFetcher.sharedInstance.performRequest(.PUT, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams, postBody: Mapper<BloggerPage>().toJSON(page)) { (JSON, error) -> () in
+			if error != nil {
+				completionHandler(page: nil, error: error)
+			} else if JSON != nil {
+				let page = Mapper<BloggerPage>().map(JSON)
+				completionHandler(page: page, error: nil)
+			}
+		}
+	}
+
+	public func getPages(blogId blogId: String!, pageId: String!, completionHandler: (page: BloggerPage?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Page: nil, error: error)
+				completionHandler(page: nil, error: error)
 			} else if JSON != nil {
-				let Page = Mapper<BloggerPage>().map(JSON)
-				completionHandler(Page: Page, error: nil)
+				let page = Mapper<BloggerPage>().map(JSON)
+				completionHandler(page: page, error: nil)
 			}
 		}
 	}
 
-	public func updatePages(pageId pageId: String!, blogId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
+	public func revertPages(blogId blogId: String!, pageId: String!, completionHandler: (page: BloggerPage?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
+		GoogleServiceFetcher.sharedInstance.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/revert", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(Page: nil, error: error)
+				completionHandler(page: nil, error: error)
 			} else if JSON != nil {
-				let Page = Mapper<BloggerPage>().map(JSON)
-				completionHandler(Page: Page, error: nil)
+				let page = Mapper<BloggerPage>().map(JSON)
+				completionHandler(page: page, error: nil)
 			}
 		}
 	}
 
-	public func getPages(blogId blogId: String!, pageId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)", queryParams: queryParams) { (JSON, error) -> () in
-			if error != nil {
-				completionHandler(Page: nil, error: error)
-			} else if JSON != nil {
-				let Page = Mapper<BloggerPage>().map(JSON)
-				completionHandler(Page: Page, error: nil)
-			}
-		}
-	}
-
-	public func revertPages(blogId blogId: String!, pageId: String!, completionHandler: (Page: BloggerPage?, error: ErrorType?) -> ()) {
-		let queryParams = setUpQueryParams()
-		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/revert", queryParams: queryParams) { (JSON, error) -> () in
-			if error != nil {
-				completionHandler(Page: nil, error: error)
-			} else if JSON != nil {
-				let Page = Mapper<BloggerPage>().map(JSON)
-				completionHandler(Page: Page, error: nil)
-			}
-		}
-	}
-
-	public func listPages(blogId blogId: String!, completionHandler: (PageList: BloggerPageList?, error: ErrorType?) -> ()) {
+	public func listPages(blogId blogId: String!, completionHandler: (pageList: BloggerPageList?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(PageList: nil, error: error)
+				completionHandler(pageList: nil, error: error)
 			} else if JSON != nil {
-				let PageList = Mapper<BloggerPageList>().map(JSON)
-				completionHandler(PageList: PageList, error: nil)
+				let pageList = Mapper<BloggerPageList>().map(JSON)
+				completionHandler(pageList: pageList, error: nil)
 			}
 		}
 	}
 
-	public func getBlogUserInfos(blogId blogId: String!, userId: String!, completionHandler: (BlogUserInfo: BloggerBlogUserInfo?, error: ErrorType?) -> ()) {
+	public func getBlogUserInfos(blogId blogId: String!, userId: String!, completionHandler: (blogUserInfo: BloggerBlogUserInfo?, error: ErrorType?) -> ()) {
 		let queryParams = setUpQueryParams()
 		GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "users/\(userId)/blogs/\(blogId)", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
-				completionHandler(BlogUserInfo: nil, error: error)
+				completionHandler(blogUserInfo: nil, error: error)
 			} else if JSON != nil {
-				let BlogUserInfo = Mapper<BloggerBlogUserInfo>().map(JSON)
-				completionHandler(BlogUserInfo: BlogUserInfo, error: nil)
+				let blogUserInfo = Mapper<BloggerBlogUserInfo>().map(JSON)
+				completionHandler(blogUserInfo: blogUserInfo, error: nil)
 			}
 		}
 	}
