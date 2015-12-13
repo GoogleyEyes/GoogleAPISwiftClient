@@ -7,13 +7,11 @@ That's why I decided I would try something new. Something that would actually ut
 
 I couldn't find what I was looking for, so I decided to build it myself.
 
-This library is still in its early stages. It contains the base model and fetcher classes and protocols, as well as implementations of the [Discovery API](https://developers.google.com/discovery/) and the [Blogger API](https://developers.google.com/blogger/). More services to come! See Contributing below if you would like to help.
-
-Please feel free to help move this project along in any way you see fit, whether it be filing issues or submitting pull requests. Even starring helps me know this project is worth working on.
+This library is still in its early stages. It contains the base model and fetcher classes and protocols, as well as implementations of the [Discovery API](https://developers.google.com/discovery/) and the [Blogger API](https://developers.google.com/blogger/). More services to come! See Contributing below if you would like to help. Even starring this project helps me know this project is worth working on.
 
 ## Installation
 ```ruby
-  pod 'GoogleAPISwiftClient', '~> 0.1.0'
+  pod 'GoogleAPISwiftClient', '~> 0.3.0'
 ```
 
 Then import:
@@ -31,13 +29,13 @@ This means that you can use any means necessary to get the OAuth token informati
 ## Basic Usage
 Simply use a chosen service's base class (named after itself) to make a request, which then returns the data to a completion handler.
 
-For example, if I wanted to fetch comments for a given Blogger post:
+For example, if I wanted to fetch a specific comment for a given Blogger post:
 - First I'd set the API Key:
 
 ```swift
     Blogger.sharedInstance.apiKey = "abcdefghijklmnop1234567890" // Example
 ```
-- Then I'd only need to call this method to get the comments for a post:
+- Then I'd only need to call this method to get a specific comment for a blog post:
 ```swift
     Blogger.sharedInstance.getCommments(commentId: "abcdef", postId: "ghijkl", blogId: "1234567") {
       comment, error in
