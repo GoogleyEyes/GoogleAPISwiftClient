@@ -57,7 +57,7 @@ public class Discovery: GoogleService {
             queryParams.updateValue(name, forKey: "name")
         }
         if let preferred = preferred {
-            queryParams.updateValue(preferred.toJSONAndQueryString(), forKey: "preferred")
+            queryParams.updateValue(preferred.toJSONString(), forKey: "preferred")
         }
         
         GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis", queryParams: queryParams) { (JSON, error) -> () in
@@ -79,7 +79,7 @@ public class Discovery: GoogleService {
             queryParams.updateValue(fields, forKey: "fields")
         }
         if let prettyPrint = prettyPrint {
-            queryParams.updateValue(prettyPrint.toJSONAndQueryString(), forKey: "prettyPrint")
+            queryParams.updateValue(prettyPrint.toJSONString(), forKey: "prettyPrint")
         }
         if let quotaUser = quotaUser {
             queryParams.updateValue(quotaUser, forKey: "quotaUser")

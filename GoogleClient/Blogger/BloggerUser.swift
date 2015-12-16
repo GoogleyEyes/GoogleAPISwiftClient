@@ -2,7 +2,7 @@
 //  BloggerUser.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/11/15.
+//  Created by Matthew Wyskiel on 12/12/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -39,7 +39,7 @@ public class BloggerUser: GoogleObject {
 		id <- map["id"]
 		displayName <- map["displayName"]
 		kind <- map["kind"]
-		created <- map["created"]
+		created <- (map["created"], RFC3339Transform())
 		blogs <- map["blogs"]
 		selfLink <- map["selfLink"]
 		url <- map["url"]

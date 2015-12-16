@@ -39,16 +39,19 @@ class GoogleServiceFetcher {
 
     }
 
-    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], completionHandler: (JSON: String?, error: ErrorType?) -> ()) {
+    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, completionHandler: (JSON: String?, error: ErrorType?) -> ()) {
         let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         if accessToken != nil {
             let manager = Manager.sharedInstance
             manager.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken!)"]
         } else if apiKey != nil {
+            let manager = Manager.sharedInstance
+            manager.session.configuration.HTTPAdditionalHeaders = nil
             finalQueryParams.updateValue(apiKey!, forKey: "key")
         }
-        Alamofire.request(method, url, parameters: finalQueryParams)
+        let request = multiEncodedURLRequest(method, URLString: url, URLParameters: queryParams, bodyParameters: postBody)
+        Alamofire.request(request)
             .validate()
             .responseString { response in
                 if response.result.isFailure {
@@ -57,5 +60,22 @@ class GoogleServiceFetcher {
                     completionHandler(JSON: response.result.value, error: nil)
                 }
             }
+    }
+    
+    func multiEncodedURLRequest(
+        method: Alamofire.Method,
+        URLString: URLStringConvertible,
+        URLParameters: [String: AnyObject],
+        bodyParameters: [String: AnyObject]?) -> NSURLRequest
+    {
+        let tempURLRequest = NSURLRequest(URL: NSURL(string: URLString.URLString)!)
+        let URLRequest = ParameterEncoding.URL.encode(tempURLRequest, parameters: URLParameters)
+        let bodyRequest = ParameterEncoding.JSON.encode(tempURLRequest, parameters: bodyParameters)
+        
+        let compositeRequest = URLRequest.0.mutableCopy() as! NSMutableURLRequest
+        compositeRequest.HTTPMethod = method.rawValue
+        compositeRequest.HTTPBody = bodyRequest.0.HTTPBody
+        
+        return compositeRequest
     }
 }

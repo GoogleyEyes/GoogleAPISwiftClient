@@ -2,7 +2,7 @@
 //  BloggerBlog.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/11/15.
+//  Created by Matthew Wyskiel on 12/12/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -44,11 +44,11 @@ public class BloggerBlog: GoogleObject {
 	public func mapping(map: Map) {
 		locale <- map["locale"]
 		selfLink <- map["selfLink"]
-		published <- map["published"]
+		published <- (map["published"], RFC3339Transform())
 		customMetaData <- map["customMetaData"]
 		kind <- map["kind"]
 		description <- map["description"]
-		updated <- map["updated"]
+		updated <- (map["updated"], RFC3339Transform())
 		name <- map["name"]
 		id <- map["id"]
 		posts <- map["posts"]

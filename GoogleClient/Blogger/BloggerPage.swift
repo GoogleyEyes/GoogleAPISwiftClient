@@ -2,12 +2,25 @@
 //  BloggerPage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/11/15.
+//  Created by Matthew Wyskiel on 12/12/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
+
+public class BloggerPageBlog: Mappable {
+	/// The identifier of the blog containing this page.
+	public var id: String!
+	
+	public required init?(_ map: Map) {
+
+	}
+
+	public func mapping(map: Map) {
+		id <- map["id"]
+	}
+}
 
 public class BloggerPage: GoogleObject {
 	/// The author of this Page.
@@ -43,7 +56,7 @@ public class BloggerPage: GoogleObject {
 		author <- map["author"]
 		title <- map["title"]
 		blog <- map["blog"]
-		published <- map["published"]
+		published <- (map["published"], RFC3339Transform())
 		id <- map["id"]
 		content <- map["content"]
 		url <- map["url"]
@@ -51,26 +64,26 @@ public class BloggerPage: GoogleObject {
 		etag <- map["etag"]
 		status <- map["status"]
 		selfLink <- map["selfLink"]
-		updated <- map["updated"]
+		updated <- (map["updated"], RFC3339Transform())
 	}
 }
 
-public class BloggerPageBlog: Mappable {
-	/// The identifier of the blog containing this page.
-	public var id: String!
+public class BloggerPageAuthorImage: Mappable {
+	/// The page author's avatar URL.
+	public var url: String!
 	
 	public required init?(_ map: Map) {
 
 	}
 
 	public func mapping(map: Map) {
-		id <- map["id"]
+		url <- map["url"]
 	}
 }
 
 public class BloggerPageAuthor: Mappable {
 	/// The page author's avatar.
-	public var image: BloggerPageImage!
+	public var image: BloggerPageAuthorImage!
 	/// The identifier of the Page creator.
 	public var id: String!
 	/// The display name.
