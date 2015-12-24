@@ -25,12 +25,16 @@ class GoogleServiceFetcher {
     let baseURL = "https://www.googleapis.com"
     var accessToken: String? {
         didSet {
-            apiKey = nil
+            if apiKey != nil {
+                apiKey = nil
+            }
         }
     }
     var apiKey: String? {
         didSet {
-            accessToken = nil
+            if accessToken != nil {
+                accessToken = nil
+            }
         }
     }
 
