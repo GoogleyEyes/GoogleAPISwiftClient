@@ -2,7 +2,7 @@
 //  BloggerPage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/12/15.
+//  Created by Matthew Wyskiel on 12/28/15.
 //  Copyright © 2015 Matthew Wyskiel. All rights reserved.
 //
 
@@ -83,7 +83,7 @@ public class BloggerPageAuthorImage: Mappable {
 
 public class BloggerPageAuthor: Mappable {
 	/// The page author's avatar.
-	public var image: BloggerPageAuthorImage!
+	public var image: BloggerPageImage!
 	/// The identifier of the Page creator.
 	public var id: String!
 	/// The display name.
