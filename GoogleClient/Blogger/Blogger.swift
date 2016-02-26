@@ -130,7 +130,7 @@ public class Blogger: GoogleService {
 	public var fields: String!
 	/// Data format for the response.
 	public var alt: BloggerAlt = .Json
-	
+
 	/// Whether the body content of posts is included. Default is false.
 	public var fetchBodies: Bool = false
 	public var status: BloggerPostUserInfosStatus!
@@ -148,7 +148,7 @@ public class Blogger: GoogleService {
 	public var maxResults: UInt!
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
 	public var startDate: NSDate!
-	
+
 	public func listPostUserInfos(userId userId: String, blogId: String, completionHandler: (postUserInfosList: BloggerPostUserInfosList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
@@ -186,7 +186,7 @@ public class Blogger: GoogleService {
 
 	/// Maximum number of comments to pull back on a post.
 	public var maxComments: UInt!
-	
+
 	public func getPostUserInfos(userId userId: String, blogId: String, postId: String, completionHandler: (postUserInfo: BloggerPostUserInfo?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let maxComments = maxComments {
@@ -203,7 +203,7 @@ public class Blogger: GoogleService {
 	}
 
 	public var range: BloggerPageViewsRange!
-	
+
 	public func getPageViews(blogId blogId: String, completionHandler: (pageviews: BloggerPageviews?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let range = range {
@@ -225,7 +225,7 @@ public class Blogger: GoogleService {
 	public var fetchBody: Bool = true
 	/// Whether image URL metadata for each post is included in the returned result (default: false).
 	public var fetchImages: Bool!
-	
+
 	public func insertPosts(post post: BloggerPost, blogId: String, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let isDraft = isDraft {
@@ -247,7 +247,7 @@ public class Blogger: GoogleService {
 
 	/// Optional date and time to schedule the publishing of the Blog. If no publishDate parameter is given, the post is either published at the a previously saved schedule date (if present), or the current time. If a future date is given, the post will be scheduled to be published.
 	public var publishDate: NSDate!
-	
+
 	public func publishPosts(blogId blogId: String, postId: String, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publishDate = publishDate {
@@ -278,7 +278,7 @@ public class Blogger: GoogleService {
 	public var publish: Bool!
 	/// Whether a revert action should be performed when the post is updated (default: false).
 	public var revert: Bool!
-	
+
 	public func patchPosts(post post: BloggerPost, postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
@@ -499,9 +499,7 @@ public class Blogger: GoogleService {
 
 	public func listComments(postId postId: String, blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
@@ -544,9 +542,7 @@ public class Blogger: GoogleService {
 
 	public func listByBlogComments(blogId blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let endDate = endDate {
 			queryParams.updateValue(endDate.toJSONString(), forKey: "endDate")
 		}
@@ -574,7 +570,7 @@ public class Blogger: GoogleService {
 
 	/// Maximum number of posts to pull back with the blog.
 	public var maxPosts: UInt!
-	
+
 	public func getBlogs(blogId blogId: String, completionHandler: (blog: BloggerBlog?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let view = view {
@@ -597,7 +593,7 @@ public class Blogger: GoogleService {
 	public var role: BloggerBlogsRole!
 	/// Whether the response is a list of blogs with per-user information instead of just blogs.
 	public var fetchUserInfo: Bool!
-	
+
 	public func listByUserBlogs(userId userId: String, completionHandler: (blogList: BloggerBlogList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let view = view {
@@ -739,9 +735,7 @@ public class Blogger: GoogleService {
 
 	public func listPages(blogId blogId: String, completionHandler: (pageList: BloggerPageList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
 		}
@@ -795,4 +789,3 @@ public class Blogger: GoogleService {
 		return queryParams
 	}
 }
-
