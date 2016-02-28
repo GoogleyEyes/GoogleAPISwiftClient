@@ -67,7 +67,7 @@ public class BloggerCommentAuthorImage: ObjectType {
 
 public class BloggerCommentAuthor: ObjectType {
 	/// The comment creator's avatar.
-	public var image: BloggerCommentImage!
+	public var image: BloggerCommentAuthorImage!
 	/// The identifier of the Comment creator.
 	public var id: String!
 	/// The display name.

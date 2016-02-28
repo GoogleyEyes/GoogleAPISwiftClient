@@ -147,7 +147,7 @@ public class Blogger: GoogleService {
 	/// Continuation token if the request is paged.
 	public var pageToken: String!
 	/// Sort order applied to search results. Default is published.
-	public var orderBy: BloggerPostUserInfosOrderBy = .PUBLISHED
+	public var orderBy: BloggerPostUserInfosOrderBy = .Published
 	/// Maximum number of posts to fetch.
 	public var maxResults: UInt!
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
@@ -503,9 +503,7 @@ public class Blogger: GoogleService {
 
 	public func listComments(postId postId: String, blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
@@ -548,9 +546,7 @@ public class Blogger: GoogleService {
 
 	public func listByBlogComments(blogId blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let endDate = endDate {
 			queryParams.updateValue(endDate.toJSONString(), forKey: "endDate")
 		}
@@ -743,9 +739,7 @@ public class Blogger: GoogleService {
 
 	public func listPages(blogId blogId: String, completionHandler: (pageList: BloggerPageList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
 		}

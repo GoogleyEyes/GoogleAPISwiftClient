@@ -83,7 +83,7 @@ public class BloggerPageAuthorImage: ObjectType {
 
 public class BloggerPageAuthor: ObjectType {
 	/// The page author's avatar.
-	public var image: BloggerPageImage!
+	public var image: BloggerPageAuthorImage!
 	/// The identifier of the Page creator.
 	public var id: String!
 	/// The display name.
