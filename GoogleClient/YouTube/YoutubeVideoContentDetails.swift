@@ -2,14 +2,19 @@
 //  YoutubeVideoContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoContentDetails: Mappable {
+public enum YoutubeVideoContentDetailsDefinition: String {
+	case Hd = "hd"
+	case Sd = "sd"
+}
+
+public class YoutubeVideoContentDetails: ObjectType {
 	/// The value of definition indicates whether the video is available in high definition or only in standard definition.
 	public var definition: YoutubeVideoContentDetailsDefinition!
 	/// Specifies the ratings that the video received under various rating schemes.
@@ -41,5 +46,10 @@ public class YoutubeVideoContentDetails: Mappable {
 		duration <- map["duration"]
 		caption <- map["caption"]
 	}
+}
+
+public enum YoutubeVideoContentDetailsCaption: String {
+	case False = "false"
+	case True = "true"
 }
 

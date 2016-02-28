@@ -2,14 +2,14 @@
 //  YoutubeActivityContentDetailsChannelItem.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeActivityContentDetailsChannelItem: Mappable {
+public class YoutubeActivityContentDetailsChannelItem: ObjectType {
 	/// The resourceId object contains information that identifies the resource that was added to the channel.
 	public var resourceId: YoutubeResourceId!
 	

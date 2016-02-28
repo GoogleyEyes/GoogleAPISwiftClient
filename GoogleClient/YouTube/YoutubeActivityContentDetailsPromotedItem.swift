@@ -2,14 +2,19 @@
 //  YoutubeActivityContentDetailsPromotedItem.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeActivityContentDetailsPromotedItem: Mappable {
+public enum YoutubeActivityContentDetailsPromotedItemCtaType: String {
+	case Unspecified = "unspecified"
+	case VisitAdvertiserSite = "visitAdvertiserSite"
+}
+
+public class YoutubeActivityContentDetailsPromotedItem: ObjectType {
 	/// The list of forecasting URLs. The client should ping all of these URLs when a promoted item is not available, to indicate that a promoted item could have been shown.
 	public var forecastingUrl: [String]!
 	/// The URL the client should direct the user to, if the user chooses to visit the advertiser's website.

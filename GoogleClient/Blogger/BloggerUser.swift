@@ -2,8 +2,8 @@
 //  BloggerUser.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/28/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -46,7 +46,7 @@ public class BloggerUser: GoogleObject {
 	}
 }
 
-public class BloggerUserBlogs: Mappable {
+public class BloggerUserBlogs: ObjectType {
 	/// The URL of the Blogs for this user.
 	public var selfLink: String!
 	
@@ -59,7 +59,7 @@ public class BloggerUserBlogs: Mappable {
 	}
 }
 
-public class BloggerUserLocale: Mappable {
+public class BloggerUserLocale: ObjectType {
 	/// The user's country setting.
 	public var country: String!
 	/// The user's language setting.

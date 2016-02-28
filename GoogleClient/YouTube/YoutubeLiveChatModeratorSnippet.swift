@@ -2,14 +2,14 @@
 //  YoutubeLiveChatModeratorSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveChatModeratorSnippet: Mappable {
+public class YoutubeLiveChatModeratorSnippet: ObjectType {
 	/// Details about the moderator.
 	public var moderatorDetails: YoutubeChannelProfileDetails!
 	/// The ID of the live chat this moderator can act on.

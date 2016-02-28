@@ -2,14 +2,14 @@
 //  YoutubeVideoStatistics.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoStatistics: Mappable {
+public class YoutubeVideoStatistics: ObjectType {
 	/// The number of users who have indicated that they liked the video by giving it a positive rating.
 	public var likeCount: UInt64!
 	/// The number of times the video has been viewed.

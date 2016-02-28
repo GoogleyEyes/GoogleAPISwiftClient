@@ -2,14 +2,21 @@
 //  YoutubeActivityContentDetailsRecommendation.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeActivityContentDetailsRecommendation: Mappable {
+public enum YoutubeActivityContentDetailsRecommendationReason: String {
+	case Unspecified = "unspecified"
+	case VideoFavorited = "videoFavorited"
+	case VideoLiked = "videoLiked"
+	case VideoWatched = "videoWatched"
+}
+
+public class YoutubeActivityContentDetailsRecommendation: ObjectType {
 	/// The resourceId object contains information that identifies the recommended resource.
 	public var resourceId: YoutubeResourceId!
 	/// The seedResourceId object contains information about the resource that caused the recommendation.

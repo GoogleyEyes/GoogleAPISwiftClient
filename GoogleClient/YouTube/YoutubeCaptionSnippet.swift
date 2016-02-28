@@ -2,14 +2,20 @@
 //  YoutubeCaptionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeCaptionSnippet: Mappable {
+public enum YoutubeCaptionSnippetTrackKind: String {
+	case ASR = "ASR"
+	case Forced = "forced"
+	case Standard = "standard"
+}
+
+public class YoutubeCaptionSnippet: ObjectType {
 	/// Indicates whether the caption track is a draft. If the value is true, then the track is not publicly visible. The default value is false.
 	public var isDraft: Bool!
 	/// The reason that YouTube failed to process the caption track. This property is only present if the state property's value is failed.
@@ -56,5 +62,24 @@ public class YoutubeCaptionSnippet: Mappable {
 		status <- map["status"]
 		language <- map["language"]
 	}
+}
+
+public enum YoutubeCaptionSnippetFailureReason: String {
+	case ProcessingFailed = "processingFailed"
+	case UnknownFormat = "unknownFormat"
+	case UnsupportedFormat = "unsupportedFormat"
+}
+
+public enum YoutubeCaptionSnippetAudioTrackType: String {
+	case Commentary = "commentary"
+	case Descriptive = "descriptive"
+	case Primary = "primary"
+	case Unknown = "unknown"
+}
+
+public enum YoutubeCaptionSnippetStatus: String {
+	case Failed = "failed"
+	case Serving = "serving"
+	case Syncing = "syncing"
 }
 

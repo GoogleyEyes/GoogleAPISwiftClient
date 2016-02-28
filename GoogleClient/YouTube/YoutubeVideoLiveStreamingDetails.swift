@@ -2,16 +2,18 @@
 //  YoutubeVideoLiveStreamingDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoLiveStreamingDetails: Mappable {
+public class YoutubeVideoLiveStreamingDetails: ObjectType {
 	/// The time that the broadcast actually ended. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. This value will not be available until the broadcast is over.
 	public var actualEndTime: NSDate!
+	/// The ID of the currently active live chat attached to this video. This field is filled only if the video is a currently live broadcast that has live chat. Once the broadcast transitions to complete this field will be removed and the live chat closed down. For persistent broadcasts that live chat id will no longer be tied to this video but rather to the new video being displayed at the persistent page.
+	public var activeLiveChatId: String!
 	/// The time that the broadcast actually started. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. This value will not be available until the broadcast begins.
 	public var actualStartTime: NSDate!
 	/// The time that the broadcast is scheduled to begin. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
@@ -27,6 +29,7 @@ public class YoutubeVideoLiveStreamingDetails: Mappable {
 
 	public func mapping(map: Map) {
 		actualEndTime <- (map["actualEndTime"], RFC3339Transform())
+		activeLiveChatId <- map["activeLiveChatId"]
 		actualStartTime <- (map["actualStartTime"], RFC3339Transform())
 		scheduledStartTime <- (map["scheduledStartTime"], RFC3339Transform())
 		scheduledEndTime <- (map["scheduledEndTime"], RFC3339Transform())

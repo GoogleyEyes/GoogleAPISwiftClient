@@ -2,14 +2,14 @@
 //  YoutubePlaylistItemContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubePlaylistItemContentDetails: Mappable {
+public class YoutubePlaylistItemContentDetails: ObjectType {
 	/// A user-generated note for this item.
 	public var note: String!
 	/// The ID that YouTube uses to uniquely identify a video. To retrieve the video resource, set the id query parameter to this value in your API request.

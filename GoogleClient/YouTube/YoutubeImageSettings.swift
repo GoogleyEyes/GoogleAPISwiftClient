@@ -2,14 +2,14 @@
 //  YoutubeImageSettings.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeImageSettings: Mappable {
+public class YoutubeImageSettings: ObjectType {
 	/// Banner image. Mobile size high resolution (1440x395).
 	public var bannerMobileExtraHdImageUrl: String!
 	/// The image map script for the small banner image.

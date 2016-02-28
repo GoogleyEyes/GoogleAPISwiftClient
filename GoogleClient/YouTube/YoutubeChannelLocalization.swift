@@ -2,14 +2,14 @@
 //  YoutubeChannelLocalization.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeChannelLocalization: Mappable {
+public class YoutubeChannelLocalization: ObjectType {
 	/// The localized strings for channel's title.
 	public var title: String!
 	/// The localized strings for channel's description.

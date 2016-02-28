@@ -2,14 +2,20 @@
 //  YoutubeLiveBroadcastContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveBroadcastContentDetails: Mappable {
+public enum YoutubeLiveBroadcastContentDetailsClosedCaptionsType: String {
+	case ClosedCaptionsDisabled = "closedCaptionsDisabled"
+	case ClosedCaptionsEmbedded = "closedCaptionsEmbedded"
+	case ClosedCaptionsHttpPost = "closedCaptionsHttpPost"
+}
+
+public class YoutubeLiveBroadcastContentDetails: ObjectType {
 	/**
 	This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true.
 	

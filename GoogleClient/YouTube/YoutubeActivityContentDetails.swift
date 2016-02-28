@@ -2,14 +2,14 @@
 //  YoutubeActivityContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeActivityContentDetails: Mappable {
+public class YoutubeActivityContentDetails: ObjectType {
 	/// The channelItem object contains details about a resource which was added to a channel. This property is only present if the snippet.type is channelItem.
 	public var channelItem: YoutubeActivityContentDetailsChannelItem!
 	/// The like object contains information about a resource that received a positive (like) rating. This property is only present if the snippet.type is like.

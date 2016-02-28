@@ -2,14 +2,14 @@
 //  YoutubeLocalizedProperty.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLocalizedProperty: Mappable {
+public class YoutubeLocalizedProperty: ObjectType {
 	public var localized: [YoutubeLocalizedString]!
 	public var defaultValue: String!
 	/// The language of the default property.

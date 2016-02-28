@@ -2,14 +2,14 @@
 //  YoutubeCdnSettings.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeCdnSettings: Mappable {
+public class YoutubeCdnSettings: ObjectType {
 	/// The format of the video stream that you are sending to Youtube.
 	public var format: String!
 	/// The ingestionInfo object contains information that YouTube provides that you need to transmit your RTMP or HTTP stream to YouTube.
@@ -26,5 +26,10 @@ public class YoutubeCdnSettings: Mappable {
 		ingestionInfo <- map["ingestionInfo"]
 		ingestionType <- map["ingestionType"]
 	}
+}
+
+public enum YoutubeCdnSettingsIngestionType: String {
+	case Dash = "dash"
+	case Rtmp = "rtmp"
 }
 

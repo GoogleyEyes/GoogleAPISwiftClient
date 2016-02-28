@@ -2,14 +2,14 @@
 //  YoutubeVideoFileDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoFileDetails: Mappable {
+public class YoutubeVideoFileDetails: ObjectType {
 	/// The uploaded file's type as detected by YouTube's video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded.
 	public var fileType: YoutubeVideoFileDetailsFileType!
 	/// A list of video streams contained in the uploaded video file. Each item in the list contains detailed metadata about a video stream.
@@ -51,5 +51,15 @@ public class YoutubeVideoFileDetails: Mappable {
 		bitrateBps <- map["bitrateBps"]
 		creationTime <- map["creationTime"]
 	}
+}
+
+public enum YoutubeVideoFileDetailsFileType: String {
+	case Archive = "archive"
+	case Audio = "audio"
+	case Document = "document"
+	case Image = "image"
+	case Other = "other"
+	case Project = "project"
+	case Video = "video"
 }
 

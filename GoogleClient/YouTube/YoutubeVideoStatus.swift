@@ -2,14 +2,31 @@
 //  YoutubeVideoStatus.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoStatus: Mappable {
+public enum YoutubeVideoStatusFailureReason: String {
+	case Codec = "codec"
+	case Conversion = "conversion"
+	case EmptyFile = "emptyFile"
+	case InvalidFile = "invalidFile"
+	case TooSmall = "tooSmall"
+	case UploadAborted = "uploadAborted"
+}
+
+public enum YoutubeVideoStatusUploadStatus: String {
+	case Deleted = "deleted"
+	case Failed = "failed"
+	case Processed = "processed"
+	case Rejected = "rejected"
+	case Uploaded = "uploaded"
+}
+
+public class YoutubeVideoStatus: ObjectType {
 	/// The video's privacy status.
 	public var privacyStatus: YoutubeVideoStatusPrivacyStatus!
 	/// This value indicates if the video can be embedded on another website.
@@ -41,5 +58,29 @@ public class YoutubeVideoStatus: Mappable {
 		uploadStatus <- map["uploadStatus"]
 		publishAt <- (map["publishAt"], RFC3339Transform())
 	}
+}
+
+public enum YoutubeVideoStatusRejectionReason: String {
+	case Claim = "claim"
+	case Copyright = "copyright"
+	case Duplicate = "duplicate"
+	case Inappropriate = "inappropriate"
+	case Legal = "legal"
+	case Length = "length"
+	case TermsOfUse = "termsOfUse"
+	case Trademark = "trademark"
+	case UploaderAccountClosed = "uploaderAccountClosed"
+	case UploaderAccountSuspended = "uploaderAccountSuspended"
+}
+
+public enum YoutubeVideoStatusPrivacyStatus: String {
+	case Private = "private"
+	case Public = "public"
+	case Unlisted = "unlisted"
+}
+
+public enum YoutubeVideoStatusLicense: String {
+	case CreativeCommon = "creativeCommon"
+	case Youtube = "youtube"
 }
 

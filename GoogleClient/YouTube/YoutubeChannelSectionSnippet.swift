@@ -2,14 +2,40 @@
 //  YoutubeChannelSectionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeChannelSectionSnippet: Mappable {
+public enum YoutubeChannelSectionSnippetType: String {
+	case AllPlaylists = "allPlaylists"
+	case ChannelsectionTypeUndefined = "channelsectionTypeUndefined"
+	case CompletedEvents = "completedEvents"
+	case LikedPlaylists = "likedPlaylists"
+	case Likes = "likes"
+	case LiveEvents = "liveEvents"
+	case MultipleChannels = "multipleChannels"
+	case MultiplePlaylists = "multiplePlaylists"
+	case PopularUploads = "popularUploads"
+	case PostedPlaylists = "postedPlaylists"
+	case PostedVideos = "postedVideos"
+	case RecentActivity = "recentActivity"
+	case RecentPosts = "recentPosts"
+	case RecentUploads = "recentUploads"
+	case SinglePlaylist = "singlePlaylist"
+	case Subscriptions = "subscriptions"
+	case UpcomingEvents = "upcomingEvents"
+}
+
+public enum YoutubeChannelSectionSnippetStyle: String {
+	case ChannelsectionStyleUndefined = "channelsectionStyleUndefined"
+	case HorizontalRow = "horizontalRow"
+	case VerticalList = "verticalList"
+}
+
+public class YoutubeChannelSectionSnippet: ObjectType {
 	/// The ID that YouTube uses to uniquely identify the channel that published the channel section.
 	public var channelId: String!
 	/// The style of the channel section.

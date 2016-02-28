@@ -2,14 +2,14 @@
 //  YoutubeCommentThreadSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeCommentThreadSnippet: Mappable {
+public class YoutubeCommentThreadSnippet: ObjectType {
 	/// The YouTube channel the comments in the thread refer to or the channel with the video the comments refer to. If video_id isn't set the comments refer to the channel itself.
 	public var channelId: String!
 	/// The top level comment of this thread.

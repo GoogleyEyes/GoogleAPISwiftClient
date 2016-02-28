@@ -2,14 +2,22 @@
 //  YoutubeVideoFileDetailsVideoStream.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoFileDetailsVideoStream: Mappable {
+public enum YoutubeVideoFileDetailsVideoStreamRotation: String {
+	case Clockwise = "clockwise"
+	case CounterClockwise = "counterClockwise"
+	case None = "none"
+	case Other = "other"
+	case UpsideDown = "upsideDown"
+}
+
+public class YoutubeVideoFileDetailsVideoStream: ObjectType {
 	/// The video stream's frame rate, in frames per second.
 	public var frameRateFps: Double!
 	/// A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.

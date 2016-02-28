@@ -2,14 +2,19 @@
 //  YoutubeSubscriptionContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeSubscriptionContentDetails: Mappable {
+public enum YoutubeSubscriptionContentDetailsActivityType: String {
+	case All = "all"
+	case Uploads = "uploads"
+}
+
+public class YoutubeSubscriptionContentDetails: ObjectType {
 	/// The approximate number of items that the subscription points to.
 	public var totalItemCount: UInt!
 	/// The type of activity this subscription is for (only uploads, everything).

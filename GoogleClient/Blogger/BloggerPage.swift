@@ -2,14 +2,14 @@
 //  BloggerPage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/28/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class BloggerPageBlog: Mappable {
+public class BloggerPageBlog: ObjectType {
 	/// The identifier of the blog containing this page.
 	public var id: String!
 	
@@ -68,7 +68,7 @@ public class BloggerPage: GoogleObject {
 	}
 }
 
-public class BloggerPageAuthorImage: Mappable {
+public class BloggerPageAuthorImage: ObjectType {
 	/// The page author's avatar URL.
 	public var url: String!
 	
@@ -81,7 +81,7 @@ public class BloggerPageAuthorImage: Mappable {
 	}
 }
 
-public class BloggerPageAuthor: Mappable {
+public class BloggerPageAuthor: ObjectType {
 	/// The page author's avatar.
 	public var image: BloggerPageImage!
 	/// The identifier of the Page creator.

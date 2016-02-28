@@ -2,14 +2,14 @@
 //  YoutubePropertyValue.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubePropertyValue: Mappable {
+public class YoutubePropertyValue: ObjectType {
 	/// The property's value.
 	public var value: String!
 	/// A property.

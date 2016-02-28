@@ -2,14 +2,14 @@
 //  YoutubeSubscriptionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeSubscriptionSnippet: Mappable {
+public class YoutubeSubscriptionSnippet: ObjectType {
 	/// A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
 	public var thumbnails: YoutubeThumbnailDetails!
 	/// The ID that YouTube uses to uniquely identify the subscriber's channel.

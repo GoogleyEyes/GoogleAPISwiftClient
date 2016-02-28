@@ -2,14 +2,14 @@
 //  YoutubeActivityContentDetailsLike.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeActivityContentDetailsLike: Mappable {
+public class YoutubeActivityContentDetailsLike: ObjectType {
 	/// The resourceId object contains information that identifies the rated resource.
 	public var resourceId: YoutubeResourceId!
 	

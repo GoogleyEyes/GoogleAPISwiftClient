@@ -2,14 +2,22 @@
 //  YoutubeLiveStreamHealthStatus.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveStreamHealthStatus: Mappable {
+public enum YoutubeLiveStreamHealthStatusStatus: String {
+	case Bad = "bad"
+	case Good = "good"
+	case NoData = "noData"
+	case Ok = "ok"
+	case Revoked = "revoked"
+}
+
+public class YoutubeLiveStreamHealthStatus: ObjectType {
 	/// The status code of this stream
 	public var status: YoutubeLiveStreamHealthStatusStatus!
 	/// The configurations issues on this stream

@@ -2,8 +2,8 @@
 //  YoutubeChannelContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -34,7 +34,7 @@ public class YoutubeChannelContentDetailsRelatedPlaylists: Mappable {
 	}
 }
 
-public class YoutubeChannelContentDetails: Mappable {
+public class YoutubeChannelContentDetails: ObjectType {
 	public var relatedPlaylists: YoutubeChannelContentDetailsRelatedPlaylists!
 	/// The googlePlusUserId object identifies the Google+ profile ID associated with this channel.
 	public var googlePlusUserId: String!

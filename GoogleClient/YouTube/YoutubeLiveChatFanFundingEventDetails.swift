@@ -2,14 +2,14 @@
 //  YoutubeLiveChatFanFundingEventDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveChatFanFundingEventDetails: Mappable {
+public class YoutubeLiveChatFanFundingEventDetails: ObjectType {
 	/// The currency in which the fund was made.
 	public var currency: String!
 	/// A rendered string that displays the fund amount and currency to the user.

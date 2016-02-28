@@ -2,14 +2,14 @@
 //  YoutubeVideoAbuseReport.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoAbuseReport: Mappable {
+public class YoutubeVideoAbuseReport: ObjectType {
 	/// The high-level, or primary, reason that the content is abusive. The value is an abuse report reason ID.
 	public var reasonId: String!
 	/// The ID that YouTube uses to uniquely identify the video.

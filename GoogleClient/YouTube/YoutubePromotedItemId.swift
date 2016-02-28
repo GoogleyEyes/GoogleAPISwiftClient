@@ -2,14 +2,14 @@
 //  YoutubePromotedItemId.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubePromotedItemId: Mappable {
+public class YoutubePromotedItemId: ObjectType {
 	/// If the promoted item represents a video, this field represents the unique YouTube ID identifying it. This field will be present only if type has the value video.
 	public var videoId: String!
 	/// If type is recentUpload, this field identifies the channel from which to take the recent upload. If missing, the channel is assumed to be the same channel for which the invideoPromotion is set.
@@ -29,5 +29,11 @@ public class YoutubePromotedItemId: Mappable {
 		websiteUrl <- map["websiteUrl"]
 		type <- map["type"]
 	}
+}
+
+public enum YoutubePromotedItemIdType: String {
+	case RecentUpload = "recentUpload"
+	case Video = "video"
+	case Website = "website"
 }
 

@@ -2,14 +2,14 @@
 //  YoutubeVideoAbuseReportReasonSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeVideoAbuseReportReasonSnippet: Mappable {
+public class YoutubeVideoAbuseReportReasonSnippet: ObjectType {
 	/// The localized label belonging to this abuse report reason.
 	public var label: String!
 	/// The secondary reasons associated with this reason, if any are available. (There might be 0 or more.)

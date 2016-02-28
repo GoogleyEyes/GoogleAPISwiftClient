@@ -2,14 +2,14 @@
 //  YoutubeChannelSectionContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeChannelSectionContentDetails: Mappable {
+public class YoutubeChannelSectionContentDetails: ObjectType {
 	/// The playlist ids for type single_playlist and multiple_playlists. For singlePlaylist, only one playlistId is allowed.
 	public var playlists: [String]!
 	/// The channel ids for type multiple_channels.

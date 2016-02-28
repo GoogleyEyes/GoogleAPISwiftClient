@@ -2,14 +2,32 @@
 //  YoutubeLiveBroadcastStatus.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveBroadcastStatus: Mappable {
+public enum YoutubeLiveBroadcastStatusRecordingStatus: String {
+	case NotRecording = "notRecording"
+	case Recorded = "recorded"
+	case Recording = "recording"
+}
+
+public enum YoutubeLiveBroadcastStatusLiveBroadcastPriority: String {
+	case High = "high"
+	case Low = "low"
+	case Normal = "normal"
+}
+
+public enum YoutubeLiveBroadcastStatusPrivacyStatus: String {
+	case Private = "private"
+	case Public = "public"
+	case Unlisted = "unlisted"
+}
+
+public class YoutubeLiveBroadcastStatus: ObjectType {
 	/// The broadcast's status. The status can be updated using the API's liveBroadcasts.transition method.
 	public var lifeCycleStatus: YoutubeLiveBroadcastStatusLifeCycleStatus!
 	/// Priority of the live broadcast event (internal state).
@@ -29,5 +47,19 @@ public class YoutubeLiveBroadcastStatus: Mappable {
 		privacyStatus <- map["privacyStatus"]
 		recordingStatus <- map["recordingStatus"]
 	}
+}
+
+public enum YoutubeLiveBroadcastStatusLifeCycleStatus: String {
+	case Abandoned = "abandoned"
+	case Complete = "complete"
+	case CompleteStarting = "completeStarting"
+	case Created = "created"
+	case Live = "live"
+	case LiveStarting = "liveStarting"
+	case Ready = "ready"
+	case Reclaimed = "reclaimed"
+	case Revoked = "revoked"
+	case TestStarting = "testStarting"
+	case Testing = "testing"
 }
 

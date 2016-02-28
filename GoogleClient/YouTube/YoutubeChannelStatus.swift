@@ -2,14 +2,20 @@
 //  YoutubeChannelStatus.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeChannelStatus: Mappable {
+public enum YoutubeChannelStatusPrivacyStatus: String {
+	case Private = "private"
+	case Public = "public"
+	case Unlisted = "unlisted"
+}
+
+public class YoutubeChannelStatus: ObjectType {
 	/// If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn't have a public YouTube identity.
 	public var isLinked: Bool!
 	/// Privacy status of the channel.
@@ -26,5 +32,12 @@ public class YoutubeChannelStatus: Mappable {
 		privacyStatus <- map["privacyStatus"]
 		longUploadsStatus <- map["longUploadsStatus"]
 	}
+}
+
+public enum YoutubeChannelStatusLongUploadsStatus: String {
+	case Allowed = "allowed"
+	case Disallowed = "disallowed"
+	case Eligible = "eligible"
+	case LongUploadsUnspecified = "longUploadsUnspecified"
 }
 

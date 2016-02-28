@@ -2,8 +2,8 @@
 //  YoutubeSearchListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -13,6 +13,7 @@ public class YoutubeSearchListResponse: GoogleObjectList {
 	public typealias Type = YoutubeSearchResult
 	/// A list of results that match the search criteria.
 	public var items: [Type]!
+	public var regionCode: String!
 	public var tokenPagination: YoutubeTokenPagination!
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#searchListResponse".
 	public var kind: String = "youtube#searchListResponse"
@@ -34,6 +35,7 @@ public class YoutubeSearchListResponse: GoogleObjectList {
 
 	public func mapping(map: Map) {
 		items <- map["items"]
+		regionCode <- map["regionCode"]
 		tokenPagination <- map["tokenPagination"]
 		kind <- map["kind"]
 		nextPageToken <- map["nextPageToken"]

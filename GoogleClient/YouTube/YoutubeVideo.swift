@@ -2,8 +2,8 @@
 //  YoutubeVideo.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -26,22 +26,20 @@ public class YoutubeVideo: GoogleObject {
 	public var etag: String!
 	/// The fileDetails object encapsulates information about the video file that was uploaded to YouTube, including the file's resolution, duration, audio and video codecs, stream bitrates, and more. This data can only be retrieved by the video owner.
 	public var fileDetails: YoutubeVideoFileDetails!
-	/// The conversionPings object encapsulates information about url pings that need to be respected by the App in different video contexts.
-	public var conversionPings: YoutubeVideoConversionPings!
 	/// The statistics object contains statistics about the video.
 	public var statistics: YoutubeVideoStatistics!
+	/// The topicDetails object encapsulates information about Freebase topics associated with the video.
+	public var topicDetails: YoutubeVideoTopicDetails!
 	/// The ID that YouTube uses to uniquely identify the video.
 	public var id: String!
 	/// The recordingDetails object encapsulates information about the location, date and address where the video was recorded.
 	public var recordingDetails: YoutubeVideoRecordingDetails!
-	/// The topicDetails object encapsulates information about Freebase topics associated with the video.
-	public var topicDetails: YoutubeVideoTopicDetails!
 	/// The player object contains information that you would use to play the video in an embedded player.
 	public var player: YoutubeVideoPlayer!
-	/// List with all localizations.
-	public var localizations: [String: YoutubeVideoLocalization]!
 	/// The monetizationDetails object encapsulates information about the monetization status of the video.
 	public var monetizationDetails: YoutubeVideoMonetizationDetails!
+	/// List with all localizations.
+	public var localizations: [String: YoutubeVideoLocalization]!
 	/**
 	The processingProgress object encapsulates information about YouTube's progress in processing the uploaded video file. The properties in the object identify the current processing status and an estimate of the time remaining until YouTube finishes processing the video. This part also indicates whether different types of data or content, such as file details or thumbnail images, are available for the video.
 	
@@ -65,14 +63,13 @@ public class YoutubeVideo: GoogleObject {
 		snippet <- map["snippet"]
 		etag <- map["etag"]
 		fileDetails <- map["fileDetails"]
-		conversionPings <- map["conversionPings"]
 		statistics <- map["statistics"]
+		topicDetails <- map["topicDetails"]
 		id <- map["id"]
 		recordingDetails <- map["recordingDetails"]
-		topicDetails <- map["topicDetails"]
 		player <- map["player"]
-		localizations <- map["localizations"]
 		monetizationDetails <- map["monetizationDetails"]
+		localizations <- map["localizations"]
 		processingDetails <- map["processingDetails"]
 		projectDetails <- map["projectDetails"]
 		status <- map["status"]

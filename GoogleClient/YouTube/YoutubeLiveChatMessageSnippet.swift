@@ -2,14 +2,14 @@
 //  YoutubeLiveChatMessageSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveChatMessageSnippet: Mappable {
+public class YoutubeLiveChatMessageSnippet: ObjectType {
 	/// The type of message, this will always be present, it determines the contents of the message as well as which fields will be present.
 	public var type: YoutubeLiveChatMessageSnippetType!
 	public var liveChatId: String!
@@ -40,5 +40,15 @@ public class YoutubeLiveChatMessageSnippet: Mappable {
 		textMessageDetails <- map["textMessageDetails"]
 		displayMessage <- map["displayMessage"]
 	}
+}
+
+public enum YoutubeLiveChatMessageSnippetType: String {
+	case ChatEndedEvent = "chatEndedEvent"
+	case FanFundingEvent = "fanFundingEvent"
+	case NewSponsorEvent = "newSponsorEvent"
+	case SponsorOnlyModeEndedEvent = "sponsorOnlyModeEndedEvent"
+	case SponsorOnlyModeStartedEvent = "sponsorOnlyModeStartedEvent"
+	case TextMessageEvent = "textMessageEvent"
+	case Tombstone = "tombstone"
 }
 

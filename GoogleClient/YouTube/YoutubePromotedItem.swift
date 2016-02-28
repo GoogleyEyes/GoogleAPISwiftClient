@@ -2,14 +2,14 @@
 //  YoutubePromotedItem.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubePromotedItem: Mappable {
+public class YoutubePromotedItem: ObjectType {
 	/// The temporal position within the video where the promoted item will be displayed. If present, it overrides the default timing.
 	public var timing: YoutubeInvideoTiming!
 	/// If true, the content owner's name will be used when displaying the promotion. This field can only be set when the update is made on behalf of the content owner.

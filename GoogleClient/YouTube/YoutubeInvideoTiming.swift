@@ -2,14 +2,14 @@
 //  YoutubeInvideoTiming.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeInvideoTiming: Mappable {
+public class YoutubeInvideoTiming: ObjectType {
 	/// Defines the duration in milliseconds for which the promotion should be displayed. If missing, the client should use the default.
 	public var durationMs: UInt64!
 	/// Defines the time at which the promotion will appear. Depending on the value of type the value of the offsetMs field will represent a time offset from the start or from the end of the video, expressed in milliseconds.
@@ -26,5 +26,10 @@ public class YoutubeInvideoTiming: Mappable {
 		offsetMs <- map["offsetMs"]
 		type <- map["type"]
 	}
+}
+
+public enum YoutubeInvideoTimingType: String {
+	case OffsetFromEnd = "offsetFromEnd"
+	case OffsetFromStart = "offsetFromStart"
 }
 

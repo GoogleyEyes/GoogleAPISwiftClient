@@ -2,14 +2,14 @@
 //  YoutubeLiveStreamSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeLiveStreamSnippet: Mappable {
+public class YoutubeLiveStreamSnippet: ObjectType {
 	/// The stream's title. The value must be between 1 and 128 characters long.
 	public var title: String!
 	/// The ID that YouTube uses to uniquely identify the channel that is transmitting the stream.

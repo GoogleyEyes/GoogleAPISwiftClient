@@ -2,14 +2,14 @@
 //  BloggerPost.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/28/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class BloggerPostBlog: Mappable {
+public class BloggerPostBlog: ObjectType {
 	/// The identifier of the Blog that contains this Post.
 	public var id: String!
 	
@@ -89,7 +89,7 @@ public class BloggerPost: GoogleObject {
 	}
 }
 
-public class BloggerPostAuthor: Mappable {
+public class BloggerPostAuthor: ObjectType {
 	/// The Post author's avatar.
 	public var image: BloggerPostImage!
 	/// The identifier of the Post creator.
@@ -111,7 +111,7 @@ public class BloggerPostAuthor: Mappable {
 	}
 }
 
-public class BloggerPostImage: Mappable {
+public class BloggerPostImage: ObjectType {
 	public var url: String!
 	
 	public required init?(_ map: Map) {
@@ -123,7 +123,7 @@ public class BloggerPostImage: Mappable {
 	}
 }
 
-public class BloggerPostLocation: Mappable {
+public class BloggerPostLocation: ObjectType {
 	/// Location's longitude.
 	public var lng: Double!
 	/// Location's latitude.
@@ -145,7 +145,7 @@ public class BloggerPostLocation: Mappable {
 	}
 }
 
-public class BloggerPostReplies: Mappable {
+public class BloggerPostReplies: ObjectType {
 	/// The List of Comments for this Post.
 	public var items: [BloggerComment]!
 	/// The URL of the comments on this post.
@@ -164,7 +164,7 @@ public class BloggerPostReplies: Mappable {
 	}
 }
 
-public class BloggerPostAuthorImage: Mappable {
+public class BloggerPostAuthorImage: ObjectType {
 	/// The Post author's avatar URL.
 	public var url: String!
 	

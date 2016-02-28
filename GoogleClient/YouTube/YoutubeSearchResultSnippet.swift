@@ -2,14 +2,20 @@
 //  YoutubeSearchResultSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeSearchResultSnippet: Mappable {
+public enum YoutubeSearchResultSnippetLiveBroadcastContent: String {
+	case Live = "live"
+	case None = "none"
+	case Upcoming = "upcoming"
+}
+
+public class YoutubeSearchResultSnippet: ObjectType {
 	/// A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
 	public var thumbnails: YoutubeThumbnailDetails!
 	/// The value that YouTube uses to uniquely identify the channel that published the resource that the search result identifies.

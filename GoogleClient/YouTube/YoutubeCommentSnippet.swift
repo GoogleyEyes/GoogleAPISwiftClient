@@ -2,14 +2,28 @@
 //  YoutubeCommentSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeCommentSnippet: Mappable {
+public enum YoutubeCommentSnippetModerationStatus: String {
+	case HeldForReview = "heldForReview"
+	case LikelySpam = "likelySpam"
+	case Published = "published"
+	case Rejected = "rejected"
+}
+
+public enum YoutubeCommentSnippetViewerRating: String {
+	case Dislike = "dislike"
+	case Like = "like"
+	case None = "none"
+	case Unspecified = "unspecified"
+}
+
+public class YoutubeCommentSnippet: ObjectType {
 	/// The date and time when was last updated . The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 	public var updatedAt: NSDate!
 	/// The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it's the video's channel.
@@ -25,7 +39,7 @@ public class YoutubeCommentSnippet: Mappable {
 	/// The comment's text. The format is either plain text or HTML dependent on what has been requested. Even the plain text representation may differ from the text originally posted in that it may replace video links with video titles etc.
 	public var textDisplay: String!
 	/// The id of the author's YouTube channel, if any.
-	public var authorChannelId: YoutubeChannelId!
+	public var authorChannelId: Any!
 	/// The ID of the video the comment refers to, if any.
 	public var videoId: String!
 	/// The date and time when the comment was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.

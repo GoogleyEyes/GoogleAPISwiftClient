@@ -2,14 +2,14 @@
 //  YoutubeActivityContentDetailsSocial.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/18/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class YoutubeActivityContentDetailsSocial: Mappable {
+public class YoutubeActivityContentDetailsSocial: ObjectType {
 	/// The author of the social network post.
 	public var author: String!
 	/// The URL of the social network post.
@@ -32,5 +32,12 @@ public class YoutubeActivityContentDetailsSocial: Mappable {
 		imageUrl <- map["imageUrl"]
 		type <- map["type"]
 	}
+}
+
+public enum YoutubeActivityContentDetailsSocialType: String {
+	case Facebook = "facebook"
+	case GooglePlus = "googlePlus"
+	case Twitter = "twitter"
+	case Unspecified = "unspecified"
 }
 
