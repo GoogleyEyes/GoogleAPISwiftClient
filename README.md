@@ -7,12 +7,13 @@ That's why I decided I would try something new. Something that would actually ut
 
 I couldn't find what I was looking for, so I decided to build it myself.
 
-This library is still in its early stages. It contains the base model and fetcher classes and protocols, as well as implementations of the [Discovery API](https://developers.google.com/discovery/) and the [Blogger API](https://developers.google.com/blogger/). More services to come! See Contributing below if you would like to help. Even starring this project helps me know this project is worth working on.
+This library is still in its early stages. It contains the base model and fetcher classes and protocols, as well as implementations of the [Discovery API](https://developers.google.com/discovery/), the [Blogger API](https://developers.google.com/blogger/), and the [YouTube Data API](https://developers.google.com/youtube/v3/). More services to come! See Contributing below if you would like to help. Even starring this project helps me know this project is worth working on.
 
 ## Installation
 ```ruby
-  pod 'GoogleAPISwiftClient', '~> 0.3.0'
+  pod 'GoogleAPISwiftClient/{API}', '~> 0.4.0'
 ```
+where API is the name of the API you wish to use. You can use multiple API's - just use multiple `pod` declarations! API names are listed in the `podspec` file under `subspecs`.
 
 Then import:
 ```swift
