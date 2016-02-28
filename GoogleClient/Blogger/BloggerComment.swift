@@ -2,8 +2,8 @@
 //  BloggerComment.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/28/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -52,7 +52,7 @@ public class BloggerComment: GoogleObject {
 	}
 }
 
-public class BloggerCommentAuthorImage: Mappable {
+public class BloggerCommentAuthorImage: ObjectType {
 	/// The comment creator's avatar URL.
 	public var url: String!
 	
@@ -65,9 +65,9 @@ public class BloggerCommentAuthorImage: Mappable {
 	}
 }
 
-public class BloggerCommentAuthor: Mappable {
+public class BloggerCommentAuthor: ObjectType {
 	/// The comment creator's avatar.
-	public var image: BloggerCommentAuthorImage!
+	public var image: BloggerCommentImage!
 	/// The identifier of the Comment creator.
 	public var id: String!
 	/// The display name.
@@ -87,7 +87,7 @@ public class BloggerCommentAuthor: Mappable {
 	}
 }
 
-public class BloggerCommentPost: Mappable {
+public class BloggerCommentPost: ObjectType {
 	/// The identifier of the post containing this comment.
 	public var id: String!
 	
@@ -100,7 +100,7 @@ public class BloggerCommentPost: Mappable {
 	}
 }
 
-public class BloggerCommentBlog: Mappable {
+public class BloggerCommentBlog: ObjectType {
 	/// The identifier of the blog containing this comment.
 	public var id: String!
 	
@@ -113,7 +113,7 @@ public class BloggerCommentBlog: Mappable {
 	}
 }
 
-public class BloggerCommentInReplyTo: Mappable {
+public class BloggerCommentInReplyTo: ObjectType {
 	/// The identified of the parent of this comment.
 	public var id: String!
 	

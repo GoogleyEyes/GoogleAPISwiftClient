@@ -73,7 +73,7 @@ class GoogleServiceFetcher {
         bodyParameters: [String: AnyObject]?) -> NSURLRequest
     {
         let tempURLRequest = NSURLRequest(URL: NSURL(string: URLString.URLString)!)
-        let URLRequest = ParameterEncoding.URL.encode(tempURLRequest, parameters: URLParameters)
+        let URLRequest = ParameterEncoding.URLEncodedInURL.encode(tempURLRequest, parameters: URLParameters)
         let bodyRequest = ParameterEncoding.JSON.encode(tempURLRequest, parameters: bodyParameters)
         
         let compositeRequest = URLRequest.0.mutableCopy() as! NSMutableURLRequest

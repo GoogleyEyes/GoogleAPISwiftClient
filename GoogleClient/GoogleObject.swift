@@ -9,16 +9,20 @@
 import Foundation
 import ObjectMapper
 
-public protocol GoogleObject: Mappable {
+public protocol ObjectType: Mappable {
+    
+}
+
+public protocol GoogleObject: ObjectType {
     var kind: String { get }
 }
 
-public protocol GoogleObjectList: GoogleObject, SequenceType {
-    typealias Type: GoogleObject
+public protocol ListType: ObjectType, SequenceType {
+    typealias Type: ObjectType
     var items: [Type]! { get }
 }
 
-extension GoogleObjectList {
+extension ListType {
     
     public func generate() -> IndexingGenerator<[Type]> {
         let objects = items as [Type]
@@ -28,6 +32,9 @@ extension GoogleObjectList {
     public subscript(position: Int) -> Type {
         return items[position]
     }
+}
+public protocol GoogleObjectList: GoogleObject, ListType {
+    
 }
 
 class RFC3339Transform: TransformType {

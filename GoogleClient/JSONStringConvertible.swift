@@ -43,3 +43,9 @@ extension NSDate: JSONStringConvertible {
         }
     }
 }
+
+extension UInt64: JSONStringConvertible {
+    func toJSONString() -> String {
+        return "\(self)"
+    }
+}

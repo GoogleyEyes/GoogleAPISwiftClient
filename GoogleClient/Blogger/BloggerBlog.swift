@@ -2,8 +2,8 @@
 //  BloggerBlog.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/28/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -58,7 +58,7 @@ public class BloggerBlog: GoogleObject {
 	}
 }
 
-public class BloggerBlogLocale: Mappable {
+public class BloggerBlogLocale: ObjectType {
 	/// The country this blog's locale is set to.
 	public var country: String!
 	/// The language this blog is authored in.
@@ -77,7 +77,7 @@ public class BloggerBlogLocale: Mappable {
 	}
 }
 
-public class BloggerBlogPosts: Mappable {
+public class BloggerBlogPosts: ObjectType {
 	/// The List of Posts for this Blog.
 	public var items: [BloggerPost]!
 	/// The URL of the container for posts in this blog.
@@ -96,7 +96,7 @@ public class BloggerBlogPosts: Mappable {
 	}
 }
 
-public class BloggerBlogPages: Mappable {
+public class BloggerBlogPages: ObjectType {
 	/// The URL of the container for pages in this blog.
 	public var selfLink: String!
 	/// The count of pages in this blog.

@@ -2,8 +2,8 @@
 //  Blogger.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 12/28/15.
-//  Copyright © 2015 Matthew Wyskiel. All rights reserved.
+//  Created by Matthew Wyskiel on 2/27/16.
+//  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
@@ -147,7 +147,7 @@ public class Blogger: GoogleService {
 	/// Continuation token if the request is paged.
 	public var pageToken: String!
 	/// Sort order applied to search results. Default is published.
-	public var orderBy: BloggerPostUserInfosOrderBy = .Published
+	public var orderBy: BloggerPostUserInfosOrderBy = .PUBLISHED
 	/// Maximum number of posts to fetch.
 	public var maxResults: UInt!
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
@@ -503,7 +503,9 @@ public class Blogger: GoogleService {
 
 	public func listComments(postId postId: String, blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		if let fetchBodies = fetchBodies {
+			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		}
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
@@ -546,7 +548,9 @@ public class Blogger: GoogleService {
 
 	public func listByBlogComments(blogId blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		if let fetchBodies = fetchBodies {
+			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		}
 		if let endDate = endDate {
 			queryParams.updateValue(endDate.toJSONString(), forKey: "endDate")
 		}
@@ -739,7 +743,9 @@ public class Blogger: GoogleService {
 
 	public func listPages(blogId blogId: String, completionHandler: (pageList: BloggerPageList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		if let fetchBodies = fetchBodies {
+			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		}
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
 		}
@@ -790,6 +796,12 @@ public class Blogger: GoogleService {
 			queryParams.updateValue(fields, forKey: "fields")
 		}
 		queryParams.updateValue(alt.rawValue, forKey: "alt")
+		if let key = key {
+			queryParams.updateValue(key, forKey: "key")
+		}
+		if let oauthToken = oauthToken {
+			queryParams.updateValue(oauthToken, forKey: "oauthToken")
+		}
 		return queryParams
 	}
 }
