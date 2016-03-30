@@ -67,17 +67,17 @@ class GoogleServiceFetcher {
                             let errJSON = JSON["error"] as! [String: AnyObject]
                             let errSpecifics = errJSON["errors"]![0] as! [String: AnyObject]
                             let errorObj = NSError(domain: errSpecifics["domain"] as! String, code: errJSON["code"] as! Int, userInfo: errSpecifics)
-                            
+
                             completionHandler(JSON: nil, error: errorObj)
                         } catch {
                             completionHandler(JSON: nil, error: alamofireError)
                         }
-                        
+
                     }
                 }
         }
     }
-    
+
     func multiEncodedURLRequest(
         method: Alamofire.Method,
         URLString: URLStringConvertible,
@@ -88,7 +88,7 @@ class GoogleServiceFetcher {
         let tempURLRequest = NSURLRequest(URL: NSURL(string: URLString.URLString)!)
         let URLRequest = ParameterEncoding.URL.encode(tempURLRequest, parameters: URLParameters)
         let bodyRequest = ParameterEncoding.JSON.encode(tempURLRequest, parameters: bodyParameters)
-        
+
         let compositeRequest = URLRequest.0.mutableCopy() as! NSMutableURLRequest
         compositeRequest.HTTPMethod = method.rawValue
         compositeRequest.HTTPBody = bodyRequest.0.HTTPBody
@@ -96,7 +96,7 @@ class GoogleServiceFetcher {
             compositeRequest.addValue(value, forHTTPHeaderField: key)
         }
         compositeRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+
         return compositeRequest
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public protocol ObjectType: Mappable {
-    
+
 }
 
 public protocol GoogleObject: ObjectType {
@@ -23,26 +23,26 @@ public protocol ListType: ObjectType, SequenceType {
 }
 
 extension ListType {
-    
+
     public func generate() -> IndexingGenerator<[Type]> {
         let objects = items as [Type]
         return objects.generate()
     }
-    
+
     public subscript(position: Int) -> Type {
         return items[position]
     }
 }
 public protocol GoogleObjectList: GoogleObject, ListType {
-    
+
 }
 
 class RFC3339Transform: TransformType {
 
     func transformFromJSON(value: AnyObject?) -> NSDate? {
-        
+
         guard value != nil else { return nil }
-        
+
         // Create date formatter
         //        NSDateFormatter *dateFormatter = nil;
         //        if (!dateFormatter) {
