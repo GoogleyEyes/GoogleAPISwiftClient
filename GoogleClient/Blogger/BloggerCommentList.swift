@@ -2,7 +2,7 @@
 //  BloggerCommentList.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -23,6 +23,10 @@ public class BloggerCommentList: GoogleObjectList {
 	public var prevPageToken: String!
 	
 	public required init?(_ map: Map) {
+
+	}
+
+	public init() {
 
 	}
 

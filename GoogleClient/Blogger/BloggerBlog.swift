@@ -2,7 +2,7 @@
 //  BloggerBlog.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -41,6 +41,10 @@ public class BloggerBlog: GoogleObject {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		locale <- map["locale"]
 		selfLink <- map["selfLink"]
@@ -70,6 +74,10 @@ public class BloggerBlogLocale: ObjectType {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		country <- map["country"]
 		language <- map["language"]
@@ -89,6 +97,10 @@ public class BloggerBlogPosts: ObjectType {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		items <- map["items"]
 		selfLink <- map["selfLink"]
@@ -103,6 +115,10 @@ public class BloggerBlogPages: ObjectType {
 	public var totalItems: Int!
 	
 	public required init?(_ map: Map) {
+
+	}
+
+	public init() {
 
 	}
 

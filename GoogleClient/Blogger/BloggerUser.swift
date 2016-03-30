@@ -2,7 +2,7 @@
 //  BloggerUser.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -33,6 +33,10 @@ public class BloggerUser: GoogleObject {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		locale <- map["locale"]
 		about <- map["about"]
@@ -54,6 +58,10 @@ public class BloggerUserBlogs: ObjectType {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		selfLink <- map["selfLink"]
 	}
@@ -68,6 +76,10 @@ public class BloggerUserLocale: ObjectType {
 	public var variant: String!
 	
 	public required init?(_ map: Map) {
+
+	}
+
+	public init() {
 
 	}
 

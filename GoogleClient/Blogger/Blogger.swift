@@ -2,7 +2,7 @@
 //  Blogger.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -503,7 +503,7 @@ public class Blogger: GoogleService {
 
 	public func listComments(postId postId: String, blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
@@ -546,7 +546,7 @@ public class Blogger: GoogleService {
 
 	public func listByBlogComments(blogId blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let endDate = endDate {
 			queryParams.updateValue(endDate.toJSONString(), forKey: "endDate")
 		}
@@ -739,7 +739,7 @@ public class Blogger: GoogleService {
 
 	public func listPages(blogId blogId: String, completionHandler: (pageList: BloggerPageList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
 		}

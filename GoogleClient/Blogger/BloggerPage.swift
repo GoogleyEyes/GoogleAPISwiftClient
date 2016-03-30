@@ -2,7 +2,7 @@
 //  BloggerPage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -14,6 +14,10 @@ public class BloggerPageBlog: ObjectType {
 	public var id: String!
 	
 	public required init?(_ map: Map) {
+
+	}
+
+	public init() {
 
 	}
 
@@ -52,6 +56,10 @@ public class BloggerPage: GoogleObject {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		author <- map["author"]
 		title <- map["title"]
@@ -76,6 +84,10 @@ public class BloggerPageAuthorImage: ObjectType {
 
 	}
 
+	public init() {
+
+	}
+
 	public func mapping(map: Map) {
 		url <- map["url"]
 	}
@@ -92,6 +104,10 @@ public class BloggerPageAuthor: ObjectType {
 	public var url: String!
 	
 	public required init?(_ map: Map) {
+
+	}
+
+	public init() {
 
 	}
 

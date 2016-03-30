@@ -2,7 +2,7 @@
 //  YoutubeLiveStreamHealthStatus.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -26,6 +26,10 @@ public class YoutubeLiveStreamHealthStatus: ObjectType {
 	public var lastUpdateTimeSeconds: UInt64!
 	
 	public required init?(_ map: Map) {
+
+	}
+
+	public init() {
 
 	}
 

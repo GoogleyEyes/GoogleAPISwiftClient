@@ -2,7 +2,7 @@
 //  Youtube.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/30/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -1812,11 +1812,11 @@ public enum YoutubeSearchEventType: String {
 }
 
 public enum YoutubeOAuthScopes: String {
-	case YoutubepartnerChannelAudit = "https://www.googleapis.com/auth/youtubepartner-channel-audit"
+	case YoutubePartnerChannelAudit = "https://www.googleapis.com/auth/youtubepartner-channel-audit"
 	case Upload = "https://www.googleapis.com/auth/youtube.upload"
 	case Youtube = "https://www.googleapis.com/auth/youtube"
-	case Youtubepartner = "https://www.googleapis.com/auth/youtubepartner"
-	case ForceSsl = "https://www.googleapis.com/auth/youtube.force-ssl"
+	case YoutubePartner = "https://www.googleapis.com/auth/youtubepartner"
+	case ForceSSL = "https://www.googleapis.com/auth/youtube.force-ssl"
 	case Readonly = "https://www.googleapis.com/auth/youtube.readonly"
 }
 

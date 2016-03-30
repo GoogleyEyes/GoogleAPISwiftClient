@@ -1,16 +1,8 @@
-#
-#  Be sure to run `pod spec lint GoogleClient.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
 Pod::Spec.new do |s|
 
   s.name         = "GoogleAPISwiftClient"
-  s.version      = "0.4.0"
-  s.summary      = "A Google API Client for Cocoa and Cocoa Touch in 2015"
+  s.version      = "0.4.1"
+  s.summary      = "A Google API Client for Apple Platforms in 2016"
 
   s.description  = <<-DESC
                    A lot of us probably use at least one of Google's public data APIs, and those of us using Cocoa and Cocoa Touch are directed to the open-source [Google APIs Objective-C Client](https://code.google.com/p/google-api-objectivec-client/) for implementation help.
@@ -32,7 +24,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
 
-  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.4.0" }
+  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.4.1" }
 
   s.framework  = "Foundation"
   s.requires_arc = true

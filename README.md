@@ -11,7 +11,7 @@ This library is still in its early stages. It contains the base model and fetche
 
 ## Installation
 ```ruby
-  pod 'GoogleAPISwiftClient/{API}', '~> 0.4.0'
+  pod 'GoogleAPISwiftClient/{API}', '~> 0.4.1'
 ```
 where API is the name of the API you wish to use. You can use multiple API's - just use multiple `pod` declarations! API names are listed in the `podspec` file under `subspecs`.
 
