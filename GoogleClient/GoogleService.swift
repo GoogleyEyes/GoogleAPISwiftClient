@@ -65,7 +65,8 @@ class GoogleServiceFetcher {
                         do {
                             let JSON = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(rawValue: 0)) as! [String: AnyObject]
                             let errJSON = JSON["error"] as! [String: AnyObject]
-                            let errSpecifics = errJSON["errors"]![0] as! [String: AnyObject]
+                            let errSpecificsArr = errJSON["errors"] as! [[String: AnyObject]]
+                            let errSpecifics = errSpecificsArr[0]
                             let errorObj = NSError(domain: errSpecifics["domain"] as! String, code: errJSON["code"] as! Int, userInfo: errSpecifics)
 
                             completionHandler(JSON: nil, error: errorObj)
