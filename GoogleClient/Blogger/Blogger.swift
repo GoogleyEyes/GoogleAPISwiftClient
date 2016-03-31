@@ -2,7 +2,7 @@
 //  Blogger.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/30/16.
+//  Created by Matthew Wyskiel on 3/31/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ public enum BloggerPostUserInfosStatus: String {
 }
 
 public enum BloggerAlt: String {
-	case Json = "json"
+	case JSON = "json"
 }
 
 public enum BloggerPostsStatus: String {
@@ -129,7 +129,7 @@ public class Blogger: GoogleService {
 	/// Selector specifying which fields to include in a partial response.
 	public var fields: String!
 	/// Data format for the response.
-	public var alt: BloggerAlt = .Json
+	public var alt: BloggerAlt = .JSON
 	/// API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 	public var key: String!
 	/// OAuth 2.0 token for the current user.
@@ -503,7 +503,7 @@ public class Blogger: GoogleService {
 
 	public func listComments(postId postId: String, blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-        queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
