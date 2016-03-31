@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */; };
+		8263981D60CE55092B7779E3 /* Pods_GoogleClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66FB1973D88ABC9424F81B /* Pods_GoogleClientTests.framework */; };
 		A4076CCC1B123D4B0041450D /* GoogleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4076CCB1B123D4B0041450D /* GoogleObject.swift */; };
 		A42E33B31BD5D3530066F807 /* Blogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A31BD5D3530066F807 /* Blogger.swift */; };
 		A42E33B41BD5D3530066F807 /* BloggerBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E33A41BD5D3530066F807 /* BloggerBlog.swift */; };
@@ -202,6 +202,7 @@
 		A4DB96B41B07FB3B00DD0950 /* GoogleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */; };
 		A4DB96C01B081B0E00DD0950 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */; };
 		A4DB96C21B081B1600DD0950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96C11B081B1600DD0950 /* Foundation.framework */; };
+		FBD4DB170CFA450881FF4320 /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783FE3CE539C11C476D8B0BA /* Pods_GoogleClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D66FB1973D88ABC9424F81B /* Pods_GoogleClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1944A9078556646CC5BD560C /* Pods-GoogleClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.release.xcconfig"; sourceTree = "<group>"; };
+		25ECA960DE530F4C8215576D /* Pods-GoogleClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		783FE3CE539C11C476D8B0BA /* Pods_GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4076CCB1B123D4B0041450D /* GoogleObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleObject.swift; sourceTree = "<group>"; };
 		A42E33A31BD5D3530066F807 /* Blogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blogger.swift; sourceTree = "<group>"; };
 		A42E33A41BD5D3530066F807 /* BloggerBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerBlog.swift; sourceTree = "<group>"; };
@@ -412,9 +417,8 @@
 		A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClientTests.swift; sourceTree = "<group>"; };
 		A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A4DB96C11B081B1600DD0950 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BF4B317BEC91F24E3159DF5B /* Pods-GoogleClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.debug.xcconfig"; sourceTree = "<group>"; };
-		E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F11C25D499A7337C8C32EABF /* Pods-GoogleClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.release.xcconfig"; sourceTree = "<group>"; };
+		C5A6D051C533C82FCAEC9CD0 /* Pods-GoogleClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.debug.xcconfig"; sourceTree = "<group>"; };
+		C783483C7459E432FF6D822E /* Pods-GoogleClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,7 +429,7 @@
 				A46810361B093353006F7839 /* SystemConfiguration.framework in Frameworks */,
 				A4DB96C21B081B1600DD0950 /* Foundation.framework in Frameworks */,
 				A4DB96C01B081B0E00DD0950 /* AddressBook.framework in Frameworks */,
-				4F5166B8C5F0CDE1EF998A4C /* Pods_GoogleClient.framework in Frameworks */,
+				FBD4DB170CFA450881FF4320 /* Pods_GoogleClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4DB96AD1B07FB3B00DD0950 /* GoogleClient.framework in Frameworks */,
+				8263981D60CE55092B7779E3 /* Pods_GoogleClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,16 +451,19 @@
 				A46810351B093353006F7839 /* SystemConfiguration.framework */,
 				A4DB96C11B081B1600DD0950 /* Foundation.framework */,
 				A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */,
-				E4B44893873A55434B4B44D0 /* Pods_GoogleClient.framework */,
+				783FE3CE539C11C476D8B0BA /* Pods_GoogleClient.framework */,
+				0D66FB1973D88ABC9424F81B /* Pods_GoogleClientTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2AE9D8EA81AA9A168AE9A4B7 /* Pods */ = {
+		875A14E9AC37D72D69BCF19C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B317BEC91F24E3159DF5B /* Pods-GoogleClient.debug.xcconfig */,
-				F11C25D499A7337C8C32EABF /* Pods-GoogleClient.release.xcconfig */,
+				C5A6D051C533C82FCAEC9CD0 /* Pods-GoogleClient.debug.xcconfig */,
+				1944A9078556646CC5BD560C /* Pods-GoogleClient.release.xcconfig */,
+				C783483C7459E432FF6D822E /* Pods-GoogleClientTests.debug.xcconfig */,
+				25ECA960DE530F4C8215576D /* Pods-GoogleClientTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -672,8 +680,8 @@
 				A4DB96A31B07FB3B00DD0950 /* GoogleClient */,
 				A4DB96B01B07FB3B00DD0950 /* GoogleClientTests */,
 				A4DB96A21B07FB3B00DD0950 /* Products */,
-				2AE9D8EA81AA9A168AE9A4B7 /* Pods */,
 				124A1DFFD0D1B41A67323E7D /* Frameworks */,
+				875A14E9AC37D72D69BCF19C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -744,12 +752,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DB96B71B07FB3B00DD0950 /* Build configuration list for PBXNativeTarget "GoogleClient" */;
 			buildPhases = (
-				D761990782B7BBD813054D43 /* Check Pods Manifest.lock */,
+				BF430380684CE923CC7E4098 /* Check Pods Manifest.lock */,
 				A4DB969C1B07FB3B00DD0950 /* Sources */,
 				A4DB969D1B07FB3B00DD0950 /* Frameworks */,
 				A4DB969E1B07FB3B00DD0950 /* Headers */,
 				A4DB969F1B07FB3B00DD0950 /* Resources */,
-				77A38B4611BA40540AB83E3F /* Copy Pods Resources */,
+				2EE451D5CC72F336846974CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -764,9 +772,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DB96BA1B07FB3B00DD0950 /* Build configuration list for PBXNativeTarget "GoogleClientTests" */;
 			buildPhases = (
+				ACED42696A69F64BCEE4FFF7 /* Check Pods Manifest.lock */,
 				A4DB96A81B07FB3B00DD0950 /* Sources */,
 				A4DB96A91B07FB3B00DD0950 /* Frameworks */,
 				A4DB96AA1B07FB3B00DD0950 /* Resources */,
+				3025A4FBD85778406B040129 /* Embed Pods Frameworks */,
+				0A716340774D1CCDA5347B04 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -832,7 +843,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		77A38B4611BA40540AB83E3F /* Copy Pods Resources */ = {
+		0A716340774D1CCDA5347B04 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EE451D5CC72F336846974CC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -847,7 +873,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D761990782B7BBD813054D43 /* Check Pods Manifest.lock */ = {
+		3025A4FBD85778406B040129 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACED42696A69F64BCEE4FFF7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF430380684CE923CC7E4098 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1171,7 +1227,7 @@
 		};
 		A4DB96B81B07FB3B00DD0950 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF4B317BEC91F24E3159DF5B /* Pods-GoogleClient.debug.xcconfig */;
+			baseConfigurationReference = C5A6D051C533C82FCAEC9CD0 /* Pods-GoogleClient.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -1190,7 +1246,7 @@
 		};
 		A4DB96B91B07FB3B00DD0950 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F11C25D499A7337C8C32EABF /* Pods-GoogleClient.release.xcconfig */;
+			baseConfigurationReference = 1944A9078556646CC5BD560C /* Pods-GoogleClient.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -1208,6 +1264,7 @@
 		};
 		A4DB96BB1B07FB3B00DD0950 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C783483C7459E432FF6D822E /* Pods-GoogleClientTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1226,6 +1283,7 @@
 		};
 		A4DB96BC1B07FB3B00DD0950 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25ECA960DE530F4C8215576D /* Pods-GoogleClientTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
