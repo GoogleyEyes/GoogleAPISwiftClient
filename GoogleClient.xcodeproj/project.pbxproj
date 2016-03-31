@@ -202,6 +202,7 @@
 		A4DB96B41B07FB3B00DD0950 /* GoogleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */; };
 		A4DB96C01B081B0E00DD0950 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */; };
 		A4DB96C21B081B1600DD0950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB96C11B081B1600DD0950 /* Foundation.framework */; };
+		A4EC23E71CAD682200CCD242 /* UploadParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC23E61CAD682200CCD242 /* UploadParameters.swift */; };
 		FBD4DB170CFA450881FF4320 /* Pods_GoogleClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783FE3CE539C11C476D8B0BA /* Pods_GoogleClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -417,6 +418,7 @@
 		A4DB96B31B07FB3B00DD0950 /* GoogleClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClientTests.swift; sourceTree = "<group>"; };
 		A4DB96BF1B081B0E00DD0950 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A4DB96C11B081B1600DD0950 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A4EC23E61CAD682200CCD242 /* UploadParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadParameters.swift; sourceTree = "<group>"; };
 		C5A6D051C533C82FCAEC9CD0 /* Pods-GoogleClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient.debug.xcconfig"; sourceTree = "<group>"; };
 		C783483C7459E432FF6D822E /* Pods-GoogleClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -703,6 +705,7 @@
 				A4DB96A61B07FB3B00DD0950 /* GoogleClient.h */,
 				A4DB96A41B07FB3B00DD0950 /* Supporting Files */,
 				A46810371B0AC4E0006F7839 /* GoogleService.swift */,
+				A4EC23E61CAD682200CCD242 /* UploadParameters.swift */,
 				A4076CCB1B123D4B0041450D /* GoogleObject.swift */,
 				A4B3F6561C14119900DB8153 /* JSONStringConvertible.swift */,
 			);
@@ -966,6 +969,7 @@
 				A4D028E81C80C0E3007BB1BA /* YoutubeWatchSettings.swift in Sources */,
 				A4D028CC1C80C0E3007BB1BA /* YoutubeVideoAbuseReportReasonSnippet.swift in Sources */,
 				A4D028941C80C0E3007BB1BA /* YoutubeLiveChatBanSnippet.swift in Sources */,
+				A4EC23E71CAD682200CCD242 /* UploadParameters.swift in Sources */,
 				A4D028E71C80C0E3007BB1BA /* YoutubeVideoTopicDetails.swift in Sources */,
 				A4D028D11C80C0E3007BB1BA /* YoutubeVideoCategorySnippet.swift in Sources */,
 				A4A4FF781B2CD6FF00BA4B8B /* Discovery.swift in Sources */,

@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Added support for media uploads
+
 ## [0.4.1] - 2016-3-30
 
 ### Fixed
