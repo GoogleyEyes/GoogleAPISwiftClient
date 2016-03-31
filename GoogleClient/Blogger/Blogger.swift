@@ -2,7 +2,7 @@
 //  Blogger.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 2/27/16.
+//  Created by Matthew Wyskiel on 3/31/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ public enum BloggerPostUserInfosStatus: String {
 }
 
 public enum BloggerAlt: String {
-	case Json = "json"
+	case JSON = "json"
 }
 
 public enum BloggerPostsStatus: String {
@@ -129,7 +129,7 @@ public class Blogger: GoogleService {
 	/// Selector specifying which fields to include in a partial response.
 	public var fields: String!
 	/// Data format for the response.
-	public var alt: BloggerAlt = .Json
+	public var alt: BloggerAlt = .JSON
 	/// API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 	public var key: String!
 	/// OAuth 2.0 token for the current user.
@@ -147,7 +147,7 @@ public class Blogger: GoogleService {
 	/// Continuation token if the request is paged.
 	public var pageToken: String!
 	/// Sort order applied to search results. Default is published.
-	public var orderBy: BloggerPostUserInfosOrderBy = .PUBLISHED
+	public var orderBy: BloggerPostUserInfosOrderBy = .Published
 	/// Maximum number of posts to fetch.
 	public var maxResults: UInt!
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
@@ -503,9 +503,7 @@ public class Blogger: GoogleService {
 
 	public func listComments(postId postId: String, blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
 		}
@@ -548,9 +546,7 @@ public class Blogger: GoogleService {
 
 	public func listByBlogComments(blogId blogId: String, completionHandler: (commentList: BloggerCommentList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let endDate = endDate {
 			queryParams.updateValue(endDate.toJSONString(), forKey: "endDate")
 		}
@@ -743,9 +739,7 @@ public class Blogger: GoogleService {
 
 	public func listPages(blogId blogId: String, completionHandler: (pageList: BloggerPageList?, error: ErrorType?) -> ()) {
 		var queryParams = setUpQueryParams()
-		if let fetchBodies = fetchBodies {
-			queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
-		}
+		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
 		}
