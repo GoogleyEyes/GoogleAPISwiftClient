@@ -44,14 +44,14 @@ class GoogleServiceFetcher {
     }
 
     func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters? = nil, completionHandler: (JSON: [String: AnyObject]?, error: ErrorType?) -> ()) {
-        
+
         if uploadParameters != nil {
             performFileUpload(method, serviceName: serviceName, apiVersion: apiVersion, endpoint: endpoint, queryParams: queryParams, postBody: postBody, uploadParameters: uploadParameters!, completionHandler: { (JSON, error) in
                 completionHandler(JSON: JSON, error: error)
             })
             return
         }
-        
+
         let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         var headers: [String: String] = [:]
@@ -60,7 +60,7 @@ class GoogleServiceFetcher {
         } else if apiKey != nil {
             finalQueryParams.updateValue(apiKey!, forKey: "key")
         }
-        let request = multiEncodedURLRequest(method, URLString: url, URLParameters: queryParams, bodyParameters: postBody, headers: headers)
+        let request = multiEncodedURLRequest(method, URLString: url, URLParameters: finalQueryParams, bodyParameters: postBody, headers: headers)
         Alamofire.request(request)
             .validate()
             .responseJSON { response in
@@ -86,7 +86,7 @@ class GoogleServiceFetcher {
                 }
         }
     }
-    
+
     private func performFileUpload(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters, completionHandler: (JSON: [String: AnyObject]?, error: ErrorType?) -> ()) {
         let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
@@ -100,7 +100,7 @@ class GoogleServiceFetcher {
         Alamofire.upload(request, data: uploadParameters.data)
             .progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
                 uploadParameters.progressHandler?(bytesWritten: bytesWritten, totalBytesWritten: totalBytesWritten, totalBytesExpectedToWrite: totalBytesExpectedToWrite)
-                
+
                 // This closure is NOT called on the main queue for performance
                 // reasons. To update your ui, dispatch to the main queue.
             }
@@ -117,12 +117,12 @@ class GoogleServiceFetcher {
                             let errSpecificsArr = errJSON["errors"] as! [[String: AnyObject]]
                             let errSpecifics = errSpecificsArr[0]
                             let errorObj = NSError(domain: errSpecifics["domain"] as! String, code: errJSON["code"] as! Int, userInfo: errSpecifics)
-                            
+
                             completionHandler(JSON: nil, error: errorObj)
                         } catch {
                             completionHandler(JSON: nil, error: alamofireError)
                         }
-                        
+
                     }
                 }
             }
