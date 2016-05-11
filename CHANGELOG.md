@@ -4,8 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.2] - 2016-5-10
+
 ### Added
 - Added support for media uploads
+
+### Fixed
+- Fixed bug where requests did not include API key.
 
 ## [0.4.1] - 2016-3-30
 
