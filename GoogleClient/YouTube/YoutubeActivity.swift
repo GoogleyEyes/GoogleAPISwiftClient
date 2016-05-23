@@ -2,13 +2,14 @@
 //  YoutubeActivity.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The Activity model type for use with the Youtube API
 public class YoutubeActivity: GoogleObject {
 	/// The contentDetails object contains information about the content associated with the activity. For example, if the snippet.type value is videoRated, then the contentDetails object's content identifies the rated video.
 	public var contentDetails: YoutubeActivityContentDetails!

@@ -2,13 +2,14 @@
 //  YoutubeActivityContentDetailsSocial.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The ActivityContentDetailsSocial model type for use with the Youtube API
 public class YoutubeActivityContentDetailsSocial: ObjectType {
 	/// The author of the social network post.
 	public var author: String!
@@ -38,10 +39,15 @@ public class YoutubeActivityContentDetailsSocial: ObjectType {
 	}
 }
 
+/// The name of the social network.
 public enum YoutubeActivityContentDetailsSocialType: String {
+	/// 
 	case Facebook = "facebook"
+	/// 
 	case GooglePlus = "googlePlus"
+	/// 
 	case Twitter = "twitter"
+	/// 
 	case Unspecified = "unspecified"
 }
 

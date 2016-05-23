@@ -2,13 +2,14 @@
 //  YoutubeVideoProcessingDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The VideoProcessingDetails model type for use with the Youtube API
 public class YoutubeVideoProcessingDetails: ObjectType {
 	/// The processingProgress object contains information about the progress YouTube has made in processing the video. The values are really only relevant if the video's processing status is processing.
 	public var processingProgress: YoutubeVideoProcessingDetailsProcessingProgress!
@@ -47,17 +48,27 @@ public class YoutubeVideoProcessingDetails: ObjectType {
 	}
 }
 
+/// The video's processing status. This value indicates whether YouTube was able to process the video or if the video is still being processed.
 public enum YoutubeVideoProcessingDetailsProcessingStatus: String {
+	/// 
 	case Failed = "failed"
+	/// 
 	case Processing = "processing"
+	/// 
 	case Succeeded = "succeeded"
+	/// 
 	case Terminated = "terminated"
 }
 
+/// The reason that YouTube failed to process the video. This property will only have a value if the processingStatus property's value is failed.
 public enum YoutubeVideoProcessingDetailsProcessingFailureReason: String {
+	/// 
 	case Other = "other"
+	/// 
 	case StreamingFailed = "streamingFailed"
+	/// 
 	case TranscodeFailed = "transcodeFailed"
+	/// 
 	case UploadFailed = "uploadFailed"
 }
 

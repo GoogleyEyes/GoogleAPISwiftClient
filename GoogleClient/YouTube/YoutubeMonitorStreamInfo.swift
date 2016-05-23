@@ -2,13 +2,14 @@
 //  YoutubeMonitorStreamInfo.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The MonitorStreamInfo model type for use with the Youtube API
 public class YoutubeMonitorStreamInfo: ObjectType {
 	/// If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.
 	public var broadcastStreamDelayMs: UInt!

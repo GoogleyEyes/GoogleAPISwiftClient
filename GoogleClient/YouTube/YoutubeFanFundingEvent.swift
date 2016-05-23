@@ -2,13 +2,14 @@
 //  YoutubeFanFundingEvent.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The FanFundingEvent model type for use with the Youtube API
 public class YoutubeFanFundingEvent: GoogleObject {
 	/// The snippet object contains basic details about the fan funding event.
 	public var snippet: YoutubeFanFundingEventSnippet!

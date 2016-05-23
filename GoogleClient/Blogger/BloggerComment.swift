@@ -2,13 +2,14 @@
 //  BloggerComment.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/12/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The Comment model type for use with the Blogger API
 public class BloggerComment: GoogleObject {
 	/// The author of this Comment.
 	public var author: BloggerCommentAuthor!
@@ -56,6 +57,7 @@ public class BloggerComment: GoogleObject {
 	}
 }
 
+/// The Image subtype of the CommentAuthor model type for use with the Blogger API
 public class BloggerCommentAuthorImage: ObjectType {
 	/// The comment creator's avatar URL.
 	public var url: String!
@@ -73,6 +75,7 @@ public class BloggerCommentAuthorImage: ObjectType {
 	}
 }
 
+/// The Author subtype of the Comment model type for use with the Blogger API
 public class BloggerCommentAuthor: ObjectType {
 	/// The comment creator's avatar.
 	public var image: BloggerCommentAuthorImage!
@@ -99,6 +102,7 @@ public class BloggerCommentAuthor: ObjectType {
 	}
 }
 
+/// The Post subtype of the Comment model type for use with the Blogger API
 public class BloggerCommentPost: ObjectType {
 	/// The identifier of the post containing this comment.
 	public var id: String!
@@ -116,6 +120,7 @@ public class BloggerCommentPost: ObjectType {
 	}
 }
 
+/// The Blog subtype of the Comment model type for use with the Blogger API
 public class BloggerCommentBlog: ObjectType {
 	/// The identifier of the blog containing this comment.
 	public var id: String!
@@ -133,6 +138,7 @@ public class BloggerCommentBlog: ObjectType {
 	}
 }
 
+/// The InReplyTo subtype of the Comment model type for use with the Blogger API
 public class BloggerCommentInReplyTo: ObjectType {
 	/// The identified of the parent of this comment.
 	public var id: String!

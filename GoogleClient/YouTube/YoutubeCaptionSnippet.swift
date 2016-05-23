@@ -2,19 +2,24 @@
 //  YoutubeCaptionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The caption track's type.
 public enum YoutubeCaptionSnippetTrackKind: String {
+	/// 
 	case ASR = "ASR"
+	/// 
 	case Forced = "forced"
+	/// 
 	case Standard = "standard"
 }
 
+/// The CaptionSnippet model type for use with the Youtube API
 public class YoutubeCaptionSnippet: ObjectType {
 	/// Indicates whether the caption track is a draft. If the value is true, then the track is not publicly visible. The default value is false.
 	public var isDraft: Bool!
@@ -68,22 +73,35 @@ public class YoutubeCaptionSnippet: ObjectType {
 	}
 }
 
+/// The reason that YouTube failed to process the caption track. This property is only present if the state property's value is failed.
 public enum YoutubeCaptionSnippetFailureReason: String {
+	/// 
 	case ProcessingFailed = "processingFailed"
+	/// 
 	case UnknownFormat = "unknownFormat"
+	/// 
 	case UnsupportedFormat = "unsupportedFormat"
 }
 
+/// The type of audio track associated with the caption track.
 public enum YoutubeCaptionSnippetAudioTrackType: String {
+	/// 
 	case Commentary = "commentary"
+	/// 
 	case Descriptive = "descriptive"
+	/// 
 	case Primary = "primary"
+	/// 
 	case Unknown = "unknown"
 }
 
+/// The caption track's status.
 public enum YoutubeCaptionSnippetStatus: String {
+	/// 
 	case Failed = "failed"
+	/// 
 	case Serving = "serving"
+	/// 
 	case Syncing = "syncing"
 }
 

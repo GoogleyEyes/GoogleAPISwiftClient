@@ -2,27 +2,38 @@
 //  YoutubeCommentSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The comment's moderation status. Will not be set if the comments were requested through the id filter.
 public enum YoutubeCommentSnippetModerationStatus: String {
+	/// 
 	case HeldForReview = "heldForReview"
+	/// 
 	case LikelySpam = "likelySpam"
+	/// 
 	case Published = "published"
+	/// 
 	case Rejected = "rejected"
 }
 
+/// The rating the viewer has given to this comment. For the time being this will never return RATE_TYPE_DISLIKE and instead return RATE_TYPE_NONE. This may change in the future.
 public enum YoutubeCommentSnippetViewerRating: String {
+	/// 
 	case Dislike = "dislike"
+	/// 
 	case Like = "like"
+	/// 
 	case None = "none"
+	/// 
 	case Unspecified = "unspecified"
 }
 
+/// The CommentSnippet model type for use with the Youtube API
 public class YoutubeCommentSnippet: ObjectType {
 	/// The date and time when was last updated . The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 	public var updatedAt: NSDate!

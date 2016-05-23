@@ -2,13 +2,14 @@
 //  YoutubeChannelConversionPing.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The ChannelConversionPing model type for use with the Youtube API
 public class YoutubeChannelConversionPing: ObjectType {
 	/// Defines the context of the ping.
 	public var context: YoutubeChannelConversionPingContext!
@@ -29,9 +30,13 @@ public class YoutubeChannelConversionPing: ObjectType {
 	}
 }
 
+/// Defines the context of the ping.
 public enum YoutubeChannelConversionPingContext: String {
+	/// 
 	case Cview = "cview"
+	/// 
 	case Subscribe = "subscribe"
+	/// 
 	case Unsubscribe = "unsubscribe"
 }
 

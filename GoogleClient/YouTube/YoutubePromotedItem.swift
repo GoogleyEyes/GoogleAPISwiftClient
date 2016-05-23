@@ -2,13 +2,14 @@
 //  YoutubePromotedItem.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The PromotedItem model type for use with the Youtube API
 public class YoutubePromotedItem: ObjectType {
 	/// The temporal position within the video where the promoted item will be displayed. If present, it overrides the default timing.
 	public var timing: YoutubeInvideoTiming!

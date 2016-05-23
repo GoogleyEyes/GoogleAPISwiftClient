@@ -2,13 +2,14 @@
 //  YoutubeVideoProcessingDetailsProcessingProgress.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The VideoProcessingDetailsProcessingProgress model type for use with the Youtube API
 public class YoutubeVideoProcessingDetailsProcessingProgress: ObjectType {
 	/// An estimate of the total number of parts that need to be processed for the video. The number may be updated with more precise estimates while YouTube processes the video.
 	public var partsTotal: UInt64!

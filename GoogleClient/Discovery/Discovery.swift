@@ -13,21 +13,7 @@ public class Discovery: GoogleService {
     var apiNameInURL: String = "discovery"
     var apiVersionString: String = "v1"
     
-    public var accessToken: String? {
-        didSet {
-            GoogleServiceFetcher.sharedInstance.accessToken = accessToken
-        }
-    }
-    public var apiKey: String? {
-        didSet {
-            GoogleServiceFetcher.sharedInstance.apiKey = apiKey
-        }
-    }
-    
-    public static let sharedInstance : Discovery = Discovery()
-    private init() {
-        
-    }
+    public let fetcher : GoogleServiceFetcher = GoogleServiceFetcher()
     
     public var alt: DiscoveryAlt?
     public var fields: String?
@@ -37,7 +23,7 @@ public class Discovery: GoogleService {
     
     public func getDiscoveryDocument(forAPI api: String, version /* begins with 'v' followed by number */: String, completionHandler: (restDescription: DiscoveryRestDescription?, error: ErrorType?) -> ()) {
         let queryParams = setUpQueryParams()
-        GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis/\(api)/\(version)/rest", queryParams: queryParams) { (JSON, error) -> () in
+        fetcher.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis/\(api)/\(version)/rest", queryParams: queryParams) { (JSON, error) -> () in
             if error != nil {
                 completionHandler(restDescription: nil, error: error)
             } else if JSON != nil {
@@ -60,7 +46,7 @@ public class Discovery: GoogleService {
             queryParams.updateValue(preferred.toJSONString(), forKey: "preferred")
         }
         
-        GoogleServiceFetcher.sharedInstance.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis", queryParams: queryParams) { (JSON, error) -> () in
+        fetcher.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis", queryParams: queryParams) { (JSON, error) -> () in
             if error != nil {
                 completionHandler(list: nil, error: error)
             } else if JSON != nil {

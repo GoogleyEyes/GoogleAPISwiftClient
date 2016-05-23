@@ -2,19 +2,24 @@
 //  YoutubeSearchResultSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// It indicates if the resource (video or channel) has upcoming/active live broadcast content. Or it's "none" if there is not any upcoming/active live broadcasts.
 public enum YoutubeSearchResultSnippetLiveBroadcastContent: String {
+	/// 
 	case Live = "live"
+	/// 
 	case None = "none"
+	/// 
 	case Upcoming = "upcoming"
 }
 
+/// The SearchResultSnippet model type for use with the Youtube API
 public class YoutubeSearchResultSnippet: ObjectType {
 	/// A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
 	public var thumbnails: YoutubeThumbnailDetails!
