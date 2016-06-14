@@ -2,13 +2,14 @@
 //  YoutubeVideoFileDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The VideoFileDetails model type for use with the Youtube API
 public class YoutubeVideoFileDetails: ObjectType {
 	/// The uploaded file's type as detected by YouTube's video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded.
 	public var fileType: YoutubeVideoFileDetailsFileType!
@@ -57,13 +58,21 @@ public class YoutubeVideoFileDetails: ObjectType {
 	}
 }
 
+/// The uploaded file's type as detected by YouTube's video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded.
 public enum YoutubeVideoFileDetailsFileType: String {
+	/// 
 	case Archive = "archive"
+	/// 
 	case Audio = "audio"
+	/// 
 	case Document = "document"
+	/// 
 	case Image = "image"
+	/// 
 	case Other = "other"
+	/// 
 	case Project = "project"
+	/// 
 	case Video = "video"
 }
 

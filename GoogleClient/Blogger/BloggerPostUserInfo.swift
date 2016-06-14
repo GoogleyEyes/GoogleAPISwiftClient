@@ -2,13 +2,14 @@
 //  BloggerPostUserInfo.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 6/10/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The PostUserInfo model type for use with the Blogger API
 public class BloggerPostUserInfo: GoogleObject {
 	/// The Post resource.
 	public var post: BloggerPost!

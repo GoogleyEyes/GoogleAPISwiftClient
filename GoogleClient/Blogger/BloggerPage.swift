@@ -2,13 +2,14 @@
 //  BloggerPage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 6/10/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The Blog subtype of the Page model type for use with the Blogger API
 public class BloggerPageBlog: ObjectType {
 	/// The identifier of the blog containing this page.
 	public var id: String!
@@ -26,6 +27,7 @@ public class BloggerPageBlog: ObjectType {
 	}
 }
 
+/// The Page model type for use with the Blogger API
 public class BloggerPage: GoogleObject {
 	/// The author of this Page.
 	public var author: BloggerPageAuthor!
@@ -76,6 +78,7 @@ public class BloggerPage: GoogleObject {
 	}
 }
 
+/// The Image subtype of the PageAuthor model type for use with the Blogger API
 public class BloggerPageAuthorImage: ObjectType {
 	/// The page author's avatar URL.
 	public var url: String!
@@ -93,6 +96,7 @@ public class BloggerPageAuthorImage: ObjectType {
 	}
 }
 
+/// The Author subtype of the Page model type for use with the Blogger API
 public class BloggerPageAuthor: ObjectType {
 	/// The page author's avatar.
 	public var image: BloggerPageAuthorImage!

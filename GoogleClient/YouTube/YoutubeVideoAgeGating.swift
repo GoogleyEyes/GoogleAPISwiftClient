@@ -2,20 +2,26 @@
 //  YoutubeVideoAgeGating.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// Video game rating, if any.
 public enum YoutubeVideoAgeGatingVideoGameRating: String {
+	/// 
 	case Anyone = "anyone"
+	/// 
 	case M15Plus = "m15Plus"
+	/// 
 	case M16Plus = "m16Plus"
+	/// 
 	case M17Plus = "m17Plus"
 }
 
+/// The VideoAgeGating model type for use with the Youtube API
 public class YoutubeVideoAgeGating: ObjectType {
 	/// Video game rating, if any.
 	public var videoGameRating: YoutubeVideoAgeGatingVideoGameRating!

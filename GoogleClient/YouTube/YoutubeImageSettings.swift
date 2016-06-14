@@ -2,13 +2,14 @@
 //  YoutubeImageSettings.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The ImageSettings model type for use with the Youtube API
 public class YoutubeImageSettings: ObjectType {
 	/// Banner image. Mobile size high resolution (1440x395).
 	public var bannerMobileExtraHdImageUrl: String!

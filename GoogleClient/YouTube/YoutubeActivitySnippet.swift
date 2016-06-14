@@ -2,27 +2,40 @@
 //  YoutubeActivitySnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The type of activity that the resource describes.
 public enum YoutubeActivitySnippetType: String {
+	/// 
 	case Bulletin = "bulletin"
+	/// 
 	case ChannelItem = "channelItem"
+	/// 
 	case Comment = "comment"
+	/// 
 	case Favorite = "favorite"
+	/// 
 	case Like = "like"
+	/// 
 	case PlaylistItem = "playlistItem"
+	/// 
 	case PromotedItem = "promotedItem"
+	/// 
 	case Recommendation = "recommendation"
+	/// 
 	case Social = "social"
+	/// 
 	case Subscription = "subscription"
+	/// 
 	case Upload = "upload"
 }
 
+/// The ActivitySnippet model type for use with the Youtube API
 public class YoutubeActivitySnippet: ObjectType {
 	/// A map of thumbnail images associated with the resource that is primarily associated with the activity. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
 	public var thumbnails: YoutubeThumbnailDetails!

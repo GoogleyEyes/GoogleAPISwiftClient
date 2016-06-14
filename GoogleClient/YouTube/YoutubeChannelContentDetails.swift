@@ -2,13 +2,14 @@
 //  YoutubeChannelContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The RelatedPlaylists subtype of the ChannelContentDetails model type for use with the Youtube API
 public class YoutubeChannelContentDetailsRelatedPlaylists: ObjectType {
 	/// The ID of the playlist that contains the channel"s uploaded videos. Use the  videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos.
 	public var uploads: String!
@@ -38,6 +39,7 @@ public class YoutubeChannelContentDetailsRelatedPlaylists: ObjectType {
 	}
 }
 
+/// The ChannelContentDetails model type for use with the Youtube API
 public class YoutubeChannelContentDetails: ObjectType {
 	public var relatedPlaylists: YoutubeChannelContentDetailsRelatedPlaylists!
 	/// The googlePlusUserId object identifies the Google+ profile ID associated with this channel.

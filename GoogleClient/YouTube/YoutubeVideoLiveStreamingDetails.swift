@@ -2,13 +2,14 @@
 //  YoutubeVideoLiveStreamingDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The VideoLiveStreamingDetails model type for use with the Youtube API
 public class YoutubeVideoLiveStreamingDetails: ObjectType {
 	/// The time that the broadcast actually ended. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. This value will not be available until the broadcast is over.
 	public var actualEndTime: NSDate!

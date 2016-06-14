@@ -2,13 +2,14 @@
 //  BloggerPost.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 6/10/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The Blog subtype of the Post model type for use with the Blogger API
 public class BloggerPostBlog: ObjectType {
 	/// The identifier of the Blog that contains this Post.
 	public var id: String!
@@ -26,6 +27,7 @@ public class BloggerPostBlog: ObjectType {
 	}
 }
 
+/// The Post model type for use with the Blogger API
 public class BloggerPost: GoogleObject {
 	/// The title of the Post.
 	public var title: String!
@@ -97,6 +99,7 @@ public class BloggerPost: GoogleObject {
 	}
 }
 
+/// The Author subtype of the Post model type for use with the Blogger API
 public class BloggerPostAuthor: ObjectType {
 	/// The Post author's avatar.
 	public var image: BloggerPostImage!
@@ -123,6 +126,7 @@ public class BloggerPostAuthor: ObjectType {
 	}
 }
 
+/// The Images subtype of the Post model type for use with the Blogger API
 public class BloggerPostImage: ObjectType {
 	public var url: String!
 	
@@ -139,6 +143,7 @@ public class BloggerPostImage: ObjectType {
 	}
 }
 
+/// The Location subtype of the Post model type for use with the Blogger API
 public class BloggerPostLocation: ObjectType {
 	/// Location's longitude.
 	public var lng: Double!
@@ -165,6 +170,7 @@ public class BloggerPostLocation: ObjectType {
 	}
 }
 
+/// The Replies subtype of the Post model type for use with the Blogger API
 public class BloggerPostReplies: ObjectType {
 	/// The List of Comments for this Post.
 	public var items: [BloggerComment]!
@@ -188,6 +194,7 @@ public class BloggerPostReplies: ObjectType {
 	}
 }
 
+/// The Image subtype of the PostAuthor model type for use with the Blogger API
 public class BloggerPostAuthorImage: ObjectType {
 	/// The Post author's avatar URL.
 	public var url: String!

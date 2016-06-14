@@ -2,13 +2,14 @@
 //  YoutubeSubscriptionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The SubscriptionSnippet model type for use with the Youtube API
 public class YoutubeSubscriptionSnippet: ObjectType {
 	/// A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
 	public var thumbnails: YoutubeThumbnailDetails!

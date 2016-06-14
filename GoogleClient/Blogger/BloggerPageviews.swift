@@ -2,13 +2,14 @@
 //  BloggerPageviews.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 6/10/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The Counts subtype of the Pageviews model type for use with the Blogger API
 public class BloggerPageviewsCount: ObjectType {
 	/// Time range the given count applies to
 	public var timeRange: String!
@@ -29,6 +30,7 @@ public class BloggerPageviewsCount: ObjectType {
 	}
 }
 
+/// The Pageviews model type for use with the Blogger API
 public class BloggerPageviews: GoogleObject {
 	/// Blog Id
 	public var blogId: String!

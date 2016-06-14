@@ -2,13 +2,14 @@
 //  YoutubeSearchResult.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The SearchResult model type for use with the Youtube API
 public class YoutubeSearchResult: GoogleObject {
 	/// The snippet object contains basic details about a search result, such as its title or description. For example, if the search result is a video, then the title will be the video's title and the description will be the video's description.
 	public var snippet: YoutubeSearchResultSnippet!

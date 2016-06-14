@@ -1,5 +1,5 @@
 //
-//  YoutubeVideoPlayer.swift
+//  YoutubeLiveChatMessageDeletedDetails.swift
 //  GoogleAPISwiftClient
 //
 //  Created by Matthew Wyskiel on 5/16/16.
@@ -9,10 +9,9 @@
 import Foundation
 import ObjectMapper
 
-/// The VideoPlayer model type for use with the Youtube API
-public class YoutubeVideoPlayer: ObjectType {
-	/// An <iframe> tag that embeds a player that will play the video.
-	public var embedHtml: String!
+/// The LiveChatMessageDeletedDetails model type for use with the Youtube API
+public class YoutubeLiveChatMessageDeletedDetails: ObjectType {
+	public var deletedMessageId: String!
 	
 	public required init?(_ map: Map) {
 
@@ -23,7 +22,7 @@ public class YoutubeVideoPlayer: ObjectType {
 	}
 
 	public func mapping(map: Map) {
-		embedHtml <- map["embedHtml"]
+		deletedMessageId <- map["deletedMessageId"]
 	}
 }
 

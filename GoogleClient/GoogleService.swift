@@ -17,30 +17,28 @@ protocol GoogleService {
     var apiVersionString: String {
         get
     }
-    var accessToken: String? { get set }
-    var apiKey: String? { get set }
+    var fetcher: GoogleServiceFetcher {
+        get
+    }
+    
+    init()
 }
 
-class GoogleServiceFetcher {
+public class GoogleServiceFetcher {
     let baseURL = "https://www.googleapis.com"
-    var accessToken: String? {
+    public var accessToken: String? {
         didSet {
             if apiKey != nil {
                 apiKey = nil
             }
         }
     }
-    var apiKey: String? {
+    public var apiKey: String? {
         didSet {
             if accessToken != nil {
                 accessToken = nil
             }
         }
-    }
-
-    static let sharedInstance : GoogleServiceFetcher = GoogleServiceFetcher()
-    private init() {
-
     }
 
     func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters? = nil, completionHandler: (JSON: [String: AnyObject]?, error: ErrorType?) -> ()) {

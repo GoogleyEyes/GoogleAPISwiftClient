@@ -2,13 +2,14 @@
 //  YoutubeChannelAuditDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 5/16/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The ChannelAuditDetails model type for use with the Youtube API
 public class YoutubeChannelAuditDetails: ObjectType {
 	/// Describes the general state of the channel. This field will always show if there are any issues whatsoever with the channel. Currently this field represents the result of the logical and operation over the community guidelines good standing, the copyright strikes good standing and the content ID claims good standing, but this may change in the future.
 	public var overallGoodStanding: Bool!

@@ -2,13 +2,14 @@
 //  BloggerUser.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 3/31/16.
+//  Created by Matthew Wyskiel on 6/10/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The User model type for use with the Blogger API
 public class BloggerUser: GoogleObject {
 	/// This user's locale
 	public var locale: BloggerUserLocale!
@@ -50,6 +51,7 @@ public class BloggerUser: GoogleObject {
 	}
 }
 
+/// The Blogs subtype of the User model type for use with the Blogger API
 public class BloggerUserBlogs: ObjectType {
 	/// The URL of the Blogs for this user.
 	public var selfLink: String!
@@ -67,6 +69,7 @@ public class BloggerUserBlogs: ObjectType {
 	}
 }
 
+/// The Locale subtype of the User model type for use with the Blogger API
 public class BloggerUserLocale: ObjectType {
 	/// The user's country setting.
 	public var country: String!
