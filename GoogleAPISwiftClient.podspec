@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GoogleAPISwiftClient"
-  s.version      = "0.4.2"
+  s.version      = "0.5.0"
   s.summary      = "A Google API Client for Apple Platforms in 2016"
 
   s.description  = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.license      = "Apache License, Version 2.0"
 
-  s.author             = { "Matthew Wyskiel" => "mwyskiel@optonline.net" }
+  s.author             = { "Matthew Wyskiel" => "mwwyskiel@gmail.com" }
   s.social_media_url   = "https://twitter.com/mattwyskiel"
 
   # written in Swift
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
 
-  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.4.2" }
+  s.source       = { :git => "https://github.com/mattwyskiel/GoogleAPISwiftClient.git", :tag => "0.5.0" }
 
   s.framework  = "Foundation"
   s.requires_arc = true

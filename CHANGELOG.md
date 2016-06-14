@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2016-6-14
+
+### Changed
+- All singletons have been removed, in favor of object initialization. This is to support fetcher properties, especially those that will be implemented in a future release to achieve feature parity with Google's official API Client library.
+
 ## [0.4.2] - 2016-5-10
 
 ### Added
