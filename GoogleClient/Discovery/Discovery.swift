@@ -15,6 +15,10 @@ public class Discovery: GoogleService {
     
     public let fetcher : GoogleServiceFetcher = GoogleServiceFetcher()
     
+    public required init() {
+        
+    }
+    
     public var alt: DiscoveryAlt?
     public var fields: String?
     public var prettyPrint: Bool?

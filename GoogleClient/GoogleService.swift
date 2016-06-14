@@ -20,18 +20,20 @@ protocol GoogleService {
     var fetcher: GoogleServiceFetcher {
         get
     }
+    
+    init()
 }
 
 public class GoogleServiceFetcher {
     let baseURL = "https://www.googleapis.com"
-    var accessToken: String? {
+    public var accessToken: String? {
         didSet {
             if apiKey != nil {
                 apiKey = nil
             }
         }
     }
-    var apiKey: String? {
+    public var apiKey: String? {
         didSet {
             if accessToken != nil {
                 accessToken = nil

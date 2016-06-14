@@ -163,6 +163,10 @@ public class Blogger: GoogleService {
 	var apiVersionString: String = "v3"
 
 	public let fetcher: GoogleServiceFetcher = GoogleServiceFetcher()
+    
+    public required init() {
+        
+    }
 
 	/// IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 	public var userIp: String!
