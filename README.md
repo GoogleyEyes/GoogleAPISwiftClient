@@ -11,7 +11,7 @@ This library is still in its early stages. It contains the base model and fetche
 
 ## Installation
 ```ruby
-  pod 'GoogleAPISwiftClient/{API}', '~> 0.4.1'
+  pod 'GoogleAPISwiftClient/{API}', '~> 0.5.0'
 ```
 where API is the name of the API you wish to use. You can use multiple API's - just use multiple `pod` declarations! API names are listed in the `podspec` file under `subspecs`.
 
@@ -31,14 +31,17 @@ This means that you can use any means necessary to get the OAuth token informati
 Simply use a chosen service's base class (named after itself) to make a request, which then returns the data to a completion handler.
 
 For example, if I wanted to fetch a specific comment for a given Blogger post:
-- First I'd set the API Key:
-
+- First I'd initialize the `Blogger` service
 ```swift
-    Blogger.sharedInstance.apiKey = "abcdefghijklmnop1234567890" // Example
+    let bloggerService = Blogger()
+```
+- Then I'd set the API Key:
+```swift
+    bloggerService.fetcher.apiKey = "abcdefghijklmnop1234567890" // Example
 ```
 - Then I'd only need to call this method to get a specific comment for a blog post:
 ```swift
-    Blogger.sharedInstance.getCommments(commentId: "abcdef", postId: "ghijkl", blogId: "1234567") {
+    bloggerService.getCommments(commentId: "abcdef", postId: "ghijkl", blogId: "1234567") {
       comment, error in
       // handle
     }
