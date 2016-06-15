@@ -26,7 +26,7 @@ public class YoutubeLiveChatUserBannedMessageDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		bannedUserDetails <- map["bannedUserDetails"]
 		banType <- map["banType"]
 		banDurationSeconds <- map["banDurationSeconds"]

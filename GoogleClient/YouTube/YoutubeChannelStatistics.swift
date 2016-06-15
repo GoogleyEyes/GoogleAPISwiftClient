@@ -30,7 +30,7 @@ public class YoutubeChannelStatistics: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		subscriberCount <- map["subscriberCount"]
 		viewCount <- map["viewCount"]
 		hiddenSubscriberCount <- map["hiddenSubscriberCount"]

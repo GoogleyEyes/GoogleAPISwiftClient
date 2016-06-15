@@ -59,7 +59,7 @@ public class YoutubeVideo: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		liveStreamingDetails <- map["liveStreamingDetails"]
 		suggestions <- map["suggestions"]
 		ageGating <- map["ageGating"]

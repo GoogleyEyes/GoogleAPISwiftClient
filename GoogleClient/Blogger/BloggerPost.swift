@@ -22,7 +22,7 @@ public class BloggerPostBlog: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		id <- map["id"]
 	}
 }
@@ -36,7 +36,7 @@ public class BloggerPost: GoogleObject {
 	/// Display image for the Post.
 	public var images: [BloggerPostImage]!
 	/// RFC 3339 date-time when this Post was published.
-	public var published: NSDate!
+	public var published: Date!
 	/// The JSON meta-data for the Post.
 	public var customMetaData: String!
 	/// The kind of this entity. Always blogger#post
@@ -46,7 +46,7 @@ public class BloggerPost: GoogleObject {
 	/// Etag of the resource.
 	public var etag: String!
 	/// RFC 3339 date-time when this Post was last updated.
-	public var updated: NSDate!
+	public var updated: Date!
 	/// The author of this Post.
 	public var author: BloggerPostAuthor!
 	/// The title link URL, similar to atom's related link.
@@ -76,7 +76,7 @@ public class BloggerPost: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		title <- map["title"]
 		content <- map["content"]
 		images <- map["images"]
@@ -118,7 +118,7 @@ public class BloggerPostAuthor: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		image <- map["image"]
 		id <- map["id"]
 		displayName <- map["displayName"]
@@ -138,7 +138,7 @@ public class BloggerPostImage: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		url <- map["url"]
 	}
 }
@@ -162,7 +162,7 @@ public class BloggerPostLocation: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		lng <- map["lng"]
 		lat <- map["lat"]
 		span <- map["span"]
@@ -187,7 +187,7 @@ public class BloggerPostReplies: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		selfLink <- map["selfLink"]
 		totalItems <- map["totalItems"]
@@ -207,7 +207,7 @@ public class BloggerPostAuthorImage: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		url <- map["url"]
 	}
 }

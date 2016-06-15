@@ -36,7 +36,7 @@ public enum YoutubeCommentSnippetViewerRating: String {
 /// The CommentSnippet model type for use with the Youtube API
 public class YoutubeCommentSnippet: ObjectType {
 	/// The date and time when was last updated . The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var updatedAt: NSDate!
+	public var updatedAt: Date!
 	/// The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it's the video's channel.
 	public var channelId: String!
 	/// Link to the author's Google+ profile, if any.
@@ -54,7 +54,7 @@ public class YoutubeCommentSnippet: ObjectType {
 	/// The ID of the video the comment refers to, if any.
 	public var videoId: String!
 	/// The date and time when the comment was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// The total number of likes this comment has received.
 	public var likeCount: UInt!
 	/// The unique id of the parent comment, only set for replies.
@@ -76,7 +76,7 @@ public class YoutubeCommentSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		updatedAt <- (map["updatedAt"], RFC3339Transform())
 		channelId <- map["channelId"]
 		authorGoogleplusProfileUrl <- map["authorGoogleplusProfileUrl"]

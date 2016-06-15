@@ -22,7 +22,7 @@ public class YoutubeCommentThreadReplies: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		comments <- map["comments"]
 	}
 }

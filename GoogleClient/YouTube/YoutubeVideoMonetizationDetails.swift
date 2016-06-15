@@ -22,7 +22,7 @@ public class YoutubeVideoMonetizationDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		access <- map["access"]
 	}
 }

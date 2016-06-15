@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class YoutubeSearchListResponse: GoogleObjectList {
-	public typealias Type = YoutubeSearchResult
+	public typealias `Type` = YoutubeSearchResult
 	/// A list of results that match the search criteria.
 	public var items: [Type]!
 	public var regionCode: String!
@@ -37,7 +37,7 @@ public class YoutubeSearchListResponse: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		regionCode <- map["regionCode"]
 		tokenPagination <- map["tokenPagination"]
@@ -53,11 +53,11 @@ public class YoutubeSearchListResponse: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

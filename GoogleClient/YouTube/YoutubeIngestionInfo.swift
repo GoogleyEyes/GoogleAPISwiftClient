@@ -31,7 +31,7 @@ public class YoutubeIngestionInfo: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		backupIngestionAddress <- map["backupIngestionAddress"]
 		ingestionAddress <- map["ingestionAddress"]
 		streamName <- map["streamName"]

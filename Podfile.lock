@@ -1,37 +1,31 @@
 PODS:
-  - Alamofire (3.3.0)
-  - ObjectMapper (1.2.0)
-  - OMGHTTPURLRQ (3.1.1):
-    - OMGHTTPURLRQ/RQ (= 3.1.1)
-  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
-  - OMGHTTPURLRQ/RQ (3.1.1):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.1.1)
-  - PromiseKit (3.0.3):
-    - PromiseKit/Foundation (= 3.0.3)
-    - PromiseKit/QuartzCore (= 3.0.3)
-    - PromiseKit/UIKit (= 3.0.3)
-  - PromiseKit/CorePromise (3.0.3)
-  - PromiseKit/Foundation (3.0.3):
-    - OMGHTTPURLRQ (~> 3.1.0)
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.0.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.0.3):
-    - PromiseKit/CorePromise
+  - Alamofire (3.4.1)
+  - ObjectMapper (1.3.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.3.0)
-  - ObjectMapper (~> 1.2.0)
-  - PromiseKit (~> 3.0.0)
+  - Alamofire (from `https://github.com/mattwyskiel/Alamofire`, branch `swift-3.0`)
+  - ObjectMapper (from `https://github.com/mattwyskiel/ObjectMapper`, branch `swift-3.0`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift-3.0
+    :git: https://github.com/mattwyskiel/Alamofire
+  ObjectMapper:
+    :branch: swift-3.0
+    :git: https://github.com/mattwyskiel/ObjectMapper
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 4565048e0955b34dfb8b901d9080df7223c185db
+    :git: https://github.com/mattwyskiel/Alamofire
+  ObjectMapper:
+    :commit: 81a641e1ac105e4bf22286fe2b4678b5bcc198cd
+    :git: https://github.com/mattwyskiel/ObjectMapper
 
 SPEC CHECKSUMS:
-  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
-  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
-  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
-  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
 
-PODFILE CHECKSUM: 2ba70bf1a9b2f3dc829c3d8a81c238da3c96f957
+PODFILE CHECKSUM: c0f0dc1a69db1c9d6ea16fdcbea5a2f29e4536d5
 
-COCOAPODS: 1.0.0.beta.4
+COCOAPODS: 1.0.0

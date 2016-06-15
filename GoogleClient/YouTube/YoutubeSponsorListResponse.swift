@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class YoutubeSponsorListResponse: GoogleObjectList {
-	public typealias Type = YoutubeSponsor
+	public typealias `Type` = YoutubeSponsor
 	/// A list of sponsors that match the request criteria.
 	public var items: [Type]!
 	public var tokenPagination: YoutubeTokenPagination!
@@ -34,7 +34,7 @@ public class YoutubeSponsorListResponse: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		tokenPagination <- map["tokenPagination"]
 		pageInfo <- map["pageInfo"]
@@ -48,11 +48,11 @@ public class YoutubeSponsorListResponse: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

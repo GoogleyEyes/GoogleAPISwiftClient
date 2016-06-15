@@ -31,7 +31,7 @@ public class YoutubeMonitorStreamInfo: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		broadcastStreamDelayMs <- map["broadcastStreamDelayMs"]
 		embedHtml <- map["embedHtml"]
 		enableMonitorStream <- map["enableMonitorStream"]

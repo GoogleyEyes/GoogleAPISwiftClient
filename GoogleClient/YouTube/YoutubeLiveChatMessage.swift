@@ -30,7 +30,7 @@ public class YoutubeLiveChatMessage: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		snippet <- map["snippet"]
 		etag <- map["etag"]
 		id <- map["id"]

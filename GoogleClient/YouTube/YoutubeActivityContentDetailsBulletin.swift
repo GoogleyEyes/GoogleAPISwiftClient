@@ -22,7 +22,7 @@ public class YoutubeActivityContentDetailsBulletin: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		resourceId <- map["resourceId"]
 	}
 }

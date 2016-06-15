@@ -28,7 +28,7 @@ public class YoutubeChannelBrandingSettings: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channel <- map["channel"]
 		image <- map["image"]
 		watch <- map["watch"]

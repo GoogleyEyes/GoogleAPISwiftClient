@@ -44,7 +44,7 @@ public class YoutubeVideoFileDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		fileType <- map["fileType"]
 		videoStreams <- map["videoStreams"]
 		durationMs <- map["durationMs"]

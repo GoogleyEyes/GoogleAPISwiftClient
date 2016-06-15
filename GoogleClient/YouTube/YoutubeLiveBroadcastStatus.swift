@@ -58,7 +58,7 @@ public class YoutubeLiveBroadcastStatus: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		lifeCycleStatus <- map["lifeCycleStatus"]
 		liveBroadcastPriority <- map["liveBroadcastPriority"]
 		privacyStatus <- map["privacyStatus"]

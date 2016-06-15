@@ -12,17 +12,32 @@ import ObjectMapper
 public class DiscoveryDirectoryList: GoogleObjectList {
     public var kind: String = "discovery#directoryList"
     public var discoveryVersion: String!
-    public typealias Type = DiscoveryDirectoryItem
+    public typealias `Type` = DiscoveryDirectoryItem
     public var items: [Type]!
     
     public required init?(_ map: Map) {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         kind <- map["kind"]
         discoveryVersion <- map["discoveryVersion"]
         items <- map["items"]
+    }
+    
+    public required init(arrayLiteral elements: Type...) {
+        items = elements
+    }
+    
+    public typealias Iterator = IndexingIterator<[Type]>
+    
+    public func makeIterator() -> Iterator {
+        let objects = items as [Type]
+        return objects.makeIterator()
+    }
+    
+    public subscript(position: Int) -> Type {
+        return items[position]
     }
 }
 
@@ -34,8 +49,8 @@ public class DiscoveryDirectoryItem: GoogleObject {
     public var title: String!
     public var APIDescription: String! // description
     public var icons: DiscoveryAPIIcon!
-    public var documentationLink: NSURL!
-    public var discoveryRestURL: NSURL! // discoveryRestUrl
+    public var documentationLink: URL!
+    public var discoveryRestURL: URL! // discoveryRestUrl
     public var discoveryLink: String!
     public var labels: [String]!
     public var preferred: Bool!
@@ -44,7 +59,7 @@ public class DiscoveryDirectoryItem: GoogleObject {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         kind <- map["kind"]
         identifier <- map["id"]
         name <- map["name"]

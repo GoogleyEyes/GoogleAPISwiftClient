@@ -28,7 +28,7 @@ public class YoutubeChannelProfileDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelUrl <- map["channelUrl"]
 		profileImageUrl <- map["profileImageUrl"]
 		channelId <- map["channelId"]

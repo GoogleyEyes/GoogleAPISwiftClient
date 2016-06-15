@@ -40,7 +40,7 @@ public class YoutubeVideoSnippet: ObjectType {
 	/// The YouTube video category associated with the video.
 	public var categoryId: String!
 	/// The date and time that the video was uploaded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// The language of the videos's default snippet.
 	public var defaultLanguage: String!
 	/// Channel title for the channel that the video belongs to.
@@ -54,7 +54,7 @@ public class YoutubeVideoSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		tags <- map["tags"]
 		liveBroadcastContent <- map["liveBroadcastContent"]

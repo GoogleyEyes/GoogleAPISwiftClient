@@ -28,7 +28,7 @@ public class YoutubePlaylistItemContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		note <- map["note"]
 		videoId <- map["videoId"]
 		endAt <- map["endAt"]

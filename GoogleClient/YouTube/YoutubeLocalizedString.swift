@@ -22,7 +22,7 @@ public class YoutubeLocalizedString: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		language <- map["language"]
 		value <- map["value"]
 	}

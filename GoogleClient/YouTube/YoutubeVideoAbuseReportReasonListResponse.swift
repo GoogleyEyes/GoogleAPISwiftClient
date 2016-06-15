@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class YoutubeVideoAbuseReportReasonListResponse: GoogleObjectList {
-	public typealias Type = YoutubeVideoAbuseReportReason
+	public typealias `Type` = YoutubeVideoAbuseReportReason
 	/// A list of valid abuse reasons that are used with video.ReportAbuse.
 	public var items: [Type]!
 	/// The visitorId identifies the visitor.
@@ -30,7 +30,7 @@ public class YoutubeVideoAbuseReportReasonListResponse: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		visitorId <- map["visitorId"]
 		etag <- map["etag"]
@@ -41,11 +41,11 @@ public class YoutubeVideoAbuseReportReasonListResponse: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

@@ -764,12 +764,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DB96B71B07FB3B00DD0950 /* Build configuration list for PBXNativeTarget "GoogleClient" */;
 			buildPhases = (
-				BF430380684CE923CC7E4098 /* Check Pods Manifest.lock */,
+				BF430380684CE923CC7E4098 /* 📦 Check Pods Manifest.lock */,
 				A4DB969C1B07FB3B00DD0950 /* Sources */,
 				A4DB969D1B07FB3B00DD0950 /* Frameworks */,
 				A4DB969E1B07FB3B00DD0950 /* Headers */,
 				A4DB969F1B07FB3B00DD0950 /* Resources */,
-				2EE451D5CC72F336846974CC /* Copy Pods Resources */,
+				2EE451D5CC72F336846974CC /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -784,12 +784,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DB96BA1B07FB3B00DD0950 /* Build configuration list for PBXNativeTarget "GoogleClientTests" */;
 			buildPhases = (
-				ACED42696A69F64BCEE4FFF7 /* Check Pods Manifest.lock */,
+				ACED42696A69F64BCEE4FFF7 /* 📦 Check Pods Manifest.lock */,
 				A4DB96A81B07FB3B00DD0950 /* Sources */,
 				A4DB96A91B07FB3B00DD0950 /* Frameworks */,
 				A4DB96AA1B07FB3B00DD0950 /* Resources */,
-				3025A4FBD85778406B040129 /* Embed Pods Frameworks */,
-				0A716340774D1CCDA5347B04 /* Copy Pods Resources */,
+				3025A4FBD85778406B040129 /* 📦 Embed Pods Frameworks */,
+				0A716340774D1CCDA5347B04 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -808,14 +808,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Matthew Wyskiel";
 				TargetAttributes = {
 					A4DB96A01B07FB3B00DD0950 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 					};
 					A4DB96AB1B07FB3B00DD0950 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -855,14 +857,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A716340774D1CCDA5347B04 /* Copy Pods Resources */ = {
+		0A716340774D1CCDA5347B04 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,14 +872,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2EE451D5CC72F336846974CC /* Copy Pods Resources */ = {
+		2EE451D5CC72F336846974CC /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,14 +887,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClient/Pods-GoogleClient-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3025A4FBD85778406B040129 /* Embed Pods Frameworks */ = {
+		3025A4FBD85778406B040129 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,14 +902,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleClientTests/Pods-GoogleClientTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACED42696A69F64BCEE4FFF7 /* Check Pods Manifest.lock */ = {
+		ACED42696A69F64BCEE4FFF7 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,14 +917,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BF430380684CE923CC7E4098 /* Check Pods Manifest.lock */ = {
+		BF430380684CE923CC7E4098 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1245,6 +1247,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5A6D051C533C82FCAEC9CD0 /* Pods-GoogleClient.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1257,6 +1260,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1264,6 +1268,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1944A9078556646CC5BD560C /* Pods-GoogleClient.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1275,6 +1280,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewwyskiel.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1294,6 +1301,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewwyskiel.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1309,6 +1317,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewwyskiel.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

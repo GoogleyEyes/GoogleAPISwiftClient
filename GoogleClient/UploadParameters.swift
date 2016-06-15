@@ -11,9 +11,9 @@ import Foundation
 public struct UploadParameters {
     public var progressHandler: ((bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) -> ())? = nil
     public var MIMEType: String
-    public var data: NSData
+    public var data: Data
     
-    public init(data: NSData, MIMEType: String) {
+    public init(data: Data, MIMEType: String) {
         self.data = data
         self.MIMEType = MIMEType
     }

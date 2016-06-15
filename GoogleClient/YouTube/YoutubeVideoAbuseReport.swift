@@ -30,7 +30,7 @@ public class YoutubeVideoAbuseReport: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		reasonId <- map["reasonId"]
 		videoId <- map["videoId"]
 		secondaryReasonId <- map["secondaryReasonId"]

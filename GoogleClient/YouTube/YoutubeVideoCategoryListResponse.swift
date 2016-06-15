@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class YoutubeVideoCategoryListResponse: GoogleObjectList {
-	public typealias Type = YoutubeVideoCategory
+	public typealias `Type` = YoutubeVideoCategory
 	/// A list of video categories that can be associated with YouTube videos. In this map, the video category ID is the map key, and its value is the corresponding videoCategory resource.
 	public var items: [Type]!
 	public var tokenPagination: YoutubeTokenPagination!
@@ -36,7 +36,7 @@ public class YoutubeVideoCategoryListResponse: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		tokenPagination <- map["tokenPagination"]
 		kind <- map["kind"]
@@ -51,11 +51,11 @@ public class YoutubeVideoCategoryListResponse: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

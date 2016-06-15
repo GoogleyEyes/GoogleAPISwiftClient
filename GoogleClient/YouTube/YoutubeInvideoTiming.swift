@@ -26,7 +26,7 @@ public class YoutubeInvideoTiming: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		durationMs <- map["durationMs"]
 		offsetMs <- map["offsetMs"]
 		type <- map["type"]

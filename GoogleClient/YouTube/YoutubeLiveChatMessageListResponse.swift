@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class YoutubeLiveChatMessageListResponse: GoogleObjectList {
-	public typealias Type = YoutubeLiveChatMessage
+	public typealias `Type` = YoutubeLiveChatMessage
 	/// A list of live chat messages.
 	public var items: [Type]!
 	public var tokenPagination: YoutubeTokenPagination!
@@ -24,7 +24,7 @@ public class YoutubeLiveChatMessageListResponse: GoogleObjectList {
 	/// Etag of this resource.
 	public var etag: String!
 	/// The date and time when the underlying stream went offline. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var offlineAt: NSDate!
+	public var offlineAt: Date!
 	/// Serialized EventId of the request which produced this response.
 	public var eventId: String!
 	/// The amount of time the client should wait before polling again.
@@ -38,7 +38,7 @@ public class YoutubeLiveChatMessageListResponse: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		tokenPagination <- map["tokenPagination"]
 		kind <- map["kind"]
@@ -54,11 +54,11 @@ public class YoutubeLiveChatMessageListResponse: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

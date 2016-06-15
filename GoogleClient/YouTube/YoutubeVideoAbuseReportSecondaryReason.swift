@@ -24,7 +24,7 @@ public class YoutubeVideoAbuseReportSecondaryReason: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		id <- map["id"]
 		label <- map["label"]
 	}

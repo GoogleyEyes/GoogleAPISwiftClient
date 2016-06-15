@@ -22,7 +22,7 @@ public class YoutubeLiveChatMessageSnippet: ObjectType {
 	/// Details about the funding event, this is only set if the type is 'fanFundingEvent'.
 	public var fanFundingEventDetails: YoutubeLiveChatFanFundingEventDetails!
 	/// The date and time when the message was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	public var messageRetractedDetails: YoutubeLiveChatMessageRetractedDetails!
 	public var messageDeletedDetails: YoutubeLiveChatMessageDeletedDetails!
 	/// Details about the text message, this is only set if the type is 'textMessageEvent'.
@@ -38,7 +38,7 @@ public class YoutubeLiveChatMessageSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		displayMessage <- map["displayMessage"]
 		type <- map["type"]
 		liveChatId <- map["liveChatId"]

@@ -22,7 +22,7 @@ public class BloggerPageBlog: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		id <- map["id"]
 	}
 }
@@ -36,7 +36,7 @@ public class BloggerPage: GoogleObject {
 	/// Data about the blog containing this Page.
 	public var blog: BloggerPageBlog!
 	/// RFC 3339 date-time when this Page was published.
-	public var published: NSDate!
+	public var published: Date!
 	/// The identifier for this resource.
 	public var id: String!
 	/// The body content of this Page, in HTML.
@@ -52,7 +52,7 @@ public class BloggerPage: GoogleObject {
 	/// The API REST URL to fetch this resource from.
 	public var selfLink: String!
 	/// RFC 3339 date-time when this Page was last updated.
-	public var updated: NSDate!
+	public var updated: Date!
 	
 	public required init?(_ map: Map) {
 
@@ -62,7 +62,7 @@ public class BloggerPage: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		author <- map["author"]
 		title <- map["title"]
 		blog <- map["blog"]
@@ -91,7 +91,7 @@ public class BloggerPageAuthorImage: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		url <- map["url"]
 	}
 }
@@ -115,7 +115,7 @@ public class BloggerPageAuthor: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		image <- map["image"]
 		id <- map["id"]
 		displayName <- map["displayName"]

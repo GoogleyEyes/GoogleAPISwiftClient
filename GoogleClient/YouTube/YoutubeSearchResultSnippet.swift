@@ -32,7 +32,7 @@ public class YoutubeSearchResultSnippet: ObjectType {
 	/// A description of the search result.
 	public var description: String!
 	/// The creation date and time of the resource that the search result identifies. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// The title of the channel that published the resource that the search result identifies.
 	public var channelTitle: String!
 	
@@ -44,7 +44,7 @@ public class YoutubeSearchResultSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		thumbnails <- map["thumbnails"]
 		channelId <- map["channelId"]
 		title <- map["title"]

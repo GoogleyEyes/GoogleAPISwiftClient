@@ -28,7 +28,7 @@ public class YoutubeChannelAuditDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		overallGoodStanding <- map["overallGoodStanding"]
 		contentIdClaimsGoodStanding <- map["contentIdClaimsGoodStanding"]
 		copyrightStrikesGoodStanding <- map["copyrightStrikesGoodStanding"]

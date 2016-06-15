@@ -38,7 +38,7 @@ public class YoutubeActivityContentDetailsRecommendation: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		resourceId <- map["resourceId"]
 		seedResourceId <- map["seedResourceId"]
 		reason <- map["reason"]

@@ -168,7 +168,7 @@ public class YoutubeContentRating: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		mtrcbRating <- map["mtrcbRating"]
 		russiaRating <- map["russiaRating"]
 		egfilmRating <- map["egfilmRating"]

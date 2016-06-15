@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class BloggerBlogList: GoogleObjectList {
-	public typealias Type = BloggerBlog
+	public typealias `Type` = BloggerBlog
 	/// The list of Blogs this user has Authorship or Admin rights over.
 	public var items: [Type]!
 	/// Admin level list of blog per-user information
@@ -26,7 +26,7 @@ public class BloggerBlogList: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		blogUserInfos <- map["blogUserInfos"]
 		kind <- map["kind"]
@@ -35,11 +35,11 @@ public class BloggerBlogList: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

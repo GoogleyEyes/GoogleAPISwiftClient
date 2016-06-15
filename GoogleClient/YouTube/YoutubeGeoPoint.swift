@@ -26,7 +26,7 @@ public class YoutubeGeoPoint: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		latitude <- map["latitude"]
 		longitude <- map["longitude"]
 		altitude <- map["altitude"]

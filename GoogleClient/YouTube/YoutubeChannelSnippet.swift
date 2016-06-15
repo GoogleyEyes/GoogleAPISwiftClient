@@ -24,7 +24,7 @@ public class YoutubeChannelSnippet: ObjectType {
 	/// The description of the channel.
 	public var description: String!
 	/// The date and time that the channel was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// The language of the channel's default title and description.
 	public var defaultLanguage: String!
 	
@@ -36,7 +36,7 @@ public class YoutubeChannelSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		thumbnails <- map["thumbnails"]
 		title <- map["title"]
 		country <- map["country"]

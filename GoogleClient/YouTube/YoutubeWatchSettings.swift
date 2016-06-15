@@ -26,7 +26,7 @@ public class YoutubeWatchSettings: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		featuredPlaylistId <- map["featuredPlaylistId"]
 		textColor <- map["textColor"]
 		backgroundColor <- map["backgroundColor"]

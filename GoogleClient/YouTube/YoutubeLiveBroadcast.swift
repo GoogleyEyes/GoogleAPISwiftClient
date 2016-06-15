@@ -35,7 +35,7 @@ public class YoutubeLiveBroadcast: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		statistics <- map["statistics"]
 		topicDetails <- map["topicDetails"]
 		id <- map["id"]

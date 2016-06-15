@@ -24,7 +24,7 @@ public class YoutubeI18nRegionSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		name <- map["name"]
 		gl <- map["gl"]
 	}

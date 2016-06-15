@@ -24,7 +24,7 @@ public class BloggerPageviewsCount: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		timeRange <- map["timeRange"]
 		count <- map["count"]
 	}
@@ -47,7 +47,7 @@ public class BloggerPageviews: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		blogId <- map["blogId"]
 		counts <- map["counts"]
 		kind <- map["kind"]

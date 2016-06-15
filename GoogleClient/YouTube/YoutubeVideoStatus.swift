@@ -56,7 +56,7 @@ public class YoutubeVideoStatus: ObjectType {
 	/// The status of the uploaded video.
 	public var uploadStatus: YoutubeVideoStatusUploadStatus!
 	/// The date and time when the video is scheduled to publish. It can be set only if the privacy status of the video is private. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishAt: NSDate!
+	public var publishAt: Date!
 	
 	public required init?(_ map: Map) {
 
@@ -66,7 +66,7 @@ public class YoutubeVideoStatus: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		privacyStatus <- map["privacyStatus"]
 		embeddable <- map["embeddable"]
 		publicStatsViewable <- map["publicStatsViewable"]

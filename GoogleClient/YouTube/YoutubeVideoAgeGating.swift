@@ -38,7 +38,7 @@ public class YoutubeVideoAgeGating: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		videoGameRating <- map["videoGameRating"]
 		restricted <- map["restricted"]
 		alcoholContent <- map["alcoholContent"]

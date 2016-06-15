@@ -30,7 +30,7 @@ public class YoutubeVideoProcessingDetailsProcessingProgress: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		partsTotal <- map["partsTotal"]
 		partsProcessed <- map["partsProcessed"]
 		timeLeftMs <- map["timeLeftMs"]

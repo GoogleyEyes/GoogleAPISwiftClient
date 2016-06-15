@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class YoutubeInvideoPromotion: ListType {
-	public typealias Type = YoutubePromotedItem
+	public typealias `Type` = YoutubePromotedItem
 	/// List of promoted items in decreasing priority.
 	public var items: [Type]!
 	/// Indicates whether the channel's promotional campaign uses "smart timing." This feature attempts to show promotions at a point in the video when they are more likely to be clicked and less likely to disrupt the viewing experience. This feature also picks up a single promotion to show on each video.
@@ -28,7 +28,7 @@ public class YoutubeInvideoPromotion: ListType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		useSmartTiming <- map["useSmartTiming"]
 		defaultTiming <- map["defaultTiming"]
@@ -38,11 +38,11 @@ public class YoutubeInvideoPromotion: ListType {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

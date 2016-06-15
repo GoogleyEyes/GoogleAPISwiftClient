@@ -30,7 +30,7 @@ public class YoutubeCdnSettings: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		resolution <- map["resolution"]
 		ingestionType <- map["ingestionType"]
 		frameRate <- map["frameRate"]

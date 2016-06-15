@@ -22,7 +22,7 @@ public class YoutubeSubscriptionSnippet: ObjectType {
 	/// The subscription's details.
 	public var description: String!
 	/// The date and time that the subscription was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// Channel title for the channel that the subscription belongs to.
 	public var channelTitle: String!
 	
@@ -34,7 +34,7 @@ public class YoutubeSubscriptionSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		thumbnails <- map["thumbnails"]
 		channelId <- map["channelId"]
 		title <- map["title"]

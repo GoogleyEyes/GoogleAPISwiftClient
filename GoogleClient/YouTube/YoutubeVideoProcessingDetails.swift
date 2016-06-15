@@ -36,7 +36,7 @@ public class YoutubeVideoProcessingDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		processingProgress <- map["processingProgress"]
 		processingFailureReason <- map["processingFailureReason"]
 		tagSuggestionsAvailability <- map["tagSuggestionsAvailability"]

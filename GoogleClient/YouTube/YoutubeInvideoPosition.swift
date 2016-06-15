@@ -24,7 +24,7 @@ public class YoutubeInvideoPosition: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		cornerPosition <- map["cornerPosition"]
 		type <- map["type"]
 	}

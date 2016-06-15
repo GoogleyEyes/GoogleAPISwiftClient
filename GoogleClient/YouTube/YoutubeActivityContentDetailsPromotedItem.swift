@@ -48,7 +48,7 @@ public class YoutubeActivityContentDetailsPromotedItem: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		forecastingUrl <- map["forecastingUrl"]
 		destinationUrl <- map["destinationUrl"]
 		ctaType <- map["ctaType"]

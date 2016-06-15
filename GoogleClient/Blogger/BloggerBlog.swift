@@ -16,7 +16,7 @@ public class BloggerBlog: GoogleObject {
 	/// The API REST URL to fetch this resource from.
 	public var selfLink: String!
 	/// RFC 3339 date-time when this blog was published.
-	public var published: NSDate!
+	public var published: Date!
 	/// The JSON custom meta-data for the Blog
 	public var customMetaData: String!
 	/// The kind of this entry. Always blogger#blog
@@ -24,7 +24,7 @@ public class BloggerBlog: GoogleObject {
 	/// The description of this blog. This is displayed underneath the title.
 	public var description: String!
 	/// RFC 3339 date-time when this blog was last updated.
-	public var updated: NSDate!
+	public var updated: Date!
 	/// The name of this blog. This is displayed as the title.
 	public var name: String!
 	/// The identifier for this resource.
@@ -46,7 +46,7 @@ public class BloggerBlog: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		locale <- map["locale"]
 		selfLink <- map["selfLink"]
 		published <- (map["published"], RFC3339Transform())
@@ -80,7 +80,7 @@ public class BloggerBlogLocale: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		country <- map["country"]
 		language <- map["language"]
 		variant <- map["variant"]
@@ -104,7 +104,7 @@ public class BloggerBlogPosts: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		selfLink <- map["selfLink"]
 		totalItems <- map["totalItems"]
@@ -126,7 +126,7 @@ public class BloggerBlogPages: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		selfLink <- map["selfLink"]
 		totalItems <- map["totalItems"]
 	}

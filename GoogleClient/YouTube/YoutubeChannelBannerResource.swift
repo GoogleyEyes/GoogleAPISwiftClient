@@ -26,7 +26,7 @@ public class YoutubeChannelBannerResource: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		kind <- map["kind"]
 		url <- map["url"]
 		etag <- map["etag"]

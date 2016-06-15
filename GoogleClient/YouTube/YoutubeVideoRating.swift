@@ -34,7 +34,7 @@ public class YoutubeVideoRating: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		rating <- map["rating"]
 		videoId <- map["videoId"]
 	}

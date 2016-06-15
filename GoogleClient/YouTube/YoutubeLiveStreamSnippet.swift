@@ -16,7 +16,7 @@ public class YoutubeLiveStreamSnippet: ObjectType {
 	/// The ID that YouTube uses to uniquely identify the channel that is transmitting the stream.
 	public var channelId: String!
 	/// The date and time that the stream was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	public var isDefaultStream: Bool!
 	/// The stream's description. The value cannot be longer than 10000 characters.
 	public var description: String!
@@ -29,7 +29,7 @@ public class YoutubeLiveStreamSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		title <- map["title"]
 		channelId <- map["channelId"]
 		publishedAt <- (map["publishedAt"], RFC3339Transform())

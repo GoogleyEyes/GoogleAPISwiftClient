@@ -30,7 +30,7 @@ public class YoutubeVideoSuggestions: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		processingWarnings <- map["processingWarnings"]
 		processingErrors <- map["processingErrors"]
 		processingHints <- map["processingHints"]

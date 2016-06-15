@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class BloggerPostUserInfosList: GoogleObjectList {
-	public typealias Type = BloggerPostUserInfo
+	public typealias `Type` = BloggerPostUserInfo
 	/// The list of Posts with User information for the post, for this Blog.
 	public var items: [Type]!
 	/// Pagination token to fetch the next page, if one exists.
@@ -26,7 +26,7 @@ public class BloggerPostUserInfosList: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		items <- map["items"]
 		nextPageToken <- map["nextPageToken"]
 		kind <- map["kind"]
@@ -35,11 +35,11 @@ public class BloggerPostUserInfosList: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
+	public func makeIterator() -> Iterator {
 		let objects = items as [Type]
-		return objects.generate()
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> Type {

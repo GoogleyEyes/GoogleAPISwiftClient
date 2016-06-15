@@ -26,7 +26,7 @@ public class YoutubeThumbnail: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		width <- map["width"]
 		height <- map["height"]
 		url <- map["url"]

@@ -28,7 +28,7 @@ public class YoutubePromotedItemId: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		videoId <- map["videoId"]
 		recentlyUploadedBy <- map["recentlyUploadedBy"]
 		websiteUrl <- map["websiteUrl"]
