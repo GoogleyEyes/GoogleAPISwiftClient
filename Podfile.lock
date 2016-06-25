@@ -1,31 +1,31 @@
 PODS:
   - Alamofire (3.4.1)
-  - ObjectMapper (1.3.0)
+  - ObjectMapper (1.2.0)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/mattwyskiel/Alamofire`, branch `swift-3.0`)
-  - ObjectMapper (from `https://github.com/mattwyskiel/ObjectMapper`, branch `swift-3.0`)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire`, branch `swift3`)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper`, branch `swift-3`)
 
 EXTERNAL SOURCES:
   Alamofire:
-    :branch: swift-3.0
-    :git: https://github.com/mattwyskiel/Alamofire
+    :branch: swift3
+    :git: https://github.com/Alamofire/Alamofire
   ObjectMapper:
-    :branch: swift-3.0
-    :git: https://github.com/mattwyskiel/ObjectMapper
+    :branch: swift-3
+    :git: https://github.com/Hearst-DD/ObjectMapper
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: 4565048e0955b34dfb8b901d9080df7223c185db
-    :git: https://github.com/mattwyskiel/Alamofire
+    :commit: e891699312a5215ad0da9f8322c5da949f90db35
+    :git: https://github.com/Alamofire/Alamofire
   ObjectMapper:
-    :commit: 81a641e1ac105e4bf22286fe2b4678b5bcc198cd
-    :git: https://github.com/mattwyskiel/ObjectMapper
+    :commit: d83fe93ee6da1688cf3b8278808ae002a329f8b9
+    :git: https://github.com/Hearst-DD/ObjectMapper
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
 
-PODFILE CHECKSUM: c0f0dc1a69db1c9d6ea16fdcbea5a2f29e4536d5
+PODFILE CHECKSUM: 8255f948a752243165a91fbcd01f518c1f1175d1
 
 COCOAPODS: 1.0.0

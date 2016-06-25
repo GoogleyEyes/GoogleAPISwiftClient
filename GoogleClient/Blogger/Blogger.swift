@@ -334,7 +334,7 @@ public class Blogger: GoogleService {
 	public var revert: Bool!
 
 	/// Update a post. This method supports patch semantics.
-	public func patchPost(post: BloggerPost, forPostID postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
+	public func patchPost(_ post: BloggerPost, forPostID postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -380,7 +380,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Update a post.
-	public func updatePost(post: BloggerPost, withPostId postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
+	public func updatePost(_ post: BloggerPost, withPostId postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -458,7 +458,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Retrieves a list of posts, possibly filtered.
-	public func listPosts(blogId blogId: String, completionHandler: (postList: BloggerPostList?, error: NSError?) -> ()) {
+	public func listPosts(blogId: String, completionHandler: (postList: BloggerPostList?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let status = status {
@@ -765,7 +765,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Update a page.
-	public func updatePage(page: BloggerPage, forPageWithId pageId: String, blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+	public func updatePage(_ page: BloggerPage, forPageWithId pageId: String, blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -784,8 +784,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Gets one blog page by ID.
-	public func getPages(blogId: String, pageId: String, completionHandler: (page: BloggerPage?, error: ErrorProtocol?) -> ()) {
-	public func getPage(forId pageId: String, fromBlogWithId blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+	public func getPages(_ blogId: String, pageId: String, completionHandler: (page: BloggerPage?, error: ErrorProtocol?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")

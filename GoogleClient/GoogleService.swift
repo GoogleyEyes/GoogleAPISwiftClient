@@ -133,7 +133,7 @@ public class GoogleServiceFetcher {
         bodyParameters: [String: AnyObject]?,
         headers: [String: String]) -> URLRequest
     {
-        let tempURLRequest = Foundation.URLRequest(url: URL(string: URLString.URLString)!)
+        let tempURLRequest = Foundation.URLRequest(url: URL(string: URLString.urlString)!)
         let URLRequest = ParameterEncoding.url.encode(tempURLRequest, parameters: URLParameters)
         let bodyRequest = ParameterEncoding.json.encode(tempURLRequest, parameters: bodyParameters)
 
