@@ -20,7 +20,7 @@ protocol GoogleService {
     var fetcher: GoogleServiceFetcher {
         get
     }
-    
+
     init()
 }
 
@@ -41,7 +41,7 @@ public class GoogleServiceFetcher {
         }
     }
 
-    func performRequest(_ method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters? = nil, completionHandler: (JSON: [String: AnyObject]?, error: ErrorProtocol?) -> ()) {
+    func performRequest(_ method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters? = nil, completionHandler: (JSON: [String: AnyObject]?, error: NSError?) -> ()) {
 
         if uploadParameters != nil {
             performFileUpload(method, serviceName: serviceName, apiVersion: apiVersion, endpoint: endpoint, queryParams: queryParams, postBody: postBody, uploadParameters: uploadParameters!, completionHandler: { (JSON, error) in
@@ -85,7 +85,7 @@ public class GoogleServiceFetcher {
         }
     }
 
-    private func performFileUpload(_ method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters, completionHandler: (JSON: [String: AnyObject]?, error: ErrorProtocol?) -> ()) {
+    private func performFileUpload(_ method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters, completionHandler: (JSON: [String: AnyObject]?, error: NSError?) -> ()) {
         let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         var headers: [String: String] = ["Content-Type":uploadParameters.MIMEType]
