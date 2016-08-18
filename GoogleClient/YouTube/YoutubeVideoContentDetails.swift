@@ -2,7 +2,7 @@
 //  YoutubeVideoContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ public enum YoutubeVideoContentDetailsDefinition: String {
 	case Sd = "sd"
 }
 
-/// The VideoContentDetails model type for use with the Youtube API
+/// Details about the content of a YouTube Video.
 public class YoutubeVideoContentDetails: ObjectType {
 	/// The value of definition indicates whether the video is available in high definition or only in standard definition.
 	public var definition: YoutubeVideoContentDetailsDefinition!

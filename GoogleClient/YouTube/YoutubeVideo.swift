@@ -2,14 +2,14 @@
 //  YoutubeVideo.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The Video model type for use with the Youtube API
+/// A video resource represents a YouTube video.
 public class YoutubeVideo: GoogleObject {
 	/// The liveStreamingDetails object contains metadata about a live video broadcast. The object will only be present in a video resource if the video is an upcoming, live, or completed live broadcast.
 	public var liveStreamingDetails: YoutubeVideoLiveStreamingDetails!

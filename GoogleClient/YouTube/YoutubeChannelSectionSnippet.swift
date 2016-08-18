@@ -2,7 +2,7 @@
 //  YoutubeChannelSectionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -57,7 +57,7 @@ public enum YoutubeChannelSectionSnippetStyle: String {
 	case VerticalList = "verticalList"
 }
 
-/// The ChannelSectionSnippet model type for use with the Youtube API
+/// Basic details about a channel section, including title, style and position.
 public class YoutubeChannelSectionSnippet: ObjectType {
 	/// The ID that YouTube uses to uniquely identify the channel that published the channel section.
 	public var channelId: String!

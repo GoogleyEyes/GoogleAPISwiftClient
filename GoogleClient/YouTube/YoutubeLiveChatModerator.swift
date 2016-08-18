@@ -2,14 +2,14 @@
 //  YoutubeLiveChatModerator.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The LiveChatModerator model type for use with the Youtube API
+/// A liveChatModerator resource represents a moderator for a YouTube live chat. A chat moderator has the ability to ban/unban users from a chat, remove message, etc.
 public class YoutubeLiveChatModerator: GoogleObject {
 	/// The snippet object contains basic details about the moderator.
 	public var snippet: YoutubeLiveChatModeratorSnippet!

@@ -115,3 +115,21 @@ class RFC3339Transform: TransformType {
         return string;
     }
 }
+
+class Base64Transform: TransformType {
+    func transformFromJSON(value: AnyObject?) -> NSData? {
+        if let byteString = value as? String {
+            return NSData(base64EncodedString: byteString, options: [])
+        } else {
+            return nil
+        }
+    }
+    
+    func transformToJSON(value: NSData?) -> String? {
+        if value != nil {
+            return value!.base64EncodedStringWithOptions([])
+        } else {
+            return nil
+        }
+    }
+}

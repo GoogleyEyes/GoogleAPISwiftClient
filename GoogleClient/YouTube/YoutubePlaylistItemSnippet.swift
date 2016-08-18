@@ -2,14 +2,14 @@
 //  YoutubePlaylistItemSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The PlaylistItemSnippet model type for use with the Youtube API
+/// Basic details about a playlist, including title, description and thumbnails.
 public class YoutubePlaylistItemSnippet: ObjectType {
 	/// The ID that YouTube uses to uniquely identify the user that added the item to the playlist.
 	public var channelId: String!

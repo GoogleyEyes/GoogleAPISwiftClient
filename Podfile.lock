@@ -1,13 +1,13 @@
 PODS:
-  - Alamofire (3.3.0)
+  - Alamofire (3.3.1)
   - ObjectMapper (1.2.0)
-  - OMGHTTPURLRQ (3.1.1):
-    - OMGHTTPURLRQ/RQ (= 3.1.1)
-  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
-  - OMGHTTPURLRQ/RQ (3.1.1):
+  - OMGHTTPURLRQ (3.1.2):
+    - OMGHTTPURLRQ/RQ (= 3.1.2)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.2)
+  - OMGHTTPURLRQ/RQ (3.1.2):
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - OMGHTTPURLRQ/UserAgent (3.1.2)
   - PromiseKit (3.0.3):
     - PromiseKit/Foundation (= 3.0.3)
     - PromiseKit/QuartzCore (= 3.0.3)
@@ -27,9 +27,9 @@ DEPENDENCIES:
   - PromiseKit (~> 3.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
-  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  OMGHTTPURLRQ: 38316b56d88125c600bcdb16df8329147da2b0ee
   PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
 
 PODFILE CHECKSUM: 2ba70bf1a9b2f3dc829c3d8a81c238da3c96f957

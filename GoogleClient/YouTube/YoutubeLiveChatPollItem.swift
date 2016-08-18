@@ -1,5 +1,5 @@
 //
-//  YoutubePlaylistLocalization.swift
+//  YoutubeLiveChatPollItem.swift
 //  GoogleAPISwiftClient
 //
 //  Created by Matthew Wyskiel on 7/11/16.
@@ -9,11 +9,10 @@
 import Foundation
 import ObjectMapper
 
-/// Playlist localization setting
-public class YoutubePlaylistLocalization: ObjectType {
-	/// The localized strings for playlist's title.
-	public var title: String!
-	/// The localized strings for playlist's description.
+/// The LiveChatPollItem model type for use with the Youtube API
+public class YoutubeLiveChatPollItem: ObjectType {
+	public var itemId: String!
+	/// Plain text description of the item.
 	public var description: String!
 	
 	public required init?(_ map: Map) {
@@ -25,7 +24,7 @@ public class YoutubePlaylistLocalization: ObjectType {
 	}
 
 	public func mapping(map: Map) {
-		title <- map["title"]
+		itemId <- map["itemId"]
 		description <- map["description"]
 	}
 }

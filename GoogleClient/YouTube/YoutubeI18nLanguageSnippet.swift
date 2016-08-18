@@ -2,14 +2,14 @@
 //  YoutubeI18nLanguageSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The I18nLanguageSnippet model type for use with the Youtube API
+/// Basic details about an i18n language, such as language code and human-readable name.
 public class YoutubeI18nLanguageSnippet: ObjectType {
 	/// A short BCP-47 code that uniquely identifies a language.
 	public var hl: String!

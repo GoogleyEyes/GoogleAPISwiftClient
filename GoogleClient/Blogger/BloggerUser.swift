@@ -2,7 +2,7 @@
 //  BloggerUser.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 6/23/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 

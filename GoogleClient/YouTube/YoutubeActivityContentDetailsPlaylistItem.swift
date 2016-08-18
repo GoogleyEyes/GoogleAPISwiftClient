@@ -2,14 +2,14 @@
 //  YoutubeActivityContentDetailsPlaylistItem.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ActivityContentDetailsPlaylistItem model type for use with the Youtube API
+/// Information about a new playlist item.
 public class YoutubeActivityContentDetailsPlaylistItem: ObjectType {
 	/// The resourceId object contains information about the resource that was added to the playlist.
 	public var resourceId: YoutubeResourceId!

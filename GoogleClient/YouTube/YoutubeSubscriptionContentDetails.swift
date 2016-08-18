@@ -2,7 +2,7 @@
 //  YoutubeSubscriptionContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ public enum YoutubeSubscriptionContentDetailsActivityType: String {
 	case Uploads = "uploads"
 }
 
-/// The SubscriptionContentDetails model type for use with the Youtube API
+/// Details about the content to witch a subscription refers.
 public class YoutubeSubscriptionContentDetails: ObjectType {
 	/// The approximate number of items that the subscription points to.
 	public var totalItemCount: UInt!

@@ -2,7 +2,7 @@
 //  Youtube.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -92,21 +92,21 @@ public class Youtube: GoogleService {
 	var apiVersionString: String = "v3"
 
 	public let fetcher: GoogleServiceFetcher = GoogleServiceFetcher()
-    
-    public required init() {
-        
-    }
+
+	public required init() {
+
+	}
 
 	/// IP address of the site where the request originates. Use this if you want to enforce per-user limits.
 	public var userIp: String!
 	/// Returns response with indentations and line breaks.
 	public var prettyPrint: Bool = true
 	/// Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
-	public var quotaUser: String!
+	public var quotaUserId: String!
 	/// Selector specifying which fields to include in a partial response.
 	public var fields: String!
 	/// Data format for the response.
-	public var alt: YoutubeAlt = .Json
+	public var alt: YoutubeAlt = .JSON
 	
 	/**
 	Note: This parameter is intended exclusively for YouTube content partners.
@@ -115,7 +115,7 @@ public class Youtube: GoogleService {
 	public var onBehalfOfContentOwner: String!
 	
 	/// Uploads a watermark image to YouTube and sets it for a channel.
-	public func setWatermarks(invideoBranding invideoBranding: YoutubeInvideoBranding, channelId: String, uploadParameters: UploadParameters, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func addWatermark(withBrandingObject invideoBranding: YoutubeInvideoBranding, channelId: String, uploadParameters: UploadParameters, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(channelId, forKey: "channelId")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -131,7 +131,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a channel's watermark image.
-	public func unsetWatermarks(channelId channelId: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func removeWatermark(fromChannelWithId channelId: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(channelId, forKey: "channelId")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -147,7 +147,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Uploads a custom video thumbnail to YouTube and sets it for a video.
-	public func setThumbnails(videoId videoId: String, uploadParameters: UploadParameters, completionHandler: (thumbnailSetResponse: YoutubeThumbnailSetResponse?, error: ErrorType?) -> ()) {
+	public func setThumbnail(forVideoWithId videoId: String, uploadParameters: UploadParameters, completionHandler: (thumbnailSetResponse: YoutubeThumbnailSetResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -164,7 +164,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Adds a new ban to the chat.
-	public func insertLiveChatBans(liveChatBan liveChatBan: YoutubeLiveChatBan, part: String, completionHandler: (liveChatBan: YoutubeLiveChatBan?, error: ErrorType?) -> ()) {
+	public func addNewLiveChatBan(liveChatBan: YoutubeLiveChatBan, part: String, completionHandler: (liveChatBan: YoutubeLiveChatBan?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "liveChat/bans", queryParams: queryParams, postBody: Mapper<YoutubeLiveChatBan>().toJSON(liveChatBan)) { (JSON, error) -> () in
@@ -178,7 +178,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Removes a chat ban.
-	public func deleteLiveChatBans(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func removeLiveChatBan(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "liveChat/bans", queryParams: queryParams) { (JSON, error) -> () in
@@ -198,7 +198,7 @@ public class Youtube: GoogleService {
 	public var hl: String = "en_US"
 	
 	/// Returns a list of categories that can be associated with YouTube videos.
-	public func listVideoCategories(part part: String, completionHandler: (videoCategoryListResponse: YoutubeVideoCategoryListResponse?, error: ErrorType?) -> ()) {
+	public func listVideoCategories(part part: String, completionHandler: (videoCategoryListResponse: YoutubeVideoCategoryListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let regionCode = regionCode {
 			queryParams.updateValue(regionCode, forKey: "regionCode")
@@ -219,7 +219,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Adds a new moderator for the chat.
-	public func insertLiveChatModerators(liveChatModerator liveChatModerator: YoutubeLiveChatModerator, part: String, completionHandler: (liveChatModerator: YoutubeLiveChatModerator?, error: ErrorType?) -> ()) {
+	public func insertLiveChatModerator(liveChatModerator: YoutubeLiveChatModerator, part: String, completionHandler: (liveChatModerator: YoutubeLiveChatModerator?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "liveChat/moderators", queryParams: queryParams, postBody: Mapper<YoutubeLiveChatModerator>().toJSON(liveChatModerator)) { (JSON, error) -> () in
@@ -238,7 +238,7 @@ public class Youtube: GoogleService {
 	public var maxResults: UInt = 5
 	
 	/// Lists moderators for a live chat.
-	public func listLiveChatModerators(liveChatId liveChatId: String, part: String, completionHandler: (liveChatModeratorlistResponse: YoutubeLiveChatModeratorListResponse?, error: ErrorType?) -> ()) {
+	public func listLiveChatModerators(forLiveChatWithId liveChatId: String, part: String, completionHandler: (liveChatModeratorlistResponse: YoutubeLiveChatModeratorListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
@@ -257,7 +257,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Removes a chat moderator.
-	public func deleteLiveChatModerators(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func removeLiveChatModerator(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "liveChat/moderators", queryParams: queryParams) { (JSON, error) -> () in
@@ -278,7 +278,7 @@ public class Youtube: GoogleService {
 	public var onBehalfOfContentOwnerChannel: String!
 	
 	/// Creates a playlist.
-	public func insertPlaylists(playlist playlist: YoutubePlaylist, part: String, completionHandler: (playlist: YoutubePlaylist?, error: ErrorType?) -> ()) {
+	public func createPlaylist(playlist: YoutubePlaylist, part: String, completionHandler: (playlist: YoutubePlaylist?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -298,7 +298,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a playlist.
-	public func deletePlaylists(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deletePlaylist(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -319,7 +319,7 @@ public class Youtube: GoogleService {
 	public var mine: Bool!
 	
 	/// Returns a collection of playlists that match the API request parameters. For example, you can retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their unique IDs.
-	public func listPlaylists(part part: String, completionHandler: (playlistListResponse: YoutubePlaylistListResponse?, error: ErrorType?) -> ()) {
+	public func listPlaylists(part part: String, completionHandler: (playlistListResponse: YoutubePlaylistListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let channelId = channelId {
 			queryParams.updateValue(channelId, forKey: "channelId")
@@ -353,7 +353,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Modifies a playlist. For example, you could change a playlist's title, description, or privacy status.
-	public func updatePlaylists(playlist playlist: YoutubePlaylist, part: String, completionHandler: (playlist: YoutubePlaylist?, error: ErrorType?) -> ()) {
+	public func updatePlaylist(playlist: YoutubePlaylist, part: String, completionHandler: (playlist: YoutubePlaylist?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -375,7 +375,7 @@ public class Youtube: GoogleService {
 	- Call the channelBanners.insert method to upload the binary image data to YouTube. The image must have a 16:9 aspect ratio and be at least 2120x1192 pixels.
 	- Extract the url property's value from the response that the API returns for step 1.
 	- Call the channels.update method to update the channel's branding settings. Set the brandingSettings.image.bannerExternalUrl property's value to the URL obtained in step 2.*/
-	public func insertChannelBanners(channelBannerResource channelBannerResource: YoutubeChannelBannerResource, uploadParameters: UploadParameters, completionHandler: (channelBannerResource: YoutubeChannelBannerResource?, error: ErrorType?) -> ()) {
+	public func addChannelBanner(channelBannerResource: YoutubeChannelBannerResource, uploadParameters: UploadParameters, completionHandler: (channelBannerResource: YoutubeChannelBannerResource?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -391,7 +391,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Adds a channelSection for the authenticated user's channel.
-	public func insertChannelSections(channelSection channelSection: YoutubeChannelSection, part: String, completionHandler: (channelSection: YoutubeChannelSection?, error: ErrorType?) -> ()) {
+	public func addChannelSection(channelSection: YoutubeChannelSection, part: String, completionHandler: (channelSection: YoutubeChannelSection?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -411,7 +411,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a channelSection.
-	public func deleteChannelSections(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteChannelSection(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -427,7 +427,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns channelSection resources that match the API request criteria.
-	public func listChannelSections(part part: String, completionHandler: (channelSectionListResponse: YoutubeChannelSectionListResponse?, error: ErrorType?) -> ()) {
+	public func listChannelSections(part part: String, completionHandler: (channelSectionListResponse: YoutubeChannelSectionListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let channelId = channelId {
 			queryParams.updateValue(channelId, forKey: "channelId")
@@ -454,7 +454,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Update a channelSection.
-	public func updateChannelSections(channelSection channelSection: YoutubeChannelSection, part: String, completionHandler: (channelSection: YoutubeChannelSection?, error: ErrorType?) -> ()) {
+	public func modifyChannelSection(channelSection: YoutubeChannelSection, part: String, completionHandler: (channelSection: YoutubeChannelSection?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -479,7 +479,7 @@ public class Youtube: GoogleService {
 	public var sync: Bool!
 	
 	/// Uploads a caption track.
-	public func insertCaptions(caption caption: YoutubeCaption, part: String, uploadParameters: UploadParameters, completionHandler: (caption: YoutubeCaption?, error: ErrorType?) -> ()) {
+	public func addCaptionTrack(caption: YoutubeCaption, part: String, uploadParameters: UploadParameters, completionHandler: (caption: YoutubeCaption?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOf = onBehalfOf {
 			queryParams.updateValue(onBehalfOf, forKey: "onBehalfOf")
@@ -502,7 +502,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a specified caption track.
-	public func deleteCaptions(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteCaptionTrack(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -521,7 +521,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns a list of caption tracks that are associated with a specified video. Note that the API response does not contain the actual captions and that the captions.download method provides the ability to retrieve a caption track.
-	public func listCaptions(videoId videoId: String, part: String, completionHandler: (captionListResponse: YoutubeCaptionListResponse?, error: ErrorType?) -> ()) {
+	public func listCaptionTracks(forVideoWithId videoId: String, part: String, completionHandler: (captionListResponse: YoutubeCaptionListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(videoId, forKey: "videoId")
 		if let onBehalfOf = onBehalfOf {
@@ -545,7 +545,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both.
-	public func updateCaptions(caption caption: YoutubeCaption, part: String, uploadParameters: UploadParameters, completionHandler: (caption: YoutubeCaption?, error: ErrorType?) -> ()) {
+	public func modifyCaptionTrack(caption: YoutubeCaption, part: String, uploadParameters: UploadParameters, completionHandler: (caption: YoutubeCaption?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOf = onBehalfOf {
 			queryParams.updateValue(onBehalfOf, forKey: "onBehalfOf")
@@ -573,7 +573,7 @@ public class Youtube: GoogleService {
 	public var tlang: String!
 	
 	/// Downloads a caption track. The caption track is returned in its original format unless the request specifies a value for the tfmt parameter and in its original language unless the request specifies a value for the tlang parameter.
-	public func downloadCaptions(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func downloadCaptionTrack(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let tfmt = tfmt {
 			queryParams.updateValue(tfmt.rawValue, forKey: "tfmt")
@@ -609,7 +609,7 @@ public class Youtube: GoogleService {
 	public var mySubscribers: Bool!
 	
 	/// Returns a collection of zero or more channel resources that match the request criteria.
-	public func listChannels(part part: String, completionHandler: (channelListResponse: YoutubeChannelListResponse?, error: ErrorType?) -> ()) {
+	public func listChannels(part part: String, completionHandler: (channelListResponse: YoutubeChannelListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(hl, forKey: "hl")
 		if let id = id {
@@ -649,7 +649,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Updates a channel's metadata. Note that this method currently only supports updates to the channel resource's brandingSettings and invideoPromotion objects and their child properties.
-	public func updateChannels(channel channel: YoutubeChannel, part: String, completionHandler: (channel: YoutubeChannel?, error: ErrorType?) -> ()) {
+	public func modifyChannel(channel: YoutubeChannel, part: String, completionHandler: (channel: YoutubeChannel?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -666,7 +666,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Creates a broadcast.
-	public func insertLiveBroadcasts(liveBroadcast liveBroadcast: YoutubeLiveBroadcast, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: ErrorType?) -> ()) {
+	public func createLiveBroadcast(liveBroadcast: YoutubeLiveBroadcast, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -698,7 +698,7 @@ public class Youtube: GoogleService {
 	public var displaySlate: Bool!
 	
 	/// Controls the settings for a slate that can be displayed in the broadcast stream.
-	public func controlLiveBroadcasts(id id: String, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: ErrorType?) -> ()) {
+	public func controlLiveBroadcast(withId id: String, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let walltime = walltime {
 			queryParams.updateValue(walltime.toJSONString(), forKey: "walltime")
@@ -728,7 +728,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a broadcast.
-	public func deleteLiveBroadcasts(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteLiveBroadcast(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -750,7 +750,7 @@ public class Youtube: GoogleService {
 	public var streamId: String!
 	
 	/// Binds a YouTube broadcast to a stream or removes an existing binding between a broadcast and a stream. A broadcast can only be bound to one video stream, though a video stream may be bound to more than one broadcast.
-	public func bindLiveBroadcasts(id id: String, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: ErrorType?) -> ()) {
+	public func bindLiveBroadcastToStream(withBroadcastID id: String, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -774,7 +774,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Updates a broadcast. For example, you could modify the broadcast settings defined in the liveBroadcast resource's contentDetails object.
-	public func updateLiveBroadcasts(liveBroadcast liveBroadcast: YoutubeLiveBroadcast, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: ErrorType?) -> ()) {
+	public func updateLiveBroadcast(liveBroadcast: YoutubeLiveBroadcast, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -799,7 +799,7 @@ public class Youtube: GoogleService {
 	public var broadcastType: YoutubeLiveBroadcastsBroadcastType = .Event
 	
 	/// Returns a list of YouTube broadcasts that match the API request parameters.
-	public func listLiveBroadcasts(part part: String, completionHandler: (liveBroadcastlistResponse: YoutubeLiveBroadcastListResponse?, error: ErrorType?) -> ()) {
+	public func listLiveBroadcasts(part part: String, completionHandler: (liveBroadcastlistResponse: YoutubeLiveBroadcastListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		if let id = id {
@@ -833,7 +833,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast's status to testing, YouTube starts to transmit video to that broadcast's monitor stream. Before calling this method, you should confirm that the value of the status.streamStatus property for the stream bound to your broadcast is active.
-	public func transitionLiveBroadcasts(broadcastStatus broadcastStatus: YoutubeLiveBroadcastsBroadcastStatus, id: String, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: ErrorType?) -> ()) {
+	public func transitionLiveBroadcast(withId id: String, toStatus broadcastStatus: YoutubeLiveBroadcastsBroadcastStatus, part: String, completionHandler: (liveBroadcast: YoutubeLiveBroadcast?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -855,7 +855,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Expresses the caller's opinion that one or more comments should be flagged as spam.
-	public func markAsSpamComments(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func markCommentAsSpam(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "comments/markAsSpam", queryParams: queryParams) { (JSON, error) -> () in
@@ -868,7 +868,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Creates a reply to an existing comment. Note: To create a top-level comment, use the commentThreads.insert method.
-	public func insertComments(comment comment: YoutubeComment, part: String, completionHandler: (comment: YoutubeComment?, error: ErrorType?) -> ()) {
+	public func replyToComment(withComment comment: YoutubeComment, part: String, completionHandler: (comment: YoutubeComment?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "comments", queryParams: queryParams, postBody: Mapper<YoutubeComment>().toJSON(comment)) { (JSON, error) -> () in
@@ -888,7 +888,7 @@ public class Youtube: GoogleService {
 	public var banAuthor: Bool = false
 	
 	/// Sets the moderation status of one or more comments. The API request must be authorized by the owner of the channel or video associated with the comments.
-	public func setModerationStatusComments(id id: String, moderationStatus: YoutubeCommentsModerationStatus, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func setModerationStatus(forCommentWithId id: String, moderationStatus: YoutubeCommentsModerationStatus, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		queryParams.updateValue(moderationStatus.rawValue, forKey: "moderationStatus")
@@ -903,7 +903,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a comment.
-	public func deleteComments(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteComment(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "comments", queryParams: queryParams) { (JSON, error) -> () in
@@ -916,7 +916,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// This parameter indicates whether the API should return comments formatted as HTML or as plain text.
-	public var textFormat: YoutubeCommentsTextFormat = .Html
+	public var textFormat: YoutubeCommentsTextFormat = .HTML
 	/**
 	The parentId parameter specifies the ID of the comment for which replies should be retrieved.
 	
@@ -924,7 +924,7 @@ public class Youtube: GoogleService {
 	public var parentId: String!
 	
 	/// Returns a list of comments that match the API request parameters.
-	public func listComments(part part: String, completionHandler: (commentListResponse: YoutubeCommentListResponse?, error: ErrorType?) -> ()) {
+	public func listComments(part part: String, completionHandler: (commentListResponse: YoutubeCommentListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
@@ -949,7 +949,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Modifies a comment.
-	public func updateComments(comment comment: YoutubeComment, part: String, completionHandler: (comment: YoutubeComment?, error: ErrorType?) -> ()) {
+	public func modifyComment(comment: YoutubeComment, part: String, completionHandler: (comment: YoutubeComment?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.PUT, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "comments", queryParams: queryParams, postBody: Mapper<YoutubeComment>().toJSON(comment)) { (JSON, error) -> () in
@@ -963,7 +963,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Lists fan funding events for a channel.
-	public func listFanFundingEvents(part part: String, completionHandler: (fanfundingEventListResponse: YoutubeFanFundingEventListResponse?, error: ErrorType?) -> ()) {
+	public func listFanFundingEvents(part part: String, completionHandler: (fanfundingEventListResponse: YoutubeFanFundingEventListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
@@ -1049,7 +1049,7 @@ public class Youtube: GoogleService {
 	public var topicId: String!
 	
 	/// Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.
-	public func listSearch(part part: String, completionHandler: (searchListResponse: YoutubeSearchListResponse?, error: ErrorType?) -> ()) {
+	public func search(part part: String, completionHandler: (searchListResponse: YoutubeSearchListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let regionCode = regionCode {
 			queryParams.updateValue(regionCode, forKey: "regionCode")
@@ -1147,7 +1147,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns a list of categories that can be associated with YouTube channels.
-	public func listGuideCategories(part part: String, completionHandler: (guideCategoryListResponse: YoutubeGuideCategoryListResponse?, error: ErrorType?) -> ()) {
+	public func listGuideCategories(part part: String, completionHandler: (guideCategoryListResponse: YoutubeGuideCategoryListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let regionCode = regionCode {
 			queryParams.updateValue(regionCode, forKey: "regionCode")
@@ -1171,7 +1171,7 @@ public class Youtube: GoogleService {
 	Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel's behalf.)
 	
 	Note: Even though an activity resource can contain information about actions like a user rating a video or marking a video as a favorite, you need to use other API methods to generate those activity resources. For example, you would use the API's videos.rate() method to rate a video and the playlistItems.insert() method to mark a video as a favorite.*/
-	public func insertActivities(activity activity: YoutubeActivity, part: String, completionHandler: (activity: YoutubeActivity?, error: ErrorType?) -> ()) {
+	public func postActivity(activity: YoutubeActivity, part: String, completionHandler: (activity: YoutubeActivity?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "activities", queryParams: queryParams, postBody: Mapper<YoutubeActivity>().toJSON(activity)) { (JSON, error) -> () in
@@ -1188,7 +1188,7 @@ public class Youtube: GoogleService {
 	public var home: Bool!
 	
 	/// Returns a list of channel activity events that match the request criteria. For example, you can retrieve events associated with a particular channel, events associated with the user's subscriptions and Google+ friends, or the YouTube home page feed, which is customized for each user.
-	public func listActivities(part part: String, completionHandler: (activityListResponse: YoutubeActivityListResponse?, error: ErrorType?) -> ()) {
+	public func listActivities(part part: String, completionHandler: (activityListResponse: YoutubeActivityListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let channelId = channelId {
 			queryParams.updateValue(channelId, forKey: "channelId")
@@ -1224,7 +1224,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Creates a new top-level comment. To add a reply to an existing comment, use the comments.insert method instead.
-	public func insertCommentThreads(commentThread commentThread: YoutubeCommentThread, part: String, completionHandler: (commentThread: YoutubeCommentThread?, error: ErrorType?) -> ()) {
+	public func addNewComment(withThreadObject commentThread: YoutubeCommentThread, part: String, completionHandler: (commentThread: YoutubeCommentThread?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "commentThreads", queryParams: queryParams, postBody: Mapper<YoutubeCommentThread>().toJSON(commentThread)) { (JSON, error) -> () in
@@ -1253,7 +1253,7 @@ public class Youtube: GoogleService {
 	public var videoId: String!
 	
 	/// Returns a list of comment threads that match the API request parameters.
-	public func listCommentThreads(part part: String, completionHandler: (commentThreadListResponse: YoutubeCommentThreadListResponse?, error: ErrorType?) -> ()) {
+	public func listCommentThreads(part part: String, completionHandler: (commentThreadListResponse: YoutubeCommentThreadListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let channelId = channelId {
 			queryParams.updateValue(channelId, forKey: "channelId")
@@ -1289,7 +1289,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Modifies the top-level comment in a comment thread.
-	public func updateCommentThreads(commentThread commentThread: YoutubeCommentThread, part: String, completionHandler: (commentThread: YoutubeCommentThread?, error: ErrorType?) -> ()) {
+	public func modifyCommentThread(commentThread: YoutubeCommentThread, part: String, completionHandler: (commentThread: YoutubeCommentThread?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.PUT, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "commentThreads", queryParams: queryParams, postBody: Mapper<YoutubeCommentThread>().toJSON(commentThread)) { (JSON, error) -> () in
@@ -1303,7 +1303,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns a list of abuse reasons that can be used for reporting abusive videos.
-	public func listVideoAbuseReportReasons(part part: String, completionHandler: (videoAbuseReportReasonListResponse: YoutubeVideoAbuseReportReasonListResponse?, error: ErrorType?) -> ()) {
+	public func listVideoAbuseReportReasons(part part: String, completionHandler: (videoAbuseReportReasonListResponse: YoutubeVideoAbuseReportReasonListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(hl, forKey: "hl")
 		queryParams.updateValue(part, forKey: "part")
@@ -1318,7 +1318,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Creates a video stream. The stream enables you to send your video to YouTube, which can then broadcast the video to your audience.
-	public func insertLiveStreams(liveStream liveStream: YoutubeLiveStream, part: String, completionHandler: (liveStream: YoutubeLiveStream?, error: ErrorType?) -> ()) {
+	public func createLiveStream(liveStream: YoutubeLiveStream, part: String, completionHandler: (liveStream: YoutubeLiveStream?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -1338,7 +1338,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a video stream.
-	public func deleteLiveStreams(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteLiveStream(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -1357,7 +1357,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns a list of video streams that match the API request parameters.
-	public func listLiveStreams(part part: String, completionHandler: (liveStreamlistResponse: YoutubeLiveStreamListResponse?, error: ErrorType?) -> ()) {
+	public func listLiveStreams(part part: String, completionHandler: (liveStreamlistResponse: YoutubeLiveStreamListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let id = id {
 			queryParams.updateValue(id, forKey: "id")
@@ -1387,7 +1387,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Updates a video stream. If the properties that you want to change cannot be updated, then you need to create a new stream with the proper settings.
-	public func updateLiveStreams(liveStream liveStream: YoutubeLiveStream, part: String, completionHandler: (liveStream: YoutubeLiveStream?, error: ErrorType?) -> ()) {
+	public func updateLiveStream(liveStream: YoutubeLiveStream, part: String, completionHandler: (liveStream: YoutubeLiveStream?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwnerChannel = onBehalfOfContentOwnerChannel {
 			queryParams.updateValue(onBehalfOfContentOwnerChannel, forKey: "onBehalfOfContentOwnerChannel")
@@ -1407,7 +1407,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Adds a subscription for the authenticated user's channel.
-	public func insertSubscriptions(subscription subscription: YoutubeSubscription, part: String, completionHandler: (subscription: YoutubeSubscription?, error: ErrorType?) -> ()) {
+	public func addSubscription(subscription: YoutubeSubscription, part: String, completionHandler: (subscription: YoutubeSubscription?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "subscriptions", queryParams: queryParams, postBody: Mapper<YoutubeSubscription>().toJSON(subscription)) { (JSON, error) -> () in
@@ -1420,19 +1420,26 @@ public class Youtube: GoogleService {
 		}
 	}
 
+	/// Set this parameter's value to true to retrieve a feed of the subscribers of the authenticated user in reverse chronological order (newest first).
+	public var myRecentSubscribers: Bool!
 	/// The forChannelId parameter specifies a comma-separated list of channel IDs. The API response will then only contain subscriptions matching those channels.
 	public var forChannelId: String!
 	
 	/// Returns subscription resources that match the API request criteria.
-	public func listSubscriptions(part part: String, completionHandler: (subscriptionListResponse: YoutubeSubscriptionListResponse?, error: ErrorType?) -> ()) {
+	public func listSubscriptions(part part: String, completionHandler: (subscriptionListResponse: YoutubeSubscriptionListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let channelId = channelId {
 			queryParams.updateValue(channelId, forKey: "channelId")
 		}
+		if let myRecentSubscribers = myRecentSubscribers {
+			queryParams.updateValue(myRecentSubscribers.toJSONString(), forKey: "myRecentSubscribers")
+		}
 		if let forChannelId = forChannelId {
 			queryParams.updateValue(forChannelId, forKey: "forChannelId")
 		}
-		queryParams.updateValue(part, forKey: "part")
+		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
+			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
+		}
 		if let id = id {
 			queryParams.updateValue(id, forKey: "id")
 		}
@@ -1448,11 +1455,9 @@ public class Youtube: GoogleService {
 		if let mine = mine {
 			queryParams.updateValue(mine.toJSONString(), forKey: "mine")
 		}
-		queryParams.updateValue(maxResults.toJSONString(), forKey: "maxResults")
-		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
-			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
-		}
 		queryParams.updateValue(order.rawValue, forKey: "order")
+		queryParams.updateValue(maxResults.toJSONString(), forKey: "maxResults")
+		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "subscriptions", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
 				completionHandler(subscriptionListResponse: nil, error: error)
@@ -1464,7 +1469,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a subscription.
-	public func deleteSubscriptions(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteSubscription(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "subscriptions", queryParams: queryParams) { (JSON, error) -> () in
@@ -1477,7 +1482,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Adds a resource to a playlist.
-	public func insertPlaylistItems(playlistItem playlistItem: YoutubePlaylistItem, part: String, completionHandler: (playlistItem: YoutubePlaylistItem?, error: ErrorType?) -> ()) {
+	public func addResourceToPlaylist(playlistItem: YoutubePlaylistItem, part: String, completionHandler: (playlistItem: YoutubePlaylistItem?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -1494,7 +1499,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a playlist item.
-	public func deletePlaylistItems(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deletePlaylistItem(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "playlistItems", queryParams: queryParams) { (JSON, error) -> () in
@@ -1510,7 +1515,7 @@ public class Youtube: GoogleService {
 	public var playlistId: String!
 	
 	/// Returns a collection of playlist items that match the API request parameters. You can retrieve all of the playlist items in a specified playlist or retrieve one or more playlist items by their unique IDs.
-	public func listPlaylistItems(part part: String, completionHandler: (playlistItemListResponse: YoutubePlaylistItemListResponse?, error: ErrorType?) -> ()) {
+	public func listPlaylistItems(part part: String, completionHandler: (playlistItemListResponse: YoutubePlaylistItemListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let id = id {
 			queryParams.updateValue(id, forKey: "id")
@@ -1540,7 +1545,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Modifies a playlist item. For example, you could update the item's position in the playlist.
-	public func updatePlaylistItems(playlistItem playlistItem: YoutubePlaylistItem, part: String, completionHandler: (playlistItem: YoutubePlaylistItem?, error: ErrorType?) -> ()) {
+	public func modifyPlaylistItem(playlistItem: YoutubePlaylistItem, part: String, completionHandler: (playlistItem: YoutubePlaylistItem?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.PUT, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "playlistItems", queryParams: queryParams, postBody: Mapper<YoutubePlaylistItem>().toJSON(playlistItem)) { (JSON, error) -> () in
@@ -1561,7 +1566,7 @@ public class Youtube: GoogleService {
 	public var notifySubscribers: Bool = true
 	
 	/// Uploads a video to YouTube and optionally sets the video's metadata.
-	public func insertVideos(video video: YoutubeVideo, part: String, uploadParameters: UploadParameters, completionHandler: (video: YoutubeVideo?, error: ErrorType?) -> ()) {
+	public func uploadVideo(video: YoutubeVideo, part: String, uploadParameters: UploadParameters, completionHandler: (video: YoutubeVideo?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let stabilize = stabilize {
 			queryParams.updateValue(stabilize.toJSONString(), forKey: "stabilize")
@@ -1588,7 +1593,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Add a like or dislike rating to a video or remove a rating from a video.
-	public func rateVideos(id id: String, rating: YoutubeVideosRating, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func addRating(rating: YoutubeVideosRating, toVideoWithId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		queryParams.updateValue(rating.rawValue, forKey: "rating")
@@ -1602,7 +1607,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Retrieves the ratings that the authorized user gave to a list of specified videos.
-	public func getRatingVideos(id id: String, completionHandler: (videoGetRatingResponse: YoutubeVideoGetRatingResponse?, error: ErrorType?) -> ()) {
+	public func getRatingVideos(id id: String, completionHandler: (videoGetRatingResponse: YoutubeVideoGetRatingResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -1619,7 +1624,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a YouTube video.
-	public func deleteVideos(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteVideo(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
@@ -1635,7 +1640,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Report abuse for a video.
-	public func reportAbuseVideos(videoAbuseReport videoAbuseReport: YoutubeVideoAbuseReport, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func reportAbuseForVideo(withReport videoAbuseReport: YoutubeVideoAbuseReport, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -1650,7 +1655,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Updates a video's metadata.
-	public func updateVideos(video video: YoutubeVideo, part: String, completionHandler: (video: YoutubeVideo?, error: ErrorType?) -> ()) {
+	public func updateVideoMetadata(video: YoutubeVideo, part: String, completionHandler: (video: YoutubeVideo?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let onBehalfOfContentOwner = onBehalfOfContentOwner {
 			queryParams.updateValue(onBehalfOfContentOwner, forKey: "onBehalfOfContentOwner")
@@ -1674,7 +1679,7 @@ public class Youtube: GoogleService {
 	public var myRating: YoutubeVideosMyRating!
 	
 	/// Returns a list of videos that match the API request parameters.
-	public func listVideos(part part: String, completionHandler: (videoListResponse: YoutubeVideoListResponse?, error: ErrorType?) -> ()) {
+	public func listVideos(part part: String, completionHandler: (videoListResponse: YoutubeVideoListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let locale = locale {
 			queryParams.updateValue(locale, forKey: "locale")
@@ -1715,7 +1720,7 @@ public class Youtube: GoogleService {
 	public var filter: YoutubeSponsorsFilter = .Newest
 	
 	/// Lists sponsors for a channel.
-	public func listSponsors(part part: String, completionHandler: (sponsorListResponse: YoutubeSponsorListResponse?, error: ErrorType?) -> ()) {
+	public func listSponsors(part part: String, completionHandler: (sponsorListResponse: YoutubeSponsorListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
@@ -1734,7 +1739,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns a list of content regions that the YouTube website supports.
-	public func listI18nRegions(part part: String, completionHandler: (i18nRegionListResponse: YoutubeI18nRegionListResponse?, error: ErrorType?) -> ()) {
+	public func listContentRegions(part part: String, completionHandler: (i18nRegionListResponse: YoutubeI18nRegionListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(hl, forKey: "hl")
 		queryParams.updateValue(part, forKey: "part")
@@ -1749,7 +1754,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Adds a message to a live chat.
-	public func insertLiveChatMessages(liveChatMessage liveChatMessage: YoutubeLiveChatMessage, part: String, completionHandler: (liveChatMessage: YoutubeLiveChatMessage?, error: ErrorType?) -> ()) {
+	public func addMessageToLiveChat(liveChatMessage: YoutubeLiveChatMessage, part: String, completionHandler: (liveChatMessage: YoutubeLiveChatMessage?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(part, forKey: "part")
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "liveChat/messages", queryParams: queryParams, postBody: Mapper<YoutubeLiveChatMessage>().toJSON(liveChatMessage)) { (JSON, error) -> () in
@@ -1766,7 +1771,7 @@ public class Youtube: GoogleService {
 	public var profileImageSize: UInt!
 	
 	/// Lists live chat messages for a specific chat.
-	public func listLiveChatMessages(liveChatId liveChatId: String, part: String, completionHandler: (liveChatMessagelistResponse: YoutubeLiveChatMessageListResponse?, error: ErrorType?) -> ()) {
+	public func listLiveChatMessages(withChatId liveChatId: String, part: String, completionHandler: (liveChatMessagelistResponse: YoutubeLiveChatMessageListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let pageToken = pageToken {
 			queryParams.updateValue(pageToken, forKey: "pageToken")
@@ -1789,7 +1794,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Deletes a chat message.
-	public func deleteLiveChatMessages(id id: String, completionHandler: (success: Bool?, error: ErrorType?) -> ()) {
+	public func deleteLiveChatMessage(withId id: String, completionHandler: (success: Bool?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(id, forKey: "id")
 		fetcher.performRequest(.DELETE, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "liveChat/messages", queryParams: queryParams) { (JSON, error) -> () in
@@ -1802,7 +1807,7 @@ public class Youtube: GoogleService {
 	}
 
 	/// Returns a list of application languages that the YouTube website supports.
-	public func listI18nLanguages(part part: String, completionHandler: (i18nLanguageListResponse: YoutubeI18nLanguageListResponse?, error: ErrorType?) -> ()) {
+	public func listSupportedLanguages(part part: String, completionHandler: (i18nLanguageListResponse: YoutubeI18nLanguageListResponse?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(hl, forKey: "hl")
 		queryParams.updateValue(part, forKey: "part")
@@ -1822,8 +1827,8 @@ public class Youtube: GoogleService {
 			queryParams.updateValue(userIp, forKey: "userIp")
 		}
 		queryParams.updateValue(prettyPrint.toJSONString(), forKey: "prettyPrint")
-		if let quotaUser = quotaUser {
-			queryParams.updateValue(quotaUser, forKey: "quotaUser")
+		if let quotaUserId = quotaUserId {
+			queryParams.updateValue(quotaUserId, forKey: "quotaUser")
 		}
 		if let fields = fields {
 			queryParams.updateValue(fields, forKey: "fields")
@@ -1885,7 +1890,7 @@ public enum YoutubeSubscriptionsOrder: String {
 /// This parameter indicates whether the API should return comments formatted as HTML or as plain text.
 public enum YoutubeCommentsTextFormat: String {
 	/// Returns the comments in HTML format. This is the default value.
-	case Html = "html"
+	case HTML = "html"
 	/// Returns the comments in plain text format.
 	case PlainText = "plainText"
 }
@@ -1903,9 +1908,9 @@ public enum YoutubeSearchVideoType: String {
 /// The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
 public enum YoutubeSearchVideoDimension: String {
 	/// Restrict search results to exclude 3D videos.
-	case X2d = "2d"
+	case X2D = "2d"
 	/// Restrict search results to only include 3D videos.
-	case X3d = "3d"
+	case X3D = "3d"
 	/// Include both 3D and non-3D videos in returned results. This is the default value.
 	case Any = "any"
 }
@@ -1931,15 +1936,15 @@ public enum YoutubeSearchVideoLicense: String {
 /// The tfmt parameter specifies that the caption track should be returned in a specific format. If the parameter is not included in the request, the track is returned in its original format.
 public enum YoutubeCaptionsTfmt: String {
 	/// SubViewer subtitle.
-	case Sbv = "sbv"
+	case SBV = "sbv"
 	/// Scenarist Closed Caption format.
-	case Scc = "scc"
+	case SCC = "scc"
 	/// SubRip subtitle.
-	case Srt = "srt"
+	case SRT = "srt"
 	/// Timed Text Markup Language caption.
-	case Ttml = "ttml"
+	case TTML = "ttml"
 	/// Web Video Text Tracks caption.
-	case Vtt = "vtt"
+	case VTT = "vtt"
 }
 
 /// The eventType parameter restricts a search to broadcast events. If you specify a value for this parameter, you must also set the type parameter's value to video.
@@ -2002,7 +2007,7 @@ public enum YoutubeSearchVideoDefinition: String {
 /// Set this parameter's value to html or plainText to instruct the API to return the comments left by users in html formatted or in plain text.
 public enum YoutubeCommentThreadsTextFormat: String {
 	/// Returns the comments in HTML format. This is the default value.
-	case Html = "html"
+	case HTML = "html"
 	/// Returns the comments in plain text format.
 	case PlainText = "plainText"
 }
@@ -2020,7 +2025,7 @@ public enum YoutubeSearchSafeSearch: String {
 /// Data format for the response.
 public enum YoutubeAlt: String {
 	/// Responses with Content-Type of application/json
-	case Json = "json"
+	case JSON = "json"
 }
 
 /// The chart parameter identifies the chart that you want to retrieve.

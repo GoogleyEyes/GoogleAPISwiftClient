@@ -2,14 +2,14 @@
 //  YoutubeLiveChatMessage.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The LiveChatMessage model type for use with the Youtube API
+/// A liveChatMessage resource represents a chat message in a YouTube Live Chat.
 public class YoutubeLiveChatMessage: GoogleObject {
 	/// The snippet object contains basic details about the message.
 	public var snippet: YoutubeLiveChatMessageSnippet!

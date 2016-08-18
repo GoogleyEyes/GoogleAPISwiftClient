@@ -2,7 +2,7 @@
 //  YoutubeVideoFileDetailsVideoStream.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -23,7 +23,7 @@ public enum YoutubeVideoFileDetailsVideoStreamRotation: String {
 	case UpsideDown = "upsideDown"
 }
 
-/// The VideoFileDetailsVideoStream model type for use with the Youtube API
+/// Information about a video stream.
 public class YoutubeVideoFileDetailsVideoStream: ObjectType {
 	/// The video stream's frame rate, in frames per second.
 	public var frameRateFps: Double!

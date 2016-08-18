@@ -2,14 +2,14 @@
 //  YoutubePromotedItemId.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The PromotedItemId model type for use with the Youtube API
+/// Describes a single promoted item id. It is a union of various possible types.
 public class YoutubePromotedItemId: ObjectType {
 	/// If the promoted item represents a video, this field represents the unique YouTube ID identifying it. This field will be present only if type has the value video.
 	public var videoId: String!

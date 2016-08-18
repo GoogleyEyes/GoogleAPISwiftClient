@@ -2,18 +2,18 @@
 //  YoutubeSearchListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The SearchListResponse model type for use with the Youtube API
 public class YoutubeSearchListResponse: GoogleObjectList {
-	public typealias Type = YoutubeSearchResult
-	/// A list of results that match the search criteria.
-	public var items: [Type]!
 	public var regionCode: String!
+	/// A list of results that match the search criteria.
+	public var items: [YoutubeSearchResult]!
 	public var tokenPagination: YoutubeTokenPagination!
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#searchListResponse".
 	public var kind: String = "youtube#searchListResponse"
@@ -38,8 +38,8 @@ public class YoutubeSearchListResponse: GoogleObjectList {
 	}
 
 	public func mapping(map: Map) {
-		items <- map["items"]
 		regionCode <- map["regionCode"]
+		items <- map["items"]
 		tokenPagination <- map["tokenPagination"]
 		kind <- map["kind"]
 		nextPageToken <- map["nextPageToken"]
@@ -49,18 +49,18 @@ public class YoutubeSearchListResponse: GoogleObjectList {
 		eventId <- map["eventId"]
 		prevPageToken <- map["prevPageToken"]
 	}
-	public required init(arrayLiteral elements: Type...) {
+	public required init(arrayLiteral elements: YoutubeSearchResult...) {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Generator = IndexingGenerator<[YoutubeSearchResult]>
 
 	public func generate() -> Generator {
-		let objects = items as [Type]
+		let objects = items as [YoutubeSearchResult]
 		return objects.generate()
 	}
 
-	public subscript(position: Int) -> Type {
+	public subscript(position: Int) -> YoutubeSearchResult {
 		return items[position]
 	}
 }

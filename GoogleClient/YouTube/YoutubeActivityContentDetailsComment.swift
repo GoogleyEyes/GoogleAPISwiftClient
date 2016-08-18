@@ -2,14 +2,14 @@
 //  YoutubeActivityContentDetailsComment.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ActivityContentDetailsComment model type for use with the Youtube API
+/// Information about a resource that received a comment.
 public class YoutubeActivityContentDetailsComment: ObjectType {
 	/// The resourceId object contains information that identifies the resource associated with the comment.
 	public var resourceId: YoutubeResourceId!

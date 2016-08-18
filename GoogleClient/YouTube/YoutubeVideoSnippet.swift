@@ -2,7 +2,7 @@
 //  YoutubeVideoSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ public enum YoutubeVideoSnippetLiveBroadcastContent: String {
 	case Upcoming = "upcoming"
 }
 
-/// The VideoSnippet model type for use with the Youtube API
+/// Basic details about a video, including title, description, uploader, thumbnails and category.
 public class YoutubeVideoSnippet: ObjectType {
 	/// The ID that YouTube uses to uniquely identify the channel that the video was uploaded to.
 	public var channelId: String!

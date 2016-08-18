@@ -2,17 +2,17 @@
 //  YoutubeLiveStreamListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The LiveStreamListResponse model type for use with the Youtube API
 public class YoutubeLiveStreamListResponse: GoogleObjectList {
-	public typealias Type = YoutubeLiveStream
 	/// A list of live streams that match the request criteria.
-	public var items: [Type]!
+	public var items: [YoutubeLiveStream]!
 	public var tokenPagination: YoutubeTokenPagination!
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#liveStreamListResponse".
 	public var kind: String = "youtube#liveStreamListResponse"
@@ -47,18 +47,18 @@ public class YoutubeLiveStreamListResponse: GoogleObjectList {
 		eventId <- map["eventId"]
 		prevPageToken <- map["prevPageToken"]
 	}
-	public required init(arrayLiteral elements: Type...) {
+	public required init(arrayLiteral elements: YoutubeLiveStream...) {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Generator = IndexingGenerator<[YoutubeLiveStream]>
 
 	public func generate() -> Generator {
-		let objects = items as [Type]
+		let objects = items as [YoutubeLiveStream]
 		return objects.generate()
 	}
 
-	public subscript(position: Int) -> Type {
+	public subscript(position: Int) -> YoutubeLiveStream {
 		return items[position]
 	}
 }

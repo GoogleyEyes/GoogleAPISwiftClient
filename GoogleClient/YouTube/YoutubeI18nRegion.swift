@@ -2,14 +2,14 @@
 //  YoutubeI18nRegion.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The I18nRegion model type for use with the Youtube API
+/// A i18nRegion resource identifies a region where YouTube is available.
 public class YoutubeI18nRegion: GoogleObject {
 	/// The snippet object contains basic details about the i18n region, such as region code and human-readable name.
 	public var snippet: YoutubeI18nRegionSnippet!

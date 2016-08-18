@@ -2,17 +2,17 @@
 //  YoutubeVideoCategoryListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The VideoCategoryListResponse model type for use with the Youtube API
 public class YoutubeVideoCategoryListResponse: GoogleObjectList {
-	public typealias Type = YoutubeVideoCategory
 	/// A list of video categories that can be associated with YouTube videos. In this map, the video category ID is the map key, and its value is the corresponding videoCategory resource.
-	public var items: [Type]!
+	public var items: [YoutubeVideoCategory]!
 	public var tokenPagination: YoutubeTokenPagination!
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#videoCategoryListResponse".
 	public var kind: String = "youtube#videoCategoryListResponse"
@@ -47,18 +47,18 @@ public class YoutubeVideoCategoryListResponse: GoogleObjectList {
 		eventId <- map["eventId"]
 		prevPageToken <- map["prevPageToken"]
 	}
-	public required init(arrayLiteral elements: Type...) {
+	public required init(arrayLiteral elements: YoutubeVideoCategory...) {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Generator = IndexingGenerator<[YoutubeVideoCategory]>
 
 	public func generate() -> Generator {
-		let objects = items as [Type]
+		let objects = items as [YoutubeVideoCategory]
 		return objects.generate()
 	}
 
-	public subscript(position: Int) -> Type {
+	public subscript(position: Int) -> YoutubeVideoCategory {
 		return items[position]
 	}
 }

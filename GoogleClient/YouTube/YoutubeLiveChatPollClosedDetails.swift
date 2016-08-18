@@ -1,5 +1,5 @@
 //
-//  YoutubeVideoProjectDetails.swift
+//  YoutubeLiveChatPollClosedDetails.swift
 //  GoogleAPISwiftClient
 //
 //  Created by Matthew Wyskiel on 7/11/16.
@@ -9,10 +9,10 @@
 import Foundation
 import ObjectMapper
 
-/// Project specific details about the content of a YouTube Video.
-public class YoutubeVideoProjectDetails: ObjectType {
-	/// A list of project tags associated with the video during the upload.
-	public var tags: [String]!
+/// The LiveChatPollClosedDetails model type for use with the Youtube API
+public class YoutubeLiveChatPollClosedDetails: ObjectType {
+	/// The id of the poll that was closed.
+	public var pollId: String!
 	
 	public required init?(_ map: Map) {
 
@@ -23,7 +23,7 @@ public class YoutubeVideoProjectDetails: ObjectType {
 	}
 
 	public func mapping(map: Map) {
-		tags <- map["tags"]
+		pollId <- map["pollId"]
 	}
 }
 

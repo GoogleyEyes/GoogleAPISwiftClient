@@ -2,14 +2,14 @@
 //  YoutubeVideoProcessingDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The VideoProcessingDetails model type for use with the Youtube API
+/// Describes processing status and progress and availability of some other Video resource parts.
 public class YoutubeVideoProcessingDetails: ObjectType {
 	/// The processingProgress object contains information about the progress YouTube has made in processing the video. The values are really only relevant if the video's processing status is processing.
 	public var processingProgress: YoutubeVideoProcessingDetailsProcessingProgress!

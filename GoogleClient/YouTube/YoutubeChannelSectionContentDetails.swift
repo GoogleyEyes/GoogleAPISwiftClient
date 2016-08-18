@@ -2,14 +2,14 @@
 //  YoutubeChannelSectionContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ChannelSectionContentDetails model type for use with the Youtube API
+/// Details about a channelsection, including playlists and channels.
 public class YoutubeChannelSectionContentDetails: ObjectType {
 	/// The playlist ids for type single_playlist and multiple_playlists. For singlePlaylist, only one playlistId is allowed.
 	public var playlists: [String]!

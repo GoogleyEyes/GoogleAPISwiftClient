@@ -2,14 +2,14 @@
 //  YoutubeThumbnailDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ThumbnailDetails model type for use with the Youtube API
+/// Internal representation of thumbnails for a YouTube resource.
 public class YoutubeThumbnailDetails: ObjectType {
 	/// The medium quality image for this resource.
 	public var medium: YoutubeThumbnail!

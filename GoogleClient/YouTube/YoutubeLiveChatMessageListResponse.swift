@@ -2,17 +2,17 @@
 //  YoutubeLiveChatMessageListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The LiveChatMessageListResponse model type for use with the Youtube API
 public class YoutubeLiveChatMessageListResponse: GoogleObjectList {
-	public typealias Type = YoutubeLiveChatMessage
 	/// A list of live chat messages.
-	public var items: [Type]!
+	public var items: [YoutubeLiveChatMessage]!
 	public var tokenPagination: YoutubeTokenPagination!
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#liveChatMessageListResponse".
 	public var kind: String = "youtube#liveChatMessageListResponse"
@@ -50,18 +50,18 @@ public class YoutubeLiveChatMessageListResponse: GoogleObjectList {
 		eventId <- map["eventId"]
 		pollingIntervalMillis <- map["pollingIntervalMillis"]
 	}
-	public required init(arrayLiteral elements: Type...) {
+	public required init(arrayLiteral elements: YoutubeLiveChatMessage...) {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Generator = IndexingGenerator<[YoutubeLiveChatMessage]>
 
 	public func generate() -> Generator {
-		let objects = items as [Type]
+		let objects = items as [YoutubeLiveChatMessage]
 		return objects.generate()
 	}
 
-	public subscript(position: Int) -> Type {
+	public subscript(position: Int) -> YoutubeLiveChatMessage {
 		return items[position]
 	}
 }

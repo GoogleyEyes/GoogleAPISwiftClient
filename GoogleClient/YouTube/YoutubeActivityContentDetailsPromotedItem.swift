@@ -2,7 +2,7 @@
 //  YoutubeActivityContentDetailsPromotedItem.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ public enum YoutubeActivityContentDetailsPromotedItemCtaType: String {
 	case VisitAdvertiserSite = "visitAdvertiserSite"
 }
 
-/// The ActivityContentDetailsPromotedItem model type for use with the Youtube API
+/// Details about a resource which is being promoted.
 public class YoutubeActivityContentDetailsPromotedItem: ObjectType {
 	/// The list of forecasting URLs. The client should ping all of these URLs when a promoted item is not available, to indicate that a promoted item could have been shown.
 	public var forecastingUrl: [String]!

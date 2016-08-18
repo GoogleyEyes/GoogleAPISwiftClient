@@ -2,7 +2,7 @@
 //  YoutubeVideoStatus.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -39,7 +39,7 @@ public enum YoutubeVideoStatusUploadStatus: String {
 	case Uploaded = "uploaded"
 }
 
-/// The VideoStatus model type for use with the Youtube API
+/// Basic details about a video category, such as its localized title.
 public class YoutubeVideoStatus: ObjectType {
 	/// The video's privacy status.
 	public var privacyStatus: YoutubeVideoStatusPrivacyStatus!

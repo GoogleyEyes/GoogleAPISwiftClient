@@ -2,7 +2,7 @@
 //  YoutubeLiveBroadcastContentDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -27,7 +27,7 @@ public enum YoutubeLiveBroadcastContentDetailsClosedCaptionsType: String {
 	case ClosedCaptionsHttpPost = "closedCaptionsHttpPost"
 }
 
-/// The LiveBroadcastContentDetails model type for use with the Youtube API
+/// Detailed settings of a broadcast.
 public class YoutubeLiveBroadcastContentDetails: ObjectType {
 	/// The date and time that the live stream referenced by boundStreamId was last updated.
 	public var boundStreamLastUpdateTimeMs: NSDate!

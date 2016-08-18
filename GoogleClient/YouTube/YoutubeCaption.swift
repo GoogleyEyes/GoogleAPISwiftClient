@@ -2,14 +2,14 @@
 //  YoutubeCaption.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The Caption model type for use with the Youtube API
+/// A caption resource represents a YouTube caption track. A caption track is associated with exactly one YouTube video.
 public class YoutubeCaption: GoogleObject {
 	/// The snippet object contains basic details about the caption.
 	public var snippet: YoutubeCaptionSnippet!

@@ -2,14 +2,14 @@
 //  YoutubeLiveChatBan.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The LiveChatBan model type for use with the Youtube API
+/// A liveChatBan resource represents a ban for a YouTube live chat.
 public class YoutubeLiveChatBan: GoogleObject {
 	/// The snippet object contains basic details about the ban.
 	public var snippet: YoutubeLiveChatBanSnippet!

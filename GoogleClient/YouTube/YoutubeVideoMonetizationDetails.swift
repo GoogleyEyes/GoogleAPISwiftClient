@@ -2,14 +2,14 @@
 //  YoutubeVideoMonetizationDetails.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The VideoMonetizationDetails model type for use with the Youtube API
+/// Details about monetization of a YouTube Video.
 public class YoutubeVideoMonetizationDetails: ObjectType {
 	/// The value of access indicates whether the video can be monetized or not.
 	public var access: YoutubeAccessPolicy!

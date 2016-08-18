@@ -2,7 +2,7 @@
 //  YoutubeContentRating.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -25,10 +25,12 @@ public enum YoutubeContentRatingMibacRating: String {
 	case MibacVm18 = "mibacVm18"
 }
 
-/// The ContentRating model type for use with the Youtube API
+/// Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 68
 public class YoutubeContentRating: ObjectType {
 	/// The video's rating from the Movie and Television Review and Classification Board (Philippines).
 	public var mtrcbRating: YoutubeContentRatingMtrcbRating!
+	/// Reasons that explain why the video received its FPB (South Africa) rating.
+	public var fpbRatingReasons: [String]!
 	/// The video's National Film Registry of the Russian Federation (MKRF - Russia) rating.
 	public var russiaRating: YoutubeContentRatingRussiaRating!
 	/// The video's rating in Egypt.
@@ -153,12 +155,12 @@ public class YoutubeContentRating: ObjectType {
 	public var mocRating: YoutubeContentRatingMocRating!
 	/// The video's rating in Greece.
 	public var grfilmRating: YoutubeContentRatingGrfilmRating!
+	/// The video's rating in Poland.
+	public var nbcplRating: YoutubeContentRatingNbcplRating!
 	/// The video's rating from the Ministero dei Beni e delle Attività Culturali e del Turismo (Italy).
 	public var mibacRating: YoutubeContentRatingMibacRating!
 	/// The video's rating from the Nacionãlais Kino centrs (National Film Centre of Latvia).
 	public var nkclvRating: YoutubeContentRatingNkclvRating!
-	/// The video's rating in Poland.
-	public var nbcplRating: YoutubeContentRatingNbcplRating!
 	
 	public required init?(_ map: Map) {
 
@@ -170,6 +172,7 @@ public class YoutubeContentRating: ObjectType {
 
 	public func mapping(map: Map) {
 		mtrcbRating <- map["mtrcbRating"]
+		fpbRatingReasons <- map["fpbRatingReasons"]
 		russiaRating <- map["russiaRating"]
 		egfilmRating <- map["egfilmRating"]
 		csaRating <- map["csaRating"]
@@ -232,9 +235,9 @@ public class YoutubeContentRating: ObjectType {
 		eirinRating <- map["eirinRating"]
 		mocRating <- map["mocRating"]
 		grfilmRating <- map["grfilmRating"]
+		nbcplRating <- map["nbcplRating"]
 		mibacRating <- map["mibacRating"]
 		nkclvRating <- map["nkclvRating"]
-		nbcplRating <- map["nbcplRating"]
 	}
 }
 

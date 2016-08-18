@@ -2,7 +2,7 @@
 //  YoutubeSearchResultSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ public enum YoutubeSearchResultSnippetLiveBroadcastContent: String {
 	case Upcoming = "upcoming"
 }
 
-/// The SearchResultSnippet model type for use with the Youtube API
+/// Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.
 public class YoutubeSearchResultSnippet: ObjectType {
 	/// A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
 	public var thumbnails: YoutubeThumbnailDetails!

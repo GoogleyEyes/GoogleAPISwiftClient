@@ -2,14 +2,14 @@
 //  YoutubeResourceId.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ResourceId model type for use with the Youtube API
+/// A resource id is a generic reference that points to another YouTube resource.
 public class YoutubeResourceId: ObjectType {
 	/// The ID that YouTube uses to uniquely identify the referred resource, if that resource is a channel. This property is only present if the resourceId.kind value is youtube#channel.
 	public var channelId: String!

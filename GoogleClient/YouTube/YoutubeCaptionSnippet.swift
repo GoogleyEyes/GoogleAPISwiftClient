@@ -2,7 +2,7 @@
 //  YoutubeCaptionSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ public enum YoutubeCaptionSnippetTrackKind: String {
 	case Standard = "standard"
 }
 
-/// The CaptionSnippet model type for use with the Youtube API
+/// Basic details about a caption track, such as its language and name.
 public class YoutubeCaptionSnippet: ObjectType {
 	/// Indicates whether the caption track is a draft. If the value is true, then the track is not publicly visible. The default value is false.
 	public var isDraft: Bool!

@@ -2,14 +2,14 @@
 //  YoutubeInvideoPosition.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The InvideoPosition model type for use with the Youtube API
+/// Describes the spatial position of a visual widget inside a video. It is a union of various position types, out of which only will be set one.
 public class YoutubeInvideoPosition: ObjectType {
 	/// Describes in which corner of the video the visual widget will appear.
 	public var cornerPosition: YoutubeInvideoPositionCornerPosition!

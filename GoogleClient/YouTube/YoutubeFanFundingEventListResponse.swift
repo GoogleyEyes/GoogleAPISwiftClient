@@ -2,17 +2,17 @@
 //  YoutubeFanFundingEventListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The FanFundingEventListResponse model type for use with the Youtube API
 public class YoutubeFanFundingEventListResponse: GoogleObjectList {
-	public typealias Type = YoutubeFanFundingEvent
 	/// A list of fan funding events that match the request criteria.
-	public var items: [Type]!
+	public var items: [YoutubeFanFundingEvent]!
 	public var tokenPagination: YoutubeTokenPagination!
 	public var pageInfo: YoutubePageInfo!
 	/// The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
@@ -44,18 +44,18 @@ public class YoutubeFanFundingEventListResponse: GoogleObjectList {
 		etag <- map["etag"]
 		eventId <- map["eventId"]
 	}
-	public required init(arrayLiteral elements: Type...) {
+	public required init(arrayLiteral elements: YoutubeFanFundingEvent...) {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Generator = IndexingGenerator<[YoutubeFanFundingEvent]>
 
 	public func generate() -> Generator {
-		let objects = items as [Type]
+		let objects = items as [YoutubeFanFundingEvent]
 		return objects.generate()
 	}
 
-	public subscript(position: Int) -> Type {
+	public subscript(position: Int) -> YoutubeFanFundingEvent {
 		return items[position]
 	}
 }

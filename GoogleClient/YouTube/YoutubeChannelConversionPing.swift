@@ -2,14 +2,14 @@
 //  YoutubeChannelConversionPing.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ChannelConversionPing model type for use with the Youtube API
+/// Pings that the app shall fire (authenticated by biscotti cookie). Each ping has a context, in which the app must fire the ping, and a url identifying the ping.
 public class YoutubeChannelConversionPing: ObjectType {
 	/// Defines the context of the ping.
 	public var context: YoutubeChannelConversionPingContext!

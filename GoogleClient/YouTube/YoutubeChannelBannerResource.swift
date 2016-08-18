@@ -2,14 +2,14 @@
 //  YoutubeChannelBannerResource.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ChannelBannerResource model type for use with the Youtube API
+/// A channel banner returned as the response to a channel_banner.insert call.
 public class YoutubeChannelBannerResource: GoogleObject {
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#channelBannerResource".
 	public var kind: String = "youtube#channelBannerResource"

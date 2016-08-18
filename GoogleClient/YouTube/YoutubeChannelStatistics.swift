@@ -2,14 +2,14 @@
 //  YoutubeChannelStatistics.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The ChannelStatistics model type for use with the Youtube API
+/// Statistics about a channel: number of subscribers, number of videos in the channel, etc.
 public class YoutubeChannelStatistics: ObjectType {
 	/// The number of subscribers that the channel has.
 	public var subscriberCount: UInt64!

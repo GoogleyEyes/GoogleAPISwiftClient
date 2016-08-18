@@ -2,7 +2,7 @@
 //  YoutubeCommentSnippet.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
@@ -33,7 +33,7 @@ public enum YoutubeCommentSnippetViewerRating: String {
 	case Unspecified = "unspecified"
 }
 
-/// The CommentSnippet model type for use with the Youtube API
+/// Basic details about a comment, such as its author and text.
 public class YoutubeCommentSnippet: ObjectType {
 	/// The date and time when was last updated . The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 	public var updatedAt: NSDate!

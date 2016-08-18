@@ -2,14 +2,14 @@
 //  YoutubeLiveStream.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-/// The LiveStream model type for use with the Youtube API
+/// A live stream describes a live ingestion point.
 public class YoutubeLiveStream: GoogleObject {
 	/// The ID that YouTube assigns to uniquely identify the stream.
 	public var id: String!

@@ -2,17 +2,17 @@
 //  YoutubeSubscriptionListResponse.swift
 //  GoogleAPISwiftClient
 //
-//  Created by Matthew Wyskiel on 5/16/16.
+//  Created by Matthew Wyskiel on 7/11/16.
 //  Copyright © 2016 Matthew Wyskiel. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
+/// The SubscriptionListResponse model type for use with the Youtube API
 public class YoutubeSubscriptionListResponse: GoogleObjectList {
-	public typealias Type = YoutubeSubscription
 	/// A list of subscriptions that match the request criteria.
-	public var items: [Type]!
+	public var items: [YoutubeSubscription]!
 	public var tokenPagination: YoutubeTokenPagination!
 	/// Identifies what kind of resource this is. Value: the fixed string "youtube#subscriptionListResponse".
 	public var kind: String = "youtube#subscriptionListResponse"
@@ -47,18 +47,18 @@ public class YoutubeSubscriptionListResponse: GoogleObjectList {
 		eventId <- map["eventId"]
 		prevPageToken <- map["prevPageToken"]
 	}
-	public required init(arrayLiteral elements: Type...) {
+	public required init(arrayLiteral elements: YoutubeSubscription...) {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[Type]>
+	public typealias Generator = IndexingGenerator<[YoutubeSubscription]>
 
 	public func generate() -> Generator {
-		let objects = items as [Type]
+		let objects = items as [YoutubeSubscription]
 		return objects.generate()
 	}
 
-	public subscript(position: Int) -> Type {
+	public subscript(position: Int) -> YoutubeSubscription {
 		return items[position]
 	}
 }
