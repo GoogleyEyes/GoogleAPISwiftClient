@@ -50,7 +50,7 @@ public class YoutubeVideoFileDetailsVideoStream: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		frameRateFps <- map["frameRateFps"]
 		vendor <- map["vendor"]
 		codec <- map["codec"]

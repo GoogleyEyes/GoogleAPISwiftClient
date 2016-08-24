@@ -47,7 +47,7 @@ public class YoutubeChannelSettings: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		showBrowseView <- map["showBrowseView"]
 		title <- map["title"]
 		showRelatedChannels <- map["showRelatedChannels"]

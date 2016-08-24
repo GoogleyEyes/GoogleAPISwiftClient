@@ -24,7 +24,7 @@ public class YoutubeLiveBroadcastTopicSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		releaseDate <- map["releaseDate"]
 		name <- map["name"]
 	}

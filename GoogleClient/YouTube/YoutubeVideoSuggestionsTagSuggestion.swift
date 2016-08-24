@@ -24,7 +24,7 @@ public class YoutubeVideoSuggestionsTagSuggestion: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		categoryRestricts <- map["categoryRestricts"]
 		tag <- map["tag"]
 	}

@@ -28,7 +28,7 @@ public class YoutubeLiveChatFanFundingEventDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		currency <- map["currency"]
 		amountDisplayString <- map["amountDisplayString"]
 		userComment <- map["userComment"]

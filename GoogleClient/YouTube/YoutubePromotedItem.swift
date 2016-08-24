@@ -28,7 +28,7 @@ public class YoutubePromotedItem: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		timing <- map["timing"]
 		promotedByContentOwner <- map["promotedByContentOwner"]
 		id <- map["id"]

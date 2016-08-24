@@ -32,7 +32,7 @@ public class YoutubeCaptionSnippet: ObjectType {
 	/// The name of the caption track. The name is intended to be visible to the user as an option during playback.
 	public var name: String!
 	/// The date and time when the caption track was last updated. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var lastUpdated: NSDate!
+	public var lastUpdated: Date!
 	/// Indicates whether caption track is formatted for "easy reader," meaning it is at a third-grade level for language learners. The default value is false.
 	public var isEasyReader: Bool!
 	/// Indicates whether the track contains closed captions for the deaf and hard of hearing. The default value is false.
@@ -56,7 +56,7 @@ public class YoutubeCaptionSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		isDraft <- map["isDraft"]
 		failureReason <- map["failureReason"]
 		isAutoSynced <- map["isAutoSynced"]

@@ -30,7 +30,7 @@ public class YoutubeVideoStatistics: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		likeCount <- map["likeCount"]
 		viewCount <- map["viewCount"]
 		favoriteCount <- map["favoriteCount"]

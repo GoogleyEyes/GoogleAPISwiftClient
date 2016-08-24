@@ -32,7 +32,7 @@ public class YoutubeSubscription: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		contentDetails <- map["contentDetails"]
 		snippet <- map["snippet"]
 		etag <- map["etag"]

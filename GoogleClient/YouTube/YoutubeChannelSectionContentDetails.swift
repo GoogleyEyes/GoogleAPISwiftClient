@@ -24,7 +24,7 @@ public class YoutubeChannelSectionContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		playlists <- map["playlists"]
 		channels <- map["channels"]
 	}

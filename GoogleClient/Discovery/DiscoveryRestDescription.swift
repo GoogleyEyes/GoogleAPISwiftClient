@@ -19,7 +19,7 @@ public class DiscoveryRestDescription: GoogleObject {
     public var title: String!
     public var APIDescription: String! // description
     public var icons: DiscoveryAPIIcon!
-    public var documentationLink: NSURL!
+    public var documentationLink: URL!
     public var labels: [String]!
     public var APIProtocol: String! // protocol
     public var rootURL: String! // rootUrl
@@ -38,7 +38,7 @@ public class DiscoveryRestDescription: GoogleObject {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         kind <- map["kind"]
         discoveryVersion <- map["discoveryVersion"]
         identifier <- map["id"]
@@ -66,14 +66,14 @@ public class DiscoveryRestDescription: GoogleObject {
 }
 
 public class DiscoveryAPIIcon: Mappable {
-    public var x16: NSURL!
-    public var x32: NSURL!
+    public var x16: URL!
+    public var x32: URL!
     
     public required init?(_ map: Map) {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         x16 <- (map["x16"], URLTransform())
         x32 <- (map["x32"], URLTransform())
     }
@@ -86,7 +86,7 @@ public class DiscoveryAuth: Mappable { // assuming OAuth 2
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         OAuthScopes <- map["oauth2.scopes"]
     }
 }
@@ -98,7 +98,7 @@ public class DiscoveryAuthScope: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         scopeDescription <- map["description"]
     }
 }
@@ -127,7 +127,7 @@ public class DiscoveryJSONSchema: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         identifier <- map["id"]
         type <- map["type"]
         xRef <- map["$ref"]
@@ -156,7 +156,7 @@ public class DiscoveryJSONSchemaAnnotations: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         required <- map["required"]
     }
 }
@@ -180,7 +180,7 @@ public class DiscoveryRestMethod: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         identifier <- map["id"]
         path <- map["path"]
         httpMethod <- map["httpMethod"]
@@ -206,7 +206,7 @@ public class DiscoveryRestMethodMediaUpload: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         accept <- map["accept"]
         maxSize <- map["maxSize"]
         protocols <- map["protocols"]
@@ -226,7 +226,7 @@ public class DiscoveryRestMethodMediaUploadProtocol: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         path <- map["path"]
     }
 }
@@ -239,7 +239,7 @@ public class DiscoveryResource: Mappable {
         
     }
     
-    public func mapping(map: Map) {
+    public func mapping(_ map: Map) {
         methods <- map["methods"]
         subResources <- map["resources"]
     }

@@ -25,7 +25,7 @@ public class Discovery: GoogleService {
     public var quotaUser: String?
     public var userIp: String?
     
-    public func getDiscoveryDocument(forAPI api: String, version /* begins with 'v' followed by number */: String, completionHandler: (restDescription: DiscoveryRestDescription?, error: ErrorType?) -> ()) {
+    public func getDiscoveryDocument(forAPI api: String, version /* begins with 'v' followed by number */: String, completionHandler: (restDescription: DiscoveryRestDescription?, error: ErrorProtocol?) -> ()) {
         let queryParams = setUpQueryParams()
         fetcher.performRequest(serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "apis/\(api)/\(version)/rest", queryParams: queryParams) { (JSON, error) -> () in
             if error != nil {
@@ -41,7 +41,7 @@ public class Discovery: GoogleService {
     public var name: String?
     public var preferred: Bool?
     
-    public func listAPIs(completionHandler: (list: DiscoveryDirectoryList?, error: ErrorType?) -> ()) {
+    public func listAPIs(_ completionHandler: (list: DiscoveryDirectoryList?, error: ErrorProtocol?) -> ()) {
         var queryParams = setUpQueryParams()
         if let name = name {
             queryParams.updateValue(name, forKey: "name")

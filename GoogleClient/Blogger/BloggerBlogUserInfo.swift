@@ -26,7 +26,7 @@ public class BloggerBlogUserInfo: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		blog <- map["blog"]
 		blogUserInfo <- map["blog_user_info"]
 		kind <- map["kind"]

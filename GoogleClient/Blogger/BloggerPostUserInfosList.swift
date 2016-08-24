@@ -11,13 +11,16 @@ import ObjectMapper
 
 /// The PostUserInfosList model type for use with the Blogger API
 public class BloggerPostUserInfosList: GoogleObjectList {
+	public typealias `Type` = BloggerPostUserInfo
+	/// The list of Posts with User information for the post, for this Blog.
+	public var items: [Type]!
 	/// Pagination token to fetch the next page, if one exists.
 	public var nextPageToken: String!
 	/// The list of Posts with User information for the post, for this Blog.
 	public var items: [BloggerPostUserInfo]!
 	/// The kind of this entity. Always blogger#postList
 	public var kind: String = "blogger#postUserInfosList"
-	
+
 	public required init?(_ map: Map) {
 
 	}
@@ -26,7 +29,8 @@ public class BloggerPostUserInfosList: GoogleObjectList {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
+		items <- map["items"]
 		nextPageToken <- map["nextPageToken"]
 		items <- map["items"]
 		kind <- map["kind"]
@@ -35,15 +39,14 @@ public class BloggerPostUserInfosList: GoogleObjectList {
 		items = elements
 	}
 
-	public typealias Generator = IndexingGenerator<[BloggerPostUserInfo]>
+	public typealias Iterator = IndexingIterator<[Type]>
 
-	public func generate() -> Generator {
-		let objects = items as [BloggerPostUserInfo]
-		return objects.generate()
+	public func makeIterator() -> Iterator {
+		let objects = items as [Type]
+		return objects.makeIterator()
 	}
 
 	public subscript(position: Int) -> BloggerPostUserInfo {
 		return items[position]
 	}
 }
-

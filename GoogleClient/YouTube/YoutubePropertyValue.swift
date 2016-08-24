@@ -24,7 +24,7 @@ public class YoutubePropertyValue: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		value <- map["value"]
 		property <- map["property"]
 	}

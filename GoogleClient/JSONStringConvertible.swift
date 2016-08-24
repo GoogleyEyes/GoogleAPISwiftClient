@@ -34,7 +34,7 @@ extension UInt: JSONStringConvertible {
     }
 }
 
-extension NSDate: JSONStringConvertible {
+extension Date: JSONStringConvertible {
     func toJSONString() -> String {
         if let dateString = RFC3339Transform().transformToJSON(self) {
             return dateString

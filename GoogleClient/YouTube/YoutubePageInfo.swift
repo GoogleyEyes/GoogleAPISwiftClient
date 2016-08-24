@@ -24,7 +24,7 @@ public class YoutubePageInfo: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		resultsPerPage <- map["resultsPerPage"]
 		totalResults <- map["totalResults"]
 	}

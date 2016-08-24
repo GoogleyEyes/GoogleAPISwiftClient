@@ -32,7 +32,7 @@ public class YoutubeCommentThreadSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		topLevelComment <- map["topLevelComment"]
 		videoId <- map["videoId"]

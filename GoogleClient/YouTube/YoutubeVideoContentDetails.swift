@@ -46,7 +46,7 @@ public class YoutubeVideoContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		definition <- map["definition"]
 		countryRestriction <- map["countryRestriction"]
 		licensedContent <- map["licensedContent"]

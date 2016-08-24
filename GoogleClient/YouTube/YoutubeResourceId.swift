@@ -28,7 +28,7 @@ public class YoutubeResourceId: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		videoId <- map["videoId"]
 		playlistId <- map["playlistId"]

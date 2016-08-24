@@ -22,7 +22,7 @@ public class YoutubeChannelConversionPings: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		pings <- map["pings"]
 	}
 }

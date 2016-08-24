@@ -24,7 +24,7 @@ public class YoutubeVideoContentDetailsRegionRestriction: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		blocked <- map["blocked"]
 		allowed <- map["allowed"]
 	}

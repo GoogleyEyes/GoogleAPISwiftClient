@@ -42,7 +42,7 @@ public class YoutubeActivityContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelItem <- map["channelItem"]
 		like <- map["like"]
 		bulletin <- map["bulletin"]

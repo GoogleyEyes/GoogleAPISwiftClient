@@ -64,7 +64,7 @@ public class YoutubeImageSettings: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		bannerMobileExtraHdImageUrl <- map["bannerMobileExtraHdImageUrl"]
 		smallBrandedBannerImageImapScript <- map["smallBrandedBannerImageImapScript"]
 		bannerMobileLowImageUrl <- map["bannerMobileLowImageUrl"]

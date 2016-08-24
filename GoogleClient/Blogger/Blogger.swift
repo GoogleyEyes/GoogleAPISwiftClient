@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-/// 
+///
 public enum BloggerPostUserInfosStatus: String {
 	/// Draft posts
 	case Draft = "draft"
@@ -63,7 +63,7 @@ public enum BloggerPostUserInfosOrderBy: String {
 	case Updated = "updated"
 }
 
-/// 
+///
 public enum BloggerPagesStatus: String {
 	/// Draft (unpublished) Pages
 	case Draft = "draft"
@@ -135,7 +135,7 @@ public enum BloggerBlogsRole: String {
 	case Reader = "READER"
 }
 
-/// 
+///
 public enum BloggerPageViewsRange: String {
 	/// Page view counts from the last thirty days.
 	case X30Days = "30DAYS"
@@ -145,7 +145,7 @@ public enum BloggerPageViewsRange: String {
 	case All = "all"
 }
 
-/// 
+///
 public enum BloggerCommentsStatus: String {
 	/// Comments that have had their content removed
 	case Emptied = "emptied"
@@ -178,14 +178,14 @@ public class Blogger: GoogleService {
 	public var fields: String!
 	/// Data format for the response.
 	public var alt: BloggerAlt = .JSON
-	
+
 	/// Whether the body content of posts is included. Default is false.
 	public var fetchBodies: Bool = false
 	public var status: BloggerPostUserInfosStatus!
 	/// Access level with which to view the returned result. Note that some fields require elevated access.
 	public var view: BloggerPostUserInfosView!
 	/// Latest post date to fetch, a date-time with RFC 3339 formatting.
-	public var endDate: NSDate!
+	public var endDate: Date!
 	/// Comma-separated list of labels to search for.
 	public var labels: String!
 	/// Continuation token if the request is paged.
@@ -195,8 +195,8 @@ public class Blogger: GoogleService {
 	/// Maximum number of posts to fetch.
 	public var maxResults: UInt!
 	/// Earliest post date to fetch, a date-time with RFC 3339 formatting.
-	public var startDate: NSDate!
-	
+	public var startDate: Date!
+
 	/// Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
 	public func listPostUserInfos(forUserId userId: String, blogId: String, completionHandler: (postUserInfosList: BloggerPostUserInfosList?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
@@ -235,7 +235,7 @@ public class Blogger: GoogleService {
 
 	/// Maximum number of comments to pull back on a post.
 	public var maxComments: UInt!
-	
+
 	/// Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.
 	public func getPostUserInfo(forUserId userId: String, blogId: String, postId: String, completionHandler: (postUserInfo: BloggerPostUserInfo?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
@@ -253,7 +253,7 @@ public class Blogger: GoogleService {
 	}
 
 	public var range: BloggerPageViewsRange!
-	
+
 	/// Retrieve pageview stats for a Blog.
 	public func getPageViews(forBlogWithId blogId: String, completionHandler: (pageviews: BloggerPageviews?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
@@ -276,9 +276,9 @@ public class Blogger: GoogleService {
 	public var fetchBody: Bool = true
 	/// Whether image URL metadata for each post is included in the returned result (default: false).
 	public var fetchImages: Bool!
-	
+
 	/// Add a post.
-	public func insertPost(post: BloggerPost, toBlogWithId blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
+	public func insertPost(_ post: BloggerPost, toBlogWithId blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let isDraft = isDraft {
 			queryParams.updateValue(isDraft.toJSONString(), forKey: "isDraft")
@@ -298,8 +298,8 @@ public class Blogger: GoogleService {
 	}
 
 	/// Optional date and time to schedule the publishing of the Blog. If no publishDate parameter is given, the post is either published at the a previously saved schedule date (if present), or the current time. If a future date is given, the post will be scheduled to be published.
-	public var publishDate: NSDate!
-	
+	public var publishDate: Date!
+
 	/// Publishes a draft post, optionally at the specific time of the given publishDate parameter.
 	public func publishPost(withId postId: String, toBlogWithId blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
@@ -332,9 +332,9 @@ public class Blogger: GoogleService {
 	public var publish: Bool!
 	/// Whether a revert action should be performed when the post is updated (default: false).
 	public var revert: Bool!
-	
+
 	/// Update a post. This method supports patch semantics.
-	public func patchPost(post: BloggerPost, forPostID postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
+	public func patchPost(_ post: BloggerPost, forPostID postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -380,7 +380,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Update a post.
-	public func updatePost(post: BloggerPost, withPostId postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
+	public func updatePost(_ post: BloggerPost, withPostId postId: String, blogId: String, completionHandler: (post: BloggerPost?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -458,7 +458,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Retrieves a list of posts, possibly filtered.
-	public func listPosts(blogId blogId: String, completionHandler: (postList: BloggerPostList?, error: NSError?) -> ()) {
+	public func listPosts(blogId: String, completionHandler: (postList: BloggerPostList?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
 		if let status = status {
@@ -639,7 +639,7 @@ public class Blogger: GoogleService {
 
 	/// Maximum number of posts to pull back with the blog.
 	public var maxPosts: UInt!
-	
+
 	/// Gets one blog by ID.
 	public func getBlog(forId blogId: String, completionHandler: (blog: BloggerBlog?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
@@ -663,7 +663,7 @@ public class Blogger: GoogleService {
 	public var role: BloggerBlogsRole!
 	/// Whether the response is a list of blogs with per-user information instead of just blogs.
 	public var fetchUserInfo: Bool!
-	
+
 	/// Retrieves a list of blogs, possibly filtered.
 	public func listBlogs(forUserWithId userId: String, completionHandler: (blogList: BloggerBlogList?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
@@ -705,7 +705,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Add a page.
-	public func insertPage(page: BloggerPage, toBlogWithId blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+	public func insertPage(_ page: BloggerPage, toBlogWithId blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let isDraft = isDraft {
 			queryParams.updateValue(isDraft.toJSONString(), forKey: "isDraft")
@@ -746,7 +746,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Update a page. This method supports patch semantics.
-	public func patchPage(page: BloggerPage, forPageWithId pageId: String, blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+	public func patchPage(_ page: BloggerPage, forPageWithId pageId: String, blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -765,7 +765,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Update a page.
-	public func updatePage(page: BloggerPage, forPageWithId pageId: String, blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+	public func updatePage(_ page: BloggerPage, forPageWithId pageId: String, blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let publish = publish {
 			queryParams.updateValue(publish.toJSONString(), forKey: "publish")
@@ -784,7 +784,7 @@ public class Blogger: GoogleService {
 	}
 
 	/// Gets one blog page by ID.
-	public func getPage(forId pageId: String, fromBlogWithId blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+	public func getPages(_ blogId: String, pageId: String, completionHandler: (page: BloggerPage?, error: ErrorProtocol?) -> ()) {
 		var queryParams = setUpQueryParams()
 		if let view = view {
 			queryParams.updateValue(view.rawValue, forKey: "view")
@@ -800,7 +800,8 @@ public class Blogger: GoogleService {
 	}
 
 	/// Revert a published or scheduled page to draft state.
-	public func revertPage(withId pageId: String, inBlogWithId blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
+
+	public func revertPage(with pageId: String, inBlogWithId blogId: String, completionHandler: (page: BloggerPage?, error: NSError?) -> ()) {
 		let queryParams = setUpQueryParams()
 		fetcher.performRequest(.POST, serviceName: apiNameInURL, apiVersion: apiVersionString, endpoint: "blogs/\(blogId)/pages/\(pageId)/revert", queryParams: queryParams) { (JSON, error) -> () in
 			if error != nil {
@@ -812,7 +813,7 @@ public class Blogger: GoogleService {
 		}
 	}
 
-	/// Retrieves the pages for a blog, optionally including non-LIVE statuses.
+
 	public func listPages(forBlogWithId blogId: String, completionHandler: (pageList: BloggerPageList?, error: NSError?) -> ()) {
 		var queryParams = setUpQueryParams()
 		queryParams.updateValue(fetchBodies.toJSONString(), forKey: "fetchBodies")
@@ -870,4 +871,3 @@ public class Blogger: GoogleService {
 		return queryParams
 	}
 }
-

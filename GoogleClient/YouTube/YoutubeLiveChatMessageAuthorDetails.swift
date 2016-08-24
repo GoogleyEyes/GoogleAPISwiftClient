@@ -36,7 +36,7 @@ public class YoutubeLiveChatMessageAuthorDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelUrl <- map["channelUrl"]
 		channelId <- map["channelId"]
 		profileImageUrl <- map["profileImageUrl"]

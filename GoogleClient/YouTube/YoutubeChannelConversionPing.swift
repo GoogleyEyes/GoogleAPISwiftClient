@@ -24,7 +24,7 @@ public class YoutubeChannelConversionPing: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		context <- map["context"]
 		conversionUrl <- map["conversionUrl"]
 	}

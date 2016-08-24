@@ -28,7 +28,7 @@ public class YoutubeVideoFileDetailsAudioStream: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelCount <- map["channelCount"]
 		bitrateBps <- map["bitrateBps"]
 		vendor <- map["vendor"]

@@ -16,7 +16,7 @@ public class YoutubeSponsorSnippet: ObjectType {
 	/// Details about the sponsor.
 	public var sponsorDetails: YoutubeChannelProfileDetails!
 	/// The date and time when the user became a sponsor. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var sponsorSince: NSDate!
+	public var sponsorSince: Date!
 	
 	public required init?(_ map: Map) {
 
@@ -26,7 +26,7 @@ public class YoutubeSponsorSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		sponsorDetails <- map["sponsorDetails"]
 		sponsorSince <- (map["sponsorSince"], RFC3339Transform())

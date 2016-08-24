@@ -24,7 +24,7 @@ public class YoutubeVideoLocalization: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		title <- map["title"]
 		description <- map["description"]
 	}

@@ -30,7 +30,7 @@ public enum YoutubeLiveBroadcastContentDetailsClosedCaptionsType: String {
 /// Detailed settings of a broadcast.
 public class YoutubeLiveBroadcastContentDetails: ObjectType {
 	/// The date and time that the live stream referenced by boundStreamId was last updated.
-	public var boundStreamLastUpdateTimeMs: NSDate!
+	public var boundStreamLastUpdateTimeMs: Date!
 	/// This setting indicates whether YouTube should enable content encryption for the broadcast.
 	public var enableContentEncryption: Bool!
 	/// Indicates whether this broadcast has low latency enabled.
@@ -71,7 +71,7 @@ public class YoutubeLiveBroadcastContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		boundStreamLastUpdateTimeMs <- (map["boundStreamLastUpdateTimeMs"], RFC3339Transform())
 		enableContentEncryption <- map["enableContentEncryption"]
 		enableLowLatency <- map["enableLowLatency"]

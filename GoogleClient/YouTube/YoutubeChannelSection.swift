@@ -34,7 +34,7 @@ public class YoutubeChannelSection: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		id <- map["id"]
 		targeting <- map["targeting"]
 		kind <- map["kind"]

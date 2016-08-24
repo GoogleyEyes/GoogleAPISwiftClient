@@ -22,7 +22,7 @@ public class YoutubeChannelTopicDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		topicIds <- map["topicIds"]
 	}
 }

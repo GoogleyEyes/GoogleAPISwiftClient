@@ -32,7 +32,7 @@ public class YoutubeLiveBroadcastTopic: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		snippet <- map["snippet"]
 		unmatched <- map["unmatched"]
 		type <- map["type"]

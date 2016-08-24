@@ -30,7 +30,7 @@ public class YoutubeChannelContentDetailsRelatedPlaylists: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		uploads <- map["uploads"]
 		watchLater <- map["watchLater"]
 		watchHistory <- map["watchHistory"]
@@ -53,7 +53,7 @@ public class YoutubeChannelContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		relatedPlaylists <- map["relatedPlaylists"]
 		googlePlusUserId <- map["googlePlusUserId"]
 	}

@@ -30,7 +30,7 @@ public class YoutubeLiveStreamContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		closedCaptionsIngestionUrl <- map["closedCaptionsIngestionUrl"]
 		isReusable <- map["isReusable"]
 	}

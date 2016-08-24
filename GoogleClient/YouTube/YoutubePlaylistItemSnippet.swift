@@ -24,7 +24,7 @@ public class YoutubePlaylistItemSnippet: ObjectType {
 	/// The item's description.
 	public var description: String!
 	/// The date and time that the item was added to the playlist. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth.
 	public var position: UInt!
 	/// Channel title for the channel that the playlist item belongs to.
@@ -38,7 +38,7 @@ public class YoutubePlaylistItemSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		thumbnails <- map["thumbnails"]
 		title <- map["title"]

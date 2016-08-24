@@ -25,7 +25,7 @@ public class YoutubeVideoCategorySnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		assignable <- map["assignable"]
 		channelId <- map["channelId"]
 		title <- map["title"]

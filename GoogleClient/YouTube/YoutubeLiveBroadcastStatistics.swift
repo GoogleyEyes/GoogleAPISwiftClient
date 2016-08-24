@@ -24,7 +24,7 @@ public class YoutubeLiveBroadcastStatistics: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		totalChatCount <- map["totalChatCount"]
 		concurrentViewers <- map["concurrentViewers"]
 	}

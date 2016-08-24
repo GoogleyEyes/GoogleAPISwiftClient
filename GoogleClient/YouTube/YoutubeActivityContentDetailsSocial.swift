@@ -30,7 +30,7 @@ public class YoutubeActivityContentDetailsSocial: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		author <- map["author"]
 		referenceUrl <- map["referenceUrl"]
 		resourceId <- map["resourceId"]

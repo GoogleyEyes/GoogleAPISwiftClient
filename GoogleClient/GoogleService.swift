@@ -20,7 +20,7 @@ protocol GoogleService {
     var fetcher: GoogleServiceFetcher {
         get
     }
-    
+
     init()
 }
 
@@ -41,7 +41,7 @@ public class GoogleServiceFetcher {
         }
     }
 
-    func performRequest(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters? = nil, completionHandler: (JSON: [String: AnyObject]?, error: NSError?) -> ()) {
+    func performRequest(_ method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters? = nil, completionHandler: (JSON: [String: AnyObject]?, error: NSError?) -> ()) {
 
         if uploadParameters != nil {
             performFileUpload(method, serviceName: serviceName, apiVersion: apiVersion, endpoint: endpoint, queryParams: queryParams, postBody: postBody, uploadParameters: uploadParameters!, completionHandler: { (JSON, error) in
@@ -63,13 +63,13 @@ public class GoogleServiceFetcher {
             .validate()
             .responseJSON { response in
                 switch response.result {
-                case .Success(let value):
+                case .success(let value):
                     completionHandler(JSON: value as? [String : AnyObject], error: nil)
-                case .Failure(let error):
+                case .failure(let error):
                     let alamofireError = error
                     if let responseData = response.data {
                         do {
-                            let JSON = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(rawValue: 0)) as! [String: AnyObject]
+                            let JSON = try JSONSerialization.jsonObject(with: responseData) as! [String: AnyObject]
                             let errJSON = JSON["error"] as! [String: AnyObject]
                             let errSpecificsArr = errJSON["errors"] as! [[String: AnyObject]]
                             let errSpecifics = errSpecificsArr[0]
@@ -85,7 +85,7 @@ public class GoogleServiceFetcher {
         }
     }
 
-    private func performFileUpload(method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters, completionHandler: (JSON: [String: AnyObject]?, error: NSError?) -> ()) {
+    private func performFileUpload(_ method: Alamofire.Method = .GET, serviceName: String, apiVersion: String, endpoint: String, queryParams: [String: String], postBody: [String: AnyObject]? = nil, uploadParameters: UploadParameters, completionHandler: (JSON: [String: AnyObject]?, error: NSError?) -> ()) {
         let url = baseURL + "/\(serviceName)/\(apiVersion)/\(endpoint)"
         var finalQueryParams = queryParams
         var headers: [String: String] = ["Content-Type":uploadParameters.MIMEType]
@@ -104,13 +104,13 @@ public class GoogleServiceFetcher {
             }
             .responseJSON { response in
                 switch response.result {
-                case .Success(let value):
+                case .success(let value):
                     completionHandler(JSON: value as? [String : AnyObject], error: nil)
-                case .Failure(let error):
+                case .failure(let error):
                     let alamofireError = error
                     if let responseData = response.data {
                         do {
-                            let JSON = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(rawValue: 0)) as! [String: AnyObject]
+                            let JSON = try JSONSerialization.jsonObject(with: responseData) as! [String: AnyObject]
                             let errJSON = JSON["error"] as! [String: AnyObject]
                             let errSpecificsArr = errJSON["errors"] as! [[String: AnyObject]]
                             let errSpecifics = errSpecificsArr[0]
@@ -127,19 +127,19 @@ public class GoogleServiceFetcher {
     }
 
     private func multiEncodedURLRequest(
-        method: Alamofire.Method,
+        _ method: Alamofire.Method,
         URLString: URLStringConvertible,
         URLParameters: [String: AnyObject],
         bodyParameters: [String: AnyObject]?,
-        headers: [String: String]) -> NSURLRequest
+        headers: [String: String]) -> URLRequest
     {
-        let tempURLRequest = NSURLRequest(URL: NSURL(string: URLString.URLString)!)
-        let URLRequest = ParameterEncoding.URL.encode(tempURLRequest, parameters: URLParameters)
-        let bodyRequest = ParameterEncoding.JSON.encode(tempURLRequest, parameters: bodyParameters)
+        let tempURLRequest = Foundation.URLRequest(url: URL(string: URLString.urlString)!)
+        let URLRequest = ParameterEncoding.url.encode(tempURLRequest, parameters: URLParameters)
+        let bodyRequest = ParameterEncoding.json.encode(tempURLRequest, parameters: bodyParameters)
 
-        let compositeRequest = URLRequest.0.mutableCopy() as! NSMutableURLRequest
-        compositeRequest.HTTPMethod = method.rawValue
-        compositeRequest.HTTPBody = bodyRequest.0.HTTPBody
+        var compositeRequest = URLRequest.0
+        compositeRequest.httpMethod = method.rawValue
+        compositeRequest.httpBody = bodyRequest.0.httpBody
         for (key, value) in headers {
             compositeRequest.addValue(value, forHTTPHeaderField: key)
         }

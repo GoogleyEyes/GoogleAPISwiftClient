@@ -24,7 +24,7 @@ public class YoutubePlaylistSnippet: ObjectType {
 	/// The playlist's description.
 	public var description: String!
 	/// The date and time that the playlist was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// The language of the playlist's default title and description.
 	public var defaultLanguage: String!
 	/// The channel title of the channel that the video belongs to.
@@ -38,7 +38,7 @@ public class YoutubePlaylistSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		thumbnails <- map["thumbnails"]
 		channelId <- map["channelId"]
 		title <- map["title"]

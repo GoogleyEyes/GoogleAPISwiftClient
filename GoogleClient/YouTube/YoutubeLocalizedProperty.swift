@@ -24,7 +24,7 @@ public class YoutubeLocalizedProperty: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		localized <- map["localized"]
 		defaultValue <- map["default"]
 		defaultLanguage <- map["defaultLanguage"]

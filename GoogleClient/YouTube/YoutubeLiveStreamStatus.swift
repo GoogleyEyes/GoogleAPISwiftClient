@@ -23,7 +23,7 @@ public class YoutubeLiveStreamStatus: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		healthStatus <- map["healthStatus"]
 		streamStatus <- map["streamStatus"]
 	}

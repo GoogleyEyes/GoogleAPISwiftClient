@@ -30,7 +30,7 @@ public class YoutubeThumbnailDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		medium <- map["medium"]
 		defaultValue <- map["default"]
 		maxres <- map["maxres"]

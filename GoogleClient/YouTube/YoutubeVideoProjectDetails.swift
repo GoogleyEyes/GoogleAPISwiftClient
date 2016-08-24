@@ -22,7 +22,7 @@ public class YoutubeVideoProjectDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		tags <- map["tags"]
 	}
 }

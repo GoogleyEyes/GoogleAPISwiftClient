@@ -82,7 +82,7 @@ public class YoutubeChannelSectionSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		style <- map["style"]
 		title <- map["title"]

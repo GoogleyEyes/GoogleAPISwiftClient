@@ -48,7 +48,7 @@ public class YoutubeActivitySnippet: ObjectType {
 	/// The description of the resource primarily associated with the activity.
 	public var description: String!
 	/// The date and time that the video was uploaded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var publishedAt: NSDate!
+	public var publishedAt: Date!
 	/// Channel title for the channel responsible for this activity
 	public var channelTitle: String!
 	/// The type of activity that the resource describes.
@@ -62,7 +62,7 @@ public class YoutubeActivitySnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		thumbnails <- map["thumbnails"]
 		channelId <- map["channelId"]
 		title <- map["title"]

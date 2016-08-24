@@ -30,7 +30,7 @@ public class BloggerPostPerUserInfo: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		userId <- map["userId"]
 		hasEditAccess <- map["hasEditAccess"]
 		blogId <- map["blogId"]

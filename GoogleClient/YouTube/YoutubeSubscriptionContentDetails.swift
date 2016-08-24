@@ -34,7 +34,7 @@ public class YoutubeSubscriptionContentDetails: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		totalItemCount <- map["totalItemCount"]
 		activityType <- map["activityType"]
 		newItemCount <- map["newItemCount"]

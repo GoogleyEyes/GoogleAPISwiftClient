@@ -28,7 +28,7 @@ public class YoutubeLiveStreamConfigurationIssue: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		reason <- map["reason"]
 		description <- map["description"]
 		severity <- map["severity"]

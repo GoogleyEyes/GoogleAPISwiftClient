@@ -22,7 +22,7 @@ public class BloggerUser: GoogleObject {
 	/// The kind of this entity. Always blogger#user
 	public var kind: String = "blogger#user"
 	/// The timestamp of when this profile was created, in seconds since epoch.
-	public var created: NSDate!
+	public var created: Date!
 	/// The container of blogs for this user.
 	public var blogs: BloggerUserBlogs!
 	/// The API REST URL to fetch this resource from.
@@ -38,7 +38,7 @@ public class BloggerUser: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		locale <- map["locale"]
 		about <- map["about"]
 		id <- map["id"]
@@ -64,7 +64,7 @@ public class BloggerUserBlogs: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		selfLink <- map["selfLink"]
 	}
 }
@@ -86,7 +86,7 @@ public class BloggerUserLocale: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		country <- map["country"]
 		language <- map["language"]
 		variant <- map["variant"]

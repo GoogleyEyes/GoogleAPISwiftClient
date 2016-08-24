@@ -34,7 +34,7 @@ public class YoutubeLiveStream: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		id <- map["id"]
 		kind <- map["kind"]
 		contentDetails <- map["contentDetails"]

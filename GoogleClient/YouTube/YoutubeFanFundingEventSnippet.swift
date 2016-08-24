@@ -24,7 +24,7 @@ public class YoutubeFanFundingEventSnippet: ObjectType {
 	/// The amount of funding in micros of fund_currency. e.g., 1 is represented
 	public var amountMicros: UInt64!
 	/// The date and time when the funding occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-	public var createdAt: NSDate!
+	public var createdAt: Date!
 	
 	public required init?(_ map: Map) {
 
@@ -34,7 +34,7 @@ public class YoutubeFanFundingEventSnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		commentText <- map["commentText"]
 		currency <- map["currency"]

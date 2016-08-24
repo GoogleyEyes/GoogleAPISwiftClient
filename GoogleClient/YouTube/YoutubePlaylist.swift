@@ -46,7 +46,7 @@ public class YoutubePlaylist: GoogleObject {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		id <- map["id"]
 		player <- map["player"]
 		kind <- map["kind"]

@@ -23,7 +23,7 @@ public class YoutubeGuideCategorySnippet: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		channelId <- map["channelId"]
 		title <- map["title"]
 	}

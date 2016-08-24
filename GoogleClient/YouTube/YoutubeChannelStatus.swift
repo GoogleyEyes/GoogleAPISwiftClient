@@ -36,7 +36,7 @@ public class YoutubeChannelStatus: ObjectType {
 
 	}
 
-	public func mapping(map: Map) {
+	public func mapping(_ map: Map) {
 		isLinked <- map["isLinked"]
 		privacyStatus <- map["privacyStatus"]
 		longUploadsStatus <- map["longUploadsStatus"]
